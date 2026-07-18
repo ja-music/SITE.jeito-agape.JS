@@ -79,4 +79,4 @@ Bom, por hoje é isso, meus irmãos. Deus abençoe, fiquem com Deus, e nos encon
 
 E se esse artigo fez sentido pra você, deixa aí nos comentários ou nos mande uma mensagem — vai ser uma grande bênção poder conversar com você.
 
-Amor e paz. ✝️
+Amor e paz.
