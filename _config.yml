@@ -33,5 +33,4 @@ feed:
 exclude:
   - README.md
   - CLAUDE.md
-  - CNAME
   - LICENSE
