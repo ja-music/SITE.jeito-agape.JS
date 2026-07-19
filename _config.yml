@@ -7,6 +7,11 @@ lang: pt-BR
 locale: pt_BR
 logo: /assets/logo.png
 
+# Google Ads — ação de conversão "Convite WhatsApp" (clique em qualquer botão do WhatsApp).
+# Preencher DEPOIS de criar a conta + a ação de conversão no Google Ads.
+# Formato: "AW-XXXXXXXXX/RÓTULO" (ID da conversão e rótulo, juntos por "/"). Vazio = desativado (no-op).
+google_ads_conversion: ""
+
 # Social / SEO
 social:
   name: Jeito Ágape
