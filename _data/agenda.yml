@@ -1,19 +1,21 @@
-- data: "2026-02-08"
-  nome: "Encontro EJC Belo Vale"
-  local: "Belo Vale - MG"
-  horario: "14h"
-
-- data: "2026-02-15"
-  nome: "Santa Missa — 6º Domingo do Tempo Comum"
-  local: "Paróquia Nossa Senhora de Lourdes, Contagem - MG"
-  horario: "10h"
-
-- data: "2026-02-20"
-  nome: "Sextou com Jesus"
-  local: "Paróquia São Pio de Pietrelcina, Betim - MG"
+# Santa Missa mensal com o Jeito Ágape — todo 4º domingo, 19h, Igreja N. Sra. de Lourdes (Contagem).
+# Próximas ocorrências listadas abaixo. ⚠️ Avise se algum mês for exceção antes do push.
+- data: "2026-07-26"
+  nome: "Santa Missa (4º domingo)"
+  local: "Igreja Nossa Senhora de Lourdes, Contagem - MG"
   horario: "19h"
 
-- data: "2026-02-22"
-  nome: "Cerco de Jericó + Santa Missa com Bruna Brant"
-  local: "Comunidade Nossa Senhora Aparecida"
-  horario: "17h"
+- data: "2026-08-23"
+  nome: "Santa Missa (4º domingo)"
+  local: "Igreja Nossa Senhora de Lourdes, Contagem - MG"
+  horario: "19h"
+
+- data: "2026-09-27"
+  nome: "Santa Missa (4º domingo)"
+  local: "Igreja Nossa Senhora de Lourdes, Contagem - MG"
+  horario: "19h"
+
+- data: "2026-10-25"
+  nome: "Santa Missa (4º domingo)"
+  local: "Igreja Nossa Senhora de Lourdes, Contagem - MG"
+  horario: "19h"
