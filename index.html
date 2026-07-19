@@ -53,6 +53,7 @@
   {
     "@context": "https://schema.org",
     "@type": "MusicGroup",
+    "@id": "https://jeitoagape.com.br/#musicgroup",
     "name": "Jeito Ágape",
     "alternateName": "Ministério Jeito Ágape",
     "description": "Banda católica e ministério de música católica de Belo Horizonte - MG. Há 16 anos evangelizando através da música, com mais de 500 missões realizadas em missas, retiros, shows, EJCs e eventos católicos em todo o Brasil.",
@@ -92,6 +93,41 @@
         "name": "Anderson Di Almeida"
       }
     }
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite + Agenda (shows gerados de _data/agenda.yml — formato do horário esperado: "14h") -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://jeitoagape.com.br/#website",
+        "url": "https://jeitoagape.com.br/",
+        "name": "Jeito Ágape",
+        "description": "Ministério de música católica de Belo Horizonte - MG. Convide a banda para missas, retiros, shows e EJCs.",
+        "inLanguage": "pt-BR",
+        "publisher": { "@id": "https://jeitoagape.com.br/#musicgroup" }
+      }{% for ev in site.data.agenda %}{% assign hr = ev.horario | remove: 'h' | remove: 'H' | strip %},
+      {
+        "@type": "MusicEvent",
+        "name": {{ ev.nome | jsonify }},
+        "startDate": "{{ ev.data }}{% if hr != '' %}T{{ hr }}:00:00-03:00{% endif %}",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": {{ ev.local | jsonify }},
+          "address": {{ ev.local | jsonify }}
+        },
+        "performer": { "@id": "https://jeitoagape.com.br/#musicgroup" },
+        "organizer": { "@id": "https://jeitoagape.com.br/#musicgroup", "name": "Jeito Ágape" },
+        "image": "https://jeitoagape.com.br/assets/hero1.png",
+        "url": "https://jeitoagape.com.br/#agenda",
+        "isAccessibleForFree": true
+      }{% endfor %}
+    ]
   }
   </script>
 
