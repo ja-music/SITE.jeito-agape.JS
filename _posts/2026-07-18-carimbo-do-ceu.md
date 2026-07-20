@@ -5,6 +5,7 @@ date: 2026-07-18
 author: "Beto Ferreira"
 category: "Reflexão"
 image: "/assets/blog/carimbo-do-ceu.jpg"
+og_image: "/assets/blog/carimbo-do-ceu-og.jpg"
 description: "O Padre Léo perguntava se o que fazemos carrega o 'carimbo do céu'. Numa era de curtidas e relevância, Jesus toca o leproso, manda calar o milagre e foge quando querem torná-lo rei. Uma reflexão sobre buscar a aprovação de Deus — e não a das multidões."
 keywords: "carimbo do céu, padre léo, redes sociais, curtidas, fama, relevância, evangelização, reflexão católica, jesus, lectio divina, oração, samaritana, leproso, espiritualidade"
 ---

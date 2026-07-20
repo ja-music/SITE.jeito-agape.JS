@@ -629,7 +629,7 @@ image: "/assets/blog/quaresma.png"
     {% assign featured = site.posts.first %}
     <a href="{{ featured.url }}" class="featured-card">
       {% if featured.image %}
-        <img src="{{ featured.image }}" alt="{{ featured.title }}" class="featured-img" />
+        <img src="{{ featured.image }}" alt="{{ featured.title }}" class="featured-img" fetchpriority="high" decoding="async" />
       {% endif %}
       <div class="featured-body">
         {% if featured.category %}
@@ -656,7 +656,7 @@ image: "/assets/blog/quaresma.png"
         {% for post in site.posts offset:1 %}
           {% if post.image %}
             <a href="{{ post.url }}" class="post-card">
-              <img src="{{ post.image }}" alt="{{ post.title }}" class="post-card-img" />
+              <img src="{{ post.image }}" alt="{{ post.title }}" class="post-card-img" loading="lazy" decoding="async" />
               <div class="post-card-body">
                 {% if post.category %}
                   <span class="category-tag" data-cat="{{ post.category | downcase }}" style="margin-bottom: 0.5rem;">{{ post.category }}</span>
@@ -709,7 +709,7 @@ image: "/assets/blog/quaresma.png"
         {% for author in site.data.authors %}
           <div class="columnist-card" onclick="openAuthorModal(this)" data-name="{{ author.name }}" data-role="{{ author.role }}" data-bio="{{ author.bio }}" data-image="{{ author.image }}">
             {% if author.image %}
-              <img src="{{ author.image }}" alt="{{ author.name }}" class="columnist-avatar" />
+              <img src="{{ author.image }}" alt="{{ author.name }}" class="columnist-avatar" width="200" height="200" loading="lazy" decoding="async" />
             {% else %}
               <div class="columnist-initials">
                 {% assign name_parts = author.name | split: " " %}

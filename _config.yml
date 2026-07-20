@@ -34,6 +34,15 @@ plugins:
 feed:
   path: /blog/feed.xml
 
+# Defaults — sem isto, um post que esquece "layout: post" no front matter é publicado
+# como HTML cru: sem <head>, sem meta/OG, sem convite no fim, sem relacionados. Falha silenciosa.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
 # Exclude from build
 exclude:
   - README.md

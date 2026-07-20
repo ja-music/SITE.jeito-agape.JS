@@ -324,6 +324,131 @@ layout: default
       max-height: 240px;
     }
   }
+
+  /* ---- Convite no fim do artigo ---- */
+  .post-invite {
+    margin: 3.5rem 0 0;
+    padding: 2.25rem 2rem;
+    border: 1px solid rgba(197, 48, 80, 0.25);
+    border-radius: 16px;
+    background: rgba(197, 48, 80, 0.06);
+    text-align: center;
+  }
+
+  .post-invite h2 {
+    margin: 0 0 0.6rem;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .post-invite p {
+    margin: 0 auto 1.5rem;
+    max-width: 34rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .post-invite-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .post-invite-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.6rem;
+    border-radius: 50px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.25s;
+  }
+
+  .post-invite-btn:hover {
+    opacity: 0.88;
+  }
+
+  .post-invite-link {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.82rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: color 0.25s;
+  }
+
+  .post-invite-link:hover {
+    color: #fff;
+  }
+
+  /* ---- Posts relacionados ---- */
+  .post-related {
+    margin-top: 3.5rem;
+  }
+
+  .post-related > h2 {
+    margin: 0 0 1.5rem;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .post-related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .post-related-card {
+    display: block;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    text-decoration: none;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+
+  .post-related-card:hover {
+    border-color: rgba(197, 48, 80, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .post-related-card img {
+    display: block;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .post-related-body {
+    padding: 0.9rem 1rem 1.1rem;
+  }
+
+  .post-related-cat {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .post-related-body h3 {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
 </style>
 
 {% assign words = content | number_of_words %}
@@ -394,7 +519,7 @@ layout: default
 
   <article>
     {% if page.image %}
-      <img src="{{ page.image }}" alt="{{ page.title }}" class="post-hero-img" />
+      <img src="{{ page.image }}" alt="{{ page.title }}" class="post-hero-img" fetchpriority="high" decoding="async" />
     {% endif %}
 
     <div class="post-header" style="max-width: 720px; margin: 0 auto;">
@@ -450,6 +575,46 @@ layout: default
       </div>
     </div>
   </article>
+
+  <!-- Convite no fim do artigo: quem leu 1.500 palavras é o leitor mais quente do site
+       e, até aqui, o post terminava em "Compartilhar" sem nunca convidar ninguém. -->
+  <aside class="post-invite">
+    <h2>Quer o Jeito Ágape na sua comunidade?</h2>
+    <p>
+      Animamos missas, retiros, EJCs, grupos de oração e shows de evangelização.
+      Conte pra gente o tipo de evento, a cidade e a data.
+    </p>
+    <div class="post-invite-actions">
+      <a href="https://api.whatsapp.com/send?phone=5531991267983&text=Ol%C3%A1!%20Gostaria%20de%20convidar%20o%20Jeito%20%C3%81gape%20para%20um%20evento.%20J%C3%A1%20adianto%20o%20tipo%20%28missa%2C%20retiro%20ou%20show%29%2C%20a%20cidade%20e%20a%20data%3A"
+         target="_blank" rel="noopener noreferrer" class="post-invite-btn">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        Chamar no WhatsApp
+      </a>
+      <a href="/#servicos" class="post-invite-link">Ver como podemos servir seu evento</a>
+    </div>
+  </aside>
+
+  <!-- Posts relacionados: mesma categoria primeiro, depois o resto. Antes daqui NENHUM
+       post linkava para outro — toda a autoridade interna vazava para fora do site. -->
+  {% assign mesma_cat = site.posts | where_exp: "p", "p.category == page.category" | where_exp: "p", "p.url != page.url" %}
+  {% assign outras_cat = site.posts | where_exp: "p", "p.category != page.category" %}
+  {% assign relacionados = mesma_cat | concat: outras_cat %}
+  {% if relacionados.size > 0 %}
+  <section class="post-related">
+    <h2>Continue lendo</h2>
+    <div class="post-related-grid">
+      {% for p in relacionados limit: 3 %}
+      <a href="{{ p.url }}" class="post-related-card">
+        {% if p.image %}<img src="{{ p.image }}" alt="{{ p.title }}" width="400" height="225" loading="lazy" />{% endif %}
+        <div class="post-related-body">
+          {% if p.category %}<span class="post-related-cat">{{ p.category }}</span>{% endif %}
+          <h3>{{ p.title }}</h3>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 </div>
 
 <div style="padding-bottom: 4rem;"></div>

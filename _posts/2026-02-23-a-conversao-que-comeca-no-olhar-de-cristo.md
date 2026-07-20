@@ -4,7 +4,8 @@ title: "A Conversão que Começa no Olhar de Cristo"
 date: 2026-02-23
 author: "Beto Ferreira"
 category: "Espiritualidade"
-image: "/assets/wallpapers/pc/02.png"
+image: "/assets/blog/conversao-olhar-de-cristo.png"
+og_image: "/assets/blog/conversao-olhar-de-cristo-og.png"
 description: "Zaqueu subiu na árvore, mas foi Jesus quem ergueu os olhos e o chamou pelo nome. A conversão não começa em nós — começa no olhar de Cristo. Uma reflexão para a Quaresma sobre a misericórdia que nos encontra primeiro."
 keywords: "conversão, zaqueu, quaresma, olhar de cristo, lucas 19, misericórdia, encontro com jesus, reflexão católica, riqueza espiritual, evangelização"
 ---

@@ -20,7 +20,7 @@
     if (window.GADS_WHATSAPP_CONVERSION) { gtag('config', window.GADS_WHATSAPP_CONVERSION.split('/')[0]); }
   </script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ page.title }} | Jeito Ágape</title>
 
   <meta name="description" content="{{ page.description | default: site.description }}" />
@@ -36,10 +36,18 @@
   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:description" content="{{ page.description | default: site.description }}" />
-  <meta property="og:image" content="{{ site.url }}{% if page.og_image %}{{ page.og_image }}{% elsif page.image %}{{ page.image }}{% else %}/assets/hero1.png{% endif %}" />
+  {% comment %}
+    og_image = imagem curada 1200x630. Só nesse caso declaramos width/height — antes eles eram
+    fixos em 1200x630 mesmo quando a imagem era 2560x1440, e o preview saía cortado no WhatsApp.
+    O type é derivado da extensão em vez de assumir PNG.
+  {% endcomment %}
+  {% assign og_img = page.og_image | default: page.image | default: '/assets/hero1.png' %}
+  <meta property="og:image" content="{{ site.url }}{{ og_img }}" />
+  {% if page.og_image %}
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:type" content="image/png" />
+  {% endif %}
+  <meta property="og:image:type" content="{% if og_img contains '.jpg' or og_img contains '.jpeg' %}image/jpeg{% else %}image/png{% endif %}" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Jeito Ágape" />
   {% if page.layout == 'post' %}
@@ -51,14 +59,15 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ page.title }}" />
   <meta name="twitter:description" content="{{ page.description | default: site.description }}" />
-  <meta name="twitter:image" content="{{ site.url }}{% if page.og_image %}{{ page.og_image }}{% elsif page.image %}{{ page.image }}{% else %}/assets/hero1.png{% endif %}" />
+  <meta name="twitter:image" content="{{ site.url }}{{ og_img }}" />
   <meta name="twitter:image:alt" content="{{ page.title }}" />
 
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon.png">
   <link rel="apple-touch-icon" href="/assets/favicon.png">
   <meta name="theme-color" content="#0A0A0A">
   <link rel="alternate" hreflang="pt-BR" href="{{ site.url }}{{ page.url }}" />
-  <link rel="alternate" type="application/rss+xml" title="Blog Jeito Ágape" href="/blog/feed.xml" />
+  {%- comment -%} O alternate do feed vem do {% feed_meta %} (jekyll-feed) mais abaixo.
+  Havia um <link rel="alternate" rss+xml> aqui também, duplicando a declaração. {%- endcomment -%}
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -307,7 +316,7 @@
   <header class="header fixed top-0 w-full z-50">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
       <a href="/" class="flex items-center">
-        <img src="/assets/logo.png" alt="Jeito Ágape" class="heartbeat" style="filter: brightness(0) invert(1); width: 34px; height: 34px;">
+        <img src="/assets/logo.png" alt="Jeito Ágape" class="heartbeat" width="34" height="34" style="filter: brightness(0) invert(1); width: 34px; height: 34px;">
       </a>
 
       <nav class="hidden md:flex items-center gap-8">
@@ -316,6 +325,7 @@
         <a href="/#album" class="nav-link">Álbum</a>
         <a href="/blog/" class="nav-link {% if page.url contains '/blog' %}active{% endif %}">Blog</a>
         <a href="/wallpapers/" class="nav-link {% if page.url contains '/wallpapers' %}active{% endif %}">Wallpapers</a>
+        <a href="/#faq" class="nav-link">FAQ</a>
         <a href="/#contato" class="nav-link">Contato</a>
         <a href="https://api.whatsapp.com/send?phone=5531991267983&text=Ol%C3%A1!%20Gostaria%20de%20convidar%20o%20Jeito%20%C3%81gape%20para%20um%20evento.%20J%C3%A1%20adianto%20o%20tipo%20%28missa%2C%20retiro%20ou%20show%29%2C%20a%20cidade%20e%20a%20data%3A" target="_blank" rel="noopener noreferrer" class="nav-cta">Convide-nos</a>
       </nav>
@@ -338,6 +348,7 @@
       <a href="/#album" class="mobile-link">Álbum</a>
       <a href="/blog/" class="mobile-link">Blog</a>
       <a href="/wallpapers/" class="mobile-link">Wallpapers</a>
+      <a href="/#faq" class="mobile-link">FAQ</a>
       <a href="/#contato" class="mobile-link">Contato</a>
       <a href="https://api.whatsapp.com/send?phone=5531991267983&text=Ol%C3%A1!%20Gostaria%20de%20convidar%20o%20Jeito%20%C3%81gape%20para%20um%20evento.%20J%C3%A1%20adianto%20o%20tipo%20%28missa%2C%20retiro%20ou%20show%29%2C%20a%20cidade%20e%20a%20data%3A" target="_blank" rel="noopener noreferrer" class="cta-btn mt-6" style="justify-content: center; width: 100%;">
         <i data-lucide="calendar" class="w-5 h-5"></i>

@@ -5,6 +5,7 @@ date: 2026-02-14
 author: "Beto Ferreira"
 category: "Ministério"
 image: "/assets/hero2.png"
+og_image: "/assets/blog/bem-vindos-og.png"
 description: "Nasce um novo canal de evangelização! Conheça o blog do Jeito Ágape: fé, testemunhos, teologia católica e reflexões sobre as músicas que tocam o coração."
 ---
 

@@ -1,0 +1,54 @@
+# Perguntas frequentes de quem organiza o evento (pároco, coordenador de pastoral,
+# comissão de festa). Este arquivo é a FONTE ÚNICA: alimenta a seção visível do site
+# E o JSON-LD FAQPage (rich result do Google). Editar aqui atualiza os dois.
+#
+# Mantenha as respostas em texto puro (sem HTML) — elas vão para o JSON-LD.
+
+# Redação proposital: fala do HISTÓRICO (fato) em vez de prometer gratuidade para sempre,
+# e leva a conversa para o WhatsApp. Assim a política pode mudar sem desmentir o site.
+- pergunta: "Como funciona o convite?"
+  resposta: >-
+    Nossa história é de evangelização gratuita: são mais de 500 missões em mais de 100 cidades
+    sem cobrar cachê. Chame a gente no WhatsApp contando o tipo de evento, a cidade e a data
+    que alinhamos todos os detalhes antes de confirmar.
+
+- pergunta: "Quantas pessoas vêm?"
+  resposta: >-
+    O ministério completo tem 7 integrantes. Fale com a gente para alinharmos a formação
+    conforme o espaço e o tipo da sua celebração.
+
+- pergunta: "Precisamos providenciar som e estrutura?"
+  resposta: >-
+    Sim. A sonorização fica por conta do evento ou do contratante. É o único ponto que
+    pedimos que a comunidade organize com antecedência.
+
+- pergunta: "Quanto tempo dura a apresentação?"
+  resposta: >-
+    Um show dura cerca de 1h10. Missas, retiros e eventos mais longos são combinados
+    conforme a programação da sua comunidade.
+
+- pergunta: "Vocês vão para outras cidades e para o interior?"
+  resposta: >-
+    Vamos onde o nosso chamado nos levar. Já passamos por mais de 100 cidades. Nos conte a
+    cidade e a data que a gente verifica.
+
+- pergunta: "Com quanta antecedência precisamos convidar?"
+  resposta: >-
+    Não temos prazo fixo — depende da nossa agenda. Quanto antes você falar com a gente,
+    maior a chance de a data estar livre. Para datas fixas, como festa de padroeiro, EJC ou
+    retiro, vale procurar a gente com alguns meses de antecedência.
+
+- pergunta: "Que tipos de evento vocês atendem?"
+  resposta: >-
+    Missas, retiros, EJC, shows de evangelização, grupos de oração, ministrações e pregações.
+    Também atendemos festas de padroeiro e eventos diocesanos e municipais.
+
+# ---------------------------------------------------------------------------
+# ⚠️ FALTA VOCÊ RESPONDER — não preenchi porque não sei a política real.
+# Descomente e ajuste o texto quando decidir. É a dúvida nº 1 de quem está longe:
+#
+# - pergunta: "E as despesas de viagem para outra cidade?"
+#   resposta: >-
+#     (ex.: "Combinamos caso a caso" / "A comunidade ajuda com o deslocamento" /
+#      "Também é por nossa conta")
+# ---------------------------------------------------------------------------

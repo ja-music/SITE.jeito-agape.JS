@@ -1,0 +1,20 @@
+# Depoimentos de quem já recebeu o Jeito Ágape.
+#
+# ⚠️ ESTE ARQUIVO ESTÁ VAZIO DE PROPÓSITO. A seção "O que dizem de nós" NÃO aparece no site
+# enquanto não houver pelo menos um item aqui — melhor não ter seção do que ter seção vazia.
+#
+# Assim que você conseguir o primeiro, é só descomentar o modelo abaixo e preencher.
+# Só entre com depoimento REAL, de pessoa real, com autorização dela. Nome + paróquia + cidade
+# valem mais que o texto em si: é isso que faz outro pároco confiar.
+#
+# Campos:
+#   texto  (obrigatório) — o depoimento, de preferência curto (1 a 3 frases)
+#   autor  (obrigatório) — "Pe. Fulano de Tal" / "Maria Silva"
+#   cargo  (opcional)    — "Pároco" / "Coordenadora do EJC" / "Comissão da Festa"
+#   local  (obrigatório) — "Paróquia São José, Divinópolis - MG"
+#   foto   (opcional)    — "/assets/depoimentos/arquivo.jpg"
+
+# - texto: "Foi uma noite de muita oração. O ministério trouxe os jovens de volta para a igreja."
+#   autor: "Pe. Fulano de Tal"
+#   cargo: "Pároco"
+#   local: "Paróquia São José, Divinópolis - MG"

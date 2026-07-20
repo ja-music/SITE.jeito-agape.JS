@@ -112,7 +112,22 @@
         "description": "Ministério de música católica de Belo Horizonte - MG. Convide a banda para missas, retiros, shows e EJCs.",
         "inLanguage": "pt-BR",
         "publisher": { "@id": "https://jeitoagape.com.br/#musicgroup" }
-      }{% for ev in site.data.agenda %}{% assign hr = ev.horario | remove: 'h' | remove: 'H' | strip %},
+      }{% if site.data.faq and site.data.faq.size > 0 %},
+      {
+        "@type": "FAQPage",
+        "@id": "https://jeitoagape.com.br/#faq",
+        "inLanguage": "pt-BR",
+        "mainEntity": [{% for item in site.data.faq %}{% unless forloop.first %},{% endunless %}
+          {
+            "@type": "Question",
+            "name": {{ item.pergunta | strip | jsonify }},
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": {{ item.resposta | strip | jsonify }}
+            }
+          }{% endfor %}
+        ]
+      }{% endif %}{% for ev in site.data.agenda %}{% assign hr = ev.horario | remove: 'h' | remove: 'H' | strip %},
       {
         "@type": "MusicEvent",
         "name": {{ ev.nome | jsonify }},
@@ -1216,6 +1231,105 @@
         padding: 1rem 1.25rem;
       }
     }
+
+    /* ---- Depoimentos (a seção só é renderizada se _data/depoimentos.yml tiver itens) ---- */
+    .depo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .depo-card {
+      padding: 1.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.02);
+      text-align: left;
+    }
+
+    .depo-card blockquote {
+      margin: 0 0 1.25rem;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      font-style: italic;
+    }
+
+    .depo-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .depo-author img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .depo-author .name {
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .depo-author .meta {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    /* ---- FAQ (acordeão nativo <details>: sem JS, e o Google lê o conteúdo fechado) ---- */
+    .faq-list {
+      max-width: 46rem;
+      margin: 2.5rem auto 0;
+      text-align: left;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .faq-item summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.15rem 0.25rem;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.95rem;
+      font-weight: 500;
+      list-style: none;
+      transition: color 0.25s;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary:hover {
+      color: var(--accent);
+    }
+
+    .faq-item summary .chev {
+      flex-shrink: 0;
+      color: var(--accent);
+      transition: transform 0.25s;
+    }
+
+    .faq-item[open] summary .chev {
+      transform: rotate(180deg);
+    }
+
+    .faq-item .faq-answer {
+      padding: 0 0.25rem 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
   </style>
 </head>
 <body>
@@ -1228,7 +1342,7 @@
   <header class="header fixed top-0 w-full z-50">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
       <a href="#hero" class="flex items-center">
-        <img src="assets/logo.png" alt="Jeito Ágape" class="heartbeat" style="filter: brightness(0) invert(1); width: 34px; height: 34px;">
+        <img src="assets/logo.png" alt="Jeito Ágape" class="heartbeat" width="34" height="34" style="filter: brightness(0) invert(1); width: 34px; height: 34px;">
       </a>
 
       <nav class="hidden md:flex items-center gap-8">
@@ -1238,6 +1352,7 @@
         <a href="/blog/" class="nav-link">Blog</a>
         <a href="/wallpapers/" class="nav-link">Wallpapers</a>
         <a href="#agenda" class="nav-link">Agenda</a>
+        <a href="#faq" class="nav-link">FAQ</a>
         <a href="#contato" class="nav-link">Contato</a>
         <a href="https://api.whatsapp.com/send?phone=5531991267983&text=Ol%C3%A1!%20Gostaria%20de%20convidar%20o%20Jeito%20%C3%81gape%20para%20um%20evento.%20J%C3%A1%20adianto%20o%20tipo%20%28missa%2C%20retiro%20ou%20show%29%2C%20a%20cidade%20e%20a%20data%3A" target="_blank" rel="noopener noreferrer" class="nav-cta">Convide-nos</a>
       </nav>
@@ -1261,6 +1376,7 @@
       <a href="/blog/" class="mobile-link">Blog</a>
       <a href="/wallpapers/" class="mobile-link">Wallpapers</a>
       <a href="#agenda" class="mobile-link">Agenda</a>
+      <a href="#faq" class="mobile-link">FAQ</a>
       <a href="#contato" class="mobile-link">Contato</a>
       <a href="https://api.whatsapp.com/send?phone=5531991267983&text=Ol%C3%A1!%20Gostaria%20de%20convidar%20o%20Jeito%20%C3%81gape%20para%20um%20evento.%20J%C3%A1%20adianto%20o%20tipo%20%28missa%2C%20retiro%20ou%20show%29%2C%20a%20cidade%20e%20a%20data%3A" target="_blank" rel="noopener noreferrer" class="cta-btn mt-6" style="justify-content: center; width: 100%;">
         <i data-lucide="calendar" class="w-5 h-5"></i>
@@ -1277,15 +1393,16 @@
     <div class="text-center" data-aos="fade-up">
       <div style="position: relative; display: inline-block;">
         <div class="carousel" id="heroCarousel">
-          <img src="assets/hero1.png" alt="" class="carousel-sizer" />
+          <img src="assets/hero1.png" alt="" class="carousel-sizer" width="1920" height="1080" />
           <div class="carousel-slide active">
-            <img src="assets/hero1.png" alt="Jeito Ágape - Ministério de Música Católica" />
+            <!-- 1º slide = LCP da home: carrega cedo e com prioridade; os demais entram sob demanda -->
+            <img src="assets/hero1.png" alt="Jeito Ágape - Ministério de Música Católica" width="1920" height="1080" fetchpriority="high" />
           </div>
           <div class="carousel-slide photo">
-            <img src="assets/hero2.png" alt="Membros do Jeito Ágape" />
+            <img src="assets/hero2.png" alt="Membros do Jeito Ágape" width="1920" height="1080" loading="lazy" />
           </div>
           <div class="carousel-slide">
-            <img src="assets/blog/carimbo-do-ceu.jpg" alt="Carimbo do Céu ou Carimbo das Curtidas? — Novo artigo no Blog" />
+            <img src="assets/blog/carimbo-do-ceu.jpg" alt="Carimbo do Céu ou Carimbo das Curtidas? — Novo artigo no Blog" width="1536" height="1024" loading="lazy" />
             <a href="/blog/2026/07/18/carimbo-do-ceu/" class="slide-overlay">
               <span class="slide-overlay-tag">Novo no Blog</span>
               <span class="slide-overlay-title">Carimbo do Céu ou Carimbo das Curtidas?</span>
@@ -1509,6 +1626,34 @@
     </div>
   </section>
 
+  <!-- Depoimentos — some do site inteiro enquanto _data/depoimentos.yml estiver vazio,
+       porque seção de depoimento vazia passa impressão pior do que não ter seção -->
+  {% if site.data.depoimentos and site.data.depoimentos.size > 0 %}
+  <section id="depoimentos" class="section">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center" data-aos="fade-up">
+        <h2 class="section-title">O Que Dizem de Nós</h2>
+        <div class="accent-bar" style="margin: 0 auto 1rem;"></div>
+        <p class="section-subtitle">Comunidades que já receberam o Jeito Ágape</p>
+      </div>
+      <div class="depo-grid">
+        {% for d in site.data.depoimentos %}
+        <div class="depo-card" data-aos="fade-up">
+          <blockquote>&ldquo;{{ d.texto }}&rdquo;</blockquote>
+          <div class="depo-author">
+            {% if d.foto %}<img src="{{ d.foto }}" alt="{{ d.autor }}" width="42" height="42" loading="lazy" />{% endif %}
+            <div>
+              <div class="name">{{ d.autor }}</div>
+              <div class="meta">{% if d.cargo %}{{ d.cargo }} &middot; {% endif %}{{ d.local }}</div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="max-w-3xl mx-auto" data-aos="fade-up">
@@ -1526,6 +1671,31 @@
       </div>
     </div>
   </section>
+
+  <!-- FAQ — conteúdo vem de _data/faq.yml, a MESMA fonte do JSON-LD FAQPage lá no <head>.
+       Editar o YAML atualiza a seção visível e o rich result do Google de uma vez só. -->
+  {% if site.data.faq and site.data.faq.size > 0 %}
+  <section id="faq" class="section">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center" data-aos="fade-up">
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <div class="accent-bar" style="margin: 0 auto 1rem;"></div>
+        <p class="section-subtitle">O que quem organiza costuma perguntar antes de convidar</p>
+      </div>
+      <div class="faq-list" data-aos="fade-up">
+        {% for item in site.data.faq %}
+        <details class="faq-item">
+          <summary>
+            <span>{{ item.pergunta }}</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 chev"></i>
+          </summary>
+          <div class="faq-answer">{{ item.resposta }}</div>
+        </details>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
 
   <!-- Agenda -->
   <section id="agenda" class="section section-alt">
