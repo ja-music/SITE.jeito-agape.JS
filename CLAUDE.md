@@ -37,6 +37,7 @@ Push to `main` → GitHub Pages builds with Jekyll and auto-deploys. Custom doma
    - [_posts/](_posts/): Blog posts in Markdown with front matter (`layout`, `title`, `date`, `author`, `category`, `image`, `description`).
    - [_data/authors.yml](_data/authors.yml): Blog columnists (name, role, bio, image).
    - [_data/agenda.yml](_data/agenda.yml): Upcoming events data (date, name, location, time).
+   - [_data/incondicional.yml](_data/incondicional.yml): Chapters of the **Incondicional Sessions** YouTube quadro — renders the `#sessions` section on the homepage (9:16 cards using each chapter's own cover art from R2, lite-embed player loads on click). New chapter = new block at the top of this file.
 
 3. **Other pages** (use `default` layout):
    - [wallpapers/index.html](wallpapers/index.html): Wallpaper download gallery with ImageGallery JSON-LD schema.

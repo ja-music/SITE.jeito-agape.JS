@@ -1330,6 +1330,83 @@
       font-size: 0.9rem;
       line-height: 1.7;
     }
+
+    /* ==== Incondicional Sessions (Shorts do YouTube) ==== */
+    .session-card {
+      position: relative;
+      width: 16rem;
+      max-width: 80vw;
+      aspect-ratio: 9 / 16;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      cursor: pointer;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+    .session-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 40px rgba(197, 48, 80, 0.25);
+    }
+    .session-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .session-card iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .session-play {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.05) 45%);
+    }
+    .session-play .btn-play {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 9999px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(197, 48, 80, 0.45);
+      transition: transform 0.25s;
+    }
+    .session-card:hover .btn-play { transform: scale(1.1); }
+    .session-meta {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.9rem 1rem;
+      text-align: left;
+    }
+    .session-meta .cap {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .session-meta .tit {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .session-meta .com {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
   </style>
 </head>
 <body>
@@ -1349,6 +1426,7 @@
         <a href="#sobre" class="nav-link">Sobre</a>
         <a href="#servicos" class="nav-link">Serviços</a>
         <a href="#album" class="nav-link">Álbum</a>
+        <a href="#sessions" class="nav-link">Sessions</a>
         <a href="/blog/" class="nav-link">Blog</a>
         <a href="/wallpapers/" class="nav-link">Wallpapers</a>
         <a href="#agenda" class="nav-link">Agenda</a>
@@ -1373,6 +1451,7 @@
       <a href="#sobre" class="mobile-link">Sobre</a>
       <a href="#servicos" class="mobile-link">Serviços</a>
       <a href="#album" class="mobile-link">Álbum</a>
+      <a href="#sessions" class="mobile-link">Sessions</a>
       <a href="/blog/" class="mobile-link">Blog</a>
       <a href="/wallpapers/" class="mobile-link">Wallpapers</a>
       <a href="#agenda" class="mobile-link">Agenda</a>
@@ -1625,6 +1704,62 @@
       </div>
     </div>
   </section>
+
+  <!-- Incondicional Sessions — Shorts do YouTube via _data/incondicional.yml.
+       Card leve: capa própria (R2) + player só carrega no clique (lite embed). -->
+  {% if site.data.incondicional.size > 0 %}
+  <section id="sessions" class="section">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center" data-aos="fade-up">
+        <h2 class="section-title">Incondicional Sessions</h2>
+        <div class="accent-bar"></div>
+        <p class="section-subtitle">Versões intimistas, um capítulo por vez — pra fazer da música a sua oração da noite</p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-6 mt-10">
+        {% for s in site.data.incondicional %}
+        <div class="session-card" data-yt="{{ s.id }}" data-aos="fade-up" role="button" tabindex="0"
+             aria-label="Assistir {{ s.titulo }} — Incondicional Sessions, capítulo {{ s.capitulo }}">
+          <img src="{{ s.capa }}" alt="Capa de {{ s.titulo }} — Incondicional Sessions #{{ s.capitulo }}" loading="lazy" />
+          <div class="session-play">
+            <div class="btn-play">
+              <svg class="w-6 h-6" fill="#fff" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="session-meta">
+            <div class="cap">Capítulo {{ s.capitulo }}</div>
+            <div class="tit">{{ s.titulo }}</div>
+            <div class="com">{{ s.autores }} · {{ s.com }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="text-center mt-8" data-aos="fade-up">
+        <a href="https://www.youtube.com/@jeitoagape" target="_blank" rel="noopener noreferrer" class="platform-link">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          Ver todos no YouTube
+        </a>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll('.session-card').forEach(function (card) {
+        function tocar() {
+          var id = card.dataset.yt;
+          if (!id || card.dataset.tocando) return;
+          card.dataset.tocando = '1';
+          card.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
+            '?autoplay=1&rel=0" title="Incondicional Sessions" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+        }
+        card.addEventListener('click', tocar);
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tocar(); }
+        });
+      });
+    </script>
+  </section>
+  {% endif %}
 
   <!-- Depoimentos — some do site inteiro enquanto _data/depoimentos.yml estiver vazio,
        porque seção de depoimento vazia passa impressão pior do que não ter seção -->
