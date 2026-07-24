@@ -41,7 +41,7 @@
     fixos em 1200x630 mesmo quando a imagem era 2560x1440, e o preview saía cortado no WhatsApp.
     O type é derivado da extensão em vez de assumir PNG.
   {% endcomment %}
-  {% assign og_img = page.og_image | default: page.image | default: '/assets/hero1.png' %}
+  {% assign og_img = page.og_image | default: page.image | default: '/assets/og-cover.jpg' %}
   <meta property="og:image" content="{{ site.url }}{{ og_img }}" />
   {% if page.og_image %}
   <meta property="og:image:width" content="1200" />

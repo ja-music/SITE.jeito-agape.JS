@@ -1,15 +1,11 @@
 # Santa Missa mensal com o Jeito Ágape — todo 4º domingo, 19h, Igreja N. Sra. de Lourdes (Contagem).
-# ⚠️ Grupo de Oração e Retiro de Servos abaixo estão com local/horário "a confirmar" — atualizar quando definido.
+# ⚠️ REGRA DE SEO (24/07/2026): só entra evento PÚBLICO com data + local + horário reais —
+# "A confirmar" gera MusicEvent inválido no Google. Grupo de Oração (28/07) e Retiro de
+# Servos (11/10) foram removidos; re-adicionar quando (e se) tiverem local/horário públicos.
 - data: "2026-07-26"
   nome: "Santa Missa (4º domingo)"
   local: "Igreja Nossa Senhora de Lourdes, Contagem - MG"
   horario: "19h"
-
-# TODO: confirmar local + horário (e se é aberto ao público)
-- data: "2026-07-28"
-  nome: "Grupo de Oração"
-  local: "A confirmar"
-  horario: ""
 
 - data: "2026-08-23"
   nome: "Santa Missa (4º domingo)"
@@ -20,12 +16,6 @@
   nome: "Santa Missa (4º domingo)"
   local: "Igreja Nossa Senhora de Lourdes, Contagem - MG"
   horario: "19h"
-
-# TODO: confirmar local (se for interno da equipe, remover daqui)
-- data: "2026-10-11"
-  nome: "Retiro de Servos (dia todo)"
-  local: "A confirmar"
-  horario: ""
 
 - data: "2026-10-25"
   nome: "Santa Missa (4º domingo)"
