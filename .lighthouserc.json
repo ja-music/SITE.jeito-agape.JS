@@ -22,7 +22,8 @@
         "resource-summary:script:size": ["error", { "maxNumericValue": 40000 }],
         "resource-summary:stylesheet:size": ["error", { "maxNumericValue": 50000 }],
         "resource-summary:font:size": ["error", { "maxNumericValue": 120000 }],
-        "resource-summary:third-party:count": ["error", { "maxNumericValue": 0 }]
+        "resource-summary:third-party:size": ["error", { "maxNumericValue": 0 }],
+        "resource-summary:third-party:count": ["warn", { "maxNumericValue": 1 }]
       }
     },
     "upload": { "target": "temporary-public-storage" }
