@@ -1,0 +1,27 @@
+// Menu mobile: o painel deslizante original (80% / 320px, .35s), agora um <dialog> — foco preso, Esc e fundo fecham.
+.mobile-menu {
+  position: fixed; inset: 0 0 0 auto;
+  width: 80%; max-width: 320px; height: 100dvh;
+  margin: 0; padding: 2rem;
+  background: var(--bg); color: var(--text);
+  border: 0; border-left: 1px solid var(--border);
+  overflow-y: auto;
+}
+.mobile-menu::backdrop { background: rgba(0, 0, 0, 0.7); }
+.mobile-menu[open] { animation: menu-in 0.35s ease; }
+@keyframes menu-in { from { transform: translateX(100%); } }
+.mobile-menu__close { position: absolute; top: 1.5rem; right: 1.5rem; width: 44px; height: 44px; display: grid; place-items: center; color: #fff; }
+.mobile-menu__close svg { width: 1.5rem; height: 1.5rem; }
+
+.mobile-link {
+  display: block;
+  padding: 1rem 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.3s;
+  text-decoration: none;
+}
+.mobile-link:hover { color: var(--text); }
+.cta-btn--full { justify-content: center; width: 100%; }

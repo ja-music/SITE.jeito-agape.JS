@@ -1,0 +1,40 @@
+// Utilitários: exatamente os que o markup original usava do Tailwind, com os mesmos valores
+.wrap-3xl, .wrap-4xl, .wrap-5xl, .wrap-6xl { width: 100%; margin-inline: auto; }
+.wrap-3xl { max-width: 48rem; }
+.wrap-4xl { max-width: 56rem; }
+.wrap-5xl { max-width: 64rem; }
+.wrap-6xl { max-width: 72rem; }
+.text-center { text-align: center; }
+.text-justify { text-align: justify; }
+.text-white { color: #fff; }
+.text-sm { font-size: .875rem; line-height: 1.25rem; }
+.font-medium { font-weight: 500; }
+.leading-relaxed { line-height: 1.625; }
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: .5rem; } .gap-4 { gap: 1rem; } .gap-5 { gap: 1.25rem; } .gap-6 { gap: 1.5rem; } .gap-8 { gap: 2rem; } .gap-10 { gap: 2.5rem; }
+.mt-6 { margin-top: 1.5rem; } .mt-8 { margin-top: 2rem; } .mt-10 { margin-top: 2.5rem; } .mt-12 { margin-top: 3rem; } .mt-16 { margin-top: 4rem; }
+.mx-auto { margin-inline: auto; }
+.px-1 { padding-inline: .25rem; } .px-4 { padding-inline: 1rem; } .px-6 { padding-inline: 1.5rem; } .py-4 { padding-block: 1rem; }
+.space-y-5 > * + * { margin-top: 1.25rem; }
+.grid--cards { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+@media (min-width: 768px) { .grid--cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .grid--cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.grid--album { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start; }
+@media (min-width: 1024px) { .grid--album { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.grid--links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+@media (min-width: 768px) { .grid--links { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .grid--links { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.link-card--wide { grid-column: span 2; }
+@media (min-width: 768px) { .link-card--wide { grid-column: span 1; } }
+.ic-3 { width: .875rem; height: .875rem; flex: none; }
+.ic-4 { width: 1rem; height: 1rem; flex: none; }
+.ic-5 { width: 1.25rem; height: 1.25rem; flex: none; }
+.ic-6 { width: 1.5rem; height: 1.5rem; flex: none; }
+.ic-7 { width: 1.75rem; height: 1.75rem; flex: none; }
+.ic-10 { width: 2.5rem; height: 2.5rem; flex: none; }
+.sr-only-focusable:focus { position: static; width: auto; height: auto; clip: auto; }

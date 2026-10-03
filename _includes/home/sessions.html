@@ -1,0 +1,25 @@
+{%- if site.data.incondicional.size > 0 %}
+<section id="sessions" class="section">
+  <div class="wrap-5xl mx-auto">
+    <div class="text-center" data-reveal>
+      <h2 class="section-title">Incondicional Sessions</h2>
+      <div class="accent-bar"></div>
+      <p class="section-subtitle">Versões intimistas, um capítulo por vez — pra fazer da música a sua oração da noite</p>
+    </div>
+
+    <div class="sessions">
+      {%- for s in site.data.incondicional %}
+      <button class="session-card" type="button" data-yt="{{ s.id }}" aria-label="Assistir {{ s.titulo }} — Incondicional Sessions, capítulo {{ s.capitulo }}">
+        {%- if s.chave and site.data.images[s.chave] %}{% include picture.html name=s.chave alt="" sizes="16rem" %}{% else %}<img src="{{ s.capa }}" alt="" width="1080" height="1920" loading="lazy">{% endif %}
+        <span class="session-play" aria-hidden="true"><span class="btn-play">{% include icon.html name="play" %}</span></span>
+        <span class="session-meta"><span class="tit">{{ s.titulo }}</span><span class="cap">Capítulo {{ s.capitulo }}</span><span class="com">{{ s.autores }} · {{ s.com }}</span></span>
+      </button>
+      {%- endfor %}
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="https://www.youtube.com/@jeitoagape" target="_blank" rel="noopener noreferrer" class="platform-link">{% include icon.html name="youtube" %} Ver todos no YouTube</a>
+    </div>
+  </div>
+</section>
+{%- endif %}

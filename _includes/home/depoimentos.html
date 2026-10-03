@@ -1,0 +1,23 @@
+{%- comment -%}Some do site inteiro enquanto _data/depoimentos.yml estiver vazio: seção de depoimento vazia passa impressão pior do que não ter seção.{%- endcomment -%}
+{%- if site.data.depoimentos and site.data.depoimentos.size > 0 %}
+<section id="depoimentos" class="section">
+  <div class="wrap-4xl mx-auto">
+    <div class="text-center" data-reveal>
+      <h2 class="section-title">O Que Dizem de Nós</h2>
+      <div class="accent-bar accent-bar--tight"></div>
+      <p class="section-subtitle">Comunidades que já receberam o Jeito Ágape</p>
+    </div>
+    <div class="depo-grid">
+      {%- for d in site.data.depoimentos %}
+      <div class="depo-card">
+        <blockquote>&ldquo;{{ d.texto }}&rdquo;</blockquote>
+        <div class="depo-author">
+          {%- if d.foto %}<img src="{{ d.foto }}" alt="" width="42" height="42" loading="lazy">{% endif %}
+          <div><div class="name">{{ d.autor }}</div><div class="meta">{% if d.cargo %}{{ d.cargo }} &middot; {% endif %}{{ d.local }}</div></div>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}

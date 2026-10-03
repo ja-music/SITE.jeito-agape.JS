@@ -1,0 +1,56 @@
+{%- assign hoje = site.time | date: "%Y%m%d" -%}
+<section id="agenda" class="section section-alt">
+  <div class="wrap-4xl mx-auto">
+    <div class="text-center" data-reveal>
+      <h2 class="section-title">Agenda</h2>
+      <div class="accent-bar accent-bar--tight"></div>
+      <p class="section-subtitle">Próximos eventos e missões</p>
+    </div>
+
+    <div class="agenda-layout">
+      <div class="agenda-photo-wrapper">
+        <div class="agenda-wave"></div>
+        <div class="agenda-wave"></div>
+        <div class="agenda-wave"></div>
+        {% include picture.html name="agenda" alt="Agenda Jeito Ágape" class="agenda-photo" sizes="(min-width: 768px) 300px, 100vw" %}
+      </div>
+
+      {%- if site.data.agenda.size > 0 %}
+      <div class="agenda-list">
+        {%- comment -%}Próximos eventos primeiro (cronológico); depois, no máximo dois já realizados, do mais recente para trás.{%- endcomment %}
+        {%- assign evs = site.data.agenda | sort: "data" %}
+        {%- for evento in evs %}{% assign event_date = evento.data | date: "%Y%m%d" %}{% if event_date >= hoje %}
+        <div class="agenda-item">
+          <div class="agenda-date">
+            <div class="day">{% include data-pt.html data=evento.data formato="dia" %}</div>
+            <div class="month">{% include data-pt.html data=evento.data formato="mes" %}</div>
+          </div>
+          <div class="agenda-divider"></div>
+          <div class="agenda-info">
+            <h3>{{ evento.nome }}</h3>
+            <div class="agenda-details"><span>{{ evento.horario }}</span><span class="dot">&middot;</span><span>{{ evento.local }}, {{ evento.cidade }} - {{ evento.uf }}</span></div>
+          </div>
+        </div>
+        {%- endif %}{% endfor %}
+        {%- assign passados = evs | reverse %}{% assign n_past = 0 %}
+        {%- for evento in passados %}{% assign event_date = evento.data | date: "%Y%m%d" %}{% if event_date < hoje and n_past < 2 %}{% assign n_past = n_past | plus: 1 %}
+        <div class="agenda-item past">
+          <div class="agenda-date">
+            <div class="day">{% include data-pt.html data=evento.data formato="dia" %}</div>
+            <div class="month">{% include data-pt.html data=evento.data formato="mes" %}</div>
+          </div>
+          <div class="agenda-divider"></div>
+          <div class="agenda-info">
+            <h3>{{ evento.nome }} <span class="agenda-status">Realizada</span></h3>
+            <div class="agenda-details"><span>{{ evento.horario }}</span><span class="dot">&middot;</span><span>{{ evento.local }}, {{ evento.cidade }} - {{ evento.uf }}</span></div>
+          </div>
+        </div>
+        {%- endif %}{% endfor %}
+      </div>
+      {%- else %}
+      <p class="agenda-empty">Nenhum evento programado no momento. Fique ligado nas nossas redes!</p>
+      {%- endif %}
+    </div>
+    <p class="text-center mt-8"><a href="/agenda/" class="platform-link">{% include icon.html name="calendar" %} Agenda completa</a></p>
+  </div>
+</section>

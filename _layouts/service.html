@@ -1,0 +1,77 @@
+---
+layout: default
+---
+{%- include wa-vars.html -%}{%- include faq-vars.html -%}
+<article>
+  <div class="page-hero wrap-4xl mx-auto">
+    {% include breadcrumb.html meio_rotulo="Serviços" meio_url="/#servicos" %}
+    <h1>{{ page.h1 | default: page.title }}</h1>
+    <div class="accent-bar"></div>
+    <p class="lead">{{ page.intro }}</p>
+    <a href="{{ wa_url }}" target="_blank" rel="noopener noreferrer" class="cta-btn" data-track="{{ page.slug }}" data-service="{{ page.slug }}">{% include icon.html name="whatsapp" class="ic-5" %} {{ page.cta | default: "Convide-nos" }}<span class="sr-only"> (abre o WhatsApp em nova aba)</span></a>
+    <p class="page-hero__hint">Abre uma conversa no WhatsApp com a mensagem pronta — é só completar cidade e data.</p>
+  </div>
+
+  <div class="wrap-4xl mx-auto px-4 page-body">
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </div>
+
+  {%- if faq_items.size > 0 %}
+  <section class="page-section page-section--alt" aria-labelledby="faq-t">
+    <div class="wrap-4xl mx-auto">
+      <h2 class="section-title" id="faq-t">Perguntas de quem organiza</h2>
+      <div class="accent-bar"></div>
+      {% include faq.html %}
+      <p class="text-center mt-8"><a href="/#faq" class="platform-link">Todas as perguntas</a></p>
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if page.related_posts and page.related_posts.size > 0 %}
+  <section class="page-section" aria-labelledby="rel-t">
+    <div class="wrap-4xl mx-auto">
+      <h2 class="section-title" id="rel-t">Para quem está organizando</h2>
+      <div class="accent-bar"></div>
+      <div class="post-related-grid related-grid">
+        {%- for slug in page.related_posts %}{% assign post = site.posts | where: "slug", slug | first %}{% if post %}
+        {%- assign ck = post.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
+        <a href="{{ post.url }}" class="post-related-card">
+          {%- if site.data.images[ck] %}{% include picture.html name=ck alt="" sizes="(min-width: 640px) 280px, 100vw" %}{% elsif post.image %}<img src="{{ post.image }}" alt="" width="400" height="225" loading="lazy">{% endif %}
+          <div class="post-related-body"><h3>{{ post.title }}</h3>{% if post.category %}<span class="post-related-cat">{{ post.category }}</span>{% endif %}</div>
+        </a>
+        {%- endif %}{% endfor %}
+      </div>
+    </div>
+  </section>
+  {%- endif %}
+
+  <section class="page-section page-section--alt" aria-labelledby="irm-t">
+    <div class="wrap-5xl mx-auto">
+      <h2 class="section-title" id="irm-t">Outras celebrações</h2>
+      <div class="accent-bar"></div>
+      <div class="grid--cards mt-8">
+        {%- for s in site.servicos %}{% if s.url != page.url %}
+        <a href="{{ s.url }}" class="card">
+          <div class="card-icon">{% include icon.html name=s.icon %}</div>
+          <h3>{{ s.short }}</h3>
+          <p>{{ s.resumo }}</p>
+          <span class="card__more">Como funciona {% include icon.html name="arrow-right" class="ic-4" %}</span>
+        </a>
+        {%- endif %}{% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" aria-labelledby="conv-t">
+    <div class="wrap-3xl mx-auto">
+      <h2 id="conv-t">Convide o Jeito Ágape para {{ page.para | default: "a sua celebração" }}</h2>
+      <p>Conte a cidade, a data e como vai ser a celebração. Respondemos pelo WhatsApp.</p>
+      <div class="cta-section__actions">
+        <a href="{{ wa_url }}" target="_blank" rel="noopener noreferrer" class="cta-btn" data-track="{{ page.slug }}-fim" data-service="{{ page.slug }}">{% include icon.html name="message" class="ic-5" %} {{ page.cta | default: "Chamar no WhatsApp" }}</a>
+        <a href="mailto:{{ site.data.contato.email }}?subject=Convite%20para%20Evento" class="cta-btn-outline">{% include icon.html name="mail" class="ic-5" %} Enviar E-mail</a>
+      </div>
+    </div>
+  </section>
+</article>

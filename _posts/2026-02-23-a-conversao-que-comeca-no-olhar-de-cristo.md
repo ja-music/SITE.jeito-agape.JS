@@ -98,21 +98,21 @@ E isso é mais do que qualquer um de nós poderia esperar.
 <h2>Referências e aprofundamento</h2>
 <div class="refs-grid">
   <a href="https://www.biblegateway.com/passage/?search=Lucas+19%3A1-10&version=ARA" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="book-open" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="book" %}</div>
     <div class="ref-text">
       <span class="ref-title">Zaqueu — texto completo</span>
       <span class="ref-source">Lucas 19, 1-10 · Bible Gateway</span>
     </div>
   </a>
   <a href="https://www.biblegateway.com/passage/?search=Mateus+19%3A16-26&version=ARA" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="book-open" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="book" %}</div>
     <div class="ref-text">
       <span class="ref-title">O jovem rico</span>
       <span class="ref-source">Mateus 19, 16-26 · Bible Gateway</span>
     </div>
   </a>
   <a href="https://www.vatican.va/archive/cathechism_po/index_new/p1s2cap2_422-682_po.html" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="book-open" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="book" %}</div>
     <div class="ref-text">
       <span class="ref-title">A misericórdia de Deus e a conversão</span>
       <span class="ref-source">Catecismo da Igreja Católica · Vatican.va</span>
@@ -125,21 +125,21 @@ E isso é mais do que qualquer um de nós poderia esperar.
 <h2>Músicas sobre conversão</h2>
 <div class="refs-grid">
   <a href="https://www.youtube.com/watch?v=bCffspoAA6o" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="music" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="music" %}</div>
     <div class="ref-text">
       <span class="ref-title">Fraternidade São João Paulo Segundo</span>
       <span class="ref-source">YouTube</span>
     </div>
   </a>
   <a href="https://www.youtube.com/watch?v=G0WfZoOU4sA" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="music" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="music" %}</div>
     <div class="ref-text">
       <span class="ref-title">Anjos de Resgate</span>
       <span class="ref-source">YouTube</span>
     </div>
   </a>
   <a href="https://www.youtube.com/watch?v=hc6Q9nitx94" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="music" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="music" %}</div>
     <div class="ref-text">
       <span class="ref-title">Juninho Cassimiro</span>
       <span class="ref-source">YouTube</span>
@@ -152,21 +152,21 @@ E isso é mais do que qualquer um de nós poderia esperar.
 <h2>Padres falando sobre Zaqueu</h2>
 <div class="refs-grid">
   <a href="https://www.youtube.com/watch?v=Beb7GQi7iBI" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="play" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="play" %}</div>
     <div class="ref-text">
       <span class="ref-title">A história de Zaqueu</span>
       <span class="ref-source">Pe. Léo · YouTube</span>
     </div>
   </a>
   <a href="https://www.youtube.com/watch?v=aeAmnJm0W5Y" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="play" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="play" %}</div>
     <div class="ref-text">
       <span class="ref-title">A conversão de Zaqueu</span>
       <span class="ref-source">Frei Gilson · YouTube</span>
     </div>
   </a>
   <a href="https://www.youtube.com/watch?v=xyxGwIsiaA0" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="play" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="play" %}</div>
     <div class="ref-text">
       <span class="ref-title">O desapego de Zaqueu</span>
       <span class="ref-source">Pe. Paulo Ricardo · YouTube</span>

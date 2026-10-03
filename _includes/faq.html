@@ -1,0 +1,8 @@
+<div class="faq-list">
+  {%- for item in faq_items %}
+  <details class="faq-item">
+    <summary><span>{{ item.pergunta }}</span>{% include icon.html name="chevron-down" class="chev" %}</summary>
+    <div class="faq-answer">{{ item.resposta | strip }}</div>
+  </details>
+  {%- endfor %}
+</div>

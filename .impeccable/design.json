@@ -1,0 +1,421 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-03T20:10:00-03:00",
+  "title": "Design System: Jeito Ágape",
+  "extensions": {
+    "colorMeta": {
+      "night": {
+        "role": "neutral",
+        "displayName": "Noite",
+        "canonical": "#0A0A0A",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(25% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(45% 0 0)",
+          "oklch(55% 0 0)",
+          "oklch(65% 0 0)",
+          "oklch(80% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "charcoal": {
+        "role": "neutral",
+        "displayName": "Carvão",
+        "canonical": "#111111",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(25% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(45% 0 0)",
+          "oklch(55% 0 0)",
+          "oklch(65% 0 0)",
+          "oklch(80% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "agape-red": {
+        "role": "primary",
+        "displayName": "Vermelho Ágape",
+        "canonical": "#C53050",
+        "tonalRamp": [
+          "oklch(15% 0.06 12)",
+          "oklch(25% 0.10 12)",
+          "oklch(35% 0.14 12)",
+          "oklch(45% 0.17 12)",
+          "oklch(55% 0.17 12)",
+          "oklch(65% 0.15 12)",
+          "oklch(80% 0.09 12)",
+          "oklch(95% 0.03 12)"
+        ]
+      },
+      "agape-red-lit": {
+        "role": "primary",
+        "displayName": "Vermelho Ágape aceso",
+        "canonical": "#d4365a",
+        "tonalRamp": [
+          "oklch(15% 0.06 12)",
+          "oklch(25% 0.10 12)",
+          "oklch(35% 0.14 12)",
+          "oklch(45% 0.17 12)",
+          "oklch(58% 0.18 12)",
+          "oklch(65% 0.15 12)",
+          "oklch(80% 0.09 12)",
+          "oklch(95% 0.03 12)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Branco",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(25% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(45% 0 0)",
+          "oklch(55% 0 0)",
+          "oklch(65% 0 0)",
+          "oklch(80% 0 0)",
+          "oklch(100% 0 0)"
+        ]
+      },
+      "white-soft": {
+        "role": "neutral",
+        "displayName": "Branco suave",
+        "canonical": "rgba(255, 255, 255, 0.75)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(25% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(45% 0 0)",
+          "oklch(55% 0 0)",
+          "oklch(65% 0 0)",
+          "oklch(80% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "white-muted": {
+        "role": "neutral",
+        "displayName": "Branco apagado",
+        "canonical": "rgba(255, 255, 255, 0.5)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(25% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(45% 0 0)",
+          "oklch(55% 0 0)",
+          "oklch(65% 0 0)",
+          "oklch(80% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Fio",
+        "canonical": "rgba(255, 255, 255, 0.06)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(25% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(45% 0 0)",
+          "oklch(55% 0 0)",
+          "oklch(65% 0 0)",
+          "oklch(80% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "whatsapp-green": {
+        "role": "tertiary",
+        "displayName": "Verde WhatsApp",
+        "canonical": "#25D366",
+        "tonalRamp": [
+          "oklch(15% 0.06 150)",
+          "oklch(25% 0.10 150)",
+          "oklch(35% 0.14 150)",
+          "oklch(45% 0.17 150)",
+          "oklch(55% 0.19 150)",
+          "oklch(65% 0.19 150)",
+          "oklch(80% 0.12 150)",
+          "oklch(95% 0.04 150)"
+        ]
+      },
+      "agape-red-text": {
+        "role": "primary",
+        "displayName": "Vermelho Ágape para texto",
+        "canonical": "#e8657e",
+        "tonalRamp": [
+          "oklch(15% 0.06 12)",
+          "oklch(25% 0.10 12)",
+          "oklch(35% 0.14 12)",
+          "oklch(45% 0.17 12)",
+          "oklch(55% 0.17 12)",
+          "oklch(68% 0.15 12)",
+          "oklch(80% 0.09 12)",
+          "oklch(95% 0.03 12)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Títulos de seção e H1 de páginas internas; centrados, seguidos da barra vermelha."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "H2 no corpo de posts e páginas de serviço."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Título de cartões."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Parágrafos; 0.9rem apagado dentro de cartões; medida de 720px nos posts."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Subtítulo sob o título da seção, peso 300, máx 560px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Etiquetas de categoria, mês da agenda, rótulos de fatos; caixa alta."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Links do cabeçalho em caixa alta."
+      }
+    },
+    "shadows": [
+      {
+        "name": "palco",
+        "value": "0 20px 60px rgba(0,0,0,0.5), 0 0 100px rgba(0,0,0,0.25), 0 0 3px rgba(197,48,80,0.12)",
+        "purpose": "Só o carrossel do herói."
+      },
+      {
+        "name": "levantar-vermelho",
+        "value": "0 8px 30px rgba(197,48,80,0.3)",
+        "purpose": "Hover do botão primário, com translateY(-2px)."
+      },
+      {
+        "name": "levantar",
+        "value": "0 8px 30px rgba(0,0,0,0.2)",
+        "purpose": "Hover do cartão de sessão."
+      },
+      {
+        "name": "flutuante",
+        "value": "0 4px 20px rgba(37,211,102,0.3)",
+        "purpose": "Botão flutuante do WhatsApp."
+      },
+      {
+        "name": "modal",
+        "value": "0 8px 40px rgba(0,0,0,0.3)",
+        "purpose": "Painel do menu e modal de autor."
+      }
+    ],
+    "motion": [
+      {
+        "name": "hover",
+        "value": "0.3s ease",
+        "purpose": "Transições de cor, borda e fundo nos estados de hover (0.25s nos cartões de sessão)."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity 0.6s ease, transform 0.6s ease (translateY 100px → 0, uma vez, atraso por --delay)",
+        "purpose": "Entrada das seções ao rolar; sem JS tudo aparece em 2,5s."
+      },
+      {
+        "name": "crossfade",
+        "value": "opacity 1.8s ease, filter 1.8s ease",
+        "purpose": "Troca de slide do herói com leve desfoque; autoplay 30s."
+      },
+      {
+        "name": "float",
+        "value": "6s ease-in-out infinite",
+        "purpose": "O carrossel flutua 10px."
+      },
+      {
+        "name": "heartbeat",
+        "value": "2.4s ease-in-out infinite",
+        "purpose": "O coração do logo."
+      },
+      {
+        "name": "bounce",
+        "value": "2s ease-in-out infinite",
+        "purpose": "Indicador de rolagem do herói."
+      },
+      {
+        "name": "agenda-pulse",
+        "value": "4s ease-out infinite",
+        "purpose": "Brilho vermelho da foto da agenda."
+      },
+      {
+        "name": "menu-in",
+        "value": "0.35s ease",
+        "purpose": "Painel lateral do menu entra da direita."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce desliga float, heartbeat, bounce, agenda-pulse, o desfoque dos slides e o reveal",
+        "purpose": "Acessibilidade."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão primário",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "O convite: vermelho, 600, 10px, com ícone à esquerda.",
+      "html": "<a class=\"ds-cta-btn\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z\"/></svg> Convide-nos para Seu Evento</a>",
+      "css": ".ds-cta-btn { display: inline-flex; align-items: center; gap: 0.6rem; background: #C53050; color: #fff; font: 600 1rem/1.5 Inter, system-ui, sans-serif; padding: 0.9rem 2rem; border-radius: 10px; border: 2px solid #C53050; text-decoration: none; transition: all 0.3s; } .ds-cta-btn:hover { background: #d4365a; border-color: #d4365a; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(197,48,80,0.3); } .ds-cta-btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Botão contorno",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Ação secundária na faixa vermelha de convite.",
+      "html": "<a class=\"ds-cta-outline\" href=\"#\">Enviar E-mail</a>",
+      "css": ".ds-cta-outline { display: inline-flex; align-items: center; gap: 0.6rem; background: transparent; color: #fff; font: 600 1rem/1.5 Inter, system-ui, sans-serif; padding: 0.9rem 2rem; border-radius: 10px; border: 2px solid rgba(255,255,255,0.3); text-decoration: none; transition: all 0.3s; } .ds-cta-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); } .ds-cta-outline:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "CTA da navegação",
+      "kind": "button",
+      "refersTo": "nav-cta",
+      "description": "O convite compacto no cabeçalho.",
+      "html": "<a class=\"ds-nav-cta\" href=\"#\">Convide-nos</a>",
+      "css": ".ds-nav-cta { display: inline-block; background: #C53050; color: #fff; font: 600 0.85rem/1.5 Inter, system-ui, sans-serif; padding: 0.45rem 1.2rem; border-radius: 8px; text-decoration: none; transition: all 0.3s; } .ds-nav-cta:hover { background: #d4365a; transform: translateY(-1px); }"
+    },
+    {
+      "name": "Pílula",
+      "kind": "chip",
+      "refersTo": "pill",
+      "description": "Link de plataforma (Spotify, Deezer…) e links secundários.",
+      "html": "<a class=\"ds-pill\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><circle cx=\"12\" cy=\"12\" r=\"10\"/></svg> Spotify</a>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; gap: 0.4rem; color: rgba(255,255,255,0.5); font: 500 0.8rem/1.5 Inter, system-ui, sans-serif; padding: 0.5rem 0.9rem; border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; text-decoration: none; transition: all 0.3s; white-space: nowrap; } .ds-pill:hover { color: #fff; border-color: #C53050; background: rgba(197,48,80,0.1); }"
+    },
+    {
+      "name": "Cartão",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Cartão de serviço: ícone vermelho, título, texto apagado; a borda vira vermelha no hover.",
+      "html": "<a class=\"ds-card\" href=\"#\"><svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18V5l12-2v13\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><circle cx=\"18\" cy=\"16\" r=\"3\"/></svg><h3>Missas</h3><p>Canções que acompanham a liturgia com reverência e beleza, elevando a espiritualidade de cada celebração.</p></a>",
+      "css": ".ds-card { display: block; background: #111111; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 2rem; color: #fff; text-decoration: none; font-family: Inter, system-ui, sans-serif; transition: border-color 0.3s; } .ds-card svg { color: #C53050; margin-bottom: 1rem; } .ds-card h3 { font-size: 1.1rem; font-weight: 600; margin: 0 0 0.75rem; } .ds-card p { color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.7; margin: 0; } .ds-card:hover { border-color: #C53050; }"
+    },
+    {
+      "name": "Cartão de contato",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Ícone grande, rede e handle, centrados.",
+      "html": "<a class=\"ds-link-card\" href=\"#\"><svg width=\"40\" height=\"40\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"2\" y=\"2\" width=\"20\" height=\"20\" rx=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/><circle cx=\"17.5\" cy=\"6.5\" r=\"1\" fill=\"currentColor\"/></svg><span class=\"ds-label\">Instagram</span><span class=\"ds-handle\">@jeitoagape</span></a>",
+      "css": ".ds-link-card { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; padding: 2rem 1.5rem; background: #111111; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; text-decoration: none; color: #fff; font-family: Inter, system-ui, sans-serif; transition: border-color 0.3s; } .ds-link-card svg { color: #C53050; } .ds-link-card .ds-label { font-weight: 600; font-size: 0.95rem; } .ds-link-card .ds-handle { color: rgba(255,255,255,0.5); font-size: 0.8rem; } .ds-link-card:hover { border-color: #C53050; }"
+    },
+    {
+      "name": "Etiqueta de categoria",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Categoria do post, caixa alta, cor por categoria sobre a mesma matiz a 15%.",
+      "html": "<span class=\"ds-tag\">Ministério</span>",
+      "css": ".ds-tag { display: inline-block; font: 600 0.7rem/1.5 Inter, system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.25rem 0.7rem; border-radius: 4px; background: rgba(197,48,80,0.15); color: #e8657e; }"
+    },
+    {
+      "name": "Navegação",
+      "kind": "nav",
+      "refersTo": "nav-cta",
+      "description": "Links em caixa alta apagados; ativo em branco; CTA vermelho.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"is-active\">Sobre</a><a href=\"#\">Serviços</a><a href=\"#\">Álbum</a><a href=\"#\">Agenda</a><a href=\"#\" class=\"ds-nav-cta\">Convide-nos</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 2rem; font-family: Inter, system-ui, sans-serif; } .ds-nav a { color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: color 0.3s; } .ds-nav a:hover, .ds-nav a.is-active { color: #fff; } .ds-nav .ds-nav-cta { background: #C53050; color: #fff; font-weight: 600; padding: 0.45rem 1.2rem; border-radius: 8px; text-transform: none; letter-spacing: 0; }"
+    },
+    {
+      "name": "Título de seção",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "A assinatura: título centrado, barra vermelha 40×3, subtítulo apagado.",
+      "html": "<div class=\"ds-section-head\"><h2>Como Podemos Servir Seu Evento</h2><div class=\"ds-bar\"></div><p>Conheça as formas de levar o Jeito Ágape para sua comunidade</p></div>",
+      "css": ".ds-section-head { text-align: center; font-family: Inter, system-ui, sans-serif; color: #fff; } .ds-section-head h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; letter-spacing: -0.02em; margin: 0; } .ds-bar { width: 40px; height: 3px; background: #C53050; margin: 1rem auto 1.5rem; } .ds-section-head p { color: rgba(255,255,255,0.5); font-weight: 300; max-width: 560px; margin: 0 auto; line-height: 1.7; }"
+    },
+    {
+      "name": "Item da agenda",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "Paralelogramo carvão com dia vermelho e mês em etiqueta.",
+      "html": "<div class=\"ds-agenda\"><div class=\"ds-agenda-day\"><strong>25</strong><span>OUT</span></div><div><h4>Santa Missa (4º domingo)</h4><p>19h · Igreja Nossa Senhora de Lourdes, Contagem - MG</p></div></div>",
+      "css": ".ds-agenda { display: flex; align-items: center; gap: 1.5rem; padding: 1.25rem 2.5rem; background: #111111; clip-path: polygon(3% 0, 100% 0, 97% 100%, 0 100%); font-family: Inter, system-ui, sans-serif; color: #fff; } .ds-agenda-day { text-align: center; min-width: 56px; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 1.5rem; } .ds-agenda-day strong { display: block; color: #C53050; font-size: 1.6rem; font-weight: 700; line-height: 1; } .ds-agenda-day span { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); } .ds-agenda h4 { margin: 0 0 0.2rem; font-size: 1rem; font-weight: 600; } .ds-agenda p { margin: 0; color: rgba(255,255,255,0.5); font-size: 0.85rem; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O palco apagado antes da primeira nota",
+    "overview": "O site é um palco escuro: fundo quase preto com grão de filme, luz branca só onde há palavra, e um único vermelho — o do coração da marca — marcando o que importa: a barra sob cada título, o botão de convite, os ícones. Nada brilha por brilhar; a sensação é de teatro paroquial à noite, com a banda prestes a tocar. É quente sem ser colorido, sério sem ser corporativo.\n\nA densidade é editorial e calma: seções largas com muito ar (7rem de respiro), títulos centrados com a barra vermelha embaixo, textos curtos em cinza suave. Os blocos de conteúdo são cartões escuros com borda de 1px quase invisível — a profundidade vem de camadas tonais (#0A0A0A → #111111), não de sombra. O movimento é discreto: as seções sobem e aparecem uma vez ao rolar, o carrossel do herói flutua devagar, o coração do logo bate.\n\nRejeições confirmadas pelo dono (2026-10-03): nenhuma paleta nova, nenhuma fonte nova, nenhuma reestruturação das seções. Este arquivo descreve o mundo estabelecido para que a lapidação o refine sem substituir.",
+    "keyCharacteristics": [
+      "Fundo noturno com grão de filme a 5% sobre tudo",
+      "Um só acento (vermelho #C53050) em menos de 10% de qualquer tela",
+      "Inter em todos os papéis; hierarquia por peso (300 / 400 / 500 / 600 / 700), não por família",
+      "Cartões e painéis separados por borda de 1px a 6% de branco, nunca por sombra em repouso",
+      "Título centrado + barra vermelha de 40×3px abre toda seção",
+      "Movimento mínimo e desligável (prefers-reduced-motion)"
+    ],
+    "rules": [
+      {
+        "name": "A Regra do Único Vermelho",
+        "body": "O vermelho aparece em menos de 10% de qualquer tela: barra, botão, ícones, links. A raridade é o que faz o botão de convite saltar. A única exceção é a faixa de convite (cta-section), que inverte: fundo vermelho inteiro, texto branco.",
+        "section": "colors"
+      },
+      {
+        "name": "A Regra do Vermelho em Texto",
+        "body": "#C53050 só em superfícies, ícones, barra e texto ≥ 1.1rem/600. Texto menor que precise ser vermelho usa --accent-text (#e8657e); nunca o vermelho da marca a 3,5:1.",
+        "section": "colors"
+      },
+      {
+        "name": "A Regra do Grão",
+        "body": "Um grão de filme fixo (SVG feTurbulence, 140px, opacidade 5%) cobre a página inteira acima de tudo. Ele é parte da identidade; qualquer contraste é medido com ele por cima.",
+        "section": "colors"
+      },
+      {
+        "name": "A Regra do Peso",
+        "body": "Quando precisar de ênfase, suba o peso ou o tamanho; nunca mude a família nem use gradiente no texto.",
+        "section": "typography"
+      },
+      {
+        "name": "A Regra do Piso",
+        "body": "Nenhum texto funcional abaixo de 0.75rem (12px). O overlay de números do herói (0.55rem) é o único legado abaixo disso e está marcado para lapidação.",
+        "section": "typography"
+      },
+      {
+        "name": "A Regra da Borda, Não da Sombra",
+        "body": "Superfícies em repouso se separam por tom e fio de 1px. Uma sombra em repouso fora do carrossel e do botão flutuante está errada.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do abrir toda seção com título centrado + barra vermelha de 40×3px + subtítulo apagado; é a assinatura do site.",
+      "Do separar superfícies por tom (#0A0A0A → #111111) e fio de 1px; reservar sombra para hover, carrossel e botão flutuante.",
+      "Do manter o vermelho em menos de 10% da tela e usar o branco aceso só para hover/ativo.",
+      "Do usar Inter em todos os papéis e diferenciar por peso: 700 títulos, 600 subtítulos e botões, 500 navegação, 300–400 corpo.",
+      "Do manter cantos na escala 4 / 8 / 10 / 12 / 16px e círculos completos para avatares e botões flutuantes.",
+      "Do medir contraste com o grão por cima: texto funcional ≥ 4,5:1, piso de opacidade 50% para apoio e 75% para leitura.",
+      "Do dar 44px de área de toque a todo controle, mesmo quando o desenho visível é menor (dots, chevrons).",
+      "Do desligar loops (float, heartbeat, bounce, agenda-pulse, desfoque dos slides) com prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't introduzir outra família tipográfica, gradiente em texto ou vermelho diferente do #C53050.",
+      "Don't colocar sombra em repouso em cartões, botões ou seções.",
+      "Don't usar o vermelho em texto abaixo de 1rem sobre carvão (3,5:1): use branco, branco apagado ou o vermelho aceso só em hover.",
+      "Don't usar borda lateral colorida grossa como destaque; o destaque é a barra de 3px sob o título ou a borda de 1px que vira vermelha no hover.",
+      "Don't justificar texto: cartões, Quem Somos e a nota do álbum são alinhados à esquerda desde a lapidação de 2026-10-03; prosa fica entre 65 e 80 caracteres por linha.",
+      "Don't reordenar, renomear ou remover as seções da home (#sobre #servicos #album #sessions #faq #agenda #contato) nem mudar o padrão título-barra-subtítulo."
+    ]
+  }
+}

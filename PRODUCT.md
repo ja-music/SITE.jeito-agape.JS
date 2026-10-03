@@ -51,7 +51,8 @@ Success: more qualified WhatsApp conversations; the site is the first result for
 
 Binding, confirmed by the owner 2026-10-02:
 
-- **Symbol and palette are fixed.** The gradient-red heart (`assets/logo.png`; no vector on file — a trace must be approved) and black `#0A0A0A` / red `#C53050` / white. Typography, layout, motion and imagery are open.
+- **Symbol and palette are fixed.** The gradient-red heart (`assets/logo.png`; no vector on file — a trace must be approved) and black `#0A0A0A` / red `#C53050` / white.
+- **The incumbent look is the established world (owner decision, 2026-10-03).** After seeing three redesign directions the owner kept the current site: Inter, the dark stage with film grain, section title + red accent bar, bordered cards, the hero carousel, the agenda parallelograms, the section order of the home. `DESIGN.md` documents it. Work on the site is **refinement of this world**, never replacement: no new typeface, palette, section structure or copy without an explicit request. Imagery stays open (more real photos and a hero reel are welcome).
 - **Incumbent brand artwork** (evidence of the identity, not authority over the new look): `assets/hero1.png` and `assets/hero2.png` — heavy condensed white wordmark "JEITO ÁGAPE" with the heart, "MINISTÉRIO" small above it, fine black grain, a band of crumpled-foil texture with red speckles, slanted photo strips of the six members in black "Ministério Jeito Ágape" T-shirts, and the verse «"Nada pode nos separar do amor de Deus" – Romanos 8,39».
 - **Voice.** Catholic, warm, welcoming, hopeful; "Paz e bem"; never corporate, never hype; pt-BR throughout. Emojis only on social, not on the site.
 - **Vocabulary.** "Convide-nos", "missões", "ministério". Never "contratar banda" or "orçamento" as headlines, even on pages that rank for those searches.

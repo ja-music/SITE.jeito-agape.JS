@@ -1,0 +1,46 @@
+# Contato e redes — FONTE ÚNICA. O número do WhatsApp estava colado em 9 lugares do site antigo.
+whatsapp_numero: "5531991267983"
+whatsapp_exibicao: "(31) 99126-7983"
+whatsapp_internacional: "+55 31 99126-7983"
+# Texto padrão do convite (qualificador: tipo, cidade e data). Páginas de serviço têm o próprio.
+whatsapp_texto: "Olá! Gostaria de convidar o Jeito Ágape para um evento. Já adianto o tipo (missa, retiro ou show), a cidade e a data:"
+email: "contato@jeitoagape.com.br"
+# hero: aparece na coluna de ícones ao lado do carrossel · card: vira card na seção Contato
+redes:
+  - nome: Instagram
+    handle: "@jeitoagape"
+    url: "https://www.instagram.com/jeitoagape"
+    icone: instagram
+    hero: true
+    card: true
+  - nome: YouTube
+    handle: "/jeitoagape"
+    url: "https://www.youtube.com/@jeitoagape"
+    icone: youtube
+    hero: true
+    card: true
+  - nome: TikTok
+    handle: "@jeitoagape"
+    url: "https://www.tiktok.com/@jeitoagape"
+    icone: tiktok
+    hero: true
+    card: true
+  - nome: Spotify
+    handle: "Confiar"
+    url: "https://open.spotify.com/album/3m1HYXg7gYW2PWSacnrrkK"
+    icone: spotify
+    hero: true
+  - nome: X (Twitter)
+    handle: "@jeitoagape"
+    url: "https://x.com/jeitoagape"
+    icone: x
+    hero: true
+# sameAs completo para o JSON-LD (inclui plataformas que não entram no rodapé)
+same_as:
+  - "https://www.instagram.com/jeitoagape"
+  - "https://www.youtube.com/@jeitoagape"
+  - "https://www.tiktok.com/@jeitoagape"
+  - "https://open.spotify.com/album/3m1HYXg7gYW2PWSacnrrkK"
+  - "https://soundcloud.com/jeitoagape"
+  - "https://www.deezer.com/br/album/64039912"
+  - "https://music.apple.com/br/album/confiar-%D7%90%D7%9E%D7%95%D7%9F/1387072756"

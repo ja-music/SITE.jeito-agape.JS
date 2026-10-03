@@ -1,0 +1,13 @@
+{%- comment -%}
+Monta as URLs do WhatsApp uma vez (texto geral e texto da página). Assigns de include valem no template que inclui.
+Uso: {% include wa-vars.html %} → wa_url (texto da página ou geral) e wa_url_geral.
+{%- endcomment -%}
+{%- assign wa_base = "https://api.whatsapp.com/send?phone=" | append: site.data.contato.whatsapp_numero | append: "&text=" -%}
+{%- assign wa_texto_geral = site.data.contato.whatsapp_texto | url_encode | replace: "+", "%20" -%}
+{%- assign wa_url_geral = wa_base | append: wa_texto_geral -%}
+{%- if page.whatsapp_text -%}
+{%- assign wa_texto_pagina = page.whatsapp_text | url_encode | replace: "+", "%20" -%}
+{%- assign wa_url = wa_base | append: wa_texto_pagina -%}
+{%- else -%}
+{%- assign wa_url = wa_url_geral -%}
+{%- endif -%}

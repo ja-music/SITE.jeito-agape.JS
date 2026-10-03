@@ -1,0 +1,81 @@
+---
+layout: default
+---
+{%- include wa-vars.html -%}
+<article>
+  <div class="page-hero wrap-4xl mx-auto">
+    {% include breadcrumb.html %}
+    <h1>{{ page.h1 | default: page.title }}</h1>
+    <div class="accent-bar"></div>
+    {%- if page.intro %}<p class="lead">{{ page.intro }}</p>{% endif %}
+    {%- if page.schema == "contact" %}<a href="{{ wa_url }}" target="_blank" rel="noopener noreferrer" class="cta-btn" data-track="contato-hero">{% include icon.html name="message" class="ic-5" %} Convide-nos pelo WhatsApp</a>{% endif %}
+  </div>
+
+  {%- if page.schema == "agenda" %}
+  {%- assign hoje = site.time | date: "%Y%m%d" %}
+  <div class="wrap-5xl mx-auto px-4">
+    <div class="agenda-layout">
+      <div class="agenda-photo-wrapper">
+        <div class="agenda-wave"></div><div class="agenda-wave"></div><div class="agenda-wave"></div>
+        {% include picture.html name="agenda" alt="Agenda Jeito Ágape" class="agenda-photo" sizes="(min-width: 768px) 360px, 100vw" %}
+      </div>
+      <div class="agenda-list">
+        <h2 class="sr-only">Próximos eventos</h2>
+        {%- assign futuros = 0 %}
+        {%- for ev in site.data.agenda %}{% assign d = ev.data | date: "%Y%m%d" %}{% if d >= hoje %}{% assign futuros = futuros | plus: 1 %}
+        <div class="agenda-item">
+          <div class="agenda-date"><div class="day">{% include data-pt.html data=ev.data formato="dia" %}</div><div class="month">{% include data-pt.html data=ev.data formato="mes" %}</div></div>
+          <div class="agenda-divider"></div>
+          <div class="agenda-info"><h3>{{ ev.nome }}</h3><div class="agenda-details"><span>{{ ev.horario }}</span><span class="dot">&middot;</span><span>{{ ev.local }}, {{ ev.cidade }} - {{ ev.uf }}</span></div></div>
+        </div>
+        {%- endif %}{% endfor %}
+        {%- if futuros == 0 %}<p class="agenda-empty">Nenhum evento programado no momento. Fique ligado nas nossas redes!</p>{% endif %}
+      </div>
+    </div>
+  </div>
+  {%- endif %}
+
+  <div class="wrap-4xl mx-auto px-4 page-body">
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </div>
+
+  {%- if page.schema == "agenda" %}
+  {%- assign passados = 0 %}{% for ev in site.data.agenda %}{% assign d = ev.data | date: "%Y%m%d" %}{% if d < hoje %}{% assign passados = passados | plus: 1 %}{% endif %}{% endfor %}
+  {%- if passados > 0 %}
+  <section class="page-section page-section--alt" aria-labelledby="ja-t">
+    <div class="wrap-4xl mx-auto">
+      <h2 class="section-title" id="ja-t">Já aconteceu</h2>
+      <div class="accent-bar"></div>
+      <div class="agenda-list mt-8">
+        {%- for ev in site.data.agenda reversed %}{% assign d = ev.data | date: "%Y%m%d" %}{% if d < hoje %}
+        <div class="agenda-item past">
+          <div class="agenda-date"><div class="day">{% include data-pt.html data=ev.data formato="dia" %}</div><div class="month">{% include data-pt.html data=ev.data formato="mes" %}</div></div>
+          <div class="agenda-divider"></div>
+          <div class="agenda-info"><h3>{{ ev.nome }} <span class="agenda-status">Realizada</span></h3><div class="agenda-details"><span>{{ ev.horario }}</span><span class="dot">&middot;</span><span>{{ ev.local }}, {{ ev.cidade }} - {{ ev.uf }}</span></div></div>
+        </div>
+        {%- endif %}{% endfor %}
+      </div>
+    </div>
+  </section>
+  {%- endif %}
+  {%- endif %}
+
+  {%- if page.schema == "contact" %}
+  <section class="page-section" aria-label="Canais de contato">
+    <div class="wrap-4xl mx-auto">{% include contact-cards.html %}</div>
+  </section>
+  {%- else %}
+  <section class="cta-section" aria-labelledby="conv-t">
+    <div class="wrap-3xl mx-auto">
+      <h2 id="conv-t">Quer o Jeito Ágape na sua comunidade?</h2>
+      <p>Conte o tipo de celebração, a cidade e a data. Respondemos pelo WhatsApp.</p>
+      <div class="cta-section__actions">
+        <a href="{{ wa_url }}" target="_blank" rel="noopener noreferrer" class="cta-btn" data-track="{{ page.slug }}-fim">{% include icon.html name="message" class="ic-5" %} Chamar no WhatsApp</a>
+        <a href="mailto:{{ site.data.contato.email }}?subject=Convite%20para%20Evento" class="cta-btn-outline">{% include icon.html name="mail" class="ic-5" %} Enviar E-mail</a>
+      </div>
+    </div>
+  </section>
+  {%- endif %}
+</article>

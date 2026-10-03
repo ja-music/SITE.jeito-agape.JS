@@ -1,23 +1,38 @@
 # Santa Missa mensal com o Jeito Ágape — todo 4º domingo, 19h, Igreja N. Sra. de Lourdes (Contagem).
 # ⚠️ REGRA DE SEO (24/07/2026): só entra evento PÚBLICO com data + local + horário reais —
-# "A confirmar" gera MusicEvent inválido no Google. Grupo de Oração (28/07) e Retiro de
-# Servos (11/10) foram removidos; re-adicionar quando (e se) tiverem local/horário públicos.
+# "A confirmar" gera MusicEvent inválido no Google. O build só emite JSON-LD de evento FUTURO.
+# Campos: data (AAAA-MM-DD) · nome · local (nome do lugar) · endereco (rua, opcional) · cidade · uf · horario ("19h")
 - data: "2026-07-26"
   nome: "Santa Missa (4º domingo)"
-  local: "Igreja Nossa Senhora de Lourdes, Contagem - MG"
+  local: "Igreja Nossa Senhora de Lourdes"
+  cidade: "Contagem"
+  uf: "MG"
   horario: "19h"
 
 - data: "2026-08-23"
   nome: "Santa Missa (4º domingo)"
-  local: "Igreja Nossa Senhora de Lourdes, Contagem - MG"
+  local: "Igreja Nossa Senhora de Lourdes"
+  cidade: "Contagem"
+  uf: "MG"
   horario: "19h"
 
 - data: "2026-09-27"
   nome: "Santa Missa (4º domingo)"
-  local: "Igreja Nossa Senhora de Lourdes, Contagem - MG"
+  local: "Igreja Nossa Senhora de Lourdes"
+  cidade: "Contagem"
+  uf: "MG"
   horario: "19h"
 
 - data: "2026-10-25"
   nome: "Santa Missa (4º domingo)"
-  local: "Igreja Nossa Senhora de Lourdes, Contagem - MG"
+  local: "Igreja Nossa Senhora de Lourdes"
+  cidade: "Contagem"
+  uf: "MG"
+  horario: "19h"
+
+- data: "2026-11-22"
+  nome: "Santa Missa (4º domingo)"
+  local: "Igreja Nossa Senhora de Lourdes"
+  cidade: "Contagem"
+  uf: "MG"
   horario: "19h"

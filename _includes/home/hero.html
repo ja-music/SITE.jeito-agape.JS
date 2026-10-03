@@ -1,0 +1,60 @@
+{%- assign org = site.data.org -%}{%- assign ct = site.data.contato -%}{%- assign alb = site.data.album -%}
+{%- assign hero_sizes = "(min-width: 1067px) 960px, 90vw" -%}
+{%- assign ultimo = site.posts.first -%}
+{%- assign n_slides = 2 -%}{%- if ultimo -%}{%- assign n_slides = 3 -%}{%- endif -%}
+<section id="hero" class="hero">
+  <h1 class="sr-only">{{ org.nome }} — Ministério de Música Católica de {{ org.cidade }}</h1>
+  <div class="text-center" data-reveal>
+    <div class="hero__stage">
+      <div class="carousel" id="heroCarousel">
+        <div class="carousel-sizer" aria-hidden="true"></div>
+        <div class="carousel-slide active">
+          {%- comment -%}1º slide = LCP da home: carrega cedo e com prioridade; os demais entram sob demanda{%- endcomment %}
+          {% include picture.html name="hero1" alt="Jeito Ágape - Ministério de Música Católica" sizes=hero_sizes priority=true %}
+        </div>
+        <div class="carousel-slide photo">
+          {% include picture.html name="hero2" alt="Membros do Jeito Ágape" sizes=hero_sizes %}
+        </div>
+        {%- if ultimo %}{% assign ck = ultimo.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
+        <div class="carousel-slide">
+          {%- if site.data.images[ck] %}{% include picture.html name=ck alt="" sizes=hero_sizes %}{% elsif ultimo.image %}<img src="{{ ultimo.image }}" alt="" width="1200" height="675" loading="lazy">{% endif %}
+          <a href="{{ ultimo.url }}" class="slide-overlay">
+            <span class="slide-overlay-tag">Novo no Blog</span>
+            <span class="slide-overlay-title">{{ ultimo.title }}</span>
+            <span class="slide-overlay-btn">{% include icon.html name="arrow-right" class="ic-4" %} Ler artigo</span>
+          </a>
+        </div>
+        {%- endif %}
+        <div class="hero-stats-overlay">
+          <span><strong>{{ org.anos }}</strong> anos</span>
+          <span class="dot">&middot;</span>
+          <span><strong>{{ org.missoes }}</strong> missões</span>
+          <span class="dot">&middot;</span>
+          <span><strong>{{ org.cidades }}</strong> cidades</span>
+          <span class="dot">&middot;</span>
+          <span><strong>{{ alb.faixas_total }}</strong> músicas autorais</span>
+        </div>
+      </div>
+      <div class="hero-socials">
+        <div class="line"></div>
+        {%- for r in ct.redes %}{% if r.hero %}
+        <a href="{{ r.url }}" target="_blank" rel="noopener noreferrer" title="{{ r.nome }}" aria-label="{{ r.nome }}">{% include icon.html name=r.icone %}</a>
+        {%- endif %}{% endfor %}
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="carousel-dots" role="group" aria-label="Slides">
+      {%- for i in (1..n_slides) %}
+      <button class="carousel-dot{% if forloop.first %} active{% endif %}" type="button" data-slide="{{ forloop.index0 }}" aria-label="Slide {{ i }} de {{ n_slides }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"></button>
+      {%- endfor %}
+    </div>
+    <div class="hero-cta" data-reveal style="--delay: 200ms">
+      <a href="{{ wa_url_geral }}" target="_blank" rel="noopener noreferrer" class="hero-cta-link" data-track="hero">
+        {% include icon.html name="whatsapp" class="ic-4" %}
+        Convide para Seu Evento<span class="sr-only"> (abre o WhatsApp em nova aba)</span>
+      </a>
+      <p>Leve o Jeito Ágape para sua paróquia ou comunidade</p>
+    </div>
+    <div class="mt-6 scroll-indicator" aria-hidden="true">{% include icon.html name="chevrons-down" %}</div>
+  </div>
+</section>

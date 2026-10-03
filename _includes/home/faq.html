@@ -1,0 +1,13 @@
+{%- comment -%}Conteúdo vem de _data/faq.yml, a MESMA fonte do JSON-LD FAQPage do <head>.{%- endcomment -%}
+{%- if faq_items.size > 0 %}
+<section id="faq" class="section">
+  <div class="wrap-4xl mx-auto">
+    <div class="text-center" data-reveal>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      <div class="accent-bar accent-bar--tight"></div>
+      <p class="section-subtitle">O que quem organiza costuma perguntar antes de convidar</p>
+    </div>
+    <div>{% include faq.html %}</div>
+  </div>
+</section>
+{%- endif %}

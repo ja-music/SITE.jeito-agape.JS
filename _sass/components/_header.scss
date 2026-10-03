@@ -1,0 +1,58 @@
+// Header (CSS original) + o que eram utilitários no markup
+/* Header */
+.header {
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+
+.header.scrolled {
+  background: rgba(10, 10, 10, 0.95);
+}
+
+.nav-link {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--text);
+}
+
+.nav-link.active {
+  color: var(--text);
+}
+
+/* Header CTA */
+.nav-cta {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.45rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.nav-cta:hover {
+  background: #d4365a;
+}
+
+
+// o que eram classes do Tailwind no markup original
+.header { position: fixed; top: 0; width: 100%; z-index: 50; }
+.header__bar { max-width: 72rem; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; }
+.header__logo { display: flex; align-items: center; }
+.header__logo img { width: 34px; height: 34px; filter: brightness(0) invert(1); }
+.nav { display: none; align-items: center; gap: 2rem; }
+.nav-link { text-decoration: none; }
+.nav-cta:hover { color: #fff; }
+.menu-toggle { width: 44px; height: 44px; display: grid; place-items: center; color: #fff; margin: -5px -10px -5px 0; }
+.menu-toggle svg { width: 1.5rem; height: 1.5rem; }
+@media (min-width: 768px) { .nav { display: flex; } .menu-toggle { display: none; } }

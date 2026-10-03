@@ -11,3 +11,7 @@ node_modules/
 assets/img/
 _data/images.json
 .lighthouseci/
+
+# capturas de revisão do impeccable (geradas)
+.impeccable/review/
+.impeccable/config.local.json

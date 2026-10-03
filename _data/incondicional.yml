@@ -8,3 +8,4 @@
   capitulo: 1
   com: "Delliz Christine · Lucas Arcanjo"
   capa: "https://pub-b07d240f6cf240969a26c85f8e6496f6.r2.dev/covers/capa-is-001-espirito-poderoso.png"
+  chave: sessions-espirito-poderoso   # original em assets/src/sessions/ → pipeline gera AVIF/WebP

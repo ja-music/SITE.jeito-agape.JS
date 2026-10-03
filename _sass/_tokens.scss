@@ -1,0 +1,15 @@
+// Tokens do site (os seis do :root original + os valores que estavam soltos no CSS)
+:root {
+  color-scheme: dark;
+  --bg: #0A0A0A;
+  --surface: #111111;
+  --accent: #C53050;
+  --accent-hover: #d4365a;
+  --accent-text: #e8657e; // vermelho para texto pequeno: 6,2:1 sobre noite, 5,9:1 sobre carvão (o #C53050 dá 3,5:1)
+  --text: #FFFFFF;
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --text-soft: rgba(255, 255, 255, 0.75);
+  --border: rgba(255, 255, 255, 0.06);
+  --whatsapp: #25D366;
+  --font: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", sans-serif;
+}

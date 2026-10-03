@@ -1,0 +1,38 @@
+// Cards de contato (CSS original)
+/* Contact & Social */
+.link-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.3s;
+}
+
+.link-card:hover {
+  border-color: var(--accent);
+}
+
+.link-card .icon {
+  color: var(--accent);
+}
+
+.link-card .label {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.link-card .handle {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+
+.link-card svg { width: 2.5rem; height: 2.5rem; }

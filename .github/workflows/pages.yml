@@ -30,6 +30,19 @@ jobs:
         with:
           fetch-depth: 0 # histórico completo: lastmod do sitemap vem do git
 
+      # Pipeline Node (antes do Jekyll): gera assets/img/ + _data/images.json,
+      # que são git-ignored — o build do site depende deles existirem.
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Instala dependências Node
+        run: npm ci
+
+      - name: Gera imagens responsivas
+        run: npm run images
+
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3' # mesma série do container `site` do LOPS
@@ -42,6 +55,17 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+
+      - name: Valida JSON-LD do site gerado
+        run: node scripts/check-jsonld.mjs _site
+
+      # Lighthouse CI sobre o _site estático (celular). Os scripts do Google são bloqueados
+      # na medição para avaliar o site em si; limites em .lighthouserc.json e budget.json.
+      - uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: .lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
 
       - uses: actions/upload-pages-artifact@v3
 
@@ -56,6 +80,39 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+
+      # IndexNow (Bing, Yandex, Naver, Seznam…): avisa as URLs cujo lastmod do sitemap mudou
+      # nos últimos 7 dias. O Google ignora o IndexNow; para ele vale o sitemap + Search Console.
+      - name: IndexNow
+        if: github.event_name != 'schedule'
+        env:
+          SITE: https://jeitoagape.com.br
+          KEY: 034f71f58dad8bce44a1ff07244faaf8
+        run: |
+          python3 - <<'PYEOF'
+          import os, re, json, datetime, urllib.request, xml.etree.ElementTree as ET
+          site, key = os.environ['SITE'], os.environ['KEY']
+          try:
+              xml = urllib.request.urlopen(site + '/sitemap.xml', timeout=30).read()
+          except Exception as e:
+              print('sitemap indisponível:', e); raise SystemExit(0)
+          ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+          limite = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=7)
+          urls = []
+          for u in ET.fromstring(xml).findall('s:url', ns):
+              loc = u.findtext('s:loc', default='', namespaces=ns); lm = u.findtext('s:lastmod', default='', namespaces=ns)
+              if not lm: continue
+              try: dt = datetime.datetime.fromisoformat(lm.replace('Z', '+00:00'))
+              except ValueError: continue
+              if dt >= limite: urls.append(loc)
+          if not urls:
+              print('nada mudou nos últimos 7 dias; nada a enviar'); raise SystemExit(0)
+          body = json.dumps({'host': 'jeitoagape.com.br', 'key': key, 'keyLocation': f'{site}/{key}.txt', 'urlList': urls[:1000]}).encode()
+          req = urllib.request.Request('https://api.indexnow.org/indexnow', data=body, headers={'Content-Type': 'application/json; charset=utf-8'})
+          try:
+              with urllib.request.urlopen(req, timeout=30) as r: print('IndexNow', r.status, len(urls), 'URLs')
+          except urllib.error.HTTPError as e: print('IndexNow HTTP', e.code, e.read()[:200])
+          PYEOF
 
   # Notifica no Discord o RESULTADO do CI/deploy — sucesso (verde) E falha (vermelho).
   # if: always() para rodar mesmo quando um job anterior falha. Pula limpo se o

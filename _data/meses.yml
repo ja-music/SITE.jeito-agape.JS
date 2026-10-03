@@ -1,0 +1,4 @@
+# Nomes de mês em pt-BR: o strftime do Ruby só sabe inglês ("19 de July de 2026" saía no blog).
+longos: [janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro]
+curtos: [jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez]
+dias: [domingo, segunda-feira, terça-feira, quarta-feira, quinta-feira, sexta-feira, sábado]

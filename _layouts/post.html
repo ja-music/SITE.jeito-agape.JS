@@ -1,542 +1,26 @@
 ---
 layout: default
 ---
-
-<style>
-  /* Hero image */
-  .post-hero-img {
-    width: 100%;
-    max-height: 420px;
-    object-fit: cover;
-    border-radius: 16px;
-    margin-bottom: 2.5rem;
-    border: 1px solid var(--border);
-  }
-
-  /* Category tag */
-  .category-tag {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.25rem 0.7rem;
-    border-radius: 4px;
-    background: rgba(197, 48, 80, 0.15);
-    color: var(--accent);
-  }
-
-  .category-tag[data-cat="espiritualidade"] { background: rgba(99, 102, 241, 0.15); color: #818cf8; }
-  .category-tag[data-cat="ministerio"] { background: rgba(197, 48, 80, 0.15); color: #e8657e; }
-  .category-tag[data-cat="musica"] { background: rgba(234, 179, 8, 0.15); color: #eab308; }
-  .category-tag[data-cat="eventos"] { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
-  .category-tag[data-cat="reflexao"] { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
-
-  .post-header {
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .post-header h1 {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin: 0.75rem 0 1rem;
-    line-height: 1.2;
-  }
-
-  .post-meta-row {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    flex-wrap: wrap;
-  }
-
-  .post-meta-row .dot {
-    opacity: 0.3;
-  }
-
-  /* Post content prose */
-  .post-content {
-    max-width: 720px;
-    margin: 0 auto;
-    padding-bottom: 4rem;
-    line-height: 1.85;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.05rem;
-  }
-
-  .post-content h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text);
-    margin: 2.5rem 0 1rem;
-    letter-spacing: -0.01em;
-  }
-
-  .post-content h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text);
-    margin: 2rem 0 0.75rem;
-  }
-
-  .post-content p {
-    margin-bottom: 1.4rem;
-  }
-
-  .post-content a {
-    color: var(--accent);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    transition: color 0.3s;
-  }
-
-  .post-content a:hover {
-    color: #d4365a;
-  }
-
-  .post-content ul, .post-content ol {
-    margin: 1rem 0 1.4rem 1.5rem;
-  }
-
-  .post-content li {
-    margin-bottom: 0.5rem;
-  }
-
-  .post-content blockquote {
-    border-left: 3px solid var(--accent);
-    padding: 1rem 1.5rem;
-    margin: 2rem 0;
-    color: rgba(255, 255, 255, 0.65);
-    font-style: italic;
-    background: var(--surface);
-    border-radius: 0 12px 12px 0;
-    font-size: 1.05rem;
-    line-height: 1.8;
-  }
-
-  .post-content img {
-    max-width: 100%;
-    border-radius: 12px;
-    margin: 2rem 0;
-  }
-
-  .post-content strong {
-    color: var(--text);
-    font-weight: 600;
-  }
-
-  .post-content hr {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 2.5rem 0;
-  }
-
-  /* Back link */
-  .post-back {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.3s;
-    margin-bottom: 2rem;
-  }
-
-  .post-back:hover {
-    color: var(--text);
-  }
-
-  /* Share / footer area */
-  .post-footer {
-    border-top: 1px solid var(--border);
-    padding-top: 2rem;
-    margin-top: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .post-footer .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  .post-footer .back-link:hover {
-    color: var(--text);
-  }
-
-  .share-links {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .share-links span {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-  }
-
-  .share-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    transition: all 0.3s;
-    text-decoration: none;
-  }
-
-  .share-links a:hover,
-  .share-links button:hover {
-    border-color: var(--accent);
-    color: var(--text);
-  }
-
-  .share-links button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    transition: all 0.3s;
-    position: relative;
-  }
-
-  .copy-toast {
-    position: absolute;
-    bottom: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-  }
-
-  .copy-toast.show {
-    opacity: 1;
-  }
-
-  /* "Veja mais" reference cards */
-  .refs-section h2 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-    letter-spacing: 0.02em;
-  }
-
-  .refs-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-  }
-
-  .ref-card {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.2rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    text-decoration: none !important;
-    transition: border-color 0.3s, transform 0.2s;
-  }
-
-  .ref-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-1px);
-  }
-
-  .ref-card .ref-icon {
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .ref-card .ref-icon i {
-    color: var(--accent);
-  }
-
-  .ref-card .ref-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    min-width: 0;
-  }
-
-  .ref-card .ref-title {
-    color: var(--text) !important;
-    font-size: 0.9rem;
-    font-weight: 500;
-    line-height: 1.3;
-  }
-
-  .ref-card .ref-source {
-    color: var(--text-muted);
-    font-size: 0.75rem;
-    font-weight: 400;
-  }
-
-  @media (min-width: 640px) {
-    .refs-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 640px) {
-    .post-hero-img {
-      border-radius: 12px;
-      max-height: 240px;
-    }
-  }
-
-  /* ---- Convite no fim do artigo ---- */
-  .post-invite {
-    margin: 3.5rem 0 0;
-    padding: 2.25rem 2rem;
-    border: 1px solid rgba(197, 48, 80, 0.25);
-    border-radius: 16px;
-    background: rgba(197, 48, 80, 0.06);
-    text-align: center;
-  }
-
-  .post-invite h2 {
-    margin: 0 0 0.6rem;
-    color: #fff;
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-
-  .post-invite p {
-    margin: 0 auto 1.5rem;
-    max-width: 34rem;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
-    line-height: 1.65;
-  }
-
-  .post-invite-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .post-invite-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.6rem;
-    border-radius: 50px;
-    background: var(--accent);
-    color: #fff;
-    font-size: 0.88rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: opacity 0.25s;
-  }
-
-  .post-invite-btn:hover {
-    opacity: 0.88;
-  }
-
-  .post-invite-link {
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 0.82rem;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    transition: color 0.25s;
-  }
-
-  .post-invite-link:hover {
-    color: #fff;
-  }
-
-  /* ---- Posts relacionados ---- */
-  .post-related {
-    margin-top: 3.5rem;
-  }
-
-  .post-related > h2 {
-    margin: 0 0 1.5rem;
-    color: #fff;
-    font-size: 1.05rem;
-    font-weight: 600;
-  }
-
-  .post-related-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .post-related-card {
-    display: block;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.02);
-    text-decoration: none;
-    transition: border-color 0.25s, transform 0.25s;
-  }
-
-  .post-related-card:hover {
-    border-color: rgba(197, 48, 80, 0.4);
-    transform: translateY(-2px);
-  }
-
-  .post-related-card img {
-    display: block;
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-  }
-
-  .post-related-body {
-    padding: 0.9rem 1rem 1.1rem;
-  }
-
-  .post-related-cat {
-    display: block;
-    margin-bottom: 0.35rem;
-    color: var(--accent);
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  .post-related-body h3 {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.88);
-    font-size: 0.88rem;
-    font-weight: 500;
-    line-height: 1.45;
-  }
-</style>
-
-{% assign words = content | number_of_words %}
-{% assign mins = words | divided_by: 200 %}
-{% if mins < 1 %}{% assign mins = 1 %}{% endif %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Jeito Ágape",
-      "item": "{{ site.url }}/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Blog",
-      "item": "{{ site.url }}/blog/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": {{ page.title | jsonify }}
-    }
-  ]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": {{ page.title | jsonify }},
-  "description": {{ page.description | default: page.excerpt | strip_html | truncatewords: 30 | jsonify }},
-  "image": "{{ site.url }}{% if page.og_image %}{{ page.og_image }}{% elsif page.image %}{{ page.image }}{% else %}/assets/hero1.png{% endif %}",
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "dateModified": "{{ page.date | date_to_xmlschema }}",
-  "author": {
-    "@type": "Person",
-    "name": {{ page.author | default: "Jeito Ágape" | jsonify }}
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Jeito Ágape",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ site.url }}/assets/logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "{{ site.url }}{{ page.url }}"
-  },
-  "wordCount": "{{ words }}",
-  "articleSection": {{ page.category | default: "Blog" | jsonify }},
-  "inLanguage": "pt-BR"
-}
-</script>
-
-<div class="max-w-4xl mx-auto px-4">
-  <a href="/blog/" class="post-back">
-    <i data-lucide="arrow-left" class="w-4 h-4"></i>
-    Voltar ao Blog
-  </a>
+{%- include wa-vars.html -%}
+{%- assign palavras = content | number_of_words -%}
+{%- assign minutos = palavras | divided_by: 200 -%}{%- if minutos < 1 -%}{%- assign minutos = 1 -%}{%- endif -%}
+{%- assign chave = page.image | remove: "/assets/" | split: "." | first | replace: "/", "-" -%}
+<div class="wrap-4xl mx-auto px-4">
+  <a href="/blog/" class="post-back">{% include icon.html name="arrow-left" %} Voltar ao Blog</a>
 
   <article>
-    {% if page.image %}
-      <img src="{{ page.image }}" alt="{{ page.title }}" class="post-hero-img" fetchpriority="high" decoding="async" />
-    {% endif %}
+    {%- if page.image %}
+    {%- if site.data.images[chave] %}{% include picture.html name=chave alt=page.title class="post-hero-img" sizes="(min-width: 58rem) 54rem, calc(100vw - 2rem)" priority=true %}{% else %}<img src="{{ page.image }}" alt=page.title class="post-hero-img" fetchpriority="high" decoding="async" width="1200" height="675">{% endif %}
+    {%- endif %}
 
     <div class="post-header" style="max-width: 720px; margin: 0 auto;">
-      {% if page.category %}
-        <span class="category-tag" data-cat="{{ page.category | downcase }}">{{ page.category }}</span>
-      {% endif %}
-
+      {%- if page.category %}<span class="category-tag" data-cat="{{ page.category | slugify }}">{{ page.category }}</span>{% endif %}
       <h1>{{ page.title }}</h1>
-
       <div class="post-meta-row">
-        <span>{{ page.date | date: "%d de %B de %Y" }}</span>
-        {% if page.author %}<span class="dot">&middot;</span><span>{{ page.author }}</span>{% endif %}
-        {% assign words = content | number_of_words %}
-        {% assign mins = words | divided_by: 200 %}
-        {% if mins < 1 %}{% assign mins = 1 %}{% endif %}
+        <time datetime="{{ page.date | date_to_xmlschema }}">{% include data-pt.html data=page.date %}</time>
+        {%- if page.author %}<span class="dot">&middot;</span><span>{{ page.author }}</span>{% endif %}
         <span class="dot">&middot;</span>
-        <span>{{ mins }} min de leitura</span>
+        <span>{{ minutos }} min de leitura</span>
       </div>
     </div>
 
@@ -545,88 +29,45 @@ layout: default
     </div>
 
     <div class="post-footer" style="max-width: 720px; margin: 2rem auto 0;">
-      <a href="/blog/" class="back-link">
-        <i data-lucide="arrow-left" class="w-4 h-4"></i>
-        Todos os artigos
-      </a>
+      <a href="/blog/" class="back-link">{% include icon.html name="arrow-left" %} Todos os artigos</a>
       <div class="share-links">
         <span>Compartilhar:</span>
-        <a href="https://api.whatsapp.com/send?text={{ page.title | url_encode }}%20{{ site.url }}{{ page.url }}" target="_blank" rel="noopener noreferrer" title="WhatsApp">
-          <i data-lucide="message-circle" class="w-4 h-4"></i>
-        </a>
-        <a href="https://t.me/share/url?url={{ site.url }}{{ page.url }}&text={{ page.title | url_encode }}" target="_blank" rel="noopener noreferrer" title="Telegram">
-          <i data-lucide="send" class="w-4 h-4"></i>
-        </a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank" rel="noopener noreferrer" title="Facebook">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/jeitoagape" target="_blank" rel="noopener noreferrer" title="Instagram">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        </a>
-        <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url }}" target="_blank" rel="noopener noreferrer" title="Twitter / X">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-        </a>
-        <button id="copy-link" title="Copiar link" style="cursor:pointer;background:none;border:none;">
-          <i data-lucide="link" class="w-4 h-4"></i>
-        </button>
+        <a href="https://api.whatsapp.com/send?text={{ page.title | url_encode | replace: '+', '%20' }}%20{{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="Compartilhar no WhatsApp" data-track="share">{% include icon.html name="message" %}</a>
+        <a href="https://t.me/share/url?url={{ page.url | absolute_url }}&text={{ page.title | url_encode | replace: '+', '%20' }}" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Compartilhar no Telegram">{% include icon.html name="send" %}</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Compartilhar no Facebook">{% include icon.html name="facebook" %}</a>
+        <a href="https://www.instagram.com/jeitoagape" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram do Jeito Ágape">{% include icon.html name="instagram" %}</a>
+        <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode | replace: '+', '%20' }}&url={{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" title="Twitter / X" aria-label="Compartilhar no X">{% include icon.html name="x" %}</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Compartilhar no LinkedIn">{% include icon.html name="linkedin" %}</a>
+        <button id="copy-link" type="button" title="Copiar link" aria-label="Copiar link">{% include icon.html name="link" %}</button>
       </div>
     </div>
   </article>
 
-  <!-- Convite no fim do artigo: quem leu 1.500 palavras é o leitor mais quente do site
-       e, até aqui, o post terminava em "Compartilhar" sem nunca convidar ninguém. -->
   <aside class="post-invite">
     <h2>Quer o Jeito Ágape na sua comunidade?</h2>
-    <p>
-      Animamos missas, retiros, EJCs, grupos de oração e shows de evangelização.
-      Conte pra gente o tipo de evento, a cidade e a data.
-    </p>
+    <p>Animamos missas, retiros, EJCs, grupos de oração e shows de evangelização. Conte pra gente o tipo de evento, a cidade e a data.</p>
     <div class="post-invite-actions">
-      <a href="https://api.whatsapp.com/send?phone=5531991267983&text=Ol%C3%A1!%20Gostaria%20de%20convidar%20o%20Jeito%20%C3%81gape%20para%20um%20evento.%20J%C3%A1%20adianto%20o%20tipo%20%28missa%2C%20retiro%20ou%20show%29%2C%20a%20cidade%20e%20a%20data%3A"
-         target="_blank" rel="noopener noreferrer" class="post-invite-btn">
-        <i data-lucide="message-circle" class="w-5 h-5"></i>
-        Chamar no WhatsApp
-      </a>
+      <a href="{{ wa_url_geral }}" target="_blank" rel="noopener noreferrer" class="post-invite-btn" data-track="post-fim">{% include icon.html name="message" %} Chamar no WhatsApp</a>
       <a href="/#servicos" class="post-invite-link">Ver como podemos servir seu evento</a>
     </div>
   </aside>
 
-  <!-- Posts relacionados: mesma categoria primeiro, depois o resto. Antes daqui NENHUM
-       post linkava para outro — toda a autoridade interna vazava para fora do site. -->
-  {% assign mesma_cat = site.posts | where_exp: "p", "p.category == page.category" | where_exp: "p", "p.url != page.url" %}
-  {% assign outras_cat = site.posts | where_exp: "p", "p.category != page.category" %}
-  {% assign relacionados = mesma_cat | concat: outras_cat %}
-  {% if relacionados.size > 0 %}
+  {%- assign mesma_cat = site.posts | where_exp: "p", "p.category == page.category" | where_exp: "p", "p.url != page.url" %}
+  {%- assign outras_cat = site.posts | where_exp: "p", "p.category != page.category" %}
+  {%- assign relacionados = mesma_cat | concat: outras_cat %}
+  {%- if relacionados.size > 0 %}
   <section class="post-related">
     <h2>Continue lendo</h2>
     <div class="post-related-grid">
-      {% for p in relacionados limit: 3 %}
+      {%- for p in relacionados limit: 3 %}{% assign ck = p.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
       <a href="{{ p.url }}" class="post-related-card">
-        {% if p.image %}<img src="{{ p.image }}" alt="{{ p.title }}" width="400" height="225" loading="lazy" />{% endif %}
-        <div class="post-related-body">
-          {% if p.category %}<span class="post-related-cat">{{ p.category }}</span>{% endif %}
-          <h3>{{ p.title }}</h3>
-        </div>
+        {%- if site.data.images[ck] %}{% include picture.html name=ck alt="" sizes="(min-width: 640px) 280px, 100vw" %}{% elsif p.image %}<img src="{{ p.image }}" alt="" width="400" height="225" loading="lazy">{% endif %}
+        <div class="post-related-body"><h3>{{ p.title }}</h3>{% if p.category %}<span class="post-related-cat">{{ p.category }}</span>{% endif %}</div>
       </a>
-      {% endfor %}
+      {%- endfor %}
     </div>
   </section>
-  {% endif %}
+  {%- endif %}
 </div>
 
 <div style="padding-bottom: 4rem;"></div>
-
-<script>
-  document.getElementById('copy-link').addEventListener('click', function() {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      var toast = document.createElement('span');
-      toast.className = 'copy-toast show';
-      toast.textContent = 'Link copiado!';
-      this.appendChild(toast);
-      setTimeout(() => { toast.remove(); }, 1500);
-    });
-  });
-</script>

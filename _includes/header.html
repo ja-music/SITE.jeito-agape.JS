@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="header__bar">
+    <a href="/" class="header__logo" aria-label="Jeito Ágape — início">
+      <img src="{{ '/assets/logo.png' | relative_url }}" alt="" class="heartbeat" width="34" height="34">
+    </a>
+    <nav class="nav" aria-label="Principal">
+      {%- for item in site.data.nav.principal %}
+      {%- assign ativo = false %}{% unless item.url contains "#" %}{% if page.url contains item.url %}{% assign ativo = true %}{% endif %}{% endunless %}
+      <a href="{{ item.url }}" class="nav-link{% if ativo %} active{% endif %}"{% if ativo %} aria-current="page"{% endif %}>{{ item.rotulo }}</a>
+      {%- endfor %}
+      <a href="{{ wa_url_geral }}" target="_blank" rel="noopener noreferrer" class="nav-cta" data-track="header">Convide-nos<span class="sr-only"> (abre o WhatsApp em nova aba)</span></a>
+    </nav>
+    <button id="menu-abrir" class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">{% include icon.html name="menu" %}</button>
+  </div>
+</header>
+
+<dialog id="menu" class="mobile-menu" aria-label="Menu">
+  <button class="mobile-menu__close" type="button" aria-label="Fechar menu" data-fechar>{% include icon.html name="close" %}</button>
+  <div class="mt-16">
+    {%- for item in site.data.nav.principal %}
+    <a href="{{ item.url }}" class="mobile-link">{{ item.rotulo }}</a>
+    {%- endfor %}
+    <a href="{{ wa_url_geral }}" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn--full mt-6" data-track="menu">{% include icon.html name="calendar" class="ic-5" %} Convide-nos</a>
+  </div>
+</dialog>

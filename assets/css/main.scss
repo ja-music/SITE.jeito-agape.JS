@@ -1,0 +1,28 @@
+---
+# Folha única do site. Jekyll compila o Sass de _sass/ e comprime (sass.style em _config.yml).
+# A cara é a do site original: cada partial de components/ é o CSS antigo fatiado por seção.
+---
+@use "tokens";
+@use "reset";
+@use "type";
+@use "base";
+@use "layout";
+@use "components/header";
+@use "components/menu";
+@use "components/hero";
+@use "components/buttons";
+@use "components/sections";
+@use "components/album";
+@use "components/sessions";
+@use "components/cta";
+@use "components/faq";
+@use "components/agenda";
+@use "components/depoimentos";
+@use "components/contact";
+@use "components/footer";
+@use "components/post";
+@use "components/blog";
+@use "components/wallpapers";
+@use "components/error";
+@use "components/pages";
+@use "motion";
