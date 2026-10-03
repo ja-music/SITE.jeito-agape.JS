@@ -2,7 +2,7 @@
 title: "Banda para Missa"
 h1: "Música ao vivo para a sua Missa"
 description: "O Jeito Ágape, ministério de música católica de Belo Horizonte, anima Missas, novenas e celebrações em toda Minas desde 2010. Convide-nos pelo WhatsApp."
-intro: "Ministério de música católica de Belo Horizonte que, desde 2010, anima a liturgia da Missa em paróquias de toda Minas: cantos que a assembleia conhece e canções autorais. Convide-nos contando a cidade e a data."
+intro: "Cantos que a assembleia conhece, no momento certo da liturgia, e canções nossas quando o celebrante permite. Desde 2010, em paróquias de toda Minas. Convide-nos contando a cidade e a data."
 service_type: "Animação musical de Missa"
 order: 1
 icon: music
@@ -11,7 +11,7 @@ related_posts: [quanto-custa-banda-para-missa-festa-paroquial]
 whatsapp_text: "Olá! Gostaria de convidar o Jeito Ágape para uma Missa. Cidade e data:"
 permalink: /banda-para-missa/
 short: "Missas"
-resumo: "Canções que acompanham a liturgia com reverência e beleza, elevando a espiritualidade de cada celebração."
+resumo: "Cantos que a assembleia conhece, no momento certo da liturgia, e canções nossas quando o celebrante permite."
 cta: "Convide-nos para a Missa"
 para: "a Missa"
 ---
@@ -50,7 +50,7 @@ Numa novena, a música de cada noite prepara a comunidade para o dia principal. 
 
 Não temos prazo fixo: depende da nossa agenda. Quanto antes você falar com a gente, maior a chance de a data estar livre. Para datas que não mudam, como a festa do padroeiro, vale procurar com alguns meses de antecedência.
 
-Vamos a toda Minas e além. Nos conte a cidade e a data que a gente verifica.
+Vamos a toda Minas e além. Conte a cidade e a data, que a gente verifica.
 
 ## Conheça o ministério numa Missa aberta
 

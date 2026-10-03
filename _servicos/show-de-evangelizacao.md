@@ -2,7 +2,7 @@
 title: "Banda Católica para Eventos e Shows"
 h1: "Show de evangelização para o seu evento"
 description: "O Jeito Ágape leva um show de evangelização de cerca de 1h10 a eventos paroquiais, diocesanos e municipais e grupos de oração. Convide-nos pelo WhatsApp."
-intro: "Ministério de música católica de Belo Horizonte que leva um show de evangelização de cerca de 1h10 a eventos paroquiais, diocesanos e municipais, grupos de oração, ministrações e pregações. Convide-nos contando a cidade e a data."
+intro: "Cerca de 1h10 de música, palavra e oração para eventos paroquiais, diocesanos e municipais, grupos de oração e pregações. Convide-nos contando a cidade e a data."
 service_type: "Show de evangelização"
 order: 4
 icon: mic
@@ -11,7 +11,7 @@ related_posts: [como-organizar-festa-do-padroeiro]
 whatsapp_text: "Olá! Gostaria de convidar o Jeito Ágape para um show de evangelização. Cidade e data:"
 permalink: /show-de-evangelizacao/
 short: "Shows"
-resumo: "Apresentações com arte, mensagem e música que tocam o público com luz, som e espiritualidade."
+resumo: "Cerca de 1h10 de música, palavra e oração, na praça, no salão ou no palco do evento."
 cta: "Convide-nos para o evento"
 para: "o evento"
 ---

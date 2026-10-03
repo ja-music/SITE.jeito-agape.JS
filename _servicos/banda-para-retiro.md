@@ -2,7 +2,7 @@
 title: "Banda para Retiro e EJC"
 h1: "Música para retiros, EJC e encontros de jovens"
 description: "Louvor, adoração e ministração para retiros, EJC, crisma e acampamentos católicos em Minas. O Jeito Ágape serve desde 2010. Convide-nos pelo WhatsApp."
-intro: "Ministério de música católica de Belo Horizonte que serve retiros, EJC, encontros de jovens, crisma e acampamentos com louvor, adoração e ministração, seguindo a programação da equipe. Convide-nos com antecedência."
+intro: "Louvor, adoração e ministração no ritmo do retiro, e animação com linguagem jovem no EJC, sempre seguindo a programação da equipe. Convide-nos com antecedência."
 service_type: "Animação musical de retiro e EJC"
 order: 3
 icon: mountain
@@ -11,7 +11,7 @@ related_posts: [quanto-custa-banda-para-missa-festa-paroquial]
 whatsapp_text: "Olá! Gostaria de convidar o Jeito Ágape para um retiro ou EJC. Cidade e data:"
 permalink: /banda-para-retiro/
 short: "Retiros e EJC"
-resumo: "Música para aprofundar a oração, o silêncio e a escuta de Deus, e animação com linguagem jovem nos encontros de juventude."
+resumo: "Louvor, adoração e ministração no ritmo do retiro, e animação com linguagem jovem no EJC."
 cta: "Convide-nos para o retiro"
 para: "o retiro ou EJC"
 ---
@@ -54,6 +54,6 @@ O ministério completo tem 7 integrantes; a formação se ajusta ao espaço da c
 
 Retiros e EJCs têm data marcada com meses de antecedência, e a nossa agenda também enche cedo. Não temos prazo fixo, mas quanto antes a coordenação falar com a gente, maior a chance de a data estar livre.
 
-Vamos a toda Minas e além. Diga a cidade e as datas do encontro que a gente verifica.
+Vamos a toda Minas e além. Conte a cidade e as datas do encontro, que a gente verifica.
 
 Convide-nos para o seu retiro ou EJC: mande no WhatsApp o tipo de encontro, a cidade, a data e em quais momentos a música entra. Alinhamos tudo antes de confirmar. [Conheça o ministério](/sobre/), [veja a agenda](/agenda/) ou [fale com a gente](/contato/).

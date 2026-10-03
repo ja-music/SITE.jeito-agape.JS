@@ -46,7 +46,7 @@ Isso também define como servimos: a celebração é da comunidade que nos convi
 
 Em mais de 100 cidades de Minas e do Brasil, em paróquias grandes e pequenas, na capital e no interior. Preferimos não listar nomes de paróquias aqui; se quiser saber se já passamos pela sua região, pergunte no WhatsApp.
 
-Vamos onde o nosso chamado nos levar. Nos conte a cidade e a data que a gente verifica.
+Vamos onde o chamado nos levar. Conte a cidade e a data, que a gente verifica.
 
 ## A nossa música
 

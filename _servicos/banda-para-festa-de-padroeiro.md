@@ -2,7 +2,7 @@
 title: "Banda para Festa de Padroeiro"
 h1: "Música ao vivo para a festa do padroeiro"
 description: "Novena, Missa solene e show na praça: o Jeito Ágape anima festas de padroeiro e quermesses em Minas desde 2010. Convide-nos com meses de antecedência."
-intro: "Ministério de música católica de Belo Horizonte que anima a festa do padroeiro por inteiro: a novena, a Missa solene e o show de evangelização na praça. Convide-nos com alguns meses de antecedência."
+intro: "Novena, Missa solene e show na praça: servimos uma parte ou a festa inteira. Convide-nos com alguns meses de antecedência, porque a data do padroeiro é fixa e os fins de semana fecham cedo."
 service_type: "Animação musical de festa de padroeiro"
 order: 2
 icon: calendar
@@ -11,7 +11,7 @@ related_posts: [como-organizar-festa-do-padroeiro, quanto-custa-banda-para-missa
 whatsapp_text: "Olá! Gostaria de convidar o Jeito Ágape para a festa do padroeiro. Cidade e data:"
 permalink: /banda-para-festa-de-padroeiro/
 short: "Festa do padroeiro"
-resumo: "Novena, missa solene e show na praça: música para a festa inteira da sua comunidade, do tríduo ao encerramento."
+resumo: "Novena, Missa solene e show na praça. Servimos uma parte ou a festa inteira, do tríduo ao encerramento."
 cta: "Convide-nos para a festa"
 para: "a festa do padroeiro"
 ---
