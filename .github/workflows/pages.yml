@@ -1,0 +1,126 @@
+# Build + deploy do site da banda (Jekyll 4.4) no GitHub Pages via Actions.
+# Fonte do Pages precisa estar em "GitHub Actions" (Settings → Pages); com isso o
+# builder padrão (Jekyll 3, que ignora o Gemfile) deixa de ser usado.
+name: Deploy Jekyll site to Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Segunda 06:00 (BRT). A agenda marca "passado" no build (site.time): sem
+    # rebuild periódico, um evento vencido continuaria listado como futuro.
+    - cron: '0 9 * * 1'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # histórico completo: lastmod do sitemap vem do git
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3' # mesma série do container `site` do LOPS
+          bundler-cache: true
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build com Jekyll
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+
+      - uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    # PR só valida o build; deploy em push na main, schedule e dispatch manual.
+    if: github.event_name != 'pull_request'
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
+
+  # Notifica no Discord o RESULTADO do CI/deploy — sucesso (verde) E falha (vermelho).
+  # if: always() para rodar mesmo quando um job anterior falha. Pula limpo se o
+  # secret DISCORD_WEBHOOK não existir.
+  notify:
+    needs: [test, deploy]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - name: Notifica no Discord
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          GH_TOKEN: ${{ github.token }}
+          NEEDS: ${{ toJSON(needs) }}
+          REPO: ${{ github.repository }}
+          WF: ${{ github.workflow }}
+          REF: ${{ github.ref_name }}
+          ACTOR: ${{ github.actor }}
+          EVENT: ${{ github.event_name }}
+          SHA: ${{ github.sha }}
+          RUN_ID: ${{ github.run_id }}
+          SERVER: ${{ github.server_url }}
+        run: |
+          [ -z "$DISCORD_WEBHOOK" ] && { echo "DISCORD_WEBHOOK ausente — pulando."; exit 0; }
+          RUN_URL="$SERVER/$REPO/actions/runs/$RUN_ID"
+          COMMIT_URL="$SERVER/$REPO/commit/$SHA"
+          SHORT_SHA="${SHA:0:7}"
+          MSG=$(gh api "repos/$REPO/commits/$SHA" --jq '.commit.message' 2>/dev/null | head -1)
+          [ -z "$MSG" ] && MSG="(sem mensagem de commit)"
+
+          # Resultado de cada job dependente (contexto needs) + resumo por job.
+          FAILED=$(echo "$NEEDS" | jq -r '[to_entries[] | select(.value.result=="failure") | .key] | join(", ")')
+          CANCELLED=$(echo "$NEEDS" | jq -r '[to_entries[] | select(.value.result=="cancelled") | .key] | join(", ")')
+          JOBS=$(echo "$NEEDS" | jq -r '[to_entries[] | ((if .value.result=="success" then "✅" elif .value.result=="failure" then "❌" elif .value.result=="cancelled" then "🚫" else "•" end) + " " + .key)] | join("  ·  ")')
+
+          # Duração aproximada do run.
+          DUR=""
+          START=$(gh api "repos/$REPO/actions/runs/$RUN_ID" --jq '.run_started_at // .created_at' 2>/dev/null)
+          if [ -n "$START" ]; then
+            STARTS=$(date -u -d "$START" +%s 2>/dev/null || echo "")
+            [ -n "$STARTS" ] && { S=$(( $(date -u +%s) - STARTS )); DUR="$((S/60))m$((S%60))s"; }
+          fi
+
+          if [ -n "$FAILED" ]; then COLOR=15548997; TITLE="❌ CI falhou — $REPO"
+          elif [ -n "$CANCELLED" ]; then COLOR=9807270; TITLE="🚫 CI cancelado — $REPO"
+          else COLOR=5763719; TITLE="✅ CI passou — $REPO"; fi
+
+          FIELDS=$(jq -nc \
+            --arg ref "$REF" --arg actor "$ACTOR" --arg event "$EVENT" --arg wf "$WF" \
+            --arg sha "$SHORT_SHA" --arg commiturl "$COMMIT_URL" --arg jobs "$JOBS" --arg dur "$DUR" \
+            '[
+              {name:"Branch", value:("`"+$ref+"`"), inline:true},
+              {name:"Autor", value:$actor, inline:true},
+              {name:"Evento", value:$event, inline:true},
+              {name:"Workflow", value:$wf, inline:true},
+              {name:"Commit", value:("["+$sha+"]("+$commiturl+")"), inline:true}
+            ]
+            + (if $dur != "" then [{name:"Duração", value:$dur, inline:true}] else [] end)
+            + [{name:"Jobs", value:$jobs, inline:false}]')
+
+          jq -nc \
+            --arg title "$TITLE" --arg url "$RUN_URL" --argjson color "$COLOR" \
+            --arg msg "$MSG" --argjson fields "$FIELDS" --arg ts "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            '{username:"Jeito Ágape · Site", embeds:[{title:$title, url:$url, color:$color, description:("**"+$msg+"**"), fields:$fields, footer:{text:"jeitoagape.com.br · build & deploy"}, timestamp:$ts}]}' \
+            | curl -sf -H "Content-Type: application/json" -d @- "$DISCORD_WEBHOOK"
