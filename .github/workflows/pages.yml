@@ -61,7 +61,7 @@ jobs:
   # if: always() para rodar mesmo quando um job anterior falha. Pula limpo se o
   # secret DISCORD_WEBHOOK não existir.
   notify:
-    needs: [test, deploy]
+    needs: [build, deploy]
     if: always()
     runs-on: ubuntu-latest
     permissions:
