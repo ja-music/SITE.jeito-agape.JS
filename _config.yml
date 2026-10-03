@@ -43,8 +43,16 @@ defaults:
     values:
       layout: post
 
-# Exclude from build
+# Exclude from build — tudo que é ferramenta/contexto de design ou pipeline, não site.
 exclude:
   - README.md
   - CLAUDE.md
   - LICENSE
+  - PRODUCT.md
+  - DESIGN.md
+  - design/
+  - scripts/
+  - package.json
+  - package-lock.json
+  - node_modules/
+  - budget.json
