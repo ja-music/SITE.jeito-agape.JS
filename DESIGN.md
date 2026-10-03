@@ -268,5 +268,5 @@ Paralelogramo carvão com dia em vermelho (1.6rem / 700) e mês em etiqueta, tí
 - **Don't** colocar sombra em repouso em cartões, botões ou seções.
 - **Don't** usar o vermelho em texto abaixo de 1rem sobre carvão (3,5:1): use branco, branco apagado ou o vermelho aceso só em hover.
 - **Don't** usar borda lateral colorida grossa como destaque; o destaque é a barra de 3px sob o título ou a borda de 1px que vira vermelha no hover.
-- **Don't** justificar texto: cartões, Quem Somos e a nota do álbum são alinhados à esquerda desde a lapidação de 2026-10-03; prosa fica entre 65 e 80 caracteres por linha (`.sobre-text` 42rem, `.post-content` 42rem).
+- **Don't** justificar texto sem `hyphens: auto` (decisão do dono, 2026-10-03: cartões, Quem Somos e a nota do álbum ficam justificados, com hifenização em pt-BR para não abrir rios de espaço); prosa fica entre 65 e 80 caracteres por linha (`.sobre-text` 42rem, `.post-content` 42rem).
 - **Don't** reordenar, renomear ou remover as seções da home (`#sobre #servicos #album #sessions #faq #agenda #contato`) nem mudar o padrão título-barra-subtítulo.

@@ -67,12 +67,13 @@ a.card:focus-visible {
   color: var(--text-muted);
   font-size: 0.9rem;
   line-height: 1.7;
-  text-align: left; // era justificado sem hifenização: rios de branco a 342px
+  text-align: justify; // justificado como o dono gosta; a hifenização em pt-BR evita os rios de espaço
+  hyphens: auto;
 }
 
 
 .accent-bar--tight { margin: 0 auto 1rem; }
-.sobre-text { color: var(--text-soft); max-width: 42rem; margin-inline: auto; text-align: left; } // 42rem ≈ 75 caracteres; antes 97 por linha, justificado
+.sobre-text { color: var(--text-soft); max-width: 42rem; margin-inline: auto; text-align: justify; hyphens: auto; } // 42rem ≈ 75 caracteres por linha (antes 97); justificado com hifenização
 a.card { display: block; color: inherit; text-decoration: none; }
 .card__more { display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 1rem; color: var(--accent-text); font-size: 0.85rem; font-weight: 600; }
 .card-icon svg { width: 1.25rem; height: 1.25rem; }
