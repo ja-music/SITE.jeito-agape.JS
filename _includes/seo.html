@@ -163,7 +163,8 @@
       ]
     }
     {%- endif -%}
-    {%- if schema == "home" and faq_items.size > 0 -%},
+    {%- assign faq_ld = false -%}{%- if schema == "home" or schema == "article" -%}{%- if faq_items.size > 0 -%}{%- assign faq_ld = true -%}{%- endif -%}{%- endif -%}
+    {%- if faq_ld -%},
     {
       "@type": "FAQPage",
       "@id": "{{ url }}#faq",
