@@ -27,7 +27,7 @@ Dezesseis anos depois, continuamos os mesmos nisso. O que mudou foi o tamanho da
   <dt>Cidades</dt>
   <dd>Mais de 100, em Minas Gerais e no Brasil</dd>
   <dt>Álbum</dt>
-  <dd><em>Confiar</em> (2020), 11 faixas autorais, produzido por Anderson Di Almeida</dd>
+  <dd><em>Confiar</em> (2020), 10 canções autorais e um oracional (11 faixas), produzido por Anderson Di Almeida</dd>
   <dt>Sessions</dt>
   <dd><em>Incondicional Sessions</em>, quadro no YouTube; capítulo 1: "Espírito Poderoso"</dd>
   <dt>Missa mensal</dt>
@@ -50,7 +50,7 @@ Vamos onde o chamado nos levar. Conte a cidade e a data, que a gente verifica.
 
 ## A nossa música
 
-Em 2020 lançamos o *Confiar*, nosso primeiro disco autoral: 11 canções compostas por integrantes do ministério, produzidas por Anderson Di Almeida, com mensagens de fé, esperança e entrega total a Deus. Está no [Spotify](https://open.spotify.com/album/3m1HYXg7gYW2PWSacnrrkK), no [Deezer](https://www.deezer.com/br/album/64039912), no [Apple Music](https://music.apple.com/br/album/confiar-%D7%90%D7%9E%D7%95%D7%9F/1387072756) e no [SoundCloud](https://soundcloud.com/jeitoagape).
+Em 2020 lançamos o *Confiar*, nosso primeiro disco autoral: 10 canções compostas por integrantes do ministério e um oracional, produzidos por Anderson Di Almeida, com mensagens de fé, esperança e entrega total a Deus. Está no [Spotify](https://open.spotify.com/album/3m1HYXg7gYW2PWSacnrrkK), no [Deezer](https://www.deezer.com/br/album/64039912), no [Apple Music](https://music.apple.com/br/album/confiar-%D7%90%D7%9E%D7%95%D7%9F/1387072756) e no [SoundCloud](https://soundcloud.com/jeitoagape).
 
 No [YouTube](https://www.youtube.com/@jeitoagape), o quadro *Incondicional Sessions* traz versões intimistas, um capítulo por vez, para fazer da música a sua oração da noite. O capítulo 1 é "Espírito Poderoso".
 
@@ -62,4 +62,4 @@ Aqui no site também escrevemos. Beto Ferreira, estudante de Teologia, composito
 
 Todo 4º domingo, às 19h, animamos a Santa Missa na Igreja Nossa Senhora de Lourdes, em Contagem (MG). É aberta a todos, e é o jeito mais simples de nos conhecer de perto. As próximas datas estão na [agenda](/agenda/).
 
-Convide-nos para a sua celebração: [Missa](/banda-para-missa/), [festa do padroeiro](/banda-para-festa-de-padroeiro/), [retiro ou EJC](/banda-para-retiro/) ou [show de evangelização](/show-de-evangelizacao/). Mande uma mensagem no WhatsApp com o tipo de celebração, a cidade e a data, e alinhamos tudo antes de confirmar. [Fale com a gente](/contato/).
+Convide-nos para a sua [Missa](/banda-para-missa/), [festa do padroeiro](/banda-para-festa-de-padroeiro/), [retiro ou EJC](/banda-para-retiro/) ou [show de evangelização](/show-de-evangelizacao/). Mande uma mensagem no WhatsApp dizendo qual deles, a cidade e a data, e alinhamos tudo antes de confirmar. [Fale com a gente](/contato/).

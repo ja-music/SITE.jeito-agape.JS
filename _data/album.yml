@@ -1,7 +1,8 @@
 # Álbum Confiar — alimenta a seção da home, a página /confiar/ (futura) e o MusicAlbum do JSON-LD.
 titulo: "Confiar"
 ano: "2020"
-faixas_total: 11
+faixas_total: 11      # faixas no disco (numTracks do JSON-LD)
+cancoes: 10           # canções de fato: a faixa 8, "Oracional: Confiar", é uma pregação (dono, 2026-10-04)
 produtor: "Anderson Di Almeida"
 capa: "/assets/confiar-album.png"
 descricao: "Nosso primeiro álbum autoral: canções compostas por integrantes do ministério, com mensagens de fé, esperança e entrega."

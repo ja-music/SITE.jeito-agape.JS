@@ -13,6 +13,6 @@ A Missa mensal é aberta a todos. Se você quer conhecer o ministério antes de 
 
 Retiros, EJCs e encontros fechados seguem a programação da própria comunidade e não entram na lista. Por isso a agenda pública é menor do que a estrada.
 
-Convide-nos para a sua celebração: mande no WhatsApp o tipo de celebração, a cidade e a data, que a gente verifica a agenda e alinha os detalhes antes de confirmar. [Veja como falar com a gente](/contato/).
+Convide-nos: mande no WhatsApp se é Missa, festa, retiro ou show, a cidade e a data, que a gente verifica a agenda e alinha os detalhes antes de confirmar. [Veja como falar com a gente](/contato/).
 
 Para acompanhar as novidades da agenda, siga o Instagram [@jeitoagape](https://www.instagram.com/jeitoagape).

@@ -13,7 +13,7 @@ Site oficial: {{ site.url }}/ · Idioma: pt-BR · Base: {{ org.cidade }}, {{ org
 
 - Ministério de música católica (não é banda contratada): evangelização pela música desde {{ org.fundacao }}.
 - {{ org.integrantes }} integrantes · {{ org.missoes }} missões · {{ org.cidades }} cidades.
-- Álbum autoral: {{ alb.titulo }} ({{ alb.ano }}, {{ alb.faixas_total }} faixas, produção de {{ alb.produtor }}).
+- Álbum autoral: {{ alb.titulo }} ({{ alb.ano }}, {{ alb.cancoes }} canções e um oracional em {{ alb.faixas_total }} faixas, produção de {{ alb.produtor }}).
 - Série no YouTube: Incondicional Sessions (capítulo 1: "{{ site.data.incondicional[0].titulo }}").
 - Missa mensal: {{ org.missa_mensal.quando }}, {{ org.missa_mensal.local }}, {{ org.missa_mensal.cidade }} – {{ org.missa_mensal.uf }}.
 - Lema: "{{ org.versiculo }}" ({{ org.versiculo_ref }}).

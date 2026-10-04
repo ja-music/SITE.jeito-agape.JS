@@ -10,7 +10,7 @@
   home: true
   pergunta: "Como funciona o convite?"
   resposta: >-
-    Pelo WhatsApp. Conte o tipo de celebração, a cidade e a data; a gente verifica a agenda e
+    Pelo WhatsApp. Diga se é Missa, festa, retiro ou show, a cidade e a data; a gente verifica a agenda e
     alinha os detalhes antes de confirmar. Nossa história é de mais de 500 missões em mais de
     100 cidades sem cobrar cachê.
 
@@ -18,8 +18,8 @@
   home: true
   pergunta: "Quantas pessoas vêm?"
   resposta: >-
-    O ministério completo tem 7 integrantes. A formação se ajusta ao espaço e ao tipo da
-    celebração; combinamos isso na primeira conversa.
+    O ministério completo tem 7 integrantes. A formação se ajusta ao espaço e ao tipo de
+    evento; combinamos isso na primeira conversa.
 
 - id: som-estrutura
   home: true
@@ -53,7 +53,7 @@
 
 - id: tipos-de-evento
   home: true
-  pergunta: "Que tipos de celebração vocês atendem?"
+  pergunta: "Que tipos de evento vocês atendem?"
   resposta: >-
     Missas, novenas e festas de padroeiro, retiros, EJC, shows de evangelização, grupos de
     oração, ministrações, pregações e eventos diocesanos e municipais.

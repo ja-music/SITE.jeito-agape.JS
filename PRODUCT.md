@@ -25,7 +25,7 @@ Success: more qualified WhatsApp conversations; the site is the first result for
 **A ministry, not a hired band.** Confirmed by the owner (2026-10-02) as four truths a neighbouring band could not copy:
 
 - 16 years (since 2010), 500+ "missões" in 100+ cities — historically without charging a fee; evangelization as mission, the community organizes sound and structure.
-- Original music: the album *Confiar* (2020, 11 tracks, produced by Anderson Di Almeida) and the YouTube series *Incondicional Sessions* (chapter 1 "Espírito Poderoso").
+- Original music: the album *Confiar* (2020, 11 tracks: 10 songs plus one spoken "oracional", produced by Anderson Di Almeida) and the YouTube series *Incondicional Sessions* (chapter 1 "Espírito Poderoso").
 - A format that adapts to the celebration: Missa (liturgical), retiro, EJC, festa de padroeiro, show de evangelização, grupo de oração, ministrações, pregações.
 - A community of faith that plays: prayer before every stage; members are a community, not session musicians. This is real and is proof material — shown with real photos and real words, never dramatized.
 
@@ -60,7 +60,7 @@ Binding, confirmed by the owner 2026-10-02:
 
 ## Evidence on Hand
 
-- Numbers (site/FAQ, owner-confirmed): since 2010; 500+ missões; 100+ cities; 7 members; *Confiar* (2020, 11 tracks, prod. Anderson Di Almeida); monthly Mass (4th Sunday, 19h, N. Sra. de Lourdes, Contagem).
+- Numbers (site/FAQ, owner-confirmed): since 2010; 500+ missões; 100+ cities; 7 members; *Confiar* (2020, 11 tracks = 10 songs + 1 oracional, prod. Anderson Di Almeida); monthly Mass (4th Sunday, 19h, N. Sra. de Lourdes, Contagem).
 - Imagery in the repo: `assets/hero1.png` (logo lock-up on grain, 1920×1080), `assets/hero2.png` (six members in photo strips), `assets/confiar-album.png` (cover, 800²), `assets/agenda.jpg`, columnist photos `assets/Beto.jpg` and `assets/Delliz.jpg`, blog covers in `assets/blog/`, Incondicional Sessions #001 cover on R2 (`https://pub-b07d240f6cf240969a26c85f8e6496f6.r2.dev/covers/capa-is-001-espirito-poderoso.png`), wallpapers in `assets/wallpapers/`.
 - Owner will provide: more live photos and videos by event type, and a < 60 s reel on YouTube for the hero (link pending).
 - Blog: 6 posts by Beto Ferreira (theology student, composer and vocalist); columnist Delliz Christine. Two posts are organizer-facing guides ("Quanto custa contratar uma banda para missa ou festa paroquial?", "Como organizar a festa do padroeiro").

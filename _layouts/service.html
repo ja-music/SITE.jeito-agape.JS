@@ -32,7 +32,7 @@ layout: default
   {%- if page.related_posts and page.related_posts.size > 0 %}
   <section class="page-section" aria-labelledby="rel-t">
     <div class="wrap-4xl mx-auto">
-      <h2 class="section-title" id="rel-t">Guias práticos para a sua celebração</h2>
+      <h2 class="section-title" id="rel-t">Guias práticos para quem organiza</h2>
       <div class="accent-bar"></div>
       <div class="post-related-grid related-grid">
         {%- for slug in page.related_posts %}{% assign post = site.posts | where: "slug", slug | first %}{% if post %}
@@ -49,7 +49,7 @@ layout: default
 
   <section class="page-section page-section--alt" aria-labelledby="irm-t">
     <div class="wrap-5xl mx-auto">
-      <h2 class="section-title" id="irm-t">Outras celebrações</h2>
+      <h2 class="section-title" id="irm-t">Veja também</h2>
       <div class="accent-bar"></div>
       <div class="grid--cards mt-8">
         {%- for s in site.servicos %}{% if s.url != page.url %}
@@ -66,8 +66,8 @@ layout: default
 
   <section class="cta-section" aria-labelledby="conv-t">
     <div class="wrap-3xl mx-auto">
-      <h2 id="conv-t">Convide o Jeito Ágape para {{ page.para | default: "a sua celebração" }}</h2>
-      <p>Conte a cidade, a data e como vai ser a celebração. A gente responde pelo WhatsApp e alinha tudo antes de confirmar.</p>
+      <h2 id="conv-t">Convide o Jeito Ágape para {{ page.para | default: "a sua comunidade" }}</h2>
+      <p>Conte a cidade, a data e o que está planejado. A gente responde pelo WhatsApp e alinha tudo antes de confirmar.</p>
       <div class="cta-section__actions">
         <a href="{{ wa_url }}" target="_blank" rel="noopener noreferrer" class="cta-btn" data-track="{{ page.slug }}-fim" data-service="{{ page.slug }}">{% include icon.html name="message" class="ic-5" %} {{ page.cta | default: "Chamar no WhatsApp" }}</a>
         <a href="mailto:{{ site.data.contato.email }}?subject=Convite%20para%20Evento" class="cta-btn-outline">{% include icon.html name="mail" class="ic-5" %} Enviar E-mail</a>

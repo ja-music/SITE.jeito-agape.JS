@@ -1,8 +1,8 @@
 ---
 title: "Contato"
-h1: "Convide-nos para a sua celebração"
+h1: "Convide o Jeito Ágape para a sua paróquia"
 description: "Fale com o Jeito Ágape pelo WhatsApp (31) 99126-7983 ou por contato@jeitoagape.com.br. Conte o tipo de celebração, a cidade e a data. Convide-nos."
-intro: "O caminho mais rápido é o WhatsApp: conte o tipo de celebração, a cidade, a data e o horário, e se há som no local. Respondemos por lá."
+intro: "O caminho mais rápido é o WhatsApp: diga se é Missa, festa, retiro ou show, a cidade, a data e o horário, e se há som no local. Respondemos por lá."
 schema: contact
 permalink: /contato/
 ---
@@ -26,7 +26,7 @@ Paz e bem. O Jeito Ágape é um ministério de música católica de Belo Horizon
 
 Para a gente responder já com a agenda na mão, conte:
 
-- o tipo de celebração (Missa, novena, festa do padroeiro, retiro, EJC, show de evangelização, grupo de oração);
+- o que vai acontecer (Missa, novena, festa do padroeiro, retiro, EJC, show de evangelização, grupo de oração);
 - a cidade e a paróquia ou comunidade;
 - a data, ou as datas possíveis;
 - o horário previsto;
@@ -45,4 +45,4 @@ Com isso respondemos pelo WhatsApp, verificamos a data e alinhamos os detalhes a
 
 As perguntas mais comuns de quem organiza, como quantas pessoas vêm, quanto dura e com quanta antecedência convidar, estão respondidas nas [perguntas frequentes](/#faq).
 
-Convide-nos para a sua celebração: mande a mensagem no WhatsApp e a gente responde por lá. [Conheça o ministério](/sobre/) e [veja a agenda](/agenda/).
+Convide-nos: mande a mensagem no WhatsApp e a gente responde por lá. [Conheça o ministério](/sobre/) e [veja a agenda](/agenda/).
