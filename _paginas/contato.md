@@ -32,7 +32,7 @@ Para a gente responder já com a agenda na mão, conte:
 - o horário previsto;
 - se o local tem som e estrutura, ou se ainda vão providenciar.
 
-Com isso respondemos pelo WhatsApp, verificamos a data e alinhamos os detalhes antes de confirmar. Nossa história é de mais de 500 missões sem cobrar cachê; o que pedimos é que a comunidade organize a sonorização. Se for em outra cidade, conte a cidade e a data que a gente verifica.
+Com isso respondemos pelo WhatsApp, verificamos a data e alinhamos os detalhes antes de confirmar. O que pedimos é que a comunidade organize a sonorização. Se for em outra cidade, conte a cidade e a data que a gente verifica.
 
 ## Redes
 

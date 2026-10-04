@@ -56,7 +56,7 @@ No [YouTube](https://www.youtube.com/@jeitoagape), o quadro *Incondicional Sessi
 
 ## O blog e quem escreve
 
-Aqui no site também escrevemos. Beto Ferreira, estudante de Teologia, compositor e vocalista do ministério, assina a coluna de doutrina; Delliz Christine, integrante do Jeito Ágape, escreve sobre espiritualidade, fé, música e evangelização. Há textos de reflexão e também guias práticos para quem organiza celebrações, como [o guia da festa do padroeiro](/blog/2026/07/19/como-organizar-festa-do-padroeiro/) e [o que compõe o custo da música ao vivo](/blog/2026/07/19/quanto-custa-banda-para-missa-festa-paroquial/). [Leia o blog](/blog/).
+Aqui no site também escrevemos. Beto Ferreira, estudante de Teologia, compositor e vocalista do ministério, assina a coluna de doutrina; Delliz Christine, integrante do Jeito Ágape, escreve sobre espiritualidade, fé, música e evangelização. Há textos de reflexão e também guias práticos para quem organiza celebrações, como [o guia da festa do padroeiro](/blog/2026/07/19/como-organizar-festa-do-padroeiro/) e [o que a comissão precisa organizar para a música ao vivo](/blog/2026/07/19/quanto-custa-banda-para-missa-festa-paroquial/). [Leia o blog](/blog/).
 
 ## A Missa de todo mês
 

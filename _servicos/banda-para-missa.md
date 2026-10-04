@@ -56,6 +56,6 @@ Vamos a toda Minas e além. Conte a cidade e a data, que a gente verifica.
 
 Todo 4º domingo do mês, às 19h, animamos a Santa Missa na Igreja Nossa Senhora de Lourdes, em Contagem (MG). É aberta a todos, e é o jeito mais simples de nos conhecer de perto antes de convidar. As próximas datas estão na [agenda](/agenda/).
 
-Se a sua comunidade está montando a festa e quer entender o que compõe o custo da música ao vivo, escrevemos [um guia sobre isso](/blog/2026/07/19/quanto-custa-banda-para-missa-festa-paroquial/).
+Se a sua comunidade está montando a festa, escrevemos [um guia do que a comissão precisa organizar para a música ao vivo](/blog/2026/07/19/quanto-custa-banda-para-missa-festa-paroquial/).
 
 Convide-nos para a sua Missa: mande uma mensagem no WhatsApp contando a paróquia, a cidade e a data. Alinhamos todos os detalhes antes de confirmar. [Mais sobre quem somos](/sobre/) e [como falar com a gente](/contato/).

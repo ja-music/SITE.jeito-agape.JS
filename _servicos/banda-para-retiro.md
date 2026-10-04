@@ -7,7 +7,7 @@ service_type: "Animação musical de retiro e EJC"
 order: 3
 icon: mountain
 faq: [antecedencia, quantas-pessoas, som-estrutura, duracao]
-related_posts: [quanto-custa-banda-para-missa-festa-paroquial]
+related_posts: []
 whatsapp_text: "Olá! Gostaria de convidar o Jeito Ágape para um retiro ou EJC. Cidade e data:"
 permalink: /banda-para-retiro/
 short: "Retiros e EJC"

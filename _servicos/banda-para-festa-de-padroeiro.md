@@ -56,6 +56,6 @@ Vamos a toda Minas e além. Conte a cidade e a data da festa que a gente verific
 
 ## Para a comissão que está começando
 
-Escrevemos dois guias práticos a partir do que vimos em muitas festas: [como organizar a festa do padroeiro](/blog/2026/07/19/como-organizar-festa-do-padroeiro/), com cronograma reverso de seis meses e checklist da véspera, e [o que compõe o custo da música ao vivo](/blog/2026/07/19/quanto-custa-banda-para-missa-festa-paroquial/), para a reunião da comissão não ser pega de surpresa.
+Escrevemos dois guias práticos a partir do que vimos em muitas festas: [como organizar a festa do padroeiro](/blog/2026/07/19/como-organizar-festa-do-padroeiro/), com cronograma reverso de seis meses e checklist da véspera, e [o que a comissão precisa organizar para a música ao vivo](/blog/2026/07/19/quanto-custa-banda-para-missa-festa-paroquial/), para a véspera não virar correria.
 
 Convide-nos para a festa do seu padroeiro: mande no WhatsApp o nome da paróquia, a cidade, a data da festa e o que a comissão imagina (novena, Missa solene, show). Alinhamos tudo antes de confirmar. [Veja a agenda](/agenda/) e [fale com a gente](/contato/).
