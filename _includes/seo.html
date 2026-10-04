@@ -184,7 +184,7 @@
       "@type": "MusicEvent",
       "@id": "{{ '/agenda/' | absolute_url }}#event-{{ ev.data }}",
       "name": {{ ev.nome | jsonify }},
-      "startDate": "{{ ev.data }}{% if hr != '' %}T{{ hr }}:00:00-03:00{% endif %}",
+      "startDate": "{{ ev.data }}{% if ev.inicio %}T{{ ev.inicio }}:00-03:00{% elsif hr != '' %}T{{ hr }}:00:00-03:00{% endif %}",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": { "@type": "Place", "name": {{ ev.local | jsonify }}, "address": { "@type": "PostalAddress", {% if ev.endereco %}"streetAddress": {{ ev.endereco | jsonify }}, {% endif %}"addressLocality": {{ ev.cidade | jsonify }}, "addressRegion": {{ ev.uf | jsonify }}, "addressCountry": "BR" } },
