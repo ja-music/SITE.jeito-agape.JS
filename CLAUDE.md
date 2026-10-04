@@ -52,6 +52,7 @@ npx lighthouse http://localhost:4010/ --form-factor=mobile --screenEmulation.mob
 
 ## Content rules
 
+- Sessions (`_data/incondicional.yml`): each chapter carries `id` (YouTube, used for the link) and `video` (the full MP4 on the public R2 bucket, what the site actually plays through a native `<video>` on click). The YouTube embed is only the fallback when `video` is missing: covers with a copyright claim refuse to play outside youtube.com.
 - Agenda: only confirmed public events; the home shows the list with past ones labelled "Realizada" (no strike-through, no opacity); `/agenda/` splits future / "Já aconteceu".
 - Posts: `_posts/YYYY-MM-DD-slug.md` with `title, date, author, category, image, description`; category drives the tag colour (`slugify` — "Ministério" → `ministerio`). URLs `/blog/YYYY/MM/DD/slug/` must not change, nor `/blog/feed.xml`, `/wallpapers/`, `/404.html`, the GSC file or any `/assets/*` path referenced by published OG tags.
 - Vocabulary: "Convide-nos", "missões", "ministério"; "banda" only in `<title>`/H1 of intent pages. Never promise gratuity as a rule; never invent testimonials, member bios or parish names.
