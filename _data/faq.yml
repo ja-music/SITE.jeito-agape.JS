@@ -67,3 +67,49 @@
 #     (ex.: "Combinamos caso a caso" / "A comunidade ajuda com o deslocamento" /
 #      "Também é por nossa conta")
 # ---------------------------------------------------------------------------
+
+# --- Perguntas do artigo "O que é um ministério de música católica" (blog, 2026-10) ---
+# Sem `home: true`: não aparecem na home. O post as referencia por id em `faq:` no front matter;
+# o layout do post renderiza a seção visível e o seo.html emite o FAQPage da página do artigo.
+- id: ministerio-o-que-e
+  pergunta: "O que é um ministério de música católica?"
+  resposta: >-
+    É um grupo de batizados que coloca a música a serviço da Igreja: na liturgia, ajudando a
+    assembleia a rezar cantando, e na evangelização, em retiros, encontros, grupos de oração e
+    shows. Ministério vem do latim ministerium, serviço.
+
+- id: ministerio-vs-coral
+  pergunta: "Qual é a diferença entre ministério de música e coral?"
+  resposta: >-
+    O coral canta a polifonia e o canto gregoriano em celebrações solenes, com vozes divididas
+    e regente. O ministério de música anima a liturgia com cantos que a assembleia acompanha e,
+    quando é de evangelização, também serve retiros, encontros e shows fora da Missa.
+
+- id: ministerio-vs-banda
+  pergunta: "Ministério de música e banda católica são a mesma coisa?"
+  resposta: >-
+    Não. A banda ou o artista católico é um grupo profissional, com repertório, contrato e
+    estrutura próprios. O ministério existe como serviço à Igreja e à evangelização; a música
+    é o meio, não o produto.
+
+- id: ministerio-na-missa
+  pergunta: "O que o ministério de música faz na Missa?"
+  resposta: >-
+    Serve cada momento da celebração com o canto próprio dele: entrada, ato penitencial,
+    Glória, salmo responsorial, aclamação ao Evangelho, apresentação das oferendas, Santo,
+    Cordeiro de Deus, comunhão e canto final. Conduz a assembleia sem substituí-la, respeita o
+    silêncio e segue quem preside.
+
+- id: ministerio-quem-participa
+  pergunta: "Quem pode participar de um ministério de música?"
+  resposta: >-
+    Qualquer batizado com vida de fé e disposição para servir. Não precisa ser músico
+    profissional; precisa de formação musical, litúrgica e espiritual, ensaio e oração
+    constantes, e humildade para não ser o centro.
+
+- id: ministerio-como-convidar
+  pergunta: "Como convidar um ministério de música para uma celebração?"
+  resposta: >-
+    Informe o tipo da celebração (Missa, festa de padroeiro, retiro, EJC ou show), a cidade e
+    a data. Em geral, a sonorização, a estrutura e a acolhida ficam por conta de quem convida.
+    O Jeito Ágape responde pelo WhatsApp (31) 99126-7983.
