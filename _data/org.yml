@@ -1,0 +1,22 @@
+# Fatos do ministério — FONTE ÚNICA para o site visível, o JSON-LD (MusicGroup) e o llms.txt.
+# Mexeu aqui, mudou nos três. Só fato confirmado; nada de promessa.
+nome: "Jeito Ágape"
+nome_alternativo: "Ministério Jeito Ágape"
+definicao: "O Jeito Ágape é um ministério de música católica de Belo Horizonte (MG) que, desde 2010, leva louvor ao vivo a missas, festas de padroeiro, retiros e EJCs: mais de 500 missões em mais de 100 cidades."
+descricao_curta: "Ministério de música católica de Belo Horizonte. Desde 2010, louvor ao vivo em missas, festas de padroeiro, retiros e EJCs em toda Minas."
+fundacao: "2010"
+cidade: "Belo Horizonte"
+uf: "MG"
+area_atendida: "Minas Gerais e todo o Brasil"
+integrantes: 7
+missoes: "500+"
+cidades: "100+"
+anos: 16
+versiculo: "Nada pode nos separar do amor de Deus"
+versiculo_ref: "Romanos 8,39"
+generos: ["Música Católica", "Louvor e Adoração", "Música Cristã"]
+missa_mensal:
+  quando: "Todo 4º domingo, 19h"
+  local: "Igreja Nossa Senhora de Lourdes"
+  cidade: "Contagem"
+  uf: "MG"

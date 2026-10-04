@@ -1,0 +1,20 @@
+{%- assign ct = site.data.contato -%}
+<div class="grid--links">
+  {%- for r in ct.redes %}{% if r.card %}
+  <a href="{{ r.url }}" target="_blank" rel="noopener noreferrer" class="link-card">
+    {% include icon.html name=r.icone class="icon" %}
+    <span class="label">{{ r.nome }}</span>
+    <span class="handle">{{ r.handle }}</span>
+  </a>
+  {%- endif %}{% endfor %}
+  <a href="mailto:{{ ct.email }}" class="link-card" data-track="contato-email">
+    {% include icon.html name="mail" class="icon" %}
+    <span class="label">E-mail</span>
+    <span class="handle">{{ ct.email }}</span>
+  </a>
+  <a href="{{ wa_url_geral }}" target="_blank" rel="noopener noreferrer" class="link-card link-card--wide" data-track="contato-card">
+    {% include icon.html name="phone" class="icon" %}
+    <span class="label">WhatsApp</span>
+    <span class="handle">{{ ct.whatsapp_exibicao }}</span>
+  </a>
+</div>

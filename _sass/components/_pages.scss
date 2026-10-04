@@ -1,0 +1,29 @@
+// Páginas internas (serviço, sobre, agenda, contato): composição com elementos do próprio site
+// Faixa de abertura das páginas internas: o título no estilo .section-title, a barra, o apoio em 300.
+.page-hero { padding: 3rem 1.5rem 2.5rem; text-align: center; }
+.page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; text-wrap: balance; margin-bottom: 1rem; }
+.page-hero .lead { color: var(--text-soft); font-size: 1rem; font-weight: 400; max-width: 560px; margin: 0 auto 2rem; line-height: 1.7; } // parágrafo de leitura, não subtítulo de uma linha
+.page-hero__hint { color: var(--text-muted); font-size: 0.8rem; margin-top: 0.8rem; }
+.page-hero .cta-btn { margin-top: .25rem; }
+.breadcrumb { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.25rem; }
+.breadcrumb ol { display: contents; }
+.breadcrumb li { display: inline-flex; align-items: center; gap: 0.5rem; }
+.breadcrumb li + li::before { content: "·"; opacity: 0.3; }
+.breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+.breadcrumb a:hover { color: var(--text); }
+.breadcrumb--left { justify-content: flex-start; }
+// Lista de fatos (Sobre) e dados de contato: dt como .track-num, dd simples
+.page-facts { display: grid; grid-template-columns: 1fr; margin: 1.5rem 0; }
+.page-facts > dt { color: var(--accent-text); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; padding-top: 0.9rem; }
+.page-facts > dd { padding: 0.25rem 0 0.9rem; border-bottom: 1px solid var(--border); font-size: 0.95rem; line-height: 1.6; color: rgba(255, 255, 255, 0.8); }
+@media (min-width: 768px) {
+  .page-facts { grid-template-columns: 11rem 1fr; column-gap: 1.5rem; }
+  .page-facts > dt { padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
+  .page-facts > dd { padding: 0.9rem 0; }
+}
+.page-body { padding-bottom: 2rem; }
+.page-section { padding: 4rem 1.5rem; }
+.page-section--alt { background: var(--surface); }
+.page-section .section-title { text-align: center; }
+.page-section .accent-bar { margin: 1rem auto 1.5rem; }
+.related-grid { margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 300px)); justify-content: center; gap: 1.25rem; } // um card só não vira um letterbox de 896px

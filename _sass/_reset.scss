@@ -1,0 +1,15 @@
+// Reset mínimo — reproduz o que o preflight do Tailwind fazia no site antigo (o CSS foi escrito em cima dele)
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { line-height: 1.5; -webkit-text-size-adjust: 100%; }
+body { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
+table { border-collapse: collapse; text-indent: 0; border-color: inherit; }
+img, svg, video { display: block; max-width: 100%; height: auto; }
+picture { display: contents; } // o <img> do picture.html ocupa a caixa exata do markup original
+picture > source { display: none; } // senão os <source> viram itens flex vazios (e ganham gap)
+ul, ol { list-style: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+input, textarea, select { font: inherit; }
+a { color: inherit; text-decoration: inherit; }
+dialog { max-width: none; max-height: none; }
+:where(address) { font-style: normal; }

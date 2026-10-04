@@ -1,0 +1,32 @@
+{%- assign alb = site.data.album -%}
+<section id="album" class="section section-alt">
+  <div class="wrap-5xl mx-auto">
+    <div class="text-center" data-reveal>
+      <h2 class="section-title">{{ alb.titulo }}</h2>
+      <div class="accent-bar"></div>
+      <p class="section-subtitle">Nosso primeiro disco autoral: 11 canções de fé, esperança e entrega, compostas por integrantes do ministério</p>
+    </div>
+
+    <div class="grid--album">
+      <div>
+        <div class="album-cover">
+          {% include picture.html name="confiar-album" alt="Capa do Álbum Confiar - Jeito Ágape" sizes="(min-width: 1024px) 480px, 100vw" %}
+        </div>
+        <div class="platform-links">
+          {%- for pl in alb.plataformas %}
+          <a href="{{ pl.url }}" target="_blank" rel="noopener noreferrer" class="platform-link">{% include icon.html name=pl.icone %} {{ pl.nome }}</a>
+          {%- endfor %}
+        </div>
+        <p class="album-note">Produzido por <strong class="text-white font-medium">{{ alb.produtor }}</strong>, lançado em {{ alb.ano }}. Ouça na sua plataforma e cante com a gente na próxima celebração.</p>
+      </div>
+
+      <div>
+        <ol class="tracklist">
+          {%- for f in alb.faixas %}
+          <li class="track"><span class="track-num">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span><span class="track-name">{{ f }}</span></li>
+          {%- endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

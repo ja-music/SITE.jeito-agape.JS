@@ -1,0 +1,8 @@
+{%- comment -%}Resolve a lista de FAQ da página uma vez: subconjunto por ids (page.faq) ou, na home, todas as marcadas home: true.{%- endcomment -%}
+{%- if page.faq -%}
+{%- assign faq_items = site.data.faq | where_exp: "q", "page.faq contains q.id" -%}
+{%- elsif page.schema == "home" -%}
+{%- assign faq_items = site.data.faq | where: "home", true -%}
+{%- else -%}
+{%- assign faq_items = "" | split: "" -%}
+{%- endif -%}

@@ -1,0 +1,203 @@
+{%- assign org = site.data.org -%}{%- assign ct = site.data.contato -%}{%- assign alb = site.data.album -%}
+{%- assign schema = page.schema | default: "page" -%}
+{%- if schema == "home" -%}{%- assign titulo = org.nome | append: " | Ministério de Música Católica em BH" -%}{%- else -%}{%- assign titulo = page.title | append: " | " | append: org.nome -%}{%- endif -%}
+{%- assign desc = page.description | default: org.descricao_curta | strip -%}
+{%- assign url = page.url | replace: "index.html", "" | absolute_url -%}
+{%- assign og_rel = page.og_image | default: page.image | default: "/assets/og-cover.jpg" -%}
+{%- assign og_img = og_rel | absolute_url -%}
+{%- assign modificado = page.last_modified_at | default: page.date | default: site.time -%}
+{%- assign hoje = site.time | date: "%Y%m%d" -%}
+<title>{{ titulo }}</title>
+<meta name="description" content="{{ desc | escape }}">
+<link rel="canonical" href="{{ url }}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="{% if schema == 'article' %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ url }}">
+<meta property="og:title" content="{{ page.title | default: org.nome | escape }}">
+<meta property="og:description" content="{{ desc | escape }}">
+<meta property="og:image" content="{{ og_img }}">
+{%- if og_rel contains "-og." or og_rel contains "og-cover" %}
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+{%- endif %}
+<meta property="og:image:type" content="{% if og_rel contains '.jpg' or og_rel contains '.jpeg' %}image/jpeg{% else %}image/png{% endif %}">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="{{ org.nome }}">
+{%- if schema == "article" %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+<meta property="article:modified_time" content="{{ modificado | date_to_xmlschema }}">
+<meta property="article:author" content="{{ page.author | default: org.nome }}">
+<meta property="article:section" content="{{ page.category }}">
+{%- endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title | default: org.nome | escape }}">
+<meta name="twitter:description" content="{{ desc | escape }}">
+<meta name="twitter:image" content="{{ og_img }}">
+<meta name="twitter:image:alt" content="{{ page.title | default: org.nome | escape }}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MusicGroup",
+      "@id": "{{ site.url }}/#musicgroup",
+      "name": {{ org.nome | jsonify }},
+      "alternateName": {{ org.nome_alternativo | jsonify }},
+      "url": "{{ site.url }}/",
+      "description": {{ org.definicao | jsonify }},
+      "foundingDate": {{ org.fundacao | jsonify }},
+      "foundingLocation": { "@type": "Place", "name": "Belo Horizonte, MG, Brasil" },
+      "logo": { "@type": "ImageObject", "url": "{{ '/assets/logo.png' | absolute_url }}", "width": 256, "height": 256 },
+      "image": "{{ '/assets/hero2.png' | absolute_url }}",
+      "genre": {{ org.generos | jsonify }},
+      "knowsLanguage": "pt-BR",
+      "areaServed": [ { "@type": "AdministrativeArea", "name": "Minas Gerais" }, { "@type": "Country", "name": "Brasil" } ],
+      "email": {{ ct.email | jsonify }},
+      "telephone": {{ ct.whatsapp_internacional | jsonify }},
+      "contactPoint": { "@type": "ContactPoint", "contactType": "convites", "telephone": {{ ct.whatsapp_internacional | jsonify }}, "email": {{ ct.email | jsonify }}, "availableLanguage": "pt-BR", "url": "{{ '/contato/' | absolute_url }}" },
+      "sameAs": {{ ct.same_as | jsonify }},
+      "album": { "@id": "{{ site.url }}/#album" }
+    },
+    {
+      "@type": "MusicAlbum",
+      "@id": "{{ site.url }}/#album",
+      "name": {{ alb.titulo | jsonify }},
+      "datePublished": {{ alb.ano | jsonify }},
+      "numTracks": {{ alb.faixas_total }},
+      "byArtist": { "@id": "{{ site.url }}/#musicgroup" },
+      "producer": { "@type": "Person", "name": {{ alb.produtor | jsonify }} },
+      "image": "{{ alb.capa | absolute_url }}",
+      "sameAs": [{% for pl in alb.plataformas %}{% unless forloop.first %}, {% endunless %}{{ pl.url | jsonify }}{% endfor %}]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": {{ org.nome | jsonify }},
+      "description": {{ org.descricao_curta | jsonify }},
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "{{ site.url }}/#musicgroup" }
+    },
+    {
+      "@type": {% if schema == "about" %}"AboutPage"{% elsif schema == "contact" %}"ContactPage"{% elsif schema == "collection" %}"CollectionPage"{% else %}"WebPage"{% endif %},
+      "@id": "{{ url }}#webpage",
+      "url": "{{ url }}",
+      "name": {{ titulo | jsonify }},
+      "description": {{ desc | jsonify }},
+      "inLanguage": "pt-BR",
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "about": { "@id": "{{ site.url }}/#musicgroup" },
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "{{ og_img }}" },
+      "dateModified": "{{ modificado | date_to_xmlschema }}"{% if schema != "home" %},
+      "breadcrumb": { "@id": "{{ url }}#breadcrumb" }{% endif %}
+    }
+    {%- if schema != "home" -%},
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ url }}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": {{ org.nome | jsonify }}, "item": "{{ site.url }}/" }
+        {%- if schema == "service" -%}, { "@type": "ListItem", "position": 2, "name": "Convide-nos", "item": "{{ site.url }}/#servicos" }, { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }
+        {%- elsif schema == "article" -%}, { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ '/blog/' | absolute_url }}" }, { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }
+        {%- else -%}, { "@type": "ListItem", "position": 2, "name": {{ page.title | jsonify }} }
+        {%- endif %}
+      ]
+    }
+    {%- endif -%}
+    {%- if schema == "service" -%},
+    {
+      "@type": "Service",
+      "@id": "{{ url }}#service",
+      "name": {{ page.title | jsonify }},
+      "serviceType": {{ page.service_type | jsonify }},
+      "description": {{ desc | jsonify }},
+      "url": "{{ url }}",
+      "provider": { "@id": "{{ site.url }}/#musicgroup" },
+      "areaServed": [ { "@type": "AdministrativeArea", "name": "Minas Gerais" }, { "@type": "Country", "name": "Brasil" } ],
+      "audience": { "@type": "Audience", "audienceType": "paróquias e comunidades católicas" },
+      "availableLanguage": "pt-BR",
+      "mainEntityOfPage": { "@id": "{{ url }}#webpage" }
+    }
+    {%- endif -%}
+    {%- if schema == "article" -%}
+    {%- assign autor = site.data.authors | where: "name", page.author | first -%},
+    {
+      "@type": "BlogPosting",
+      "@id": "{{ url }}#article",
+      "headline": {{ page.title | jsonify }},
+      "description": {{ desc | jsonify }},
+      "image": "{{ page.og_image | default: page.image | default: '/assets/og-cover.jpg' | absolute_url }}",
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ modificado | date_to_xmlschema }}",
+      "author": {% if autor %}{ "@id": "{{ '/sobre/' | absolute_url }}#person-{{ autor.name | slugify }}" }{% else %}{ "@type": "Person", "name": {{ page.author | default: org.nome | jsonify }} }{% endif %},
+      "publisher": { "@id": "{{ site.url }}/#musicgroup" },
+      "mainEntityOfPage": { "@id": "{{ url }}#webpage" },
+      "articleSection": {{ page.category | default: "Blog" | jsonify }},
+      "wordCount": {{ content | strip_html | number_of_words }},
+      "inLanguage": "pt-BR"
+    }
+    {%- if autor -%},
+    {
+      "@type": "Person",
+      "@id": "{{ '/sobre/' | absolute_url }}#person-{{ autor.name | slugify }}",
+      "name": {{ autor.name | jsonify }},
+      "jobTitle": {{ autor.role | jsonify }},
+      "description": {{ autor.bio | jsonify }},
+      "image": "{{ autor.image | absolute_url }}",
+      "memberOf": { "@id": "{{ site.url }}/#musicgroup" }
+    }
+    {%- endif -%}
+    {%- endif -%}
+    {%- if schema == "collection" -%},
+    {
+      "@type": "Blog",
+      "@id": "{{ url }}#blog",
+      "name": "Blog Jeito Ágape",
+      "url": "{{ url }}",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "{{ site.url }}/#musicgroup" },
+      "blogPost": [
+        {%- for post in site.posts %}{% unless forloop.first %},{% endunless %}
+        { "@type": "BlogPosting", "headline": {{ post.title | jsonify }}, "url": "{{ post.url | absolute_url }}", "datePublished": "{{ post.date | date_to_xmlschema }}", "image": "{{ post.og_image | default: post.image | default: '/assets/og-cover.jpg' | absolute_url }}", "author": { "@type": "Person", "name": {{ post.author | default: org.nome | jsonify }} } }
+        {%- endfor %}
+      ]
+    }
+    {%- endif -%}
+    {%- if schema == "home" and faq_items.size > 0 -%},
+    {
+      "@type": "FAQPage",
+      "@id": "{{ url }}#faq",
+      "inLanguage": "pt-BR",
+      "mainEntity": [
+        {%- for item in faq_items %}{% unless forloop.first %},{% endunless %}
+        { "@type": "Question", "name": {{ item.pergunta | strip | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ item.resposta | strip | jsonify }} } }
+        {%- endfor %}
+      ]
+    }
+    {%- endif -%}
+    {%- if schema == "home" or schema == "agenda" -%}
+    {%- for ev in site.data.agenda -%}
+    {%- assign ev_dia = ev.data | date: "%Y%m%d" -%}
+    {%- if ev_dia >= hoje -%}
+    {%- assign hr = ev.horario | remove: "h" | remove: "H" | strip -%},
+    {
+      "@type": "MusicEvent",
+      "@id": "{{ '/agenda/' | absolute_url }}#event-{{ ev.data }}",
+      "name": {{ ev.nome | jsonify }},
+      "startDate": "{{ ev.data }}{% if hr != '' %}T{{ hr }}:00:00-03:00{% endif %}",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": { "@type": "Place", "name": {{ ev.local | jsonify }}, "address": { "@type": "PostalAddress", {% if ev.endereco %}"streetAddress": {{ ev.endereco | jsonify }}, {% endif %}"addressLocality": {{ ev.cidade | jsonify }}, "addressRegion": {{ ev.uf | jsonify }}, "addressCountry": "BR" } },
+      "performer": { "@id": "{{ site.url }}/#musicgroup" },
+      "image": "{{ '/assets/hero2.png' | absolute_url }}",
+      "description": {{ ev.nome | append: " com o Jeito Ágape, " | append: ev.local | append: ", " | append: ev.cidade | append: " - " | append: ev.uf | jsonify }},
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL", "availability": "https://schema.org/InStock", "url": "{{ '/agenda/' | absolute_url }}" },
+      "url": "{{ '/agenda/' | absolute_url }}"
+    }
+    {%- endif -%}
+    {%- endfor -%}
+    {%- endif %}
+  ]
+}
+</script>

@@ -2,3 +2,16 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 .sass-cache/
+
+# Impeccable (skill de design): o binário nativo é baixado pelo launcher no 1º uso — não versionar
+.claude/skills/impeccable/scripts/bin/
+
+# Build assets gerados no CI (pipeline de imagens, Node)
+node_modules/
+assets/img/
+_data/images.json
+.lighthouseci/
+
+# capturas de revisão do impeccable (geradas)
+.impeccable/review/
+.impeccable/config.local.json

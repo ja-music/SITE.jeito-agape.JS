@@ -1,0 +1,10 @@
+{%- comment -%}Data em pt-BR (o strftime do Ruby só sabe inglês). Uso: {% include data-pt.html data=page.date formato="longo|curto|dia" %}{%- endcomment -%}
+{%- assign d = include.data | date: "%-d" -%}
+{%- assign m = include.data | date: "%-m" | minus: 1 -%}
+{%- assign y = include.data | date: "%Y" -%}
+{%- if include.formato == "curto" -%}{{ d }} {{ site.data.meses.curtos[m] }}
+{%- elsif include.formato == "ponto" -%}{{ d }}.{{ site.data.meses.curtos[m] }}.{{ y }}
+{%- elsif include.formato == "dia" -%}{{ d }}
+{%- elsif include.formato == "mes" -%}{{ site.data.meses.curtos[m] }}
+{%- else -%}{{ d }} de {{ site.data.meses.longos[m] }} de {{ y }}
+{%- endif -%}

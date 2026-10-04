@@ -1,0 +1,48 @@
+// Faixa vermelha de convite (CSS original)
+/* CTA Section (red) */
+.cta-section {
+  background: var(--accent);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  color: rgba(255, 255, 255, 0.92); // .85 dava 4,27:1 sobre o vermelho; .92 passa AA, diferença invisível
+  font-size: 1.05rem;
+  font-weight: 300;
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.cta-section .cta-btn {
+  background: #fff;
+  color: var(--accent);
+  border-color: #fff;
+}
+
+.cta-section .cta-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cta-section .cta-btn-outline {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.cta-section .cta-btn-outline:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+.cta-section__actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }

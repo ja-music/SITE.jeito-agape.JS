@@ -1,0 +1,11 @@
+# Navegação principal (desktop e menu mobile) — os mesmos nove links do site original.
+principal:
+  - { rotulo: Sobre, url: "/#sobre" }
+  - { rotulo: Serviços, url: "/#servicos" }
+  - { rotulo: Álbum, url: "/#album" }
+  - { rotulo: Sessions, url: "/#sessions" }
+  - { rotulo: Blog, url: "/blog/" }
+  - { rotulo: Wallpapers, url: "/wallpapers/" }
+  - { rotulo: Agenda, url: "/#agenda" }
+  - { rotulo: FAQ, url: "/#faq" }
+  - { rotulo: Contato, url: "/#contato" }

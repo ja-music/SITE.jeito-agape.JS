@@ -1,0 +1,32 @@
+# Álbum Confiar — alimenta a seção da home, a página /confiar/ (futura) e o MusicAlbum do JSON-LD.
+titulo: "Confiar"
+ano: "2020"
+faixas_total: 11
+produtor: "Anderson Di Almeida"
+capa: "/assets/confiar-album.png"
+descricao: "Nosso primeiro álbum autoral: canções compostas por integrantes do ministério, com mensagens de fé, esperança e entrega."
+plataformas:
+  - nome: Spotify
+    url: "https://open.spotify.com/album/3m1HYXg7gYW2PWSacnrrkK"
+    icone: spotify
+  - nome: Deezer
+    url: "https://www.deezer.com/br/album/64039912"
+    icone: deezer
+  - nome: Apple Music
+    url: "https://music.apple.com/br/album/confiar-%D7%90%D7%9E%D7%95%D7%9F/1387072756"
+    icone: apple
+  - nome: SoundCloud
+    url: "https://soundcloud.com/jeitoagape"
+    icone: soundcloud
+faixas:
+  - "Discípulo do Amor"
+  - "Recomeçar"
+  - "Lugares Altos"
+  - "Filho do Altíssimo"
+  - "Infinito Amor"
+  - "Doce Maria"
+  - "Confiar"
+  - "Oracional: Confiar (Daniel Pio)"
+  - "Aliança"
+  - "Sangue e Água"
+  - "Leão de Judá"

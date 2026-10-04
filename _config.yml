@@ -1,11 +1,15 @@
 # Jekyll Configuration — Jeito Ágape
 title: Jeito Ágape
 tagline: "Ministério de Música Católica"
-description: "Jeito Ágape é um ministério de música católica de Belo Horizonte - MG. Há 16 anos evangelizando através da música, com mais de 500 missões realizadas em missas, retiros, shows e EJCs."
+description: "Jeito Ágape, ministério de música católica de Belo Horizonte: desde 2010, mais de 500 missões em Missas, festas de padroeiro, retiros e shows. Convide-nos."
 url: "https://jeitoagape.com.br"
 lang: pt-BR
 locale: pt_BR
 logo: /assets/logo.png
+timezone: America/Sao_Paulo
+
+# GA4 (propriedade da conta da banda). Só entra no build de produção (JEKYLL_ENV=production).
+ga4_id: "G-HMWJ8YLG75"
 
 # Google Ads — ação de conversão "Convite WhatsApp" (clique em qualquer botão do WhatsApp).
 # Preencher DEPOIS de criar a conta + a ação de conversão no Google Ads.
@@ -27,8 +31,23 @@ permalink: /blog/:year/:month/:day/:title/
 # Plugins (supported by GitHub Pages)
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-last-modified-at   # lastmod do sitemap vem do git (precisa de fetch-depth: 0 no CI)
+
+# Coleções: páginas de intenção (/banda-para-missa/ …) e páginas institucionais (/sobre/ …).
+# Uma lista só (site.servicos) alimenta home, menu, rodapé, llms.txt e os links entre irmãs.
+collections:
+  servicos:
+    output: true
+    permalink: /:name/
+    sort_by: order
+  paginas:
+    output: true
+    permalink: /:name/
+
+sass:
+  style: compressed
+  sass_dir: _sass
 
 # Feed
 feed:
@@ -42,9 +61,30 @@ defaults:
       type: posts
     values:
       layout: post
+      schema: article
+  - scope:
+      path: ""
+      type: servicos
+    values:
+      layout: service
+      schema: service
+  - scope:
+      path: ""
+      type: paginas
+    values:
+      layout: page
+      schema: page
 
-# Exclude from build
+# Exclude from build — tudo que é ferramenta/contexto de design ou pipeline, não site.
 exclude:
   - README.md
   - CLAUDE.md
   - LICENSE
+  - PRODUCT.md
+  - DESIGN.md
+  - design/
+  - scripts/
+  - package.json
+  - package-lock.json
+  - node_modules/
+  - budget.json

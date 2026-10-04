@@ -1,0 +1,53 @@
+// FAQ (CSS original)
+/* ---- FAQ (acordeão nativo <details>: sem JS, e o Google lê o conteúdo fechado) ---- */
+.faq-list {
+  max-width: 46rem;
+  margin: 2.5rem auto 0;
+  text-align: left;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 0.25rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  font-weight: 500;
+  list-style: none;
+  transition: color 0.25s;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary:hover {
+  color: var(--accent);
+}
+
+.faq-item summary .chev {
+  flex-shrink: 0;
+  color: var(--accent);
+  transition: transform 0.25s;
+}
+
+.faq-item[open] summary .chev {
+  transform: rotate(180deg);
+}
+
+.faq-item .faq-answer {
+  padding: 0 0.25rem 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+
+.faq-item summary .chev { width: 1rem; height: 1rem; }

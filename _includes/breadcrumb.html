@@ -1,0 +1,8 @@
+{%- comment -%}Migalhas das páginas internas, no estilo da linha de meta dos posts. Uso: {% include breadcrumb.html meio_rotulo="Serviços" meio_url="/#servicos" %}{%- endcomment -%}
+<nav class="breadcrumb{% if include.esquerda %} breadcrumb--left{% endif %}" aria-label="Você está em">
+  <ol>
+    <li><a href="/">Jeito Ágape</a></li>
+    {%- if include.meio_rotulo %}<li><a href="{{ include.meio_url }}">{{ include.meio_rotulo }}</a></li>{% endif %}
+    <li><span aria-current="page">{{ include.atual | default: page.short | default: page.title }}</span></li>
+  </ol>
+</nav>

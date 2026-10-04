@@ -1,0 +1,37 @@
+<section id="servicos" class="section">
+  <div class="wrap-5xl mx-auto">
+    <div class="text-center" data-reveal>
+      <h2 class="section-title">Como servimos a sua celebração</h2>
+      <div class="accent-bar"></div>
+      <p class="section-subtitle">Missas, festas de padroeiro, retiros e shows: escolha a sua e veja como funciona</p>
+    </div>
+
+    <div class="grid--cards">
+      {%- for s in site.servicos %}
+      <a href="{{ s.url }}" class="card">
+        <div class="card-icon">{% include icon.html name=s.icon %}</div>
+        <h3>{{ s.short }}</h3>
+        <p>{{ s.resumo }}</p>
+        <span class="card__more">Como funciona {% include icon.html name="arrow-right" class="ic-4" %}</span>
+      </a>
+      {%- endfor %}
+      <div class="card">
+        <div class="card-icon">{% include icon.html name="cross" %}</div>
+        <h3>Ministrações</h3>
+        <p>Louvor, intercessão e cura conduzidos com música e oração, em grupos de oração e encontros.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">{% include icon.html name="book" %}</div>
+        <h3>Pregações</h3>
+        <p>A Palavra e a música no mesmo momento: acompanhamos a pregação para que ela chegue ao coração.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="{{ wa_url_geral }}" target="_blank" rel="noopener noreferrer" class="cta-btn" data-track="servicos">
+        {% include icon.html name="whatsapp" class="ic-5" %}
+        Convide-nos pelo WhatsApp<span class="sr-only"> (abre em nova aba)</span>
+      </a>
+    </div>
+  </div>
+</section>

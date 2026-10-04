@@ -1,0 +1,456 @@
+// Post do blog (CSS original de _layouts/post.html)
+  /* Hero image */
+  .post-hero-img {
+width: 100%;
+max-height: 420px;
+object-fit: cover;
+border-radius: 16px;
+margin-bottom: 2.5rem;
+border: 1px solid var(--border);
+  }
+
+  /* Category tag */
+  .category-tag {
+display: inline-block;
+font-size: 0.7rem;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+padding: 0.25rem 0.7rem;
+border-radius: 4px;
+background: rgba(197, 48, 80, 0.15);
+color: var(--accent-text);
+  }
+
+  .category-tag[data-cat="espiritualidade"] { background: rgba(99, 102, 241, 0.15); color: #818cf8; }
+  .category-tag[data-cat="ministerio"] { background: rgba(197, 48, 80, 0.15); color: #e8657e; }
+  .category-tag[data-cat="musica"] { background: rgba(234, 179, 8, 0.15); color: #eab308; }
+  .category-tag[data-cat="eventos"] { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
+  .category-tag[data-cat="reflexao"] { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+
+  .post-header {
+margin-bottom: 3rem;
+padding-bottom: 2rem;
+border-bottom: 1px solid var(--border);
+  }
+
+  .post-header h1 {
+font-size: clamp(1.8rem, 4vw, 2.8rem);
+font-weight: 700;
+letter-spacing: -0.02em;
+margin: 0.75rem 0 1rem;
+line-height: 1.2;
+  }
+
+  .post-meta-row {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+color: var(--text-muted);
+font-size: 0.85rem;
+flex-wrap: wrap;
+  }
+
+  .post-meta-row .dot {
+opacity: 0.3;
+  }
+
+  /* Post content prose */
+  .post-content {
+max-width: 42rem; // ≈ 80 caracteres a 16,8px (720px dava 86)
+margin: 0 auto;
+padding-bottom: 4rem;
+line-height: 1.85;
+color: rgba(255, 255, 255, 0.8);
+font-size: 1.05rem;
+  }
+
+  .post-content h2 {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--text);
+margin: 2.5rem 0 1rem;
+letter-spacing: -0.01em;
+  }
+
+  .post-content h3 {
+font-size: 1.2rem;
+font-weight: 600;
+color: var(--text);
+margin: 2rem 0 0.75rem;
+  }
+
+  .post-content p {
+margin-bottom: 1.4rem;
+  }
+
+  .post-content a {
+color: var(--accent-text);
+text-decoration: underline;
+text-underline-offset: 3px;
+transition: color 0.3s;
+  }
+
+  .post-content a:hover {
+color: #d4365a;
+  }
+
+  .post-content ul, .post-content ol {
+margin: 1rem 0 1.4rem 1.5rem;
+  }
+
+  .post-content li {
+margin-bottom: 0.5rem;
+  }
+
+  .post-content blockquote {
+border-left: 3px solid var(--accent);
+padding: 1rem 1.5rem;
+margin: 2rem 0;
+color: rgba(255, 255, 255, 0.65);
+font-style: italic;
+background: var(--surface);
+border-radius: 0 12px 12px 0;
+font-size: 1.05rem;
+line-height: 1.8;
+  }
+
+  .post-content img {
+max-width: 100%;
+border-radius: 12px;
+margin: 2rem 0;
+  }
+
+  .post-content strong {
+color: var(--text);
+font-weight: 600;
+  }
+
+  .post-content hr {
+border: none;
+border-top: 1px solid var(--border);
+margin: 2.5rem 0;
+  }
+
+  /* Back link */
+  .post-back {
+display: inline-flex;
+align-items: center;
+gap: 0.4rem;
+color: var(--text-muted);
+font-size: 0.85rem;
+font-weight: 500;
+text-decoration: none;
+transition: color 0.3s;
+margin-bottom: 2rem;
+  }
+
+  .post-back:hover {
+color: var(--text);
+  }
+
+  /* Share / footer area */
+  .post-footer {
+border-top: 1px solid var(--border);
+padding-top: 2rem;
+margin-top: 2rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 1rem;
+  }
+
+  .post-footer .back-link {
+display: inline-flex;
+align-items: center;
+gap: 0.4rem;
+color: var(--text-muted);
+font-size: 0.85rem;
+font-weight: 500;
+text-decoration: none;
+transition: color 0.3s;
+  }
+
+  .post-footer .back-link:hover {
+color: var(--text);
+  }
+
+  .share-links {
+    flex-wrap: wrap; // no celular o botão \"Copiar link\" saía da tela
+display: flex;
+align-items: center;
+gap: 0.75rem;
+  }
+
+  .share-links span {
+color: var(--text-muted);
+font-size: 0.8rem;
+  }
+
+  .share-links a {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 36px;
+height: 36px;
+border-radius: 50%;
+border: 1px solid var(--border);
+color: var(--text-muted);
+transition: all 0.3s;
+text-decoration: none;
+  }
+
+  .share-links a:hover,
+  .share-links button:hover {
+border-color: var(--accent);
+color: var(--text);
+  }
+
+  .share-links button {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 36px;
+height: 36px;
+border-radius: 50%;
+border: 1px solid var(--border);
+color: var(--text-muted);
+transition: all 0.3s;
+position: relative;
+  }
+
+  .toast, .copy-toast {
+position: absolute;
+bottom: calc(100% + 8px);
+left: 50%;
+transform: translateX(-50%);
+background: var(--surface);
+border: 1px solid var(--border);
+color: var(--text);
+font-size: 0.7rem;
+font-weight: 500;
+padding: 0.3rem 0.6rem;
+border-radius: 6px;
+white-space: nowrap;
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.3s;
+  }
+
+  .toast.is-visible, .copy-toast.show {
+opacity: 1;
+  }
+
+  /* "Veja mais" reference cards */
+  .post-content .refs-section h2 {
+font-size: 1.2rem;
+font-weight: 600;
+color: var(--text-muted);
+margin-bottom: 1rem;
+letter-spacing: 0.02em;
+  }
+
+  .post-content .refs-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 0.75rem;
+  }
+
+  .post-content .ref-card {
+display: flex;
+align-items: center;
+gap: 1rem;
+padding: 1rem 1.2rem;
+background: var(--surface);
+border: 1px solid var(--border);
+border-radius: 10px;
+text-decoration: none;
+transition: border-color 0.3s, transform 0.2s;
+  }
+
+  .post-content .ref-card:hover {
+border-color: var(--accent);
+transform: translateY(-1px);
+  }
+
+  .post-content .ref-card .ref-icon {
+flex-shrink: 0;
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 8px;
+background: rgba(255, 255, 255, 0.05);
+  }
+
+  .post-content .ref-card .ref-icon svg {
+color: var(--accent);
+  }
+
+  .post-content .ref-card .ref-text {
+display: flex;
+flex-direction: column;
+gap: 0.15rem;
+min-width: 0;
+  }
+
+  .post-content .ref-card .ref-title {
+color: var(--text);
+font-size: 0.9rem;
+font-weight: 500;
+line-height: 1.3;
+  }
+
+  .post-content .ref-card .ref-source {
+color: var(--text-muted);
+font-size: 0.75rem;
+font-weight: 400;
+  }
+
+  @media (min-width: 640px) {
+.post-content .refs-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+  }
+
+  @media (max-width: 640px) {
+.post-hero-img {
+  border-radius: 12px;
+  max-height: 240px;
+}
+  }
+
+  /* ---- Convite no fim do artigo ---- */
+  .post-invite {
+margin: 3.5rem 0 0;
+padding: 2.25rem 2rem;
+border: 1px solid rgba(197, 48, 80, 0.25);
+border-radius: 16px;
+background: rgba(197, 48, 80, 0.06);
+text-align: center;
+  }
+
+  .post-invite h2 {
+margin: 0 0 0.6rem;
+color: #fff;
+font-size: 1.25rem;
+font-weight: 600;
+  }
+
+  .post-invite p {
+margin: 0 auto 1.5rem;
+max-width: 34rem;
+color: rgba(255, 255, 255, 0.6);
+font-size: 0.9rem;
+line-height: 1.65;
+  }
+
+  .post-invite-actions {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+  }
+
+  .post-invite-btn {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+padding: 0.75rem 1.6rem;
+border-radius: 50px;
+background: var(--accent);
+color: #fff;
+font-size: 0.88rem;
+font-weight: 600;
+text-decoration: none;
+transition: opacity 0.25s;
+  }
+
+  .post-invite-btn:hover {
+opacity: 0.88;
+  }
+
+  .post-invite-link {
+color: rgba(255, 255, 255, 0.55);
+font-size: 0.82rem;
+text-decoration: none;
+border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+transition: color 0.25s;
+  }
+
+  .post-invite-link:hover {
+color: #fff;
+  }
+
+  /* ---- Posts relacionados ---- */
+  .post-related {
+margin-top: 3.5rem;
+  }
+
+  .post-related > h2 {
+margin: 0 0 1.5rem;
+color: #fff;
+font-size: 1.05rem;
+font-weight: 600;
+  }
+
+  .post-related-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1.25rem;
+  }
+
+  .post-related-card {
+display: block;
+overflow: hidden;
+border: 1px solid rgba(255, 255, 255, 0.07);
+border-radius: 12px;
+background: rgba(255, 255, 255, 0.02);
+text-decoration: none;
+transition: border-color 0.25s, transform 0.25s;
+  }
+
+  .post-related-card:hover {
+border-color: rgba(197, 48, 80, 0.4);
+transform: translateY(-2px);
+  }
+
+  .post-related-card img {
+display: block;
+width: 100%;
+height: 120px;
+object-fit: cover;
+  }
+
+  .post-related-body {
+padding: 0.9rem 1rem 1.1rem;
+  }
+
+  .post-related-cat {
+display: block;
+margin-top: 0.35rem;
+color: var(--accent-text);
+font-size: 0.75rem;
+font-weight: 600;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+  }
+
+  .post-related-body h3 {
+margin: 0;
+color: rgba(255, 255, 255, 0.88);
+font-size: 0.88rem;
+font-weight: 500;
+line-height: 1.45;
+  }
+
+  .toast { position: fixed; left: 50%; bottom: 5.5rem; transform: translateX(-50%); z-index: 2001; }
+  .post-content .ref-card .ref-icon svg { width: 1.25rem; height: 1.25rem; color: var(--accent); }
+  .share-links a svg, .share-links button svg { width: 1rem; height: 1rem; }
+  .share-links a, .share-links button { position: relative; }
+  .share-links a::before, .share-links button::before { content: ""; position: absolute; inset: -4px; } // alvo de 44px
+  .post-back svg, .back-link svg { width: 1rem; height: 1rem; }
+  .post-invite-btn svg { width: 1.25rem; height: 1.25rem; }

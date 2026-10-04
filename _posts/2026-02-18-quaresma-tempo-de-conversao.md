@@ -110,42 +110,42 @@ A Quaresma nos convida a enterrar aquilo que nos impede de ser quem Deus sonhou.
 <h2>Veja mais</h2>
 <div class="refs-grid">
   <a href="https://www.vatican.va/archive/cathechism_po/index_new/p1s2cap2_422-682_po.html" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="book-open" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="book" %}</div>
     <div class="ref-text">
       <span class="ref-title">A tentação de Jesus no deserto</span>
       <span class="ref-source">Catecismo §540 · Vatican.va</span>
     </div>
   </a>
   <a href="https://www.vatican.va/archive/cathechism_po/index_new/p2s2cap1_1420-1532_po.html" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="book-open" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="book" %}</div>
     <div class="ref-text">
       <span class="ref-title">Jejum, oração e esmola como penitência</span>
       <span class="ref-source">Catecismo §1434–1438 · Vatican.va</span>
     </div>
   </a>
   <a href="https://www.vatican.va/archive/cod-iuris-canonici/portuguese/codex-iuris-canonici_po.pdf" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="scale" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="scale" %}</div>
     <div class="ref-text">
       <span class="ref-title">Dias de penitência, jejum e abstinência</span>
       <span class="ref-source">Cânones 1249–1253 · Vatican.va</span>
     </div>
   </a>
   <a href="https://www.youtube.com/watch?v=okDpjXJ2ueg" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="play" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="play" %}</div>
     <div class="ref-text">
       <span class="ref-title">Como viver bem a Quaresma</span>
       <span class="ref-source">Pe. Paulo Ricardo · YouTube</span>
     </div>
   </a>
   <a href="https://www.youtube.com/watch?v=q15tf6gg83M" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="play" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="play" %}</div>
     <div class="ref-text">
       <span class="ref-title">Plano de vida para todo católico em 2026</span>
       <span class="ref-source">Pe. Douglas Pinheiro · YouTube</span>
     </div>
   </a>
   <a href="https://www.youtube.com/watch?v=FRay_fToldY" target="_blank" rel="noopener noreferrer" class="ref-card">
-    <div class="ref-icon"><i data-lucide="play" class="w-5 h-5"></i></div>
+    <div class="ref-icon">{% include icon.html name="play" %}</div>
     <div class="ref-text">
       <span class="ref-title">Amor de Deus — Seminário de Vida no Espírito Santo</span>
       <span class="ref-source">Emmir Nogueira · YouTube</span>

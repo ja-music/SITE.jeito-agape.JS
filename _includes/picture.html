@@ -1,0 +1,37 @@
+{%- comment -%}
+  Imagem responsiva a partir do manifesto _data/images.json (gerado por `npm run images`).
+
+  {% include picture.html name="hero2" alt="…" sizes="(min-width: 64rem) 60rem, 100vw"
+       class="hero__img" priority=true %}
+
+  Parâmetros: name (chave do manifesto, obrigatório) · alt (obrigatório; "" se decorativa)
+  · sizes (padrão 100vw) · class (no <img>) · pictureclass (no <picture>) · priority=true
+  (loading=eager + fetchpriority=high) · loading (padrão lazy) · width/height (sobrescrevem
+  as dimensões da fonte) · fallback_src (caminho do original, usado só se a chave não existir).
+{%- endcomment -%}
+{%- assign img = site.data.images[include.name] -%}
+{%- assign sizes = include.sizes | default: "100vw" -%}
+{%- if include.alt == nil -%}
+<!-- picture.html: "alt" obrigatório para "{{ include.name }}" (use alt="" se decorativa) -->
+{%- endif -%}
+{%- if img -%}
+{%- assign prefix = "/assets/img/" | relative_url -%}
+{%- capture base -%}{{ prefix }}{{ include.name }}.{{ img.hash }}{%- endcapture -%}
+{%- capture avif -%}{%- for w in img.widths -%}{{ base }}-{{ w }}.avif {{ w }}w{%- unless forloop.last -%}, {% endunless -%}{%- endfor -%}{%- endcapture -%}
+{%- capture webp -%}{%- for w in img.widths -%}{{ base }}-{{ w }}.webp {{ w }}w{%- unless forloop.last -%}, {% endunless -%}{%- endfor -%}{%- endcapture -%}
+{%- capture fb -%}{%- for w in img.widths -%}{{ base }}-{{ w }}.{{ img.fallback }} {{ w }}w{%- unless forloop.last -%}, {% endunless -%}{%- endfor -%}{%- endcapture -%}
+{%- assign srcw = img.widths | first -%}
+{%- for w in img.widths -%}{%- if w <= 1200 -%}{%- assign srcw = w -%}{%- endif -%}{%- endfor -%}
+{%- assign width = include.width | default: img.w -%}
+{%- assign height = include.height | default: img.h -%}
+<picture{% if include.pictureclass %} class="{{ include.pictureclass }}"{% endif %}>
+  <source type="image/avif" srcset="{{ avif }}" sizes="{{ sizes }}">
+  <source type="image/webp" srcset="{{ webp }}" sizes="{{ sizes }}">
+  <img src="{{ base }}-{{ srcw }}.{{ img.fallback }}" srcset="{{ fb }}" sizes="{{ sizes }}" width="{{ width }}" height="{{ height }}" alt="{{ include.alt | escape }}" decoding="async"{% if include.priority %} loading="eager" fetchpriority="high"{% else %} loading="{{ include.loading | default: 'lazy' }}"{% endif %}{% if include.class %} class="{{ include.class }}"{% endif %}>
+</picture>
+{%- else -%}
+<!-- picture.html: no entry "{{ include.name }}" in _data/images.json — run npm run images -->
+{%- if include.fallback_src -%}
+<img src="{{ include.fallback_src | relative_url }}" alt="{{ include.alt | escape }}" decoding="async"{% if include.priority %} loading="eager" fetchpriority="high"{% else %} loading="{{ include.loading | default: 'lazy' }}"{% endif %}{% if include.width %} width="{{ include.width }}"{% endif %}{% if include.height %} height="{{ include.height }}"{% endif %}{% if include.class %} class="{{ include.class }}"{% endif %}>
+{%- endif -%}
+{%- endif -%}

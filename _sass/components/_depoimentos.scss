@@ -1,0 +1,50 @@
+// Depoimentos (CSS original; seção só aparece com dados)
+/* ---- Depoimentos (a seção só é renderizada se _data/depoimentos.yml tiver itens) ---- */
+.depo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.depo-card {
+  padding: 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  text-align: left;
+}
+
+.depo-card blockquote {
+  margin: 0 0 1.25rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  font-style: italic;
+}
+
+.depo-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.depo-author img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.depo-author .name {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.depo-author .meta {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+

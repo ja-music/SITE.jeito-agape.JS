@@ -1,0 +1,44 @@
+---
+permalink: /llms.txt
+sitemap: false
+---
+{%- assign org = site.data.org -%}{%- assign ct = site.data.contato -%}{%- assign alb = site.data.album -%}
+# {{ org.nome }}
+
+> {{ org.definicao }}
+
+Site oficial: {{ site.url }}/ · Idioma: pt-BR · Base: {{ org.cidade }}, {{ org.uf }}, Brasil · Atende: {{ org.area_atendida }}.
+
+## Sobre
+
+- Ministério de música católica (não é banda contratada): evangelização pela música desde {{ org.fundacao }}.
+- {{ org.integrantes }} integrantes · {{ org.missoes }} missões · {{ org.cidades }} cidades.
+- Álbum autoral: {{ alb.titulo }} ({{ alb.ano }}, {{ alb.faixas_total }} faixas, produção de {{ alb.produtor }}).
+- Série no YouTube: Incondicional Sessions (capítulo 1: "{{ site.data.incondicional[0].titulo }}").
+- Missa mensal: {{ org.missa_mensal.quando }}, {{ org.missa_mensal.local }}, {{ org.missa_mensal.cidade }} – {{ org.missa_mensal.uf }}.
+- Lema: "{{ org.versiculo }}" ({{ org.versiculo_ref }}).
+- Mais: [Quem somos]({{ "/sobre/" | absolute_url }})
+
+## Convites (o que o ministério faz em cada celebração)
+
+{% for s in site.servicos %}- [{{ s.title }}]({{ s.url | absolute_url }}): {{ s.intro }}
+{% endfor %}
+Como convidar: mensagem no WhatsApp {{ ct.whatsapp_internacional }} ({{ ct.whatsapp_exibicao }}) com o tipo de celebração, a cidade e a data. E-mail: {{ ct.email }}. [Contato]({{ "/contato/" | absolute_url }})
+
+## Música
+
+- {{ alb.titulo }} ({{ alb.ano }}): {% for pl in alb.plataformas %}{{ pl.nome }} {{ pl.url }}{% unless forloop.last %} · {% endunless %}{% endfor %}
+- YouTube: https://www.youtube.com/@jeitoagape · Instagram: https://www.instagram.com/jeitoagape · TikTok: https://www.tiktok.com/@jeitoagape
+
+## Agenda
+
+- [Agenda]({{ "/agenda/" | absolute_url }}) — só eventos públicos com data, local e horário confirmados.
+
+## Perguntas frequentes
+
+{% for q in site.data.faq %}- {{ q.pergunta }} {{ q.resposta | strip | newline_to_br | replace: "<br />", " " | replace: "  ", " " }}
+{% endfor %}
+## Blog
+
+{% for post in site.posts limit: 10 %}- [{{ post.title }}]({{ post.url | absolute_url }}) ({{ post.date | date: "%Y-%m-%d" }}): {{ post.description }}
+{% endfor %}
