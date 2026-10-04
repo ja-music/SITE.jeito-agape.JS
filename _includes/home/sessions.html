@@ -9,7 +9,7 @@
 
     <div class="sessions">
       {%- for s in site.data.incondicional %}
-      <button class="session-card" type="button" data-yt="{{ s.id }}" aria-label="Assistir {{ s.titulo }} — Incondicional Sessions, capítulo {{ s.capitulo }}">
+      <button class="session-card" type="button" data-yt="{{ s.id }}"{% if s.video %} data-video="{{ s.video }}"{% endif %} aria-label="Assistir {{ s.titulo }} — Incondicional Sessions, capítulo {{ s.capitulo }}">
         {%- if s.chave and site.data.images[s.chave] %}{% include picture.html name=s.chave alt="" sizes="16rem" %}{% else %}<img src="{{ s.capa }}" alt="" width="1080" height="1920" loading="lazy">{% endif %}
         <span class="session-play" aria-hidden="true"><span class="btn-play">{% include icon.html name="play" %}</span></span>
         <span class="session-meta"><span class="tit">{{ s.titulo }}</span><span class="cap">Capítulo {{ s.capitulo }}</span><span class="com">{{ s.autores }} · {{ s.com }}</span></span>
@@ -17,8 +17,10 @@
       {%- endfor %}
     </div>
 
-    <div class="text-center mt-8">
+    {%- assign ig = site.data.contato.redes | where: "icone", "instagram" | first %}
+    <div class="text-center mt-8 platform-links">
       <a href="https://www.youtube.com/@jeitoagape" target="_blank" rel="noopener noreferrer" class="platform-link">{% include icon.html name="youtube" %} Ver os capítulos no YouTube</a>
+      {%- if ig %}<a href="{{ ig.url }}" target="_blank" rel="noopener noreferrer" class="platform-link">{% include icon.html name="instagram" %} Ver no Instagram</a>{% endif %}
     </div>
   </div>
 </section>

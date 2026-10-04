@@ -26,8 +26,8 @@
   });
   // play nas Sessions (botão, não link)
   document.addEventListener('click', function (e) {
-    var b = e.target.closest && e.target.closest('.session-card[data-yt]');
-    if (b) gtag('event', 'sessions_play', { event_category: 'conteudo', video_id: b.getAttribute('data-yt'), page_path: pagina });
+    var b = e.target.closest && e.target.closest('.session-card[data-yt], .session-card[data-video]');
+    if (b) gtag('event', 'sessions_play', { event_category: 'conteudo', video_id: b.getAttribute('data-yt') || b.getAttribute('data-video'), page_path: pagina });
   });
   // chegou na agenda (seção da home ou página)
   var agenda = document.getElementById('agenda');
