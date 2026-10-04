@@ -4,7 +4,10 @@
 # video   = MP4 no R2 público: é o que o site toca (o player do YouTube bloqueia covers com
 #           reivindicação de direitos fora do youtube.com). Sem `video`, o site cai no embed do YouTube.
 # capa    = arte 1080×1920 (R2 público, mesma capa do Reel)
+# instagram = link do Reel deste capítulo (app do Instagram → compartilhar → copiar link). Com ele,
+#           o botão sob o vídeo leva ao post; sem ele, convida a seguir o perfil @jeitoagape.
 - id: NBmB7i5MffI
+  instagram: ""
   video: "https://pub-b07d240f6cf240969a26c85f8e6496f6.r2.dev/posts/is-001-espirito-poderoso-1080.mp4"
   titulo: "Espírito Poderoso"
   autores: "Ramon e Rafael"

@@ -18,9 +18,10 @@
     </div>
 
     {%- assign ig = site.data.contato.redes | where: "icone", "instagram" | first %}
+    {%- assign reel = site.data.incondicional | map: "instagram" | compact | first %}
     <div class="text-center mt-8 platform-links">
+      {%- if reel and reel != "" %}<a href="{{ reel }}" target="_blank" rel="noopener noreferrer" class="platform-link">{% include icon.html name="instagram" %} Ver este capítulo no Instagram</a>{% elsif ig %}<a href="{{ ig.url }}" target="_blank" rel="noopener noreferrer" class="platform-link">{% include icon.html name="instagram" %} Seguir {{ ig.handle }} no Instagram</a>{% endif %}
       <a href="https://www.youtube.com/@jeitoagape" target="_blank" rel="noopener noreferrer" class="platform-link">{% include icon.html name="youtube" %} Ver os capítulos no YouTube</a>
-      {%- if ig %}<a href="{{ ig.url }}" target="_blank" rel="noopener noreferrer" class="platform-link">{% include icon.html name="instagram" %} Ver no Instagram</a>{% endif %}
     </div>
   </div>
 </section>
