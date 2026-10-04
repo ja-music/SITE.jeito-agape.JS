@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Coração Ágape — traço vetorial aproximado do logo PNG (a aprovar pelo dono; substituir pelo vetor oficial quando houver) -->
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D8365A"/><stop offset="1" stop-color="#8E2039"/></linearGradient></defs>
-  <path fill="url(#g)" d="M31 55 C 20 44, 6 36, 6 22 C 6 13, 13 8, 20 9 C 25 10, 28 13, 30 17 C 33 12, 39 8, 46 8 C 54 8, 60 14, 60 22 C 60 28, 56 33, 52 36 C 49 38, 46 40, 44 43 C 41 48, 36 52, 31 55 Z"/>
-</svg>
