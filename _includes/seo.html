@@ -10,7 +10,7 @@
 <title>{{ titulo }}</title>
 <meta name="description" content="{{ desc | escape }}">
 <link rel="canonical" href="{{ url }}">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="robots" content="{% if page.noindex %}noindex, nofollow{% else %}index, follow, max-image-preview:large{% endif %}">
 <meta property="og:type" content="{% if schema == 'article' %}article{% else %}website{% endif %}">
 <meta property="og:url" content="{{ url }}">
 <meta property="og:title" content="{{ page.title | default: org.nome | escape }}">
