@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{%- include wa-vars.html -%}
+{%- include wa-vars.html -%}{%- include faq-vars.html -%}
 {%- assign palavras = content | number_of_words -%}
 {%- assign minutos = palavras | divided_by: 200 -%}{%- if minutos < 1 -%}{%- assign minutos = 1 -%}{%- endif -%}
 {%- assign chave = page.image | remove: "/assets/" | split: "." | first | replace: "/", "-" -%}
@@ -27,6 +27,13 @@ layout: default
     <div class="post-content">
       {{ content }}
     </div>
+
+    {%- if faq_items.size > 0 %}
+    <section class="post-faq" aria-labelledby="faq-t" style="max-width: 720px; margin: 2.5rem auto 0;">
+      <h2 id="faq-t">Perguntas frequentes</h2>
+      {% include faq.html %}
+    </section>
+    {%- endif %}
 
     <div class="post-footer" style="max-width: 720px; margin: 2rem auto 0;">
       <a href="/blog/" class="back-link">{% include icon.html name="arrow-left" %} Todos os artigos</a>
