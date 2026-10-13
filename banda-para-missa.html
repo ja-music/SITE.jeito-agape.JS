@@ -1,0 +1,23 @@
+---
+# A página da Missa saiu em 2026-10-13 (o ministério é focado em eventos). O endereço antigo
+# continua vivo e leva à página de show de evangelização — o GitHub Pages não faz redirect no
+# servidor, então é o mesmo HTML que o jekyll-redirect-from geraria. Fora do sitemap.
+permalink: /banda-para-missa/
+layout: null
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Show de evangelização | {{ site.data.org.nome }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{{ site.url }}/show-de-evangelizacao/">
+<meta http-equiv="refresh" content="0; url={{ site.url }}/show-de-evangelizacao/">
+<script>location.replace("/show-de-evangelizacao/" + location.hash);</script>
+</head>
+<body>
+<p>Esta página mudou de endereço: <a href="/show-de-evangelizacao/">show de evangelização do {{ site.data.org.nome }}</a>.</p>
+</body>
+</html>

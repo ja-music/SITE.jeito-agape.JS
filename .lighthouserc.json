@@ -2,7 +2,7 @@
   "ci": {
     "collect": {
       "staticDistDir": "./_site",
-      "url": ["http://localhost/", "http://localhost/banda-para-missa/", "http://localhost/blog/"],
+      "url": ["http://localhost/", "http://localhost/show-de-evangelizacao/", "http://localhost/blog/"],
       "numberOfRuns": 2,
       "settings": {
         "formFactor": "mobile",

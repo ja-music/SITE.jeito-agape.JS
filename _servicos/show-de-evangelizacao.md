@@ -1,22 +1,22 @@
 ---
-title: "Banda Católica para Eventos e Shows"
+title: "Show de evangelização para o seu evento"
 h1: "Show de evangelização para o seu evento"
 description: "O Jeito Ágape leva um show de evangelização de cerca de 1h10 a eventos paroquiais, diocesanos e municipais e grupos de oração. Convide-nos pelo WhatsApp."
 intro: "Cerca de 1h10 de música, palavra e oração para eventos paroquiais, diocesanos e municipais, grupos de oração e pregações. Convide-nos contando a cidade e a data."
 service_type: "Show de evangelização"
-order: 4
+order: 1
 icon: mic
 faq: [duracao, som-estrutura, tipos-de-evento, convite]
 related_posts: [como-organizar-festa-do-padroeiro]
 whatsapp_text: "Olá! Gostaria de convidar o Jeito Ágape para um show de evangelização. Cidade e data:"
 permalink: /show-de-evangelizacao/
-short: "Shows"
+short: "Shows de evangelização"
 resumo: "Cerca de 1h10 de música, palavra e oração, na praça, no salão ou no palco do evento."
 cta: "Convide-nos para o evento"
 para: "o evento"
 ---
 
-O Jeito Ágape é um ministério de música católica de Belo Horizonte (MG) que leva shows de evangelização a eventos paroquiais, diocesanos e municipais, grupos de oração, ministrações e pregações em toda Minas desde 2010. Quem procura uma banda católica para eventos encontra aqui um ministério com mais de 500 missões em mais de 100 cidades, um álbum autoral e oração antes de cada palco. Para convidar, mande a cidade e a data no WhatsApp.
+O Jeito Ágape é um ministério de música católica de Belo Horizonte (MG) que leva shows de evangelização a eventos paroquiais, diocesanos e municipais, grupos de oração, ministrações e pregações em toda Minas desde 2010. São mais de 500 missões em mais de 100 cidades, um álbum autoral e oração antes de cada palco. Para convidar, mande a cidade e a data no WhatsApp.
 
 ## Como é um show de evangelização do Jeito Ágape
 
