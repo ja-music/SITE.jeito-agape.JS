@@ -164,7 +164,7 @@ missão, o álbum autoral *Confiar* e a série *Incondicional Sessions* no YouTu
 domingo, às 19h, animamos a Santa Missa na Igreja Nossa Senhora de Lourdes, em Contagem; é
 aberta a todos e é o jeito mais simples de nos conhecer de perto.
 
-Servimos [Missas](/banda-para-missa/), [festas de padroeiro](/banda-para-festa-de-padroeiro/),
-[retiros e EJCs](/banda-para-retiro/) e [shows de evangelização](/show-de-evangelizacao/).
+Servimos [shows de evangelização](/show-de-evangelizacao/), [festas de padroeiro](/banda-para-festa-de-padroeiro/)
+e [retiros e EJCs](/banda-para-retiro/).
 Para convidar, basta uma mensagem no WhatsApp com o tipo da celebração, a cidade e a data.
 [Fale com a gente](/contato/).

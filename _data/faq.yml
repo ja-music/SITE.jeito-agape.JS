@@ -10,7 +10,7 @@
   home: true
   pergunta: "Como funciona o convite?"
   resposta: >-
-    Pelo WhatsApp. Diga se é Missa, festa, retiro ou show, a cidade e a data; a gente verifica a agenda e
+    Pelo WhatsApp. Diga se é show, festa, retiro ou encontro, a cidade e a data; a gente verifica a agenda e
     alinha os detalhes antes de confirmar. São mais de 500 missões em mais de 100 cidades,
     sempre como missão.
 
@@ -33,8 +33,8 @@
   home: true
   pergunta: "Quanto tempo dura a apresentação?"
   resposta: >-
-    Um show dura cerca de 1h10. Na Missa, a música acompanha o ritmo da celebração; em retiros
-    e encontros, seguimos a programação da equipe.
+    Um show dura cerca de 1h10. Em festas, retiros e encontros, seguimos a programação da
+    equipe.
 
 - id: outras-cidades
   home: true
@@ -55,8 +55,8 @@
   home: true
   pergunta: "Que tipos de evento vocês atendem?"
   resposta: >-
-    Missas, novenas e festas de padroeiro, retiros, EJC, shows de evangelização, grupos de
-    oração, ministrações, pregações e eventos diocesanos e municipais.
+    Shows de evangelização, festas de padroeiro e novenas, retiros, EJC, grupos de oração,
+    ministrações, pregações, eventos diocesanos e municipais, e as Missas dentro desses eventos.
 
 # ---------------------------------------------------------------------------
 # ⚠️ FALTA VOCÊ RESPONDER — não preenchi porque não sei a política real.
@@ -110,6 +110,6 @@
 - id: ministerio-como-convidar
   pergunta: "Como convidar um ministério de música para uma celebração?"
   resposta: >-
-    Informe o tipo da celebração (Missa, festa de padroeiro, retiro, EJC ou show), a cidade e
+    Informe o tipo do evento (show, festa de padroeiro, retiro, EJC ou Missa), a cidade e
     a data. Em geral, a sonorização, a estrutura e a acolhida ficam por conta de quem convida.
     O Jeito Ágape responde pelo WhatsApp (31) 99126-7983.

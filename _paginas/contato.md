@@ -1,8 +1,8 @@
 ---
 title: "Contato"
 h1: "Convide o Jeito Ágape para a sua paróquia"
-description: "Fale com o Jeito Ágape pelo WhatsApp (31) 99126-7983 ou por contato@jeitoagape.com.br. Conte o tipo de celebração, a cidade e a data. Convide-nos."
-intro: "O caminho mais rápido é o WhatsApp: diga se é Missa, festa, retiro ou show, a cidade, a data e o horário, e se há som no local. Respondemos por lá."
+description: "Fale com o Jeito Ágape pelo WhatsApp (31) 99126-7983 ou por contato@jeitoagape.com.br. Conte o tipo de evento, a cidade e a data. Convide-nos."
+intro: "O caminho mais rápido é o WhatsApp: diga se é show, festa, retiro ou encontro, a cidade, a data e o horário, e se há som no local. Respondemos por lá."
 schema: contact
 permalink: /contato/
 ---

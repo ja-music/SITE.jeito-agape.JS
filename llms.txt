@@ -19,11 +19,11 @@ Site oficial: {{ site.url }}/ · Idioma: pt-BR · Base: {{ org.cidade }}, {{ org
 - Lema: "{{ org.versiculo }}" ({{ org.versiculo_ref }}).
 - Mais: [Quem somos]({{ "/sobre/" | absolute_url }})
 
-## Convites (o que o ministério faz em cada celebração)
+## Convites (o que o ministério faz em cada evento)
 
 {% for s in site.servicos %}- [{{ s.title }}]({{ s.url | absolute_url }}): {{ s.intro }}
 {% endfor %}
-Como convidar: mensagem no WhatsApp {{ ct.whatsapp_internacional }} ({{ ct.whatsapp_exibicao }}) com o tipo de celebração, a cidade e a data. E-mail: {{ ct.email }}. [Contato]({{ "/contato/" | absolute_url }})
+Como convidar: mensagem no WhatsApp {{ ct.whatsapp_internacional }} ({{ ct.whatsapp_exibicao }}) com o tipo de evento, a cidade e a data. E-mail: {{ ct.email }}. [Contato]({{ "/contato/" | absolute_url }})
 
 ## Música
 

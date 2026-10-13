@@ -85,7 +85,7 @@ O que pedimos é o que está fora da nossa mão:
   organize com antecedência.
 - **Horários combinados.** Chegada, passagem de som e o momento em que a música entra.
 
-Chame a gente no WhatsApp contando se é Missa, festa, retiro ou show, a cidade e a data, que
+Chame a gente no WhatsApp contando se é show, festa, retiro ou encontro, a cidade e a data, que
 alinhamos tudo antes de confirmar.
 
 ## O cronograma que não falha

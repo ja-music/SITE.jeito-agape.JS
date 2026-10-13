@@ -1,5 +1,5 @@
 ---
-title: "Banda para Retiro e EJC"
+title: "Música para retiros, EJC e encontros de jovens"
 h1: "Música para retiros, EJC e encontros de jovens"
 description: "Louvor, adoração e ministração para retiros, EJC, crisma e acampamentos católicos em Minas. O Jeito Ágape serve desde 2010. Convide-nos pelo WhatsApp."
 intro: "Louvor, adoração e ministração no ritmo do retiro, e animação com linguagem jovem no EJC, sempre seguindo a programação da equipe. Convide-nos com antecedência."
@@ -16,7 +16,7 @@ cta: "Convide-nos para o retiro"
 para: "o retiro ou EJC"
 ---
 
-O Jeito Ágape é um ministério de música católica de Belo Horizonte (MG) que serve retiros, EJC, encontros de jovens, crisma e acampamentos católicos em toda Minas desde 2010, com louvor, adoração e ministração. Quem procura uma banda para retiro ou para EJC encontra aqui um ministério que já viveu esses encontros por dentro, em mais de 500 missões. Para convidar, mande no WhatsApp a cidade e a data do encontro, de preferência com meses de antecedência.
+O Jeito Ágape é um ministério de música católica de Belo Horizonte (MG) que serve retiros, EJC, encontros de jovens, crisma e acampamentos católicos em toda Minas desde 2010, com louvor, adoração e ministração. É um ministério que já viveu esses encontros por dentro, em mais de 500 missões. Para convidar, mande no WhatsApp a cidade e a data do encontro, de preferência com meses de antecedência.
 
 ## Como funciona a música num retiro
 

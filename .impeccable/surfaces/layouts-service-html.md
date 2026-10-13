@@ -5,9 +5,9 @@ primary_target: "_layouts/service.html"
 related_targets: ["_servicos","_sass/components/_pages.scss"]
 ---
 
-# Surface brief — Service pages (`/banda-para-missa/`, `/banda-para-festa-de-padroeiro/`, `/banda-para-retiro/`, `/show-de-evangelizacao/`)
+# Surface brief — Service pages (`/show-de-evangelizacao/`, `/banda-para-festa-de-padroeiro/`, `/banda-para-retiro/`; the Missa page left on 2026-10-13)
 
-Scope: the four intent pages rendered by `_layouts/service.html`. Visitor mode: **Persuade**. Status: **established world, refinement only** — these pages are new, but built strictly from the home's vocabulary (DESIGN.md).
+Scope: the three intent pages rendered by `_layouts/service.html`. Visitor mode: **Persuade**. Status: **established world, refinement only** — these pages are new, but built strictly from the home's vocabulary (DESIGN.md).
 
 Audience and job: an organizer who searched (or was sent) for one kind of celebration; must understand in one screen what the ministry does for that celebration and invite with the page-specific WhatsApp text. Proof: the facts in the body, the FAQ, related guides. Constraints: ≥ 300 unique words per page; the searcher's words only in `<title>`, H1 and the first paragraph; breadcrumb + `Service` JSON-LD; same world as the home.
 

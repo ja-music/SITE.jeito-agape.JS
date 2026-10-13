@@ -1,7 +1,7 @@
 # Jekyll Configuration — Jeito Ágape
 title: Jeito Ágape
 tagline: "Ministério de Música Católica"
-description: "Jeito Ágape, ministério de música católica de Belo Horizonte: desde 2010, mais de 500 missões em Missas, festas de padroeiro, retiros e shows. Convide-nos."
+description: "Jeito Ágape, ministério de música católica de Belo Horizonte: desde 2010, mais de 500 missões em shows de evangelização, festas de padroeiro, retiros e EJCs. Convide-nos."
 url: "https://jeitoagape.com.br"
 lang: pt-BR
 locale: pt_BR
@@ -34,7 +34,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-last-modified-at   # lastmod do sitemap vem do git (precisa de fetch-depth: 0 no CI)
 
-# Coleções: páginas de intenção (/banda-para-missa/ …) e páginas institucionais (/sobre/ …).
+# Coleções: páginas de intenção (/show-de-evangelizacao/ …) e páginas institucionais (/sobre/ …).
 # Uma lista só (site.servicos) alimenta home, menu, rodapé, llms.txt e os links entre irmãs.
 collections:
   servicos:
