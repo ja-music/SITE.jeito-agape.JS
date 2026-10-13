@@ -2,14 +2,15 @@
   "name": "site-jeito-agape",
   "private": true,
   "type": "module",
-  "description": "Pipeline Node do site da banda (Jekyll 4): imagens responsivas + validação de JSON-LD",
+  "description": "Pipeline Node do site da banda (Jekyll 4): agenda vinda do JAM + imagens responsivas + validação de JSON-LD",
   "engines": {
     "node": ">=22"
   },
   "scripts": {
     "images": "node scripts/images.mjs",
     "images:clean": "node scripts/images.mjs --clean",
-    "check:jsonld": "node scripts/check-jsonld.mjs _site"
+    "check:jsonld": "node scripts/check-jsonld.mjs _site",
+    "agenda": "node scripts/sync-agenda.mjs"
   },
   "devDependencies": {
     "pixelmatch": "^6.0.0",

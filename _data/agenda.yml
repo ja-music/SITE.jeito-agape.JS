@@ -1,7 +1,7 @@
-# Santa Missa mensal com o Jeito Ágape — todo 4º domingo, 19h, Igreja N. Sra. de Lourdes (Contagem).
-# ⚠️ REGRA DE SEO (24/07/2026): só entra evento PÚBLICO com data + local + horário reais —
-# "A confirmar" gera MusicEvent inválido no Google. O build só emite JSON-LD de evento FUTURO.
-# Campos: data (AAAA-MM-DD) · nome · local (nome do lugar) · endereco (rua, opcional) · cidade · uf · horario ("19h")
+# GERADO no CI por scripts/sync-agenda.mjs a partir do JAM (GET /api/public/agenda).
+# Não edite à mão: marque "Publicar na agenda do site" no evento, dentro do app.
+# Este arquivo commitado é o fallback quando a API está fora do ar no build.
+# Campos: data (AAAA-MM-DD) · nome · local · endereco (opcional) · cidade · uf · horario ("19h") · inicio ("19:00")
 - data: "2026-07-26"
   nome: "Santa Missa (4º domingo)"
   local: "Igreja Nossa Senhora de Lourdes"

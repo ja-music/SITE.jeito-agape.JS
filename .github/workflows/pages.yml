@@ -9,9 +9,10 @@ on:
   pull_request:
   workflow_dispatch:
   schedule:
-    # Segunda 06:00 (BRT). A agenda marca "passado" no build (site.time): sem
-    # rebuild periódico, um evento vencido continuaria listado como futuro.
-    - cron: '0 9 * * 1'
+    # Diário, 06:00 (BRT). A agenda marca "passado" no build (site.time) e vem do JAM
+    # (sync-agenda): sem rebuild periódico, um evento vencido continuaria listado como
+    # futuro e um evento novo só entraria quando o JAM disparasse o workflow.
+    - cron: '0 9 * * *'
 
 permissions:
   contents: read
@@ -39,6 +40,13 @@ jobs:
 
       - name: Instala dependências Node
         run: npm ci
+
+      # Agenda pública vem do JAM (o app dispara este workflow ao salvar evento marcado
+      # "Publicar na agenda do site"). API fora do ar → mantém o _data/agenda.yml commitado.
+      - name: Sincroniza agenda com o JAM
+        run: npm run agenda
+        env:
+          AGENDA_API_URL: ${{ vars.AGENDA_API_URL || 'https://api.jeitoagape.com.br/api/public/agenda' }}
 
       - name: Gera imagens responsivas
         run: npm run images
