@@ -24,6 +24,8 @@
 .grid--cards { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
 @media (min-width: 768px) { .grid--cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1024px) { .grid--cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* "Veja também" das páginas de serviço: são 2 irmãs desde que a página da Missa saiu (2026-10-13). */
+@media (min-width: 1024px) { .grid--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .grid--album { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start; }
 @media (min-width: 1024px) { .grid--album { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .grid--links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }

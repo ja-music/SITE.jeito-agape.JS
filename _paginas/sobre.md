@@ -23,7 +23,7 @@ Dezesseis anos depois, continuamos os mesmos nisso. O que mudou foi o tamanho da
   <dt>Integrantes</dt>
   <dd>7 no ministério completo; a formação se ajusta à celebração</dd>
   <dt>Missões</dt>
-  <dd>Mais de 500, em Missas, retiros, EJC, shows de evangelização, grupos de oração, ministrações, pregações, festas de padroeiro e eventos diocesanos e municipais</dd>
+  <dd>Mais de 500, em shows de evangelização, festas de padroeiro, retiros, EJC, grupos de oração, ministrações, pregações, eventos diocesanos e municipais e Missas</dd>
   <dt>Cidades</dt>
   <dd>Mais de 100, em Minas Gerais e no Brasil</dd>
   <dt>Álbum</dt>
@@ -38,7 +38,7 @@ Dezesseis anos depois, continuamos os mesmos nisso. O que mudou foi o tamanho da
 
 ## Oramos antes de cada palco
 
-Não somos músicos de ocasião reunidos para uma apresentação; somos uma comunidade de fé que toca. Antes de cada Missa, retiro ou show, paramos para rezar juntos, e é dali que a música sai.
+Não somos músicos de ocasião reunidos para uma apresentação; somos uma comunidade de fé que toca. Antes de cada show, retiro ou encontro, paramos para rezar juntos, e é dali que a música sai.
 
 Isso também define como servimos: a celebração é da comunidade que nos convida, e a música existe para ajudá-la a rezar.
 
@@ -56,10 +56,10 @@ No [YouTube](https://www.youtube.com/@jeitoagape), o quadro *Incondicional Sessi
 
 ## O blog e quem escreve
 
-Aqui no site também escrevemos. Beto Ferreira, estudante de Teologia, compositor e vocalista do ministério, assina a coluna de doutrina; Delliz Christine, integrante do Jeito Ágape, escreve sobre espiritualidade, fé, música e evangelização. Há textos de reflexão e também guias práticos para quem organiza celebrações, como [o guia da festa do padroeiro](/blog/2026/07/19/como-organizar-festa-do-padroeiro/) e [o que a comissão precisa organizar para a música ao vivo](/blog/2026/07/19/quanto-custa-banda-para-missa-festa-paroquial/). [Leia o blog](/blog/).
+Aqui no site também escrevemos. Beto Ferreira, estudante de Teologia, compositor e vocalista do ministério, assina a coluna de doutrina; Delliz Christine, integrante do Jeito Ágape, escreve sobre espiritualidade, fé, música e evangelização. Há textos de reflexão e também guias práticos para quem organiza celebrações, como [o guia da festa do padroeiro](/blog/2026/07/19/como-organizar-festa-do-padroeiro/) e [o que a comissão precisa organizar para a música ao vivo](/blog/2026/07/19/quanto-custa-banda-para-missa-festa-paroquial/), além de uma explicação sobre [o que é um ministério de música católica]({% post_url 2026-10-03-o-que-e-ministerio-de-musica-catolica %}). [Leia o blog](/blog/).
 
 ## A Missa de todo mês
 
 Todo 4º domingo, às 19h, animamos a Santa Missa na Igreja Nossa Senhora de Lourdes, em Contagem (MG). É aberta a todos, e é o jeito mais simples de nos conhecer de perto. As próximas datas estão na [agenda](/agenda/).
 
-Convide-nos para a sua [Missa](/banda-para-missa/), [festa do padroeiro](/banda-para-festa-de-padroeiro/), [retiro ou EJC](/banda-para-retiro/) ou [show de evangelização](/show-de-evangelizacao/). Mande uma mensagem no WhatsApp dizendo qual deles, a cidade e a data, e alinhamos tudo antes de confirmar. [Fale com a gente](/contato/).
+Convide-nos para o seu [show de evangelização](/show-de-evangelizacao/), a [festa do padroeiro](/banda-para-festa-de-padroeiro/) ou o [retiro ou EJC](/banda-para-retiro/). Mande uma mensagem no WhatsApp dizendo qual deles, a cidade e a data, e alinhamos tudo antes de confirmar. [Fale com a gente](/contato/).

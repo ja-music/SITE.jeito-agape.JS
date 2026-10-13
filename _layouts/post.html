@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{%- include wa-vars.html -%}
+{%- include wa-vars.html -%}{%- include faq-vars.html -%}
 {%- assign palavras = content | number_of_words -%}
 {%- assign minutos = palavras | divided_by: 200 -%}{%- if minutos < 1 -%}{%- assign minutos = 1 -%}{%- endif -%}
 {%- assign chave = page.image | remove: "/assets/" | split: "." | first | replace: "/", "-" -%}
@@ -28,6 +28,13 @@ layout: default
       {{ content }}
     </div>
 
+    {%- if faq_items.size > 0 %}
+    <section class="post-faq" aria-labelledby="faq-t" style="max-width: 720px; margin: 2.5rem auto 0;">
+      <h2 id="faq-t">Perguntas frequentes</h2>
+      {% include faq.html %}
+    </section>
+    {%- endif %}
+
     <div class="post-footer" style="max-width: 720px; margin: 2rem auto 0;">
       <a href="/blog/" class="back-link">{% include icon.html name="arrow-left" %} Todos os artigos</a>
       <div class="share-links">
@@ -45,7 +52,7 @@ layout: default
 
   <aside class="post-invite">
     <h2>Quer o Jeito Ágape na sua comunidade?</h2>
-    <p>Missas, festas de padroeiro, retiros, EJCs, grupos de oração e shows de evangelização. Diga se é Missa, festa, retiro ou show, a cidade e a data; a gente responde pelo WhatsApp.</p>
+    <p>Shows de evangelização, festas de padroeiro, retiros, EJCs e grupos de oração. Diga se é show, festa, retiro ou encontro, a cidade e a data; a gente responde pelo WhatsApp.</p>
     <div class="post-invite-actions">
       <a href="{{ wa_url_geral }}" target="_blank" rel="noopener noreferrer" class="post-invite-btn" data-track="post-fim">{% include icon.html name="whatsapp" %} Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a>
       <a href="/#servicos" class="post-invite-link">Ver como podemos servir a sua comunidade</a>

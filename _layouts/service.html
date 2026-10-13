@@ -51,7 +51,7 @@ layout: default
     <div class="wrap-5xl mx-auto">
       <h2 class="section-title" id="irm-t">Veja também</h2>
       <div class="accent-bar"></div>
-      <div class="grid--cards mt-8">
+      <div class="grid--cards grid--pair mt-8">
         {%- for s in site.servicos %}{% if s.url != page.url %}
         <a href="{{ s.url }}" class="card">
           <div class="card-icon">{% include icon.html name=s.icon %}</div>

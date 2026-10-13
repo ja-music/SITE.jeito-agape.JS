@@ -1,5 +1,5 @@
 ---
-title: "Banda para Festa de Padroeiro"
+title: "Música ao vivo para a festa do padroeiro"
 h1: "Música ao vivo para a festa do padroeiro"
 description: "Novena, Missa solene e show na praça: o Jeito Ágape anima festas de padroeiro e quermesses em Minas desde 2010. Convide-nos com meses de antecedência."
 intro: "Novena, Missa solene e show na praça: servimos uma parte ou a festa inteira. Convide-nos com alguns meses de antecedência, porque a data do padroeiro é fixa e os fins de semana fecham cedo."
@@ -16,7 +16,7 @@ cta: "Convide-nos para a festa"
 para: "a festa do padroeiro"
 ---
 
-O Jeito Ágape é um ministério de música católica de Belo Horizonte (MG) que anima festas de padroeiro em paróquias de toda Minas desde 2010: a novena, a Missa solene e o show de evangelização na praça ou no salão. Quem procura uma banda para festa de padroeiro ou quermesse encontra aqui um ministério que conhece o formato por dentro, em mais de 500 missões por mais de 100 cidades. Para convidar, mande a cidade e a data no WhatsApp com alguns meses de antecedência.
+O Jeito Ágape é um ministério de música católica de Belo Horizonte (MG) que anima festas de padroeiro em paróquias de toda Minas desde 2010: a novena, a Missa solene e o show de evangelização na praça ou no salão. Conhecemos a festa e a quermesse por dentro: são mais de 500 missões em mais de 100 cidades. Para convidar, mande a cidade e a data no WhatsApp com alguns meses de antecedência.
 
 ## A festa do padroeiro tem uma forma conhecida
 
@@ -32,7 +32,7 @@ A música de cada noite acompanha o tema que o pároco definiu e os cantos da ce
 
 ## A Missa solene do padroeiro
 
-Na Missa solene, a música segue a liturgia com reverência: cantos que a assembleia conhece, nos momentos próprios, alinhados antes com o celebrante e a equipe de liturgia. É a mesma forma que usamos em [qualquer Missa](/banda-para-missa/), com o cuidado a mais que o dia pede.
+Na Missa solene, a música segue a liturgia com reverência: cantos que a assembleia conhece, nos momentos próprios, alinhados antes com o celebrante e a equipe de liturgia. É o cuidado que o dia principal da festa pede.
 
 Se houver procissão, coroação ou outro momento próprio da devoção, conte para a gente na primeira conversa.
 
