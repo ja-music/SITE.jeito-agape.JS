@@ -5,8 +5,11 @@
  * Roda no CI antes do `jekyll build`. O coordenador marca "Publicar na agenda do site" no app,
  * e o JAM dispara este workflow; o site continua estático e o JSON-LD continua saindo do YAML.
  *
- * Regra de SEO do site (24/07/2026): só entra evento com data, horário, nome, local, cidade e UF.
+ * Regra de SEO do site (24/07/2026): evento futuro só entra com data, horário, nome, local, cidade e UF.
  * Item incompleto é descartado com aviso — "A confirmar" gera MusicEvent inválido no Google.
+ * Evento que já aconteceu entra sem cidade/UF (2026-10-13): o JAM publicou todos os passados de uma
+ * vez (migration V63) e eles são anteriores a esses campos; o site os mostra como "Realizada" só com
+ * o local, e o seo.html não gera MusicEvent para datas passadas.
  *
  * Se a API estiver fora do ar, o arquivo commitado fica como está e o build segue (exit 0):
  * agenda velha é melhor que site sem deploy.
@@ -38,8 +41,15 @@ export function horarioIso(startTime) {
   return `${hh}:${mm}`;
 }
 
-function completo(ev) {
-  return Boolean(ev.date && ev.startTime && ev.title && ev.venue && ev.city && ev.state);
+/** Hoje no fuso da banda, "AAAA-MM-DD" — o mesmo corte de passado/futuro que os templates usam. */
+export function hojeBrt(agora = new Date()) {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(agora);
+}
+
+export function completo(ev, hoje = hojeBrt()) {
+  const basico = Boolean(ev.date && ev.startTime && ev.title && ev.venue);
+  if (!basico) return false;
+  return ev.date < hoje || Boolean(ev.city && ev.state);
 }
 
 export function paraYaml(eventos) {
@@ -56,8 +66,8 @@ export function paraYaml(eventos) {
     linhas.push(`  nome: ${JSON.stringify(ev.title)}`);
     linhas.push(`  local: ${JSON.stringify(ev.venue)}`);
     if (ev.address) linhas.push(`  endereco: ${JSON.stringify(ev.address)}`);
-    linhas.push(`  cidade: ${JSON.stringify(ev.city)}`);
-    linhas.push(`  uf: ${JSON.stringify(ev.state)}`);
+    if (ev.city) linhas.push(`  cidade: ${JSON.stringify(ev.city)}`);
+    if (ev.state) linhas.push(`  uf: ${JSON.stringify(ev.state)}`);
     linhas.push(`  horario: ${JSON.stringify(horarioLegivel(ev.startTime))}`);
     linhas.push(`  inicio: ${JSON.stringify(horarioIso(ev.startTime))}`);
   }
@@ -81,10 +91,11 @@ async function main() {
     return;
   }
 
-  const validos = eventos.filter(completo);
+  const hoje = hojeBrt();
+  const validos = eventos.filter((ev) => completo(ev, hoje));
   const descartados = eventos.length - validos.length;
   if (descartados > 0) {
-    console.warn(`sync-agenda: ${descartados} evento(s) sem data/horário/local/cidade/UF descartado(s) (regra de SEO)`);
+    console.warn(`sync-agenda: ${descartados} evento(s) descartado(s): falta data/horário/nome/local, ou cidade/UF num evento futuro (regra de SEO)`);
   }
 
   await fs.writeFile(OUTPUT, paraYaml(validos), 'utf8');

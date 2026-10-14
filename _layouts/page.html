@@ -53,7 +53,7 @@ layout: default
         <div class="agenda-item past">
           <div class="agenda-date"><div class="day">{% include data-pt.html data=ev.data formato="dia" %}</div><div class="month">{% include data-pt.html data=ev.data formato="mes" %}</div></div>
           <div class="agenda-divider"></div>
-          <div class="agenda-info"><h3>{{ ev.nome }} <span class="agenda-status">Realizada</span></h3><div class="agenda-details"><span>{{ ev.horario }}</span><span class="dot">&middot;</span><span>{{ ev.local }}, {{ ev.cidade }} - {{ ev.uf }}</span></div></div>
+          <div class="agenda-info"><h3>{{ ev.nome }} <span class="agenda-status">Realizada</span></h3><div class="agenda-details"><span>{{ ev.horario }}</span><span class="dot">&middot;</span><span>{{ ev.local }}{% if ev.cidade %}, {{ ev.cidade }}{% if ev.uf %} - {{ ev.uf }}{% endif %}{% endif %}</span></div></div>
         </div>
         {%- endif %}{% endfor %}
       </div>
