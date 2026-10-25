@@ -135,7 +135,8 @@
       "mainEntityOfPage": { "@id": "{{ url }}#webpage" },
       "articleSection": {{ page.category | default: "Blog" | jsonify }},
       "wordCount": {{ content | strip_html | number_of_words }},
-      "inLanguage": "pt-BR"
+      "inLanguage": "pt-BR"{% if page.musicas.size > 0 %},
+      "about": [{% for m in page.musicas %}{% unless forloop.first %}, {% endunless %}{ "@id": "{{ url }}#musica-{{ m.titulo | slugify: 'latin' }}" }{% endfor %}]{% endif %}
     }
     {%- if autor -%},
     {
@@ -148,6 +149,38 @@
       "memberOf": { "@id": "{{ site.url }}/#musicgroup" }
     }
     {%- endif -%}
+    {%- for m in page.musicas -%}
+    {%- assign m_autor = m.autor | default: "" | strip -%}{%- assign m_int = m.interprete | default: "" | strip -%}{%- assign m_album = m.album | default: "" | strip -%}
+    {%- assign m_links = "" | split: "" -%}
+    {%- assign m_yt = m.youtube | default: "" | strip -%}{%- if m_yt != "" -%}{%- assign m_links = m_links | push: m_yt -%}{%- endif -%}
+    {%- assign m_sp = m.spotify | default: "" | strip -%}{%- if m_sp != "" -%}{%- assign m_links = m_links | push: m_sp -%}{%- endif -%},
+    {
+      "@type": "MusicComposition",
+      "@id": "{{ url }}#musica-{{ m.titulo | slugify: 'latin' }}",
+      "name": {{ m.titulo | jsonify }},
+      "inLanguage": "pt-BR"
+      {%- if m_autor != "" -%},
+      "composer": {% if m_autor == org.nome %}{ "@id": "{{ site.url }}/#musicgroup" }{% else %}{ "@type": "Person", "name": {{ m_autor | jsonify }} }{% endif %}
+      {%- endif -%}
+      {%- if m.autoral or m_int != "" or m_links.size > 0 -%},
+      "recordedAs": {
+        "@type": "MusicRecording",
+        "name": {{ m.titulo | jsonify }}
+        {%- if m.autoral -%},
+        "byArtist": { "@id": "{{ site.url }}/#musicgroup" }
+        {%- elsif m_int != "" -%},
+        "byArtist": { "@type": "MusicGroup", "name": {{ m_int | jsonify }} }
+        {%- endif -%}
+        {%- if m_album != "" and m_album == alb.titulo -%},
+        "inAlbum": { "@id": "{{ site.url }}/#album" }
+        {%- endif -%}
+        {%- if m_links.size > 0 -%},
+        "sameAs": {{ m_links | jsonify }}
+        {%- endif %}
+      }
+      {%- endif %}
+    }
+    {%- endfor -%}
     {%- endif -%}
     {%- if schema == "collection" -%}
     {%- if page.categoria -%}{%- assign blog_posts = site.posts | where: "category", page.categoria -%}{%- else -%}{%- assign blog_posts = site.posts -%}{%- endif -%},

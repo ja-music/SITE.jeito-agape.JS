@@ -1,0 +1,30 @@
+{%- comment -%}
+Ficha da(s) canção(ões) de um post (front matter `musicas:`), entre o cabeçalho e o texto, na coluna de leitura.
+Um cartão por canção; campo vazio ou ausente não aparece (sobretudo `autor`: sem certeza, omita o campo).
+Os links "Ouvir" levam data-track="ficha" (track.js classifica youtube_click / spotify_click pelo host).
+Os mesmos dados viram MusicComposition + MusicRecording no JSON-LD (_includes/seo.html).
+{%- endcomment -%}
+{%- if page.musicas and page.musicas.size > 0 %}
+<section class="ficha-musica" aria-labelledby="ficha-t">
+  <h2 id="ficha-t" class="ficha-rotulo">{% if page.musicas.size > 1 %}Ficha das canções{% else %}Ficha da canção{% endif %}</h2>
+  <ul class="ficha-lista">
+    {%- for m in page.musicas %}
+    {%- assign m_autor = m.autor | default: "" | strip %}{% assign m_int = m.interprete | default: "" | strip %}{% assign m_grav = m.gravacao | default: "" | strip %}{% assign m_album = m.album | default: "" | strip %}
+    {%- assign m_tom = m.tom | default: "" | strip %}{% assign m_tom_or = m.tom_original | default: "" | strip %}{% assign m_bpm = m.bpm | default: "" %}{% assign m_yt = m.youtube | default: "" | strip %}{% assign m_sp = m.spotify | default: "" | strip %}
+    <li class="ficha-card">
+      <h3>{{ m.titulo }}</h3>
+      {%- if m_autor != "" %}<p>de {{ m_autor }}</p>{% endif %}
+      {%- if m_int != "" %}<p>Gravação de referência: {{ m_int }}{% if m_grav != "" %} — {{ m_grav }}{% endif %}</p>{% endif %}
+      {%- if m_album != "" %}<p>Álbum {% if m_album == site.data.album.titulo %}<a href="/#album">{{ m_album }}</a>{% else %}{{ m_album }}{% endif %}</p>{% endif %}
+      {%- if m_tom != "" or m_bpm != "" %}<p class="ficha-tom">{% if m_tom != "" %}Tom {{ m_tom }}{% if m_tom_or != "" and m_tom_or != m_tom %} (original {{ m_tom_or }}){% endif %}{% endif %}{% if m_tom != "" and m_bpm != "" %} · {% endif %}{% if m_bpm != "" %}{{ m_bpm }} BPM{% endif %}</p>{% endif %}
+      {%- if m_yt != "" or m_sp != "" %}
+      <p class="ficha-ouvir">
+        {%- if m_yt != "" %}<a href="{{ m_yt }}" target="_blank" rel="noopener noreferrer" class="platform-link" data-track="ficha">{% include icon.html name="youtube" %} Ouvir no YouTube<span class="sr-only">: {{ m.titulo }} (abre em nova aba)</span></a>{% endif %}
+        {%- if m_sp != "" %}<a href="{{ m_sp }}" target="_blank" rel="noopener noreferrer" class="platform-link" data-track="ficha">{% include icon.html name="spotify" %} Ouvir no Spotify<span class="sr-only">: {{ m.titulo }} (abre em nova aba)</span></a>{% endif %}
+      </p>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
