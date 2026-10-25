@@ -1,8 +1,9 @@
 // Player só entra no clique. Com data-video toca o MP4 do R2 no <video> nativo (o embed do YouTube
 // bloqueia covers com reivindicação de direitos fora do youtube.com); sem ele, cai no youtube-nocookie.
+// Vale para os cartões das Sessions (home, 9:16) e para o vídeo dos posts (.post-video-btn, 16:9).
 // O cartão é um <button>: Enter e espaço já funcionam.
 (function () {
-  document.querySelectorAll('.session-card[data-yt], .session-card[data-video]').forEach(function (card) {
+  document.querySelectorAll('.session-card[data-yt], .session-card[data-video], .post-video-btn[data-yt], .post-video-btn[data-video]').forEach(function (card) {
     card.addEventListener('click', function () {
       if (card.getAttribute('data-tocando')) return;
       card.setAttribute('data-tocando', '1');

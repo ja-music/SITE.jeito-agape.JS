@@ -1,0 +1,20 @@
+{%- comment -%}
+Vídeo do post (front matter `video:` → youtube, mp4, capa, titulo), 16:9, na coluna de leitura.
+O player só entra no clique (_includes/js/lite-yt.js): com mp4 (bucket público do R2) toca no <video> nativo,
+como as Sessions; sem ele, youtube-nocookie. Nenhuma requisição de terceiros antes do clique.
+Capa: video.capa ou, sem ela, a capa do post (picture.html quando a chave existe em _data/images.json).
+{%- endcomment -%}
+{%- assign v_yt = page.video.youtube | default: "" | strip -%}
+{%- assign v_mp4 = page.video.mp4 | default: "" | strip -%}
+{%- if v_yt != "" or v_mp4 != "" %}
+{%- assign v_tit = page.video.titulo | default: page.title -%}
+{%- assign v_capa = page.video.capa | default: page.image | default: "" | strip -%}
+{%- assign v_chave = v_capa | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
+<figure class="post-video">
+  <button class="post-video-btn" type="button"{% if v_yt != "" %} data-yt="{{ v_yt }}"{% endif %}{% if v_mp4 != "" %} data-video="{{ v_mp4 }}"{% endif %} aria-label="Assistir ao vídeo: {{ v_tit | escape }}">
+    {%- if v_chave != "" and site.data.images[v_chave] %}{% include picture.html name=v_chave alt="" sizes="(min-width: 44rem) 42rem, calc(100vw - 2rem)" %}{% elsif v_capa != "" %}<img src="{{ v_capa }}" alt="" width="1200" height="675" loading="lazy" decoding="async">{% endif %}
+    <span class="post-video-play" aria-hidden="true"><span class="btn-play">{% include icon.html name="play" %}</span></span>
+  </button>
+  <figcaption>{{ v_tit }}</figcaption>
+</figure>
+{%- endif %}

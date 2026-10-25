@@ -1,5 +1,5 @@
 // Medição: cliques de contato (WhatsApp/e-mail) com posição e página, cliques em redes/streaming,
-// play nas Sessions, download de wallpaper, chegada na agenda. Enfileira no dataLayer antes do gtag chegar.
+// play nas Sessions e no vídeo dos posts, download de wallpaper, chegada na agenda. Enfileira no dataLayer antes do gtag chegar.
 (function () {
   window.dataLayer = window.dataLayer || [];
   if (typeof window.gtag !== 'function') window.gtag = function () { window.dataLayer.push(arguments); };
@@ -24,11 +24,14 @@
     else if (a.hasAttribute('download')) gtag('event', 'wallpaper_download', Object.assign({ event_category: 'conteudo' }, p));
     else if (/^https?:\/\//.test(href) && href.indexOf(location.host) === -1) gtag('event', 'outbound_click', Object.assign({ event_category: 'outbound' }, p));
   });
-  // play nas Sessions (botão, não link)
+  // play nas Sessions (home → sessions_play) e no vídeo dos posts (→ video_play): botões, não links.
+  // Na fase de captura: o lite-yt troca o conteúdo do botão no mesmo clique e, na bolha, o alvo
+  // (capa, ícone) já saiu do documento — o closest() não achava o botão e o clique de mouse se perdia.
   document.addEventListener('click', function (e) {
-    var b = e.target.closest && e.target.closest('.session-card[data-yt], .session-card[data-video]');
-    if (b) gtag('event', 'sessions_play', { event_category: 'conteudo', video_id: b.getAttribute('data-yt') || b.getAttribute('data-video'), page_path: pagina });
-  });
+    var b = e.target.closest && e.target.closest('.session-card[data-yt], .session-card[data-video], .post-video-btn[data-yt], .post-video-btn[data-video]');
+    if (!b || b.getAttribute('data-tocando')) return; // cliques no player já aberto não contam
+    gtag('event', b.classList.contains('post-video-btn') ? 'video_play' : 'sessions_play', { event_category: 'conteudo', video_id: b.getAttribute('data-yt') || b.getAttribute('data-video'), page_path: pagina });
+  }, true);
   // chegou na agenda (seção da home ou página)
   var agenda = document.getElementById('agenda');
   if (agenda && 'IntersectionObserver' in window) {

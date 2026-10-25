@@ -342,6 +342,19 @@ font-weight: 400;
   .ficha-ouvir .platform-link { position: relative; }
   .ficha-ouvir .platform-link::before { content: ""; position: absolute; inset: -4px; } // alvo de 44px
 
+  /* ---- Vídeo do post (front matter video:): 16:9, player só no clique (lite-yt.js) ---- */
+  .post-video { max-width: 42rem; margin: 0 auto 2.5rem; }
+  .post-video-btn { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); color: #fff; font: inherit; cursor: pointer; transition: border-color 0.25s; } // moldura de 16px; o cartão das Sessions é 9:16, não serve aqui
+  .post-video-btn:hover { border-color: var(--accent); }
+  .post-video-btn img, .post-video-btn iframe, .post-video-btn video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .post-video-btn img { object-fit: cover; }
+  .post-video-btn iframe, .post-video-btn video { background: #000; }
+  .post-video-btn video { object-fit: contain; } // um Reel 9:16 cabe inteiro na moldura 16:9
+  .post-video-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.3); }
+  .post-video-btn:hover .btn-play { transform: scale(1.1); box-shadow: 0 6px 24px rgba(197, 48, 80, 0.45); }
+  .post-video figcaption { margin-top: 0.6rem; color: var(--text-muted); font-size: 0.8rem; line-height: 1.5; }
+  @media (prefers-reduced-motion: reduce) { .post-video-btn:hover .btn-play { transform: none; } }
+
   /* ---- Convite no fim do artigo ---- */
   .post-invite {
 margin: 3.5rem 0 0;

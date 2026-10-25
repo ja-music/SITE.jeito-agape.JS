@@ -42,7 +42,8 @@
   justify-content: center;
   background: linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.45) 32%, rgba(0,0,0,0.05) 42%); // escuro só atrás da legenda (cobre a marca d'água), sem apagar o título da capa
 }
-.session-play .btn-play {
+.session-play .btn-play,
+.post-video-play .btn-play { // o mesmo botão de play no vídeo dos posts
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 9999px;
@@ -80,6 +81,6 @@
 }
 
 .session-card { padding: 0; color: #fff; text-align: left; font: inherit; } // agora é um <button>
-.session-play .btn-play svg { width: 1.5rem; height: 1.5rem; fill: #fff; }
+.session-play .btn-play svg, .post-video-play .btn-play svg { width: 1.5rem; height: 1.5rem; fill: #fff; }
 .sessions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 2.5rem; }
 .session-meta > span { display: block; }
