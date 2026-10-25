@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{%- comment -%}
+Página de uma categoria do blog (/blog/<slug>/). Front matter da página: categoria (nome como está nos
+posts, com acento), ordem (posição na fila de categorias), intro (frase que define a categoria).
+A lista é a mesma do índice (_includes/blog-lista.html), só com os posts da categoria.
+{%- endcomment -%}
+{%- assign posts_cat = site.posts | where: "category", page.categoria -%}
+<div class="blog-index wrap-4xl mx-auto px-4">
+
+  <div class="blog-hero">
+    <h1>{{ page.categoria }}</h1>
+    <div class="accent-bar"></div>
+    <p>{{ page.intro }}</p>
+    {% include blog-categorias.html %}
+  </div>
+
+  {% include blog-lista.html posts=posts_cat %}
+
+  {% include blog-assinar.html %}
+
+</div>
+
+<div style="padding-bottom: 4rem;"></div>

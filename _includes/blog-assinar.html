@@ -1,0 +1,14 @@
+{%- comment -%}Caixa "Receba nossos artigos" (e-mail via mailto: + RSS). No índice e nas páginas de categoria.{%- endcomment -%}
+  <div class="subscribe-section">
+    <h3>Receba nossos artigos</h3>
+    <p>Deixe seu e-mail e avisamos quando sair um artigo novo.</p>
+    <form class="subscribe-form" id="subscribeForm" data-email="{{ site.data.contato.email }}">
+      <label for="subscribeEmail" class="sr-only">Seu e-mail</label>
+      <input type="email" id="subscribeEmail" name="email" placeholder="nome@exemplo.com.br" autocomplete="email" required>
+      <button type="submit">Quero receber</button>
+    </form>
+    <div class="subscribe-alt">
+      <span>Ou acompanhe via</span>
+      <a href="/blog/feed.xml" target="_blank" rel="noopener noreferrer">{% include icon.html name="rss" %} RSS Feed</a>
+    </div>
+  </div>

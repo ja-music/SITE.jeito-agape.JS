@@ -1,0 +1,14 @@
+{%- comment -%}
+Fila de categorias do blog ("Todos" + uma etiqueta por categoria), no índice e nas páginas de categoria.
+As categorias vêm das páginas blog/<slug>.html (front matter `categoria` + `ordem`): uma categoria nova
+precisa da sua página para ganhar link. A ativa leva aria-current="page".
+{%- endcomment -%}
+{%- assign cats = site.pages | where_exp: "p", "p.categoria" | sort: "ordem" -%}
+<nav class="blog-cats" aria-label="Categorias do blog">
+  <ul>
+    <li><a href="/blog/" class="category-tag" data-cat="todos"{% if page.url == "/blog/" %} aria-current="page"{% endif %}>Todos</a></li>
+    {%- for c in cats %}
+    <li><a href="{{ c.url }}" class="category-tag" data-cat="{{ c.categoria | slugify: "latin" }}"{% if page.url == c.url %} aria-current="page"{% endif %}>{{ c.categoria }}</a></li>
+    {%- endfor %}
+  </ul>
+</nav>

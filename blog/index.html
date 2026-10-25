@@ -13,68 +13,12 @@ og_image: "/assets/blog/quaresma-og.png"
     <h1>Blog</h1>
     <div class="accent-bar"></div>
     <p>Novidades, reflexões e histórias do Jeito Ágape</p>
+    {% include blog-categorias.html %}
   </div>
 
-  {%- if site.posts.size > 0 %}
-  {%- assign featured = site.posts.first %}{% assign fk = featured.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
-  <a href="{{ featured.url }}" class="featured-card">
-    {%- if site.data.images[fk] %}{% include picture.html name=fk alt=featured.title class="featured-img" sizes="(min-width: 58rem) 54rem, calc(100vw - 2rem)" priority=true %}{% elsif featured.image %}<img src="{{ featured.image }}" alt=featured.title class="featured-img" fetchpriority="high" decoding="async" width="1200" height="675">{% endif %}
-    <div class="featured-body">
-      {%- if featured.category %}<span class="category-tag" data-cat="{{ featured.category | slugify: "latin" }}">{{ featured.category }}</span>{% endif %}
-      <h2>{{ featured.title }}</h2>
-      <p class="post-excerpt">{{ featured.excerpt | strip_html | truncatewords: 50 }}</p>
-      <div class="post-meta-row" style="margin-bottom: 1rem;">
-        <span>{% include data-pt.html data=featured.date formato="ponto" %}</span>
-        {%- if featured.author %}<span class="dot">&middot;</span><span>{{ featured.author }}</span>{% endif %}
-        {%- assign words = featured.content | number_of_words %}{% assign mins = words | divided_by: 200 %}{% if mins < 1 %}{% assign mins = 1 %}{% endif %}
-        <span class="dot">&middot;</span><span>{{ mins }} min de leitura</span>
-      </div>
-      <span class="read-more">Ler artigo {% include icon.html name="arrow-right" %}</span>
-    </div>
-  </a>
+  {% include blog-lista.html posts=site.posts %}
 
-  {%- if site.posts.size > 1 %}
-  <div class="section-label">Artigos anteriores</div>
-  <div class="post-grid">
-    {%- for post in site.posts offset:1 %}{% assign ck = post.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
-    {%- if post.image %}
-    <a href="{{ post.url }}" class="post-card">
-      {%- if site.data.images[ck] %}{% include picture.html name=ck alt=post.title class="post-card-img" sizes="(min-width: 641px) 140px, 100vw" %}{% else %}<img src="{{ post.image }}" alt=post.title class="post-card-img" loading="lazy" decoding="async" width="400" height="225">{% endif %}
-      <div class="post-card-body">
-        {%- if post.category %}<span class="category-tag" data-cat="{{ post.category | slugify: "latin" }}" style="margin-bottom: 0.5rem;">{{ post.category }}</span>{% endif %}
-        <h3>{{ post.title }}</h3>
-        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-        <span class="post-date">{% include data-pt.html data=post.date formato="ponto" %}</span>
-      </div>
-    </a>
-    {%- else %}
-    <a href="{{ post.url }}" class="post-card-noimg">
-      {%- if post.category %}<span class="category-tag" data-cat="{{ post.category | slugify: "latin" }}" style="margin-bottom: 0.5rem;">{{ post.category }}</span>{% endif %}
-      <h3>{{ post.title }}</h3>
-      <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
-      <span class="post-date">{% include data-pt.html data=post.date formato="ponto" %}</span>
-    </a>
-    {%- endif %}
-    {%- endfor %}
-  </div>
-  {%- endif %}
-  {%- else %}
-  <p class="no-posts">Nenhum post publicado ainda. Volte em breve!</p>
-  {%- endif %}
-
-  <div class="subscribe-section">
-    <h3>Receba nossos artigos</h3>
-    <p>Deixe seu e-mail e avisamos quando sair um artigo novo.</p>
-    <form class="subscribe-form" id="subscribeForm" data-email="{{ site.data.contato.email }}">
-      <label for="subscribeEmail" class="sr-only">Seu e-mail</label>
-      <input type="email" id="subscribeEmail" name="email" placeholder="nome@exemplo.com.br" autocomplete="email" required>
-      <button type="submit">Quero receber</button>
-    </form>
-    <div class="subscribe-alt">
-      <span>Ou acompanhe via</span>
-      <a href="/blog/feed.xml" target="_blank" rel="noopener noreferrer">{% include icon.html name="rss" %} RSS Feed</a>
-    </div>
-  </div>
+  {% include blog-assinar.html %}
 
   {%- if site.data.authors.size > 0 %}
   <div class="columnists-section">

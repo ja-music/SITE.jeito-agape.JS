@@ -44,5 +44,6 @@ Como convidar: mensagem no WhatsApp {{ ct.whatsapp_internacional }} ({{ ct.whats
 {% endfor %}
 ## Blog
 
-{% for post in site.posts limit: 10 %}- [{{ post.title }}]({{ post.url | absolute_url }}) ({{ post.date | date: "%Y-%m-%d" }}): {{ post.description }}
+{% assign cats = site.pages | where_exp: "p", "p.categoria" | sort: "ordem" %}{% for c in cats %}- [Blog › {{ c.categoria }}]({{ c.url | absolute_url }}): {{ c.intro }}
+{% endfor %}{% for post in site.posts limit: 10 %}- [{{ post.title }}]({{ post.url | absolute_url }}) ({{ post.date | date: "%Y-%m-%d" }}): {{ post.description }}
 {% endfor %}

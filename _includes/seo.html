@@ -1,7 +1,7 @@
 {%- assign org = site.data.org -%}{%- assign ct = site.data.contato -%}{%- assign alb = site.data.album -%}
 {%- assign schema = page.schema | default: "page" -%}
 {%- if schema == "home" -%}{%- assign titulo = org.nome | append: " | Ministério de Música Católica em BH" -%}{%- else -%}{%- assign titulo = page.title | append: " | " | append: org.nome -%}{%- endif -%}
-{%- assign desc = page.description | default: org.descricao_curta | strip -%}
+{%- assign desc = page.description | default: page.intro | default: org.descricao_curta | strip -%}
 {%- assign url = page.url | replace: "index.html", "" | absolute_url -%}
 {%- assign og_rel = page.og_image | default: page.image | default: "/assets/og-cover.jpg" -%}
 {%- assign og_img = og_rel | absolute_url -%}
@@ -99,6 +99,7 @@
         { "@type": "ListItem", "position": 1, "name": {{ org.nome | jsonify }}, "item": "{{ site.url }}/" }
         {%- if schema == "service" -%}, { "@type": "ListItem", "position": 2, "name": "Convide-nos", "item": "{{ site.url }}/#servicos" }, { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }
         {%- elsif schema == "article" -%}, { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ '/blog/' | absolute_url }}" }, { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }
+        {%- elsif page.categoria -%}, { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ '/blog/' | absolute_url }}" }, { "@type": "ListItem", "position": 3, "name": {{ page.categoria | jsonify }} }
         {%- else -%}, { "@type": "ListItem", "position": 2, "name": {{ page.title | jsonify }} }
         {%- endif %}
       ]
@@ -148,16 +149,17 @@
     }
     {%- endif -%}
     {%- endif -%}
-    {%- if schema == "collection" -%},
+    {%- if schema == "collection" -%}
+    {%- if page.categoria -%}{%- assign blog_posts = site.posts | where: "category", page.categoria -%}{%- else -%}{%- assign blog_posts = site.posts -%}{%- endif -%},
     {
       "@type": "Blog",
       "@id": "{{ url }}#blog",
-      "name": "Blog Jeito Ágape",
+      "name": {% if page.categoria %}{{ "Blog Jeito Ágape — " | append: page.categoria | jsonify }}{% else %}"Blog Jeito Ágape"{% endif %},
       "url": "{{ url }}",
       "inLanguage": "pt-BR",
       "publisher": { "@id": "{{ site.url }}/#musicgroup" },
       "blogPost": [
-        {%- for post in site.posts %}{% unless forloop.first %},{% endunless %}
+        {%- for post in blog_posts %}{% unless forloop.first %},{% endunless %}
         { "@type": "BlogPosting", "headline": {{ post.title | jsonify }}, "url": "{{ post.url | absolute_url }}", "datePublished": "{{ post.date | date_to_xmlschema }}", "image": "{{ post.og_image | default: post.image | default: '/assets/og-cover.jpg' | absolute_url }}", "author": { "@type": "Person", "name": {{ post.author | default: org.nome | jsonify }} } }
         {%- endfor %}
       ]
