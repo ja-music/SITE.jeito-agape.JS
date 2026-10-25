@@ -113,3 +113,29 @@
     Informe o tipo do evento (show, festa de padroeiro, retiro, EJC ou Missa), a cidade e
     a data. Em geral, a sonorização, a estrutura e a acolhida ficam por conta de quem convida.
     O Jeito Ágape responde pelo WhatsApp (31) 99126-7983.
+
+# ---- Música (blog). Sem `home:`: só aparecem nos posts que listam o id em `faq:`. ----
+# Respostas em "resposta primeiro": a primeira frase já responde; o resto explica.
+- id: musica-pout-pourri
+  pergunta: "O que é um pout-pourri?"
+  resposta: >-
+    Pout-pourri (do francês pot-pourri) é uma sequência de canções emendadas sem pausa, tocada
+    como se fosse uma música só. No repertório de show ele mantém a assembleia cantando e leva a
+    energia de um ponto a outro sem quebrar. A emenda pode manter ou mudar o tom e o andamento,
+    e é ela que pede mais ensaio.
+
+- id: musica-mudar-tom
+  pergunta: "Por que mudar o tom de uma música?"
+  resposta: >-
+    Para caber na voz de quem canta e para emendar com a canção vizinha sem degrau. Mudar o tom
+    não altera a melodia nem a letra: todas as notas sobem ou descem o mesmo tanto. No pout-pourri
+    Templo Vivo, Seja Elevado e Dança de Avivamento, o Seja Elevado desceu três semitons, de Fá
+    para Ré, para as três ficarem em Ré maior.
+
+- id: musica-click
+  pergunta: "O que é o click no ensaio?"
+  resposta: >-
+    Click, ou metrônomo, é a batida de referência que marca o andamento. Na nossa versão de
+    estudo o tempo 1 de cada compasso é acentuado, para todo mundo saber onde o compasso começa.
+    Ensaiar com click faz o grupo inteiro tocar no mesmo andamento e a emenda entre canções sair
+    igual em todo ensaio e no show.
