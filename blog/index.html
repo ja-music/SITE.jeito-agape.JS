@@ -20,7 +20,7 @@ og_image: "/assets/blog/quaresma-og.png"
   <a href="{{ featured.url }}" class="featured-card">
     {%- if site.data.images[fk] %}{% include picture.html name=fk alt=featured.title class="featured-img" sizes="(min-width: 58rem) 54rem, calc(100vw - 2rem)" priority=true %}{% elsif featured.image %}<img src="{{ featured.image }}" alt=featured.title class="featured-img" fetchpriority="high" decoding="async" width="1200" height="675">{% endif %}
     <div class="featured-body">
-      {%- if featured.category %}<span class="category-tag" data-cat="{{ featured.category | slugify }}">{{ featured.category }}</span>{% endif %}
+      {%- if featured.category %}<span class="category-tag" data-cat="{{ featured.category | slugify: "latin" }}">{{ featured.category }}</span>{% endif %}
       <h2>{{ featured.title }}</h2>
       <p class="post-excerpt">{{ featured.excerpt | strip_html | truncatewords: 50 }}</p>
       <div class="post-meta-row" style="margin-bottom: 1rem;">
@@ -41,7 +41,7 @@ og_image: "/assets/blog/quaresma-og.png"
     <a href="{{ post.url }}" class="post-card">
       {%- if site.data.images[ck] %}{% include picture.html name=ck alt=post.title class="post-card-img" sizes="(min-width: 641px) 140px, 100vw" %}{% else %}<img src="{{ post.image }}" alt=post.title class="post-card-img" loading="lazy" decoding="async" width="400" height="225">{% endif %}
       <div class="post-card-body">
-        {%- if post.category %}<span class="category-tag" data-cat="{{ post.category | slugify }}" style="margin-bottom: 0.5rem;">{{ post.category }}</span>{% endif %}
+        {%- if post.category %}<span class="category-tag" data-cat="{{ post.category | slugify: "latin" }}" style="margin-bottom: 0.5rem;">{{ post.category }}</span>{% endif %}
         <h3>{{ post.title }}</h3>
         <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
         <span class="post-date">{% include data-pt.html data=post.date formato="ponto" %}</span>
@@ -49,7 +49,7 @@ og_image: "/assets/blog/quaresma-og.png"
     </a>
     {%- else %}
     <a href="{{ post.url }}" class="post-card-noimg">
-      {%- if post.category %}<span class="category-tag" data-cat="{{ post.category | slugify }}" style="margin-bottom: 0.5rem;">{{ post.category }}</span>{% endif %}
+      {%- if post.category %}<span class="category-tag" data-cat="{{ post.category | slugify: "latin" }}" style="margin-bottom: 0.5rem;">{{ post.category }}</span>{% endif %}
       <h3>{{ post.title }}</h3>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
       <span class="post-date">{% include data-pt.html data=post.date formato="ponto" %}</span>
