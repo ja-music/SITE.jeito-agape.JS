@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Como montamos o pout-pourri Templo Vivo, Seja Elevado e Dança de Avivamento"
-date: 2026-10-25 18:00:00 -0300
+date: 2026-10-25 00:30:00 -0300
 author: "Beto Ferreira"
 category: "Música"
 image: "/assets/hero2.png"
@@ -31,10 +31,10 @@ musicas:
     tom: "D"
     bpm: 160
     youtube: "https://www.youtube.com/watch?v=SMxh1zDi4ic"
-video:
-  youtube: "rp3pv94cuns"
-  titulo: "Templo Vivo — Diego Fernandes, Ano 10 (ao vivo)"
-  # DONO: quando houver um Reel ou corte nosso deste pout-pourri no R2 público, troque por mp4: "https://pub-…r2.dev/posts/…mp4"
+# video: — DONO: quando houver um Reel ou corte NOSSO deste pout-pourri no R2 público, acrescente
+#   video: { mp4: "https://pub-….r2.dev/posts/….mp4", capa: "/assets/blog/….jpg", titulo: "…" }
+#   (sem `capa`, o poster repete a foto da capa do post logo abaixo dela). A gravação de referência
+#   do Diego Fernandes já está linkada na ficha.
 ---
 
 Um pout-pourri é uma sequência de canções emendadas sem parar, tocada como se fosse uma música só.
@@ -45,9 +45,9 @@ sobre a fé que está por trás dela.
 
 ## Por que essas três
 
-<!-- DONO: aqui entra o seu testemunho (2 ou 3 parágrafos): por que essas três canções, o que elas
+{% comment %}DONO: aqui entra o seu testemunho (2 ou 3 parágrafos): por que essas três canções, o que elas
 dizem juntas, em que momento do show elas entram e o que você espera que aconteça na assembleia
-quando a Dança chega. Sem isso o texto fica técnico demais. -->
+quando a Dança chega. Sem isso o texto fica técnico demais.{% endcomment %}
 
 As três canções não são nossas. Aprendemos com as gravações de **Diego Fernandes** (Templo Vivo e
 Dança de Avivamento) e do **Colo de Deus** (Seja Elevado), que estão linkadas na ficha acima. Quando
@@ -64,8 +64,8 @@ Mudar o tom não mexe na melodia nem na letra: todas as notas descem o mesmo tan
 onde a voz trabalha. Em Ré, o refrão do Seja Elevado cai numa região confortável para as nossas
 vozes, e o violão e o teclado passam de uma canção para a outra sem trocar de posição.
 
-<!-- DONO: confirmar se o motivo da escolha de Ré foi só a emenda ou também a voz de quem canta
-o Seja Elevado. -->
+{% comment %}DONO: confirmar se o motivo da escolha de Ré foi só a emenda ou também a voz de quem canta
+o Seja Elevado.{% endcomment %}
 
 ## Três andamentos que só sobem
 
@@ -106,20 +106,20 @@ baixo, instrumentos, um click e uma guia falada.
 - A **guia falada** anuncia cada seção um compasso antes de ela chegar: "primeira", "todos",
   "refrão", "interlúdio", "final". Ninguém precisa decorar o roteiro antes de tocar.
 - As **faixas separadas** permitem silenciar a própria: o baixista tira o baixo e toca por cima
-  da banda inteira; a voz tira a voz e canta com os instrumentos.
+  do grupo inteiro; a voz tira a voz e canta com os instrumentos.
 
 A parte frágil é achar o tempo 1. O computador sugere onde cai a batida, mas em Seja Elevado ele
 errou duas vezes, marcando o acento no tempo errado. Quem decide é o ouvido: a gente só sobe a
 versão de estudo para o nosso app de ensaio depois de ouvir o click em cima da gravação e ter
 certeza de que o 1 está no 1.
 
-<!-- DONO: "nosso app de ensaio" fica sem nome de propósito (o blog prometeu não vender nada).
-Se quiser citar o JA Manager, é aqui. -->
+{% comment %}DONO: "nosso app de ensaio" fica sem nome de propósito (o blog prometeu não vender nada).
+Se quiser citar o JA Manager, é aqui.{% endcomment %}
 
 ## O que você vai ouvir no show
 
-<!-- DONO: 1 parágrafo seu: quando este pout-pourri estreia (ou já estreou), e um convite para a
-pessoa cantar junto. Se não houver data pública ainda, diga só que está no repertório novo. -->
+{% comment %}DONO: 1 parágrafo seu: quando este pout-pourri estreia (ou já estreou), e um convite para a
+pessoa cantar junto. Se não houver data pública ainda, diga só que está no repertório novo.{% endcomment %}
 
 Se a sua comunidade canta alguma dessas três, conta pra gente em que tom e em que momento da
 celebração. É esse tipo de conversa que a gente quer ter aqui, e as melhores perguntas viram os
