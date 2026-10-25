@@ -1,0 +1,18 @@
+{%- comment -%}
+Fim dos posts da categoria Música: no lugar do convite ao organizador (.post-invite, mesma cara), uma conversa
+sobre música. O WhatsApp abre com o título do post; data-track="post-musica" → GA4 whatsapp_click com
+cta_location=post-musica. O botão flutuante e o rodapé continuam levando o "Convide-nos" em toda página.
+{%- endcomment -%}
+{%- assign conversa_texto = "Olá! Li «" | append: page.title | append: "» no blog e quero falar sobre a música…" | url_encode | replace: "+", "%20" -%}
+{%- assign conversa_url = "https://api.whatsapp.com/send?phone=" | append: site.data.contato.whatsapp_numero | append: "&text=" | append: conversa_texto -%}
+{%- assign ig = site.data.contato.redes | where: "icone", "instagram" | first %}
+  <aside class="post-invite">
+    <h2>Qual música você quer ver aqui?</h2>
+    <p>Conta pra gente que canção da sua comunidade merece um texto, ou o que você quer entender melhor sobre música católica. A gente responde pelo WhatsApp e as melhores perguntas viram os próximos textos.</p>
+    <div class="post-invite-actions">
+      <a href="{{ conversa_url }}" target="_blank" rel="noopener noreferrer" class="post-invite-btn" data-track="post-musica">{% include icon.html name="whatsapp" %} Falar sobre música no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a>
+      {%- if ig %}
+      <a href="{{ ig.url }}" target="_blank" rel="noopener noreferrer" class="post-invite-link" data-track="post-musica">Ou no Instagram, {{ ig.handle }}<span class="sr-only"> (abre em nova aba)</span></a>
+      {%- endif %}
+    </div>
+  </aside>

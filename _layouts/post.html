@@ -53,6 +53,9 @@ layout: default
     </div>
   </article>
 
+  {%- if page.category == "Música" %}
+  {%- include post-conversa.html %}
+  {%- else %}
   <aside class="post-invite">
     <h2>Quer o Jeito Ágape na sua comunidade?</h2>
     <p>Shows de evangelização, festas de padroeiro, retiros, EJCs e grupos de oração. Diga se é show, festa, retiro ou encontro, a cidade e a data; a gente responde pelo WhatsApp.</p>
@@ -61,6 +64,7 @@ layout: default
       <a href="/#servicos" class="post-invite-link">Ver como podemos servir a sua comunidade</a>
     </div>
   </aside>
+  {%- endif %}
 
   {%- assign mesma_cat = site.posts | where_exp: "p", "p.category == page.category" | where_exp: "p", "p.url != page.url" %}
   {%- assign outras_cat = site.posts | where_exp: "p", "p.category != page.category" %}
