@@ -330,7 +330,7 @@ font-weight: 400;
   }
 
   /* ---- Ficha da canção (posts com musicas: no front matter), na coluna de leitura ---- */
-  .ficha-musica { max-width: 42rem; margin: 0 auto 2.5rem; }
+  .ficha-musica { max-width: 42rem; margin: 2rem auto 2.5rem; } // o .post-header perde a margem de baixo no style inline: o respiro vem daqui
   .ficha-rotulo { margin: 0 0 1rem; color: var(--text-muted); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; } // o rótulo de seção do blog (.section-label)
   .ficha-lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr)); gap: 0.75rem; margin: 0; padding: 0; list-style: none; } // 3 colunas em 42rem, uma no celular
   .ficha-card { display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; padding: 1rem 1.2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; } // a cara do .ref-card
