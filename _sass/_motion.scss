@@ -12,5 +12,6 @@ html.js [data-reveal] { animation: reveal-fallback 0s 2.5s forwards; }
   .carousel, .scroll-indicator, .heartbeat, .agenda-wave { animation: none !important; }
   .carousel-slide { filter: none !important; transition: opacity 0.6s ease, visibility 0s linear 0.6s !important; }
   .carousel-slide.active { transition-delay: 0s !important; }
-  .cta-btn:hover, .session-card:hover { transform: none; }
+  .cta-btn:hover, .session-card:hover, .hero-cta .hero-cta-link:hover { transform: none; }
+  .whatsapp-float, .back-to-top { transition: opacity 0.2s ease !important; }
 }

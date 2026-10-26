@@ -1,9 +1,11 @@
 - name: "Beto Ferreira"
   role: "Doutrina"
+  funcao: "compositor e vocalista do Jeito Ágape" # vai na assinatura dos posts (quem escreve)
   bio: "38 anos, casado com a Bruna, pai do João. Estudante de Teologia Católica, compositor e vocalista do Jeito Ágape. Em busca constante de estar mais próximo dAquele que nos une em comunhão."
   image: "/assets/Beto.jpg"
 
 - name: "Delliz Christine"
   role: "Espiritualidade"
+  funcao: "integrante do Jeito Ágape"
   bio: "Membro do Jeito Ágape. Escreve sobre fé, música e evangelização."
   image: "/assets/Delliz.jpg"

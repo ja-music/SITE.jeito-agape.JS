@@ -6,11 +6,11 @@ cta_location=post-musica. O botão flutuante e o rodapé continuam levando o "Co
 {%- assign conversa_texto = "Olá! Li «" | append: page.title | append: "» no blog e quero falar sobre a música…" | url_encode | replace: "+", "%20" -%}
 {%- assign conversa_url = "https://api.whatsapp.com/send?phone=" | append: site.data.contato.whatsapp_numero | append: "&text=" | append: conversa_texto -%}
 {%- assign ig = site.data.contato.redes | where: "icone", "instagram" | first %}
-  <aside class="post-invite">
-    <h2>Qual música você quer ver aqui?</h2>
+  <aside class="post-invite" aria-labelledby="convite-t">
+    <h2 id="convite-t">Qual música você quer ver aqui?</h2>
     <p>Conta pra gente que canção da sua comunidade merece um texto, ou o que você quer entender melhor sobre música católica. A gente responde pelo WhatsApp e as melhores perguntas viram os próximos textos.</p>
     <div class="post-invite-actions">
-      <a href="{{ conversa_url }}" target="_blank" rel="noopener noreferrer" class="post-invite-btn" data-track="post-musica">{% include icon.html name="whatsapp" %} Falar sobre música no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a>
+      <a href="{{ conversa_url }}" target="_blank" rel="noopener noreferrer" class="cta-btn" data-track="post-musica">{% include icon.html name="whatsapp" class="ic-5" %} Falar sobre música no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a>
       {%- if ig %}
       <a href="{{ ig.url }}" target="_blank" rel="noopener noreferrer" class="post-invite-link" data-track="post-musica">Ou no Instagram, {{ ig.handle }}<span class="sr-only"> (abre em nova aba)</span></a>
       {%- endif %}

@@ -49,13 +49,26 @@ margin: 0.75rem 0 1rem;
 line-height: 1.2;
   }
 
+  // Duas linhas: quem escreve (prova de que é o ministério falando) e data · tempo de leitura.
+  // Em uma linha só, o "·" sobrava no fim da linha quando quebrava no celular.
   .post-meta-row {
 display: flex;
-align-items: center;
-gap: 0.75rem;
+flex-direction: column;
+align-items: flex-start;
+gap: 0.35rem;
 color: var(--text-muted);
 font-size: 0.85rem;
-flex-wrap: wrap;
+  }
+
+  .post-autor strong {
+color: var(--text-soft);
+font-weight: 600;
+  }
+
+  .post-meta-data {
+display: inline-flex;
+align-items: center;
+gap: 0.6rem;
   }
 
   .post-meta-row .dot {
@@ -143,6 +156,7 @@ margin: 2.5rem 0;
   .post-back {
 display: inline-flex;
 align-items: center;
+min-height: 44px; // alvo de toque (o link tinha 20px de altura)
 gap: 0.4rem;
 color: var(--text-muted);
 font-size: 0.85rem;
@@ -171,6 +185,7 @@ gap: 1rem;
   .post-footer .back-link {
 display: inline-flex;
 align-items: center;
+min-height: 44px;
 gap: 0.4rem;
 color: var(--text-muted);
 font-size: 0.85rem;
@@ -238,7 +253,7 @@ color: var(--text);
 font-size: 0.7rem;
 font-weight: 500;
 padding: 0.3rem 0.6rem;
-border-radius: 6px;
+border-radius: 8px; // escala do DESIGN.md (era 6px)
 white-space: nowrap;
 opacity: 0;
 pointer-events: none;
@@ -388,30 +403,23 @@ justify-content: center;
 gap: 1rem;
   }
 
-  .post-invite-btn {
+  // o botão do convite é o .cta-btn de todo o site (era uma pílula de 50px e 0.88rem, fora da escala)
+  .post-invite-link {
 display: inline-flex;
 align-items: center;
-gap: 0.5rem;
-padding: 0.75rem 1.6rem;
-border-radius: 50px;
-background: var(--accent);
-color: #fff;
-font-size: 0.88rem;
-font-weight: 600;
-text-decoration: none;
-transition: opacity 0.25s;
-  }
-
-  .post-invite-btn:hover {
-opacity: 0.88;
-  }
-
-  .post-invite-link {
-color: rgba(255, 255, 255, 0.55);
-font-size: 0.82rem;
-text-decoration: none;
-border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+min-height: 44px;
+color: rgba(255, 255, 255, 0.6);
+font-size: 0.85rem;
+text-decoration: underline;
+text-decoration-color: rgba(255, 255, 255, 0.25);
+text-underline-offset: 4px;
 transition: color 0.25s;
+  }
+
+  .post-invite .post-invite-hint {
+margin: 1rem auto 0;
+color: var(--text-muted);
+font-size: 0.8rem;
   }
 
   .post-invite-link:hover {
@@ -486,4 +494,33 @@ line-height: 1.45;
   .share-links a, .share-links button { position: relative; }
   .share-links a::before, .share-links button::before { content: ""; position: absolute; inset: -4px; } // alvo de 44px
   .post-back svg, .back-link svg { width: 1rem; height: 1rem; }
-  .post-invite-btn svg { width: 1.25rem; height: 1.25rem; }
+  .share-links a::before, .share-links button::before { inset: -5px; } // 36 + 10 = 46px
+
+  /* ---- Convite curto no meio do post (_includes/post-convite.html) ---- */
+  // Um cartão do site na coluna de leitura: carvão, fio de 1px, 12px. Sem borda lateral colorida.
+  .post-convite {
+margin: 2.25rem 0 2.5rem;
+padding: 1.5rem;
+background: var(--surface);
+border: 1px solid var(--border);
+border-radius: 12px;
+  }
+  .post-content .post-convite p { margin: 0 0 1.1rem; font-size: 0.98rem; line-height: 1.7; color: var(--text-soft); }
+  .post-convite__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem; }
+  .post-content .post-convite .cta-btn { color: #fff; text-decoration: none; } // o .post-content a pintaria o botão de rosa sublinhado
+  .post-content .post-convite__mais { display: inline-flex; align-items: center; gap: 0.35rem; min-height: 44px; color: var(--accent-text); font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+  .post-content .post-convite__mais:hover { color: #fff; }
+  @media (max-width: 640px) {
+.post-convite .cta-btn, .post-invite .cta-btn { width: 100%; justify-content: center; padding-inline: 1.25rem; } // o rótulo "Convide-nos para a festa" quebrava em duas linhas
+.post-invite { padding: 2rem 1.25rem; }
+  }
+
+  /* ---- Tabela e checklist do Markdown ---- */
+  // A tabela rola na horizontal dentro da coluna no celular, em vez de espremer as colunas.
+  .post-content table { display: block; max-width: 100%; overflow-x: auto; margin: 1.5rem 0 2rem; font-size: 0.95rem; line-height: 1.6; }
+  .post-content th, .post-content td { padding: 0.65rem 1rem 0.65rem 0; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  .post-content th { color: var(--text); font-weight: 600; border-bottom-color: rgba(255, 255, 255, 0.15); white-space: nowrap; }
+  .post-content .task-list { list-style: none; margin-left: 0; }
+  .post-content .task-list-item { position: relative; padding-left: 1.75rem; } // recuo pendente: a 2ª linha alinha com o texto, não com o quadrado
+  .post-content .task-box { position: absolute; left: 0; top: 0.42em; width: 1em; height: 1em; border: 1.5px solid rgba(255, 255, 255, 0.35); border-radius: 4px; }
+  .post-content .task-box--feito { background: var(--accent); border-color: var(--accent); }

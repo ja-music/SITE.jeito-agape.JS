@@ -7,8 +7,11 @@
   min-height: 100vh;
   padding: 6rem 1rem 4rem;
 }
+// No celular o herói não ocupa mais a tela inteira: o conteúdo começa sob o cabeçalho e o título
+// "Quem Somos" aparece na primeira tela (antes, ~45% de preto vazio em 390×844).
+// O topo deixa lugar para a fileira de redes, que fica 2rem acima do carrossel.
 @media (max-width: 768px) {
-  .hero { min-height: 100svh; padding: 6rem 1.5rem 2rem; }
+  .hero { min-height: 0; padding: 7.25rem 1.5rem 2.5rem; }
 }
 
 .hero img {
@@ -276,10 +279,21 @@
     display: none;
   }
 
+  // Os números saem de cima da foto (cobriam os rostos no slide 1 e o "Ler artigo" do slide do blog)
+  // e viram uma faixa de legenda na base da moldura: os slides param na altura 16:9 da régua.
+  .carousel-slide {
+    bottom: auto;
+    aspect-ratio: 16 / 9;
+  }
+
   .hero-stats-overlay {
+    position: relative;
     flex-wrap: wrap;
     gap: 0.15rem 0.9rem;
-    padding-top: 0.8rem;
+    padding: 0.65rem 1rem 0.7rem;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-radius: 0;
   }
 
   .hero-stats-overlay .dot {
@@ -287,7 +301,7 @@
   }
 
   .slide-overlay {
-    padding: 1rem 1.2rem 2.2rem;
+    padding: 1rem 1.2rem;
   }
 
   .slide-overlay-tag {

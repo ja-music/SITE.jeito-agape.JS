@@ -86,6 +86,11 @@ components:
     textColor: "{colors.white}"
     rounded: "{rounded.button}"
     padding: "0.9rem 2rem"
+  button-hero:
+    backgroundColor: "{colors.agape-red}"
+    textColor: "{colors.white}"
+    rounded: "{rounded.full}"
+    padding: "0.8rem 1.9rem"
   nav-cta:
     backgroundColor: "{colors.agape-red}"
     textColor: "{colors.white}"
@@ -180,13 +185,13 @@ Preto quente, branco em três intensidades e um vermelho só — mais o verde do
 
 ## Layout
 
-Página de uma coluna com contêineres centrados em quatro larguras herdadas do Tailwind: 48rem (texto corrido), 56rem (FAQ, contato, páginas), 64rem (grades de cartões, álbum, sessions) e 72rem (cabeçalho). Seções com `padding: 7rem 2rem` no desktop e `5rem 1.5rem` até 768px; o herói ocupa 100vh (100svh no celular) e centra o carrossel.
+Página de uma coluna com contêineres centrados em quatro larguras herdadas do Tailwind: 48rem (texto corrido), 56rem (FAQ, contato, páginas), 64rem (grades de cartões, álbum, sessions) e 72rem (cabeçalho). Seções com `padding: 7rem 2rem` no desktop e `5rem 1.5rem` até 768px; o herói ocupa 100vh no desktop e centra o carrossel; no celular ele mede só o próprio conteúdo (desde 2026-10-25), e o título "Quem Somos" aparece na primeira tela em 390×844.
 
 Grades: cartões em 1 → 2 (≥768px) → 3 (≥1024px) colunas com `gap: 1.5rem`; álbum em 1 → 2 (≥1024px) com `gap: 2.5rem`; cartões de contato em 2 → 3 (≥768px) → 5 (≥1024px) com `gap: 1rem`; agenda em 1 → `1fr 2fr` (≥768px). Todas as colunas são `minmax(0, 1fr)`, para o conteúdo nunca alargar a grade.
 
 Ritmo vertical: título → barra (1rem acima, 1.5rem abaixo) → subtítulo (4rem abaixo) → conteúdo. Dentro dos cartões, `padding: 2rem` e `gap` de 0.75rem entre ícone, título e texto. Escala de espaço: 0.5 / 0.75 / 1 / 1.5 / 2 / 2.5 / 4 / 5 / 7rem.
 
-Cabeçalho fixo de 67px (logo 34px, `padding: 1rem 1.5rem`) que ganha fundo carvão e borda ao rolar; no celular vira um botão de menu de 44px abrindo um painel lateral de 80% (máx. 320px).
+Cabeçalho fixo de 67px (logo 34px, `padding: 1rem 1.5rem`) que ganha fundo carvão e borda ao rolar; no celular vira um botão de menu de 44px abrindo um painel lateral de 80% (máx. 320px), com um "Convide-nos" compacto ao lado (o `nav-cta` com o glifo do WhatsApp, 36px visíveis e 44px de toque): o convite fica sempre à vista no cabeçalho fixo.
 
 ## Elevation & Depth
 
@@ -219,7 +224,8 @@ A exceção geométrica é a agenda: itens em paralelogramo (`clip-path: polygon
 - **Outline** (`cta-btn-outline`): transparente, texto branco, borda 2px a 30% de branco; hover: borda branca e fundo a 10%. Usado só na faixa de convite vermelha.
 - **Nav CTA** (`nav-cta`): o mesmo vermelho em 0.85rem / 600, `padding: 0.45rem 1.2rem`, 8px.
 - **Pill** (`platform-link`, `pill-link`): borda no fio, texto apagado 0.8rem / 500, ícone 1rem; hover: texto branco, borda vermelha, fundo vermelho a 10%.
-- **Hero link** (`hero-cta-link`): pílula completa, texto branco a 85%, borda a 15%; o convite do herói.
+- **Hero link** (`hero-cta-link`): o convite do herói e a luz mais forte do palco (dono, 2026-10-25). Pílula completa (9999px) em vermelho sólido, texto branco 1rem / 600, altura mínima de 52px, glifo do WhatsApp de 1.25rem; hover igual ao primário. Embaixo, a dica "Abre o WhatsApp com a mensagem pronta…" em branco suave, 0.875rem. Antes era uma pílula fantasma (fio a 10%, 13,6px) que sumia ao lado do verde do botão flutuante.
+- **Floating WhatsApp** (`whatsapp-float`): círculo verde de 56px com a sombra Flutuante. No celular sai da frente enquanto a pessoa rola para baixo (classe `lendo` no `body`, posta pelo `top.js`) e volta ao rolar para cima, junto com o voltar ao topo (44px): os dois cobriam o texto do post em 21 de 29 posições de rolagem.
 - **Focus:** contorno branco de 2px a 3px de distância (`:focus-visible`), em todos os controles.
 
 ### Chips
@@ -243,7 +249,14 @@ A exceção geométrica é a agenda: itens em paralelogramo (`clip-path: polygon
 Título Display centrado, barra vermelha 40×3px (1rem acima, 1.5rem abaixo), subtítulo Lead em branco apagado limitado a 560px, 4rem de respiro antes do conteúdo. Toda seção da home e toda página interna abre assim.
 
 ### Hero carousel (signature)
-Moldura de 16px com fio e sombra Palco, 960px máx (90vw), três slides em crossfade de 1.8s com leve desfoque (slides inativos ficam `visibility: hidden` + `inert`: não recebem foco), overlay de números na base (0.75rem, quebra em duas linhas no celular), dots de 8px dentro de botões de 24px, ícones sociais numa coluna à direita (linha no celular; alvo de 44px por padding negativo) e um indicador de rolagem que balança. Flutua 6s em loop; tudo isso para com `prefers-reduced-motion`.
+Moldura de 16px com fio e sombra Palco, 960px máx (90vw), três slides em crossfade de 1.8s com leve desfoque (slides inativos ficam `visibility: hidden` + `inert`: não recebem foco). O 1º slide é a foto dos integrantes (`hero2`, a imagem LCP pré-carregada; dono, 2026-10-25: quem chega por indicação reconhece os rostos na hora), o 2º o logo, o 3º o post mais recente. Números na base da moldura (0.75rem): sobrepostos à foto no desktop; no celular, uma faixa de legenda carvão com fio de 1px abaixo da foto (os slides param na altura 16:9 da régua), para não cobrir os rostos nem o "Ler artigo". dots de 8px dentro de botões de 24px, ícones sociais numa coluna à direita (linha no celular; alvo de 44px por padding negativo) e um indicador de rolagem que balança. Flutua 6s em loop; tudo isso para com `prefers-reduced-motion`.
+
+### Convites no post
+- **Fim do post** (`.post-invite`): painel com fio vermelho a 25% e fundo vermelho a 6%, título 1.25rem / 600, botão `cta-btn` (largura total no celular). Em post com `servico:` no front matter (slug de `_servicos`), fala daquela celebração: título "Convide o Jeito Ágape para {para}", texto = `resumo` da página, botão = `cta` da página com a mensagem pronta dela (`data-track="post-fim"`, `data-service`), link "{short}: como funciona" para a página e a dica de mensagem pronta. Sem `servico:`, o convite geral; posts de Música trocam por `post-conversa.html`.
+- **Meio do post** (`.post-convite`, `{% include post-convite.html %}` no Markdown): cartão carvão com fio e 12px na coluna de leitura (nada de borda lateral colorida), uma frase em negrito + `resumo`, `cta-btn` e "Como funciona →" em `--accent-text`. Só no ponto em que o texto fala de reservar a música, um por post, e só com `servico:`.
+
+### Contact cards
+`link-card` carvão com ícone vermelho de 2.5rem. O WhatsApp vem primeiro, com o glifo do WhatsApp, largo no celular (2 colunas): a seção fecha a home, e a última impressão é "convide", não "siga".
 
 ### FAQ item
 `<details>` com `summary` em 0.95rem / 500 a 90% de branco, chevron de 1rem à direita que gira 180° ao abrir, resposta em 0.9rem apagada; divisórias no fio.

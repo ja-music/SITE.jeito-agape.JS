@@ -48,11 +48,14 @@
 // o que eram classes do Tailwind no markup original
 .header { position: fixed; top: 0; width: 100%; z-index: 50; }
 .header__bar { max-width: 72rem; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; }
-.header__logo { display: flex; align-items: center; }
+.header__logo { display: flex; align-items: center; padding: 5px; margin: -5px; } // alvo de 44px em volta do coração de 34px
 .header__logo img { width: 34px; height: 34px; filter: brightness(0) invert(1); }
 .nav { display: none; align-items: center; gap: 2rem; }
 .nav-link { text-decoration: none; }
 .nav-cta:hover { color: #fff; }
 .menu-toggle { width: 44px; height: 44px; display: grid; place-items: center; color: #fff; margin: -5px -10px -5px 0; }
 .menu-toggle svg { width: 1.5rem; height: 1.5rem; }
-@media (min-width: 768px) { .nav { display: flex; } .menu-toggle { display: none; } }
+// Convite compacto do celular: à direita, junto do menu; 36px visíveis, 44px de toque.
+.header__convite { position: relative; display: inline-flex; align-items: center; gap: 0.4rem; margin-left: auto; margin-right: 0.75rem; padding: 0.5rem 0.9rem; }
+.header__convite::before { content: ""; position: absolute; inset: -4px 0; }
+@media (min-width: 768px) { .nav { display: flex; } .menu-toggle, .header__convite { display: none; } }

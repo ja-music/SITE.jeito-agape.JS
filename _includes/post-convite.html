@@ -1,0 +1,16 @@
+{%- comment -%}
+Convite curto no meio de um post de organizador, no ponto em que o texto fala de reservar a música.
+Uso no Markdown (linha em branco antes e depois): {% include post-convite.html %}
+Só aparece em post com servico: no front matter; o botão abre o WhatsApp com a mensagem pronta da página
+de serviço (data-track="post-meio" → GA4 whatsapp_click com cta_location=post-meio).
+{%- endcomment -%}
+{%- include servico-vars.html -%}
+{%- if svc %}
+<aside class="post-convite" aria-label="Convite ao Jeito Ágape">
+  <p><strong>A música da sua celebração ainda está em aberto?</strong> {{ svc.resumo }}</p>
+  <div class="post-convite__acoes">
+    <a href="{{ svc_wa_url }}" target="_blank" rel="noopener noreferrer" class="cta-btn" data-track="post-meio" data-service="{{ svc.slug }}">{% include icon.html name="whatsapp" class="ic-5" %} {{ svc.cta | default: "Convide-nos" }}<span class="sr-only"> (abre o WhatsApp em nova aba)</span></a>
+    <a href="{{ svc.url }}" class="post-convite__mais">Como funciona {% include icon.html name="arrow-right" class="ic-4" %}</a>
+  </div>
+</aside>
+{%- endif %}
