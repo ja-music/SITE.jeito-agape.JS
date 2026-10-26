@@ -88,8 +88,9 @@
 
 .whatsapp-float svg { width: 1.75rem; height: 1.75rem; color: #fff; }
 
-// Celular rolando para baixo (classe posta pelo top.js): os flutuantes saem da frente do texto.
-@media (max-width: 767px) {
+// Celular e tablet rolando para baixo (classe posta pelo top.js): os flutuantes saem da frente do texto.
+// Até 1023px o "Convide-nos" fica no cabeçalho fixo, então o convite continua à vista.
+@media (max-width: 1023px) {
   body.lendo .whatsapp-float,
   body.lendo .back-to-top { opacity: 0; transform: translateY(1rem); pointer-events: none; }
 }

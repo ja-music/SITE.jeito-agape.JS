@@ -4,7 +4,7 @@
 (function () {
   var btn = document.getElementById('voltar-topo');
   if (!btn) return;
-  var ticking = false, ultimoY = window.scrollY, celular = window.matchMedia('(max-width: 767px)');
+  var ticking = false, ultimoY = window.scrollY, celular = window.matchMedia('(max-width: 1023px)');
   function checar() {
     var y = window.scrollY;
     btn.classList.toggle('visible', y > 300);

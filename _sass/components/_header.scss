@@ -58,4 +58,6 @@
 // Convite compacto do celular: à direita, junto do menu; 36px visíveis, 44px de toque.
 .header__convite { position: relative; display: inline-flex; align-items: center; gap: 0.4rem; margin-left: auto; margin-right: 0.75rem; padding: 0.5rem 0.9rem; }
 .header__convite::before { content: ""; position: absolute; inset: -4px 0; }
-@media (min-width: 768px) { .nav { display: flex; } .menu-toggle, .header__convite { display: none; } }
+// O menu completo (9 links + Convide-nos) mede ~930px: entre 768 e 1023px ele passava da tela e o "Convide-nos"
+// ficava cortado e invisível (o html tem overflow-x: hidden). Até 1023px vale o cabeçalho do celular.
+@media (min-width: 1024px) { .nav { display: flex; } .menu-toggle, .header__convite { display: none; } }

@@ -5,6 +5,7 @@ date: 2026-07-19
 author: "Beto Ferreira"
 category: "Eventos"
 servico: banda-para-festa-de-padroeiro
+destaque: true # abre a seção "Para quem organiza" do /blog/ e a página /blog/eventos/
 image: "/assets/blog/capa-festa-do-padroeiro.jpg"
 og_image: "/assets/blog/capa-festa-do-padroeiro-og.jpg"
 description: "Guia prático para a comissão de festa: cronograma reverso de 6 meses, divisão da comissão por frentes, novena, estrutura, som, divulgação e checklist final. Escrito por quem já animou mais de 500 missões e festas em Minas."

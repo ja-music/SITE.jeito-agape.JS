@@ -4,7 +4,7 @@ Uso: {% include blog-lista.html posts=site.posts %} — no índice (/blog/) e na
 {%- endcomment -%}
 {%- assign lista = include.posts -%}
   {%- if lista.size > 0 %}
-  {%- assign featured = lista.first %}{% assign fk = featured.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
+  {%- assign featured = lista | where: "destaque", true | first %}{% unless featured %}{% assign featured = lista.first %}{% endunless %}{% assign fk = featured.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
   <a href="{{ featured.url }}" class="featured-card">
     {%- if site.data.images[fk] %}{% include picture.html name=fk alt=featured.title class="featured-img" pictureclass="featured-media" sizes="(min-width: 900px) 29rem, calc(100vw - 2rem)" priority=true %}{% elsif featured.image %}<img src="{{ featured.image }}" alt=featured.title class="featured-img" fetchpriority="high" decoding="async" width="1200" height="675">{% endif %}
     <div class="featured-body">
@@ -24,7 +24,7 @@ Uso: {% include blog-lista.html posts=site.posts %} — no índice (/blog/) e na
   {%- if lista.size > 1 %}
   <div class="section-label">Artigos anteriores</div>
   <div class="post-grid">
-    {%- for post in lista offset:1 %}{% assign ck = post.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
+    {%- for post in lista %}{% if post.url == featured.url %}{% continue %}{% endif %}{% assign ck = post.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
     {%- if post.image %}
     <a href="{{ post.url }}" class="post-card">
       {%- if site.data.images[ck] %}{% include picture.html name=ck alt=post.title class="post-card-img" pictureclass="post-card-media" sizes="(min-width: 58rem) 27rem, (min-width: 641px) calc(50vw - 2.5rem), calc(100vw - 2rem)" %}{% else %}<img src="{{ post.image }}" alt=post.title class="post-card-img" loading="lazy" decoding="async" width="400" height="225">{% endif %}

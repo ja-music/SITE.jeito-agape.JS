@@ -1,21 +1,55 @@
 ---
 layout: default
 ---
+{%- comment -%}
+Post do blog em coluna única (dono, 26/10/2026): trilha → etiqueta → título → quem escreve → capa → primeiro parágrafo →
+"Neste guia" (textos com 4 ou mais H2) → texto → FAQ → fim (autor, convite, "Leia a seguir", compartilhar).
+Tudo na mesma coluna de 42rem e na mesma margem esquerda.
+{%- endcomment -%}
 {%- include wa-vars.html -%}{%- include faq-vars.html -%}{%- include servico-vars.html -%}
 {%- assign autor = site.data.authors | where: "name", page.author | first -%}
 {%- assign palavras = content | number_of_words -%}
 {%- assign minutos = palavras | divided_by: 200 -%}{%- if minutos < 1 -%}{%- assign minutos = 1 -%}{%- endif -%}
 {%- assign chave = page.image | remove: "/assets/" | split: "." | first | replace: "/", "-" -%}
-<div class="wrap-4xl mx-auto px-4">
-  <a href="/blog/" class="post-back">{% include icon.html name="arrow-left" %} Voltar ao blog</a>
+{%- assign cat_pg = nil -%}{%- if page.category -%}{%- assign cat_pg = site.pages | where: "categoria", page.category | first -%}{%- endif -%}
+
+{%- comment -%}O checklist do Markdown ("- [ ]") vira um quadrado desenhado: o <input disabled> do kramdown não tem rótulo (Lighthouse a11y) e é só visual.{%- endcomment -%}
+{%- assign corpo = content | replace: '<input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />', '<span class="task-box" aria-hidden="true"></span>' | replace: '<input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />', '<span class="task-box task-box--feito" aria-hidden="true"></span>' -%}
+
+{%- comment -%}"Neste guia": lista numerada dos H2 do texto (ids do kramdown), depois do primeiro parágrafo; o rótulo para no " — ".{%- endcomment -%}
+{%- assign partes_h2 = corpo | split: '<h2 id="' -%}
+{%- assign n_h2 = partes_h2.size | minus: 1 -%}
+{%- if n_h2 >= 4 -%}
+{%- capture indice -%}
+<nav class="post-indice" aria-labelledby="indice-t">
+  <p class="post-indice__titulo" id="indice-t">{% if page.category == "Eventos" %}Neste guia{% else %}Neste texto{% endif %}</p>
+  <ol>
+    {%- for parte in partes_h2 offset:1 -%}
+    {%- assign hid = parte | split: '"' | first -%}
+    {%- assign htxt = parte | split: '</h2>' | first | split: '">' | last | strip_html | split: ' — ' | first | strip %}
+    <li><a href="#{{ hid }}">{{ htxt }}</a></li>
+    {%- endfor %}
+  </ol>
+</nav>
+{%- endcapture -%}
+{%- assign lede = corpo | split: '</p>' | first -%}
+{%- unless lede contains '<h2' -%}
+{%- assign resto = corpo | remove_first: lede | remove_first: '</p>' -%}
+{%- capture corpo -%}{{ lede }}</p>{{ indice }}{{ resto }}{%- endcapture -%}
+{%- else -%}
+{%- capture corpo -%}{{ indice }}{{ corpo }}{%- endcapture -%}
+{%- endunless -%}
+{%- endif -%}
+
+<div class="post-pagina mx-auto px-4">
+  <nav class="post-trilha" aria-label="Você está em">
+    <a href="/blog/">{% include icon.html name="arrow-left" %} Blog</a>
+    {%- if cat_pg %}<span class="post-trilha__sep" aria-hidden="true">·</span><a href="{{ cat_pg.url }}">{{ page.category }}</a>{% endif %}
+  </nav>
 
   <article>
-    {%- if page.image %}
-    {%- if site.data.images[chave] %}{% include picture.html name=chave alt=page.title class="post-hero-img" sizes="(min-width: 58rem) 54rem, calc(100vw - 2rem)" priority=true %}{% else %}<img src="{{ page.image }}" alt=page.title class="post-hero-img" fetchpriority="high" decoding="async" width="1200" height="675">{% endif %}
-    {%- endif %}
-
-    <div class="post-header" style="max-width: 720px; margin: 0 auto;">
-      {%- if page.category %}{% assign cat_pg = site.pages | where: "categoria", page.category | first %}{% if cat_pg %}<a href="{{ cat_pg.url }}" class="category-tag" data-cat="{{ page.category | slugify: "latin" }}">{{ page.category }}</a>{% else %}<span class="category-tag" data-cat="{{ page.category | slugify: "latin" }}">{{ page.category }}</span>{% endif %}{% endif %}
+    <header class="post-header">
+      {%- if page.category %}<span class="category-tag" data-cat="{{ page.category | slugify: "latin" }}">{{ page.category }}</span>{% endif %}
       <h1>{{ page.title }}</h1>
       <div class="post-meta-row">
         {%- if page.author %}
@@ -23,78 +57,94 @@ layout: default
         {%- endif %}
         <span class="post-meta-data"><time datetime="{{ page.date | date_to_xmlschema }}">{% include data-pt.html data=page.date %}</time><span class="dot" aria-hidden="true">&middot;</span>{{ minutos }} min de leitura</span>
       </div>
-    </div>
+    </header>
+
+    {%- if page.image %}
+    {%- if site.data.images[chave] %}{% include picture.html name=chave alt="" class="post-hero-img" sizes="(min-width: 46rem) 42rem, calc(100vw - 2rem)" priority=true %}{% else %}<img src="{{ page.image }}" alt="" class="post-hero-img" fetchpriority="high" decoding="async" width="1200" height="675">{% endif %}
+    {%- endif %}
 
     {%- include ficha-musica.html %}
     {%- include post-video.html %}
 
-    {%- comment -%}O checklist do Markdown ("- [ ]") vira um quadrado desenhado: o <input disabled> do kramdown não tem rótulo (Lighthouse a11y) e é só visual.{%- endcomment %}
     <div class="post-content">
-      {{ content | replace: '<input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />', '<span class="task-box" aria-hidden="true"></span>' | replace: '<input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />', '<span class="task-box task-box--feito" aria-hidden="true"></span>' }}
+      {{ corpo }}
     </div>
 
     {%- if faq_items.size > 0 %}
-    <section class="post-faq" aria-labelledby="faq-t" style="max-width: 720px; margin: 2.5rem auto 0;">
+    <section class="post-faq" aria-labelledby="faq-t">
       <h2 id="faq-t">Perguntas frequentes</h2>
       {% include faq.html %}
     </section>
     {%- endif %}
 
-    <div class="post-footer" style="max-width: 720px; margin: 2rem auto 0;">
-      <a href="/blog/" class="back-link">{% include icon.html name="arrow-left" %} Todos os artigos</a>
-      <div class="share-links">
-        <span>Compartilhar:</span>
-        <a href="https://api.whatsapp.com/send?text={{ page.title | url_encode | replace: '+', '%20' }}%20{{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="Compartilhar no WhatsApp" data-track="share">{% include icon.html name="message" %}</a>
-        <a href="https://t.me/share/url?url={{ page.url | absolute_url }}&text={{ page.title | url_encode | replace: '+', '%20' }}" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Compartilhar no Telegram">{% include icon.html name="send" %}</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Compartilhar no Facebook">{% include icon.html name="facebook" %}</a>
-        <a href="https://www.instagram.com/jeitoagape" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram do Jeito Ágape">{% include icon.html name="instagram" %}</a>
-        <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode | replace: '+', '%20' }}&url={{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" title="Twitter / X" aria-label="Compartilhar no X">{% include icon.html name="x" %}</a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Compartilhar no LinkedIn">{% include icon.html name="linkedin" %}</a>
-        <button id="copy-link" type="button" title="Copiar link" aria-label="Copiar link">{% include icon.html name="link" %}</button>
+    <footer class="post-fim">
+      {%- if autor %}{% assign ak = autor.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
+      <div class="post-autor-bloco">
+        {%- if site.data.images[ak] %}{% include picture.html name=ak alt="" class="post-autor-bloco__foto" sizes="64px" %}{% elsif autor.image %}<img src="{{ autor.image }}" alt="" class="post-autor-bloco__foto" width="64" height="64" loading="lazy">{% endif %}
+        <div>
+          <p class="post-autor-bloco__nome">{{ autor.name }}</p>
+          {%- if autor.bio %}<p class="post-autor-bloco__bio">{{ autor.bio }}</p>{% endif %}
+        </div>
       </div>
-    </div>
+      {%- endif %}
+
+      {%- if page.category == "Música" %}
+      {%- include post-conversa.html %}
+      {%- elsif svc %}
+      {%- comment -%}Post de organizador ligado a uma página de serviço: o convite fala daquela celebração, usa a mensagem pronta dela e leva até ela.{%- endcomment %}
+      <aside class="post-invite" aria-labelledby="convite-t">
+        <h2 id="convite-t">Convide o Jeito Ágape para {{ svc.para | default: "a sua comunidade" }}</h2>
+        <p>{{ svc.resumo }}</p>
+        <div class="post-invite-actions">
+          <a href="{{ svc_wa_url }}" target="_blank" rel="noopener noreferrer" class="cta-btn" data-track="post-fim" data-service="{{ svc.slug }}">{% include icon.html name="whatsapp" class="ic-5" %} {{ svc.cta | default: "Convide-nos" }}<span class="sr-only"> (abre o WhatsApp em nova aba)</span></a>
+          <a href="{{ svc.url }}" class="post-invite-link">{{ svc.short }}: como funciona</a>
+        </div>
+        <p class="post-invite-hint">Abre o WhatsApp com a mensagem pronta; é só completar a cidade e a data.</p>
+      </aside>
+      {%- else %}
+      <aside class="post-invite" aria-labelledby="convite-t">
+        <h2 id="convite-t">Quer o Jeito Ágape na sua comunidade?</h2>
+        <p>Shows de evangelização, festas de padroeiro, retiros, EJCs e grupos de oração. Diga se é show, festa, retiro ou encontro, a cidade e a data; a gente responde pelo WhatsApp.</p>
+        <div class="post-invite-actions">
+          <a href="{{ wa_url_geral }}" target="_blank" rel="noopener noreferrer" class="cta-btn" data-track="post-fim">{% include icon.html name="whatsapp" class="ic-5" %} Convide-nos pelo WhatsApp<span class="sr-only"> (abre em nova aba)</span></a>
+          <a href="/#servicos" class="post-invite-link">Ver como podemos servir a sua comunidade</a>
+        </div>
+      </aside>
+      {%- endif %}
+
+      {%- comment -%}"Leia a seguir": até 3 textos da mesma seção do índice (_data/blog_secoes.yml); se faltarem, os mais recentes.{%- endcomment %}
+      {%- assign secao_post = nil -%}
+      {%- for s in site.data.blog_secoes -%}{%- if s.categorias contains page.category -%}{%- assign secao_post = s -%}{%- endif -%}{%- endfor -%}
+      {%- assign n_seguir = 0 -%}
+      {%- capture seguir -%}
+      {%- if secao_post -%}{%- for p in site.posts -%}{%- if p.url != page.url and n_seguir < 3 and secao_post.categorias contains p.category -%}{%- assign n_seguir = n_seguir | plus: 1 %}
+        <li>{% include blog-linha.html post=p %}</li>
+      {%- endif -%}{%- endfor -%}{%- endif -%}
+      {%- if n_seguir < 2 -%}{%- for p in site.posts -%}{%- if p.url != page.url and n_seguir < 3 -%}{%- unless secao_post and secao_post.categorias contains p.category -%}{%- assign n_seguir = n_seguir | plus: 1 %}
+        <li>{% include blog-linha.html post=p %}</li>
+      {%- endunless -%}{%- endif -%}{%- endfor -%}{%- endif -%}
+      {%- endcapture -%}
+      {%- if n_seguir > 0 %}
+      <section class="post-seguir" aria-labelledby="seguir-t">
+        <h2 id="seguir-t">Leia a seguir</h2>
+        <ol class="blog-linhas">{{ seguir }}
+        </ol>
+      </section>
+      {%- endif %}
+
+      <div class="post-footer">
+        <a href="/blog/" class="back-link">{% include icon.html name="arrow-left" %} Todos os artigos</a>
+        <div class="share-links">
+          <span>Compartilhar:</span>
+          <a href="https://api.whatsapp.com/send?text={{ page.title | url_encode | replace: '+', '%20' }}%20{{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="Compartilhar no WhatsApp" data-track="share">{% include icon.html name="message" %}</a>
+          <a href="https://t.me/share/url?url={{ page.url | absolute_url }}&text={{ page.title | url_encode | replace: '+', '%20' }}" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Compartilhar no Telegram">{% include icon.html name="send" %}</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Compartilhar no Facebook">{% include icon.html name="facebook" %}</a>
+          <a href="https://www.instagram.com/jeitoagape" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram do Jeito Ágape">{% include icon.html name="instagram" %}</a>
+          <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode | replace: '+', '%20' }}&url={{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" title="Twitter / X" aria-label="Compartilhar no X">{% include icon.html name="x" %}</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Compartilhar no LinkedIn">{% include icon.html name="linkedin" %}</a>
+          <button id="copy-link" type="button" title="Copiar link" aria-label="Copiar link">{% include icon.html name="link" %}</button>
+        </div>
+      </div>
+    </footer>
   </article>
-
-  {%- if page.category == "Música" %}
-  {%- include post-conversa.html %}
-  {%- elsif svc %}
-  {%- comment -%}Post de organizador ligado a uma página de serviço: o convite fala daquela celebração, usa a mensagem pronta dela e leva até ela.{%- endcomment %}
-  <aside class="post-invite" aria-labelledby="convite-t">
-    <h2 id="convite-t">Convide o Jeito Ágape para {{ svc.para | default: "a sua comunidade" }}</h2>
-    <p>{{ svc.resumo }}</p>
-    <div class="post-invite-actions">
-      <a href="{{ svc_wa_url }}" target="_blank" rel="noopener noreferrer" class="cta-btn" data-track="post-fim" data-service="{{ svc.slug }}">{% include icon.html name="whatsapp" class="ic-5" %} {{ svc.cta | default: "Convide-nos" }}<span class="sr-only"> (abre o WhatsApp em nova aba)</span></a>
-      <a href="{{ svc.url }}" class="post-invite-link">{{ svc.short }}: como funciona</a>
-    </div>
-    <p class="post-invite-hint">Abre o WhatsApp com a mensagem pronta; é só completar a cidade e a data.</p>
-  </aside>
-  {%- else %}
-  <aside class="post-invite" aria-labelledby="convite-t">
-    <h2 id="convite-t">Quer o Jeito Ágape na sua comunidade?</h2>
-    <p>Shows de evangelização, festas de padroeiro, retiros, EJCs e grupos de oração. Diga se é show, festa, retiro ou encontro, a cidade e a data; a gente responde pelo WhatsApp.</p>
-    <div class="post-invite-actions">
-      <a href="{{ wa_url_geral }}" target="_blank" rel="noopener noreferrer" class="cta-btn" data-track="post-fim">{% include icon.html name="whatsapp" class="ic-5" %} Convide-nos pelo WhatsApp<span class="sr-only"> (abre em nova aba)</span></a>
-      <a href="/#servicos" class="post-invite-link">Ver como podemos servir a sua comunidade</a>
-    </div>
-  </aside>
-  {%- endif %}
-
-  {%- assign mesma_cat = site.posts | where_exp: "p", "p.category == page.category" | where_exp: "p", "p.url != page.url" %}
-  {%- assign outras_cat = site.posts | where_exp: "p", "p.category != page.category" %}
-  {%- assign relacionados = mesma_cat | concat: outras_cat %}
-  {%- if relacionados.size > 0 %}
-  <section class="post-related">
-    <h2>Continue lendo</h2>
-    <div class="post-related-grid">
-      {%- for p in relacionados limit: 3 %}{% assign ck = p.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
-      <a href="{{ p.url }}" class="post-related-card">
-        {%- if site.data.images[ck] %}{% include picture.html name=ck alt="" sizes="(min-width: 640px) 280px, 100vw" %}{% elsif p.image %}<img src="{{ p.image }}" alt="" width="400" height="225" loading="lazy">{% endif %}
-        <div class="post-related-body"><h3>{{ p.title }}</h3>{% if p.category %}<span class="post-related-cat">{{ p.category }}</span>{% endif %}</div>
-      </a>
-      {%- endfor %}
-    </div>
-  </section>
-  {%- endif %}
 </div>
-
-<div style="padding-bottom: 4rem;"></div>

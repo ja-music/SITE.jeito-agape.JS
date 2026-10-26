@@ -1,0 +1,2 @@
+{%- comment -%}Tempo de leitura de um post (200 palavras/min, mínimo 1). Uso: {% include post-minutos.html post=p %} → minutos_post.{%- endcomment -%}
+{%- assign minutos_post = include.post.content | number_of_words | divided_by: 200 -%}{%- if minutos_post < 1 -%}{%- assign minutos_post = 1 -%}{%- endif -%}
