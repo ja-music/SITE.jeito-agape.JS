@@ -191,7 +191,7 @@ Grades: cartões em 1 → 2 (≥768px) → 3 (≥1024px) colunas com `gap: 1.5re
 
 Ritmo vertical: título → barra (1rem acima, 1.5rem abaixo) → subtítulo (4rem abaixo) → conteúdo. Dentro dos cartões, `padding: 2rem` e `gap` de 0.75rem entre ícone, título e texto. Escala de espaço: 0.5 / 0.75 / 1 / 1.5 / 2 / 2.5 / 4 / 5 / 7rem.
 
-Cabeçalho fixo de 67px (logo 34px, `padding: 1rem 1.5rem`) que ganha fundo carvão e borda ao rolar; no celular vira um botão de menu de 44px abrindo um painel lateral de 80% (máx. 320px), com um "Convide-nos" compacto ao lado (o `nav-cta` com o glifo do WhatsApp, 36px visíveis e 44px de toque): o convite fica sempre à vista no cabeçalho fixo.
+Cabeçalho fixo de 67px (logo 34px, `padding: 1rem 1.5rem`) que ganha fundo carvão e borda ao rolar; até 1023px vira um botão de menu de 44px abrindo um painel lateral de 80% (máx. 320px), com um "Convide-nos" compacto ao lado (o menu completo mede ~930px e não cabia entre 768 e 1023px) (o `nav-cta` com o glifo do WhatsApp, 36px visíveis e 44px de toque): o convite fica sempre à vista no cabeçalho fixo.
 
 ## Elevation & Depth
 
@@ -254,6 +254,12 @@ Moldura de 16px com fio e sombra Palco, 960px máx (90vw), três slides em cross
 ### Convites no post
 - **Fim do post** (`.post-invite`): painel com fio vermelho a 25% e fundo vermelho a 6%, título 1.25rem / 600, botão `cta-btn` (largura total no celular). Em post com `servico:` no front matter (slug de `_servicos`), fala daquela celebração: título "Convide o Jeito Ágape para {para}", texto = `resumo` da página, botão = `cta` da página com a mensagem pronta dela (`data-track="post-fim"`, `data-service`), link "{short}: como funciona" para a página e a dica de mensagem pronta. Sem `servico:`, o convite geral; posts de Música trocam por `post-conversa.html`.
 - **Meio do post** (`.post-convite`, `{% include post-convite.html %}` no Markdown): cartão carvão com fio e 12px na coluna de leitura (nada de borda lateral colorida), uma frase em negrito + `resumo`, `cta-btn` e "Como funciona →" em `--accent-text`. Só no ponto em que o texto fala de reservar a música, um por post, e só com `servico:`.
+
+### Blog index (seções por leitor, 2026-10-26)
+`/blog/` é um mapa, não uma fila por data. Seções de `_data/blog_secoes.yml`: "Para quem organiza" (Eventos), "Música" e "Fé e ministério" (Ministério, Espiritualidade, Reflexão). Cada seção abre com título 700 + barra de 40×3 + apoio apagado, alinhados à esquerda como o herói do blog; depois o **destaque** (cartão carvão 16px, capa 16:9 inteira, título 700, resumo de 3 linhas; é o post com `destaque: true` ou o mais recente) e, ao lado a partir de 768px (7/12 + 5/12), até 4 **linhas de título** (`_includes/blog-linha.html`: miniatura 16:9 de 7.5rem com 8px de canto, etiqueta, título 600 de até 3 linhas, tempo de leitura; fio de 1px entre linhas). Seção com um texto só: o destaque deita a partir de 900px. "Para quem organiza" leva o bloco "Como servimos" com as páginas de serviço. Ritmo: 5rem entre seções (4rem no celular). Fecho: colunistas e "Receba nossos artigos" numa faixa de duas colunas. As páginas de categoria continuam com a lista completa (destaque + cartões verticais).
+
+### Post (coluna única, 2026-10-26)
+Tudo em uma coluna de 42rem e uma margem esquerda: trilha "← Blog · Categoria" (44px de toque) → etiqueta → H1 (até 2.5rem, `text-wrap: balance`) → assinatura em duas linhas → capa 16:9 inteira (16px) → primeiro parágrafo → **"Neste guia"** (cartão carvão 12px, lista numerada dos H2 com marcador vermelho, 2 colunas a partir de 640px; só em textos com 4 ou mais H2) → texto (listas com marcador `--accent-text`, H2 com entrelinha 1.25) → FAQ → **fim** após um fio: autor (foto redonda de 64px + bio), convite, "Leia a seguir" (as mesmas linhas de título, da mesma seção do índice), compartilhar.
 
 ### Contact cards
 `link-card` carvão com ícone vermelho de 2.5rem. O WhatsApp vem primeiro, com o glifo do WhatsApp, largo no celular (2 colunas): a seção fecha a home, e a última impressão é "convide", não "siga".

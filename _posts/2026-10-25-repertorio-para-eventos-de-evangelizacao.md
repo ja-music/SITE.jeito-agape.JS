@@ -4,7 +4,8 @@ title: "Como montar um bom repertório para eventos de evangelização"
 date: 2026-10-25 22:11:00 -0300
 author: "Beto Ferreira"
 category: "Música"
-image: "/assets/hero2.png"
+image: "/assets/blog/capa-repertorio-para-eventos.jpg"
+og_image: "/assets/blog/capa-repertorio-para-eventos-og.jpg"
 description: "Sete dicas para escolher as músicas de um retiro, encontro de jovens ou show de evangelização, e os discos católicos de onde sai boa parte do nosso repertório."
 faq: [musica-repertorio-quantas, musica-assembleia-nao-canta, musica-discos-eventos]
 ---

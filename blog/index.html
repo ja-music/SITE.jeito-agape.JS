@@ -7,21 +7,32 @@ image: "/assets/blog/quaresma.png"
 og_image: "/assets/blog/quaresma-og.png"
 ---
 {%- include wa-vars.html -%}
-<div class="blog-index wrap-4xl mx-auto px-4">
+{%- comment -%}
+Índice do blog em seções por leitor (dono, 26/10/2026): quem organiza, Música, Fé e ministério (_data/blog_secoes.yml).
+As páginas de categoria (/blog/<slug>/) continuam com a lista completa por data.
+{%- endcomment %}
+<div class="blog-index blog-index--secoes wrap-5xl mx-auto px-4">
 
   <div class="blog-hero">
     <h1>Blog</h1>
     <div class="accent-bar"></div>
     <p>Novidades, reflexões e histórias do Jeito Ágape</p>
-    {% include blog-categorias.html %}
+    <nav class="blog-cats" aria-label="Seções do blog">
+      <ul>
+        {%- for s in site.data.blog_secoes %}
+        <li><a href="#{{ s.id }}" class="category-tag" data-cat="{{ s.cor }}">{{ s.ancora }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
   </div>
 
-  {% include blog-lista.html posts=site.posts %}
+  {%- for s in site.data.blog_secoes %}
+  {% include blog-secao.html secao=s %}
+  {%- endfor %}
 
-  {% include blog-assinar.html %}
-
+  <div class="blog-fecho">
   {%- if site.data.authors.size > 0 %}
-  <div class="columnists-section">
+  <div class="blog-colunistas">
     <div class="section-label">Colunistas</div>
     <div class="columnists-grid">
       {%- for author in site.data.authors %}{% assign ak = author.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
@@ -47,7 +58,7 @@ og_image: "/assets/blog/quaresma-og.png"
   </dialog>
   {%- endfor %}
   {%- endif %}
+  {% include blog-assinar.html %}
+  </div>
 
 </div>
-
-<div style="padding-bottom: 4rem;"></div>

@@ -19,7 +19,7 @@ OWN-WORLD: inherits DESIGN.md unchanged; the only page-specific pieces are the c
 
 STORY: read, understand, share, and (for organizer posts) invite with the matching service page's own message — a short `.post-convite` card where the text talks about booking the music, and the end `.post-invite` that names the celebration and links to its page. The link is the front-matter key `servico:` (slug in `_servicos`), added 2026-10-25 after GA4 showed the festa guide drawing 75% of Google clicks and 0 invitations.
 
-FIRST VIEWPORT: back link, cover, tag, H1, date · author · reading time, first paragraph.
+FIRST VIEWPORT (revised with the owner on 2026-10-26, layout pass): trail "← Blog · Category", tag, H1, byline (author + role) and date · reading time, then the cover at column width, then the first paragraph and, on texts with 4+ H2, the numbered "Neste guia". The blog index is a map in reader sections (_data/blog_secoes.yml), not a date feed; DESIGN.md › Blog index / Post.
 
 REFINEMENT SCOPE: the share row overflowing on phones (must wrap), kramdown tables on phones (horizontal scroll container), blockquote and list rhythm, `.post-invite` contrast, the blog index featured card meta wrapping. Not in scope: typography family, colours, markup of posts (Markdown stays as the authors wrote it).
 

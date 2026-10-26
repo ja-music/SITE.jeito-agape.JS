@@ -5,7 +5,8 @@ date: 2026-11-19 05:00:00 -0300
 author: "Beto Ferreira"
 category: "Eventos"
 servico: banda-para-retiro
-image: "/assets/og-cover.jpg"
+image: "/assets/blog/capa-retiro-de-jovens.jpg"
+og_image: "/assets/blog/capa-retiro-de-jovens-og.jpg"
 description: "Passo a passo para organizar um retiro de jovens: tema e pregadores, data e local, equipe, programação do fim de semana, orçamento, inscrições e a música."
 faq: [ev-retiro-quando-comecar, ev-retiro-equipe, ev-retiro-programacao]
 ---

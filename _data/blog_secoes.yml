@@ -1,0 +1,24 @@
+# Seções do índice do blog (/blog/), uma por tipo de leitor (dono, 26/10/2026).
+# categorias: nomes exatos do `category` dos posts que entram na seção.
+# Cada seção abre com o post marcado `destaque: true` (senão, o mais recente), segue com até 4 linhas
+# e termina com o link para a(s) página(s) de categoria, onde fica o arquivo completo.
+# O "Leia a seguir" do fim de cada post usa a mesma divisão para sugerir textos do mesmo tipo.
+- id: organizar
+  titulo: "Para quem organiza"
+  ancora: "Organizar"
+  cor: eventos
+  categorias: ["Eventos"]
+  servicos: true # mostra "Como servimos" com as páginas de _servicos ao lado das linhas
+  intro: "Guias para quem prepara a festa da paróquia, o retiro, o EJC ou o show: cronograma, comissão, som e estrutura."
+- id: musica
+  titulo: "Música"
+  ancora: "Música"
+  cor: musica
+  categorias: ["Música"]
+  intro: "As canções que compomos e cantamos, o que a Igreja pede do canto na liturgia e como montamos o repertório do show."
+- id: fe
+  titulo: "Fé e ministério"
+  ancora: "Fé"
+  cor: ministerio
+  categorias: ["Ministério", "Espiritualidade", "Reflexão"]
+  intro: "Textos sobre a vida de fé e o ministério de música católica: os tempos da Igreja, a oração e a conversão."

@@ -1,11 +1,13 @@
 // Post do blog (CSS original de _layouts/post.html)
   /* Hero image */
   .post-hero-img {
+display: block;
 width: 100%;
-max-height: 420px;
+height: auto;
+aspect-ratio: 16 / 9; // a capa inteira na largura da coluna (o max-height de 420px cortava as fotos)
 object-fit: cover;
 border-radius: 16px;
-margin-bottom: 2.5rem;
+margin-bottom: 2rem;
 border: 1px solid var(--border);
   }
 
@@ -36,13 +38,14 @@ color: var(--accent-text);
   a.category-tag[aria-current="page"] { box-shadow: inset 0 0 0 1px currentColor; } // fio de 1px na cor da categoria, não sombra
 
   .post-header {
-margin-bottom: 3rem;
-padding-bottom: 2rem;
-border-bottom: 1px solid var(--border);
+margin-bottom: 1.75rem; // a capa vem logo abaixo: sem o fio, que encostava no 1º parágrafo
+padding-bottom: 0;
+border-bottom: 0;
   }
 
   .post-header h1 {
-font-size: clamp(1.8rem, 4vw, 2.8rem);
+text-wrap: balance;
+font-size: clamp(1.8rem, 4vw, 2.5rem);
 font-weight: 700;
 letter-spacing: -0.02em;
 margin: 0.75rem 0 1rem;
@@ -86,7 +89,7 @@ opacity: 0.3;
   .post-content {
 max-width: 42rem; // ≈ 80 caracteres a 16,8px (720px dava 86)
 margin: 0 auto;
-padding-bottom: 4rem;
+padding-bottom: 0;
 line-height: 1.85;
 color: rgba(255, 255, 255, 0.8);
 font-size: 1.05rem;
@@ -96,16 +99,21 @@ font-size: 1.05rem;
 font-size: 1.5rem;
 font-weight: 700;
 color: var(--text);
-margin: 2.5rem 0 1rem;
+margin: 2.75rem 0 1rem;
 letter-spacing: -0.01em;
+line-height: 1.25; // herdava 1,85 do corpo: H2 de duas linhas se desmanchava
+text-wrap: balance;
   }
 
   .post-content h3 {
 font-size: 1.2rem;
 font-weight: 600;
 color: var(--text);
-margin: 2rem 0 0.75rem;
+margin: 2rem 0 0.6rem;
+line-height: 1.35;
   }
+
+  .post-content h2[id], .post-content h3[id] { scroll-margin-top: 5.5rem; } // o cabeçalho fixo não cobre o título ao pular pelo "Neste guia"
 
   .post-content p {
 margin-bottom: 1.4rem;
@@ -125,6 +133,11 @@ color: #d4365a;
   .post-content ul, .post-content ol {
 margin: 1rem 0 1.4rem 1.5rem;
   }
+
+  // O _reset.scss tira os marcadores de toda lista; no texto do post eles voltam (cronograma, novena, "no dia" eram parágrafos soltos)
+  .post-content ul { list-style: disc; }
+  .post-content ol { list-style: decimal; }
+  .post-content li::marker { color: var(--accent-text); }
 
   .post-content li {
 margin-bottom: 0.5rem;
@@ -347,7 +360,6 @@ font-weight: 400;
   @media (max-width: 640px) {
 .post-hero-img {
   border-radius: 12px;
-  max-height: 240px;
 }
   }
 
@@ -531,3 +543,40 @@ border-radius: 12px;
   .post-content .task-list-item { position: relative; padding-left: 1.75rem; } // recuo pendente: a 2ª linha alinha com o texto, não com o quadrado
   .post-content .task-box { position: absolute; left: 0; top: 0.42em; width: 1em; height: 1em; border: 1.5px solid rgba(255, 255, 255, 0.35); border-radius: 4px; }
   .post-content .task-box--feito { background: var(--accent); border-color: var(--accent); }
+
+  /* ---- Coluna única do post (26/10/2026) ---- */
+  // Uma largura e uma margem esquerda para trilha, cabeçalho, capa, texto, FAQ e fim (antes eram 4 larguras e 3 margens).
+  .post-pagina { max-width: calc(42rem + 2rem); padding-bottom: 4rem; }
+
+  .post-trilha { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: var(--text-muted); font-size: 0.85rem; font-weight: 500; }
+  .post-trilha a { display: inline-flex; align-items: center; gap: 0.4rem; min-height: 44px; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  .post-trilha a:hover { color: var(--text); }
+  .post-trilha svg { width: 1rem; height: 1rem; }
+  .post-trilha__sep { opacity: 0.4; }
+
+  // "Neste guia": cartão carvão na coluna, lista numerada em 1 coluna no celular e 2 a partir de 640px
+  .post-indice { margin: 0.5rem 0 2.5rem; padding: 1.25rem 1.5rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+  .post-indice .post-indice__titulo { margin: 0 0 0.5rem; color: var(--text-muted); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+  .post-content .post-indice ol { margin: 0 0 0 1.25rem; }
+  .post-content .post-indice li { margin: 0; font-size: 0.95rem; line-height: 1.4; break-inside: avoid; }
+  .post-content .post-indice a { display: inline-flex; align-items: center; min-height: 44px; color: var(--text-soft); text-decoration: none; }
+  .post-content .post-indice a:hover { color: var(--accent-text); }
+  @media (min-width: 640px) { .post-content .post-indice ol { columns: 2; column-gap: 2.5rem; } }
+
+  .post-faq { margin-top: 2.5rem; }
+  .post-faq > h2 { margin: 0 0 1rem; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; } // era 16px/400, menor que as próprias perguntas
+
+  // Fim do post: um fio, depois autor → convite → "Leia a seguir" → compartilhar, com o mesmo respiro entre os blocos
+  .post-fim { display: flex; flex-direction: column; gap: 2.5rem; margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
+  .post-fim .post-invite { margin: 0; }
+  .post-fim .post-footer { margin: 0; padding-top: 1.5rem; }
+
+  .post-autor-bloco { display: flex; gap: 1rem; align-items: flex-start; }
+  .post-autor-bloco__foto { flex: none; width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
+  .post-autor-bloco p { margin: 0; }
+  .post-autor-bloco__nome { font-weight: 700; font-size: 1.05rem; }
+  .post-autor-bloco .post-autor-bloco__bio { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-top: 0.5rem; }
+
+  .post-seguir > h2 { margin: 0 0 1rem; color: var(--text-muted); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+  @media (max-width: 640px) { .post-fim .share-links > span { flex-basis: 100%; } } // "Compartilhar:" numa linha e os 7 ícones juntos na de baixo (quebravam 5 + 2)
+

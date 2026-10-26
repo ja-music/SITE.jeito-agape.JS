@@ -4,8 +4,8 @@ title: "Ministério de música católica: o que é, o que faz e como participar"
 date: 2026-10-03 22:00:00 -0300
 author: "Beto Ferreira"
 category: "Ministério"
-image: "/assets/blog/ministerio-de-musica-catolica.jpg"
-og_image: "/assets/blog/ministerio-de-musica-catolica-og.jpg"
+image: "/assets/blog/capa-ministerio-de-musica.jpg"
+og_image: "/assets/blog/capa-ministerio-de-musica-og.jpg"
 description: "Ministério de música católica é o grupo que serve a liturgia e a evangelização pela música. O que ele faz, a diferença para coral e banda, quem participa e como formar um."
 faq: [ministerio-o-que-e, ministerio-vs-coral, ministerio-vs-banda, ministerio-na-missa, ministerio-quem-participa, ministerio-como-convidar]
 ---

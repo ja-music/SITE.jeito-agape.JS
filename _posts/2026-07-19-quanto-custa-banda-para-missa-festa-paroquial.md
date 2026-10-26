@@ -4,8 +4,8 @@ title: "Música ao vivo na festa da paróquia: o que a comissão precisa organiz
 date: 2026-07-19 10:00:00 -0300
 author: "Beto Ferreira"
 category: "Eventos"
-image: "/assets/blog/custo-banda-missa.png"
-og_image: "/assets/blog/custo-banda-missa-og.png"
+image: "/assets/blog/capa-quanto-custa.jpg"
+og_image: "/assets/blog/capa-quanto-custa-og.jpg"
 description: "Som, estrutura, horários e a conversa com o ministério: o que a comissão da festa do padroeiro precisa deixar pronto para a música ao vivo dar certo, sem surpresa na véspera."
 keywords: "música ao vivo festa paroquial, organizar festa do padroeiro, sonorização missa, comissão festa paróquia, ministério de música católica, banda para festa de padroeiro"
 ---

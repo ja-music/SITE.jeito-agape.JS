@@ -4,8 +4,8 @@ title: "Bem-vindos ao Blog do Jeito Ágape!"
 date: 2026-02-14
 author: "Beto Ferreira"
 category: "Ministério"
-image: "/assets/hero2.png"
-og_image: "/assets/blog/bem-vindos-og.png"
+image: "/assets/blog/capa-bem-vindos.jpg"
+og_image: "/assets/blog/capa-bem-vindos-og.jpg"
 description: "Nasce um novo canal de evangelização! Conheça o blog do Jeito Ágape: fé, testemunhos, teologia católica e reflexões sobre as músicas que tocam o coração."
 ---
 

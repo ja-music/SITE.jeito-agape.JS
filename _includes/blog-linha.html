@@ -1,0 +1,14 @@
+{%- comment -%}
+Uma linha de título do blog (miniatura 16:9 + etiqueta + título + tempo de leitura). Usada nas seções do índice
+e no "Leia a seguir" do fim dos posts. Uso: <li>{% include blog-linha.html post=p %}</li>
+{%- endcomment -%}
+{%- assign lp = include.post -%}{%- assign lk = lp.image | remove: "/assets/" | split: "." | first | replace: "/", "-" -%}
+{%- include post-minutos.html post=lp -%}
+<a href="{{ lp.url }}" class="blog-linha">
+  {%- if site.data.images[lk] %}{% include picture.html name=lk alt="" class="blog-linha__img" pictureclass="blog-linha__media" sizes="8rem" %}{% elsif lp.image %}<img src="{{ lp.image }}" alt="" class="blog-linha__img" width="400" height="225" loading="lazy">{% endif %}
+  <span class="blog-linha__texto">
+    {%- if lp.category %}<span class="category-tag" data-cat="{{ lp.category | slugify: "latin" }}">{{ lp.category }}</span>{% endif %}
+    <span class="blog-linha__titulo">{{ lp.title }}</span>
+    <span class="blog-linha__meta">{{ minutos_post }} min de leitura</span>
+  </span>
+</a>

@@ -1,0 +1,58 @@
+{%- comment -%}
+Uma seção do índice do blog (dados em _data/blog_secoes.yml): título + barra + apoio, o destaque (post com
+`destaque: true` ou o mais recente) e até 4 linhas; sem linhas, o destaque fica deitado na largura toda.
+Uso: {% include blog-secao.html secao=s %}
+{%- endcomment -%}
+{%- assign secao = include.secao -%}
+{%- assign sp = site.posts | where_exp: "p", "secao.categorias contains p.category" -%}
+{%- if sp.size > 0 %}
+{%- assign lead = sp | where: "destaque", true | first -%}{%- unless lead -%}{%- assign lead = sp.first -%}{%- endunless -%}
+{%- assign lk = lead.image | remove: "/assets/" | split: "." | first | replace: "/", "-" -%}
+{%- include post-minutos.html post=lead -%}
+<section class="blog-secao" id="{{ secao.id }}" aria-labelledby="secao-{{ secao.id }}">
+  <div class="blog-secao__cabeca">
+    <h2 id="secao-{{ secao.id }}">{{ secao.titulo }}</h2>
+    <div class="accent-bar"></div>
+    <p>{{ secao.intro }}</p>
+  </div>
+  <div class="blog-secao__corpo{% if sp.size == 1 and secao.servicos == nil %} blog-secao__corpo--so{% endif %}">
+    <a href="{{ lead.url }}" class="secao-lead">
+      {%- if site.data.images[lk] %}{% include picture.html name=lk alt="" class="secao-lead__img" pictureclass="secao-lead__media" sizes="(min-width: 1024px) 37rem, (min-width: 768px) 60vw, calc(100vw - 2rem)" %}{% elsif lead.image %}<img src="{{ lead.image }}" alt="" class="secao-lead__img" width="1200" height="675" loading="lazy">{% endif %}
+      <div class="secao-lead__corpo">
+        {%- if lead.category %}<span class="category-tag" data-cat="{{ lead.category | slugify: "latin" }}">{{ lead.category }}</span>{% endif %}
+        <h3 class="secao-lead__titulo">{{ lead.title }}</h3>
+        <span class="secao-lead__resumo">{{ lead.excerpt | strip_html | truncatewords: 32 }}</span>
+        <span class="secao-lead__meta">{% if lead.author %}{{ lead.author }} · {% endif %}{{ minutos_post }} min de leitura</span>
+      </div>
+    </a>
+    {%- if sp.size > 1 or secao.servicos %}
+    <div class="blog-secao__lado">
+      {%- if sp.size > 1 %}
+      <ol class="blog-linhas">
+        {%- assign n = 0 -%}
+        {%- for p in sp -%}{%- if p.url != lead.url and n < 4 -%}{%- assign n = n | plus: 1 %}
+        <li>{% include blog-linha.html post=p %}</li>
+        {%- endif -%}{%- endfor %}
+      </ol>
+      {%- endif %}
+      {%- if secao.servicos %}
+      <nav class="blog-servicos" aria-labelledby="servicos-{{ secao.id }}">
+        <p class="blog-servicos__titulo" id="servicos-{{ secao.id }}">Como servimos</p>
+        <ul>
+          {%- assign svcs = site.servicos | sort: "order" %}{% for sv in svcs %}
+          <li><a href="{{ sv.url }}"><span>{{ sv.short }}</span>{% include icon.html name="arrow-right" class="ic-4" %}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+      {%- endif %}
+    </div>
+    {%- endif %}
+  </div>
+  {%- assign cat_pgs = site.pages | where_exp: "pg", "secao.categorias contains pg.categoria" | sort: "ordem" %}
+  {%- if cat_pgs.size == 1 %}
+  <p class="blog-secao__mais"><a href="{{ cat_pgs.first.url }}">Todos os textos de {{ cat_pgs.first.categoria }} {% include icon.html name="arrow-right" class="ic-4" %}</a></p>
+  {%- elsif cat_pgs.size > 1 %}
+  <p class="blog-secao__mais">Por categoria:{% for cp in cat_pgs %} <a href="{{ cp.url }}">{{ cp.categoria }}</a>{% unless forloop.last %} ·{% endunless %}{% endfor %}</p>
+  {%- endif %}
+</section>
+{%- endif %}
