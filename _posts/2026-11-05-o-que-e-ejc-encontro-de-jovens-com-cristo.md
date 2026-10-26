@@ -4,6 +4,7 @@ title: "O que é EJC: como funciona o Encontro de Jovens com Cristo"
 date: 2026-11-05 05:00:00 -0300
 author: "Beto Ferreira"
 category: "Eventos"
+servico: banda-para-retiro
 image: "/assets/og-cover.jpg"
 description: "EJC é o Encontro de Jovens com Cristo, um fim de semana de retiro feito por jovens da paróquia para jovens. Como funciona, quem participa e como a música entra."
 faq: [ev-ejc-o-que-e, ev-ejc-quem-participa, ev-ejc-musica]

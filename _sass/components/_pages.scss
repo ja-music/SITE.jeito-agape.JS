@@ -10,6 +10,8 @@
 .breadcrumb li { display: inline-flex; align-items: center; gap: 0.5rem; }
 .breadcrumb li + li::before { content: "·"; opacity: 0.3; }
 .breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+.breadcrumb a { position: relative; }
+.breadcrumb a::before { content: ""; position: absolute; inset: -12px 0; } // 20px de texto, 44px de toque, sem empurrar o título
 .breadcrumb a:hover { color: var(--text); }
 .breadcrumb--left { justify-content: flex-start; }
 // Lista de fatos (Sobre) e dados de contato: dt como .track-num, dd simples

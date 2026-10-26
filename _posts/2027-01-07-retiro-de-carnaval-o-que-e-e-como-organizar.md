@@ -4,6 +4,7 @@ title: "Retiro de Carnaval: o que é, como participar e como organizar na paróq
 date: 2027-01-07 05:00:00 -0300
 author: "Beto Ferreira"
 category: "Eventos"
+servico: banda-para-retiro
 image: "/assets/og-cover.jpg"
 description: "Retiro de Carnaval é o retiro espiritual que paróquias e comunidades fazem nos dias de folia, de sábado à terça. O que acontece, como participar e como organizar um."
 faq: [ev-carnaval-o-que-e, ev-carnaval-como-participar, ev-carnaval-organizar]

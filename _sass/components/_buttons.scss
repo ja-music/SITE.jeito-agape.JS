@@ -46,38 +46,42 @@
   margin-top: 1.8rem;
 }
 
+// O convite do herói é a luz mais forte do palco (dono, 2026-10-25): vermelho sólido em repouso.
+// Antes era uma pílula fantasma (fio a 10%, 13,6px) que sumia ao lado do verde do WhatsApp.
 .hero-cta .hero-cta-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.85rem;
-  font-weight: 500;
+  gap: 0.6rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
-  letter-spacing: 0.03em;
-  min-height: 44px;
-  padding: 0.6rem 1.4rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50px;
-  transition: all 0.3s;
+  min-height: 52px;
+  padding: 0.8rem 1.9rem;
+  border: 2px solid var(--accent);
+  border-radius: 9999px;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .hero-cta .hero-cta-link:hover {
-  color: #fff;
-  border-color: var(--accent);
-  background: rgba(197, 48, 80, 0.1);
+  background: #d4365a;
+  border-color: #d4365a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(197, 48, 80, 0.3);
 }
 
 .hero-cta p {
+  max-width: 24rem;
+  margin: 0.9rem auto 0;
   color: var(--text-soft);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 400;
-  margin-top: 0.8rem;
-  letter-spacing: 0.02em;
+  line-height: 1.55;
 }
 
 
 // a mesma pílula do herói, utilizável fora dele (link "Conheça nossa história" etc.)
-.pill-link { display: inline-flex; align-items: center; gap: 0.5rem; color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; font-weight: 500; text-decoration: none; letter-spacing: 0.03em; padding: 0.6rem 1.4rem; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50px; transition: all 0.3s; }
+.pill-link { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; font-weight: 500; text-decoration: none; letter-spacing: 0.03em; padding: 0.6rem 1.4rem; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 9999px; transition: all 0.3s; }
 .pill-link:hover { color: #fff; border-color: var(--accent); background: rgba(197, 48, 80, 0.1); }
 .pill-link svg { width: 1rem; height: 1rem; }

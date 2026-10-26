@@ -8,12 +8,13 @@
     <div class="hero__stage">
       <div class="carousel" id="heroCarousel">
         <div class="carousel-sizer" aria-hidden="true"></div>
-        <div class="carousel-slide active">
-          {%- comment -%}1º slide = LCP da home: carrega cedo e com prioridade; os demais entram sob demanda{%- endcomment %}
-          {% include picture.html name="hero1" alt="Jeito Ágape - Ministério de Música Católica" sizes=hero_sizes priority=true %}
+        {%- comment -%}1º slide = LCP da home: carrega cedo e com prioridade; os demais entram sob demanda.
+        Os rostos vêm primeiro (dono, 2026-10-25): quem chega por indicação reconhece o grupo na hora.{%- endcomment %}
+        <div class="carousel-slide photo active">
+          {% include picture.html name="hero2" alt="Membros do Jeito Ágape" sizes=hero_sizes priority=true %}
         </div>
-        <div class="carousel-slide photo">
-          {% include picture.html name="hero2" alt="Membros do Jeito Ágape" sizes=hero_sizes %}
+        <div class="carousel-slide">
+          {% include picture.html name="hero1" alt="Jeito Ágape - Ministério de Música Católica" sizes=hero_sizes %}
         </div>
         {%- if ultimo %}{% assign ck = ultimo.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
         <div class="carousel-slide">
@@ -50,10 +51,10 @@
     </div>
     <div class="hero-cta" data-reveal style="--delay: 200ms">
       <a href="{{ wa_url_geral }}" target="_blank" rel="noopener noreferrer" class="hero-cta-link" data-track="hero">
-        {% include icon.html name="whatsapp" class="ic-4" %}
+        {% include icon.html name="whatsapp" class="ic-5" %}
         Convide-nos pelo WhatsApp<span class="sr-only"> (abre em nova aba)</span>
       </a>
-      <p>Show, festa, retiro ou encontro: diga a cidade e a data. Respondemos por lá.</p>
+      <p>Abre o WhatsApp com a mensagem pronta: diga se é show, festa, retiro ou encontro, a cidade e a data.</p>
     </div>
     <div class="mt-6 scroll-indicator" aria-hidden="true">{% include icon.html name="chevrons-down" %}</div>
   </div>

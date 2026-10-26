@@ -25,7 +25,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-  transition: transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
 }
 
 .whatsapp-float:hover {
@@ -61,8 +61,8 @@
   position: fixed;
   bottom: 1.5rem;
   left: 1.5rem;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 50%;
@@ -87,5 +87,11 @@
 
 
 .whatsapp-float svg { width: 1.75rem; height: 1.75rem; color: #fff; }
+
+// Celular rolando para baixo (classe posta pelo top.js): os flutuantes saem da frente do texto.
+@media (max-width: 767px) {
+  body.lendo .whatsapp-float,
+  body.lendo .back-to-top { opacity: 0; transform: translateY(1rem); pointer-events: none; }
+}
 .back-to-top { color: #fff; padding: 0; }
 .back-to-top svg { width: 1rem; height: 1rem; }

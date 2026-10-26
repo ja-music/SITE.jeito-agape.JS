@@ -4,6 +4,7 @@ title: "Como organizar um show de evangelização na paróquia"
 date: 2026-12-17 05:00:00 -0300
 author: "Beto Ferreira"
 category: "Eventos"
+servico: show-de-evangelizacao
 image: "/assets/og-cover.jpg"
 description: "Show de evangelização é uma noite de louvor, oração e pregação com música ao vivo. Como escolher data e local, montar som e palco, divulgar e fazer o roteiro."
 faq: [ev-show-o-que-e, ev-show-estrutura, ev-show-roteiro]

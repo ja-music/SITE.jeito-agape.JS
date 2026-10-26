@@ -17,7 +17,7 @@ THESIS: the post is the site's reading register: cover framed at 16px, category 
 
 OWN-WORLD: inherits DESIGN.md unchanged; the only page-specific pieces are the category tag colours and the share row.
 
-STORY: read, understand, share, and (for organizer posts) follow the link to the matching service page.
+STORY: read, understand, share, and (for organizer posts) invite with the matching service page's own message — a short `.post-convite` card where the text talks about booking the music, and the end `.post-invite` that names the celebration and links to its page. The link is the front-matter key `servico:` (slug in `_servicos`), added 2026-10-25 after GA4 showed the festa guide drawing 75% of Google clicks and 0 invitations.
 
 FIRST VIEWPORT: back link, cover, tag, H1, date · author · reading time, first paragraph.
 

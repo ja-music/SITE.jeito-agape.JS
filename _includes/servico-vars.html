@@ -1,0 +1,11 @@
+{%- comment -%}
+Serviço ligado ao post (front matter servico: <slug de _servicos>, ex.: banda-para-festa-de-padroeiro).
+Define svc (o documento da página de serviço) e svc_wa_url (WhatsApp com a mensagem pronta daquela página).
+Sem servico: no post, svc fica vazio e os convites usam o texto geral.
+{%- endcomment -%}
+{%- assign svc = nil -%}{%- assign svc_wa_url = nil -%}
+{%- if page.servico -%}{%- assign svc = site.servicos | where: "slug", page.servico | first -%}{%- endif -%}
+{%- if svc -%}
+{%- assign svc_wa_texto = svc.whatsapp_text | default: site.data.contato.whatsapp_texto | url_encode | replace: "+", "%20" -%}
+{%- assign svc_wa_url = "https://api.whatsapp.com/send?phone=" | append: site.data.contato.whatsapp_numero | append: "&text=" | append: svc_wa_texto -%}
+{%- endif -%}

@@ -4,6 +4,7 @@ title: "Calendário de festas de padroeiro: as datas dos santos mais comuns e qu
 date: 2026-12-03 05:00:00 -0300
 author: "Beto Ferreira"
 category: "Eventos"
+servico: banda-para-festa-de-padroeiro
 image: "/assets/blog/festa-padroeiro.jpg"
 og_image: "/assets/blog/festa-padroeiro-og.jpg"
 description: "Datas das festas de padroeiro mais comuns no Brasil, de São Sebastião a Nossa Senhora Aparecida, e o mês em que a comissão deve começar a organizar cada uma."

@@ -4,6 +4,7 @@ title: "Como Organizar a Festa do Padroeiro: Cronograma, Comissão e Checklist"
 date: 2026-07-19
 author: "Beto Ferreira"
 category: "Eventos"
+servico: banda-para-festa-de-padroeiro
 image: "/assets/blog/festa-padroeiro.jpg"
 og_image: "/assets/blog/festa-padroeiro-og.jpg"
 description: "Guia prático para a comissão de festa: cronograma reverso de 6 meses, divisão da comissão por frentes, novena, estrutura, som, divulgação e checklist final. Escrito por quem já animou mais de 500 missões e festas em Minas."
@@ -51,6 +52,8 @@ perde — e é o que separa a festa tranquila da festa no sufoco.
   quer alguém específico, é agora.
 - Levantar o que precisa de autorização: uso de praça pública, alvará, som até determinada
   hora, energia. Em cidade pequena isso é rápido; em cidade média pode levar semanas.
+
+{% include post-convite.html %}
 
 ### 3 meses antes
 
@@ -190,8 +193,8 @@ e deixe claro para todos os envolvidos onde termina a celebração e onde começ
 ---
 
 Se a sua comunidade está organizando a festa e ainda falta a parte da música, [veja como
-podemos servir o seu evento](/#servicos) — animamos missas, novenas, quermesses e shows de
-evangelização. E se ficou alguma dúvida prática, [respondemos as mais comuns aqui](/#faq).
+servimos a festa do padroeiro](/banda-para-festa-de-padroeiro/) — animamos novenas, a Missa
+solene, quermesses e shows de evangelização. E se ficou alguma dúvida prática, [respondemos as mais comuns aqui](/#faq).
 
 <script type="application/ld+json">
 {
