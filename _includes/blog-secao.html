@@ -40,7 +40,7 @@ Uso: {% include blog-secao.html secao=s %}
         <p class="blog-servicos__titulo" id="servicos-{{ secao.id }}">Como servimos</p>
         <ul>
           {%- assign svcs = site.servicos | sort: "order" %}{% for sv in svcs %}
-          <li><a href="{{ sv.url }}"><span>{{ sv.short }}</span>{% include icon.html name="arrow-right" class="ic-4" %}</a></li>
+          <li><a href="{{ sv.url }}"><span class="blog-servicos__texto"><span class="blog-servicos__nome">{{ sv.short }}</span><span class="blog-servicos__resumo">{{ sv.resumo }}</span></span>{% include icon.html name="arrow-right" class="ic-4" %}</a></li>
           {%- endfor %}
         </ul>
       </nav>

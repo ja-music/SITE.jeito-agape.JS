@@ -622,14 +622,31 @@ overflow: hidden;
   .blog-servicos a:hover svg { transform: translateX(3px); }
   @media (prefers-reduced-motion: reduce) { .blog-servicos a:hover svg { transform: none; } }
 
-  /* ---- Eixo central (26/10/2026): o blog abre e divide as seções como a home (título + barra + apoio centrados) ---- */
-  .blog-hero { text-align: center; }
-  .blog-hero .accent-bar { margin-inline: auto; }
-  .blog-hero p { max-width: 35rem; margin-inline: auto; }
-  .blog-cats ul { justify-content: center; }
-  .blog-secao__cabeca { text-align: center; }
-  .blog-secao__cabeca .accent-bar { margin-inline: auto; }
-  .blog-secao__cabeca p { margin-inline: auto; }
-  .blog-secao__mais { text-align: center; }
-  .blog-colunistas .section-label { text-align: center; }
+  .blog-servicos__texto { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
+  .blog-servicos__resumo { color: var(--text-muted); font-size: 0.82rem; font-weight: 400; line-height: 1.5; }
+
+  /* ---- Componentes lado a lado com a mesma altura (dono, 26/10/2026: "espaços vazios entre os componentes") ---- */
+  // Destaque e coluna ao lado: a mais baixa estica até a linha de baixo da outra (sobravam 242px e 130px vazios).
+  @media (min-width: 768px) {
+.blog-secao__corpo { align-items: stretch; }
+.secao-lead { height: 100%; }
+.secao-lead__corpo { flex: 1; }
+.secao-lead__meta { margin-top: auto; }
+.blog-secao__lado { height: 100%; }
+.blog-secao__lado > :last-child { flex: 1; }
+.blog-secao__lado > .blog-linhas:last-child { justify-content: space-between; }
+.blog-servicos { display: flex; flex-direction: column; }
+.blog-servicos ul { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+  }
+  // Fecho: a caixa de assinatura começa na linha do 1º colunista (abaixo do rótulo) e termina na do último.
+  @media (min-width: 900px) {
+.blog-fecho { align-items: stretch; }
+.blog-fecho .subscribe-section { margin-top: 3.4375rem; display: flex; flex-direction: column; justify-content: center; } // rótulo "Colunistas": 18 + 12 + 1 + 24px
+  }
+  // O destaque ao lado de linhas fica mais baixo (foto 2:1, resumo de 2 linhas): as duas colunas já nascem quase
+  // da mesma altura e o esticamento acima só fecha a diferença, sem abrir vão dentro da coluna da direita.
+  @media (min-width: 768px) {
+.blog-secao__corpo:not(.blog-secao__corpo--so) .secao-lead__img { aspect-ratio: 2 / 1; object-position: center 30%; }
+.blog-secao__corpo:not(.blog-secao__corpo--so) .secao-lead__resumo { -webkit-line-clamp: 2; }
+  }
 

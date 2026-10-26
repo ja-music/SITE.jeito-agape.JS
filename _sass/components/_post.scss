@@ -33,7 +33,6 @@ color: var(--text-soft);
   a.category-tag[aria-current="page"] { box-shadow: inset 0 0 0 1px currentColor; } // fio de 1px na cor da categoria, não sombra
 
   .post-header {
-text-align: center; // títulos no eixo central, como as seções da home; o texto corrido segue à esquerda
 margin-bottom: 1.75rem; // a capa vem logo abaixo: sem o fio, que encostava no 1º parágrafo
 padding-bottom: 0;
 border-bottom: 0;
@@ -575,9 +574,3 @@ border-radius: 12px;
 
   .post-seguir > h2 { margin: 0 0 1rem; color: var(--text-muted); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
   @media (max-width: 640px) { .post-fim .share-links > span { flex-basis: 100%; } } // "Compartilhar:" numa linha e os 7 ícones juntos na de baixo (quebravam 5 + 2)
-
-  /* ---- Eixo central (26/10/2026): trilha, etiqueta, título, assinatura e os títulos do fim centralizados ---- */
-  .post-trilha { justify-content: center; }
-  .post-header .post-meta-row { align-items: center; }
-  .post-faq > h2, .post-seguir > h2 { text-align: center; }
-
