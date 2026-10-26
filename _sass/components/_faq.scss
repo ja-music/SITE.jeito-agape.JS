@@ -1,7 +1,7 @@
 // FAQ (CSS original)
 /* ---- FAQ (acordeão nativo <details>: sem JS, e o Google lê o conteúdo fechado) ---- */
 .faq-list {
-  max-width: 46rem;
+  max-width: 42rem; // a largura de leitura do site (post, páginas)
   margin: 2.5rem auto 0;
   text-align: left;
 }

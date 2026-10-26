@@ -13,7 +13,7 @@ layout: default
 
   {%- if page.schema == "agenda" %}
   {%- assign hoje = site.time | date: "%Y%m%d" %}
-  <div class="wrap-5xl mx-auto px-4">
+  <div class="wrap-5xl mx-auto wrap-pagina agenda-bloco">
     <div class="agenda-layout">
       <div class="agenda-photo-wrapper">
         <div class="agenda-wave"></div><div class="agenda-wave"></div><div class="agenda-wave"></div>
@@ -35,7 +35,7 @@ layout: default
   </div>
   {%- endif %}
 
-  <div class="wrap-4xl mx-auto px-4 page-body">
+  <div class="wrap-4xl mx-auto wrap-pagina page-body">
     <div class="post-content">
       {{ content }}
     </div>
@@ -64,7 +64,7 @@ layout: default
 
   {%- if page.schema == "contact" %}
   <section class="page-section" aria-label="Canais de contato">
-    <div class="wrap-4xl mx-auto">{% include contact-cards.html %}</div>
+    <div class="wrap-5xl mx-auto">{% include contact-cards.html %}</div>
   </section>
   {%- else %}
   <section class="cta-section" aria-labelledby="conv-t">

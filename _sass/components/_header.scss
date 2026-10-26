@@ -47,7 +47,7 @@
 
 // o que eram classes do Tailwind no markup original
 .header { position: fixed; top: 0; width: 100%; z-index: 50; }
-.header__bar { max-width: 72rem; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; }
+.header__bar { max-width: calc(64rem + 3rem); /* o logo começa na mesma linha das grades de 64rem */ margin-inline: auto; display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; }
 .header__logo { display: flex; align-items: center; padding: 5px; margin: -5px; } // alvo de 44px em volta do coração de 34px
 .header__logo img { width: 34px; height: 34px; filter: brightness(0) invert(1); }
 .nav { display: none; align-items: center; gap: 2rem; }

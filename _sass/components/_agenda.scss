@@ -226,3 +226,13 @@
   }
 }
 
+// A foto acompanha a altura da lista (dono, 26/10/2026): com 420px fixos, uma lista de 1 a 3 datas deixava vazio
+// em cima e embaixo, e na /agenda/ a foto quase encostava no texto. A partir de 768px a foto preenche a linha
+// da grade (mínimo de 15rem) e a lista fica centrada nela.
+@media (min-width: 768px) {
+  .agenda-layout { align-items: stretch; }
+  .agenda-photo-wrapper { min-height: 15rem; }
+  .agenda-photo { position: absolute; inset: 0; height: 100%; object-position: center 25%; }
+  .agenda-list { align-self: center; }
+}
+.agenda-bloco { margin-bottom: 3.5rem; }

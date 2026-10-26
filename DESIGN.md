@@ -11,12 +11,6 @@ colors:
   white-soft: "rgba(255, 255, 255, 0.75)"
   white-muted: "rgba(255, 255, 255, 0.5)"
   hairline: "rgba(255, 255, 255, 0.06)"
-  whatsapp-green: "#25D366"
-  tag-espiritualidade: "#818cf8"
-  tag-ministerio: "#e8657e"
-  tag-musica: "#eab308"
-  tag-eventos: "#4ade80"
-  tag-reflexao: "#c084fc"
 typography:
   display:
     fontFamily: "Inter, Inter Fallback, system-ui, sans-serif"
@@ -107,8 +101,8 @@ components:
     rounded: "{rounded.card}"
     padding: "2rem"
   tag:
-    backgroundColor: "rgba(197, 48, 80, 0.15)"
-    textColor: "{colors.tag-ministerio}"
+    backgroundColor: "rgba(255, 255, 255, 0.07)"
+    textColor: "{colors.white-soft}"
     rounded: "{rounded.tag}"
     padding: "0.25rem 0.7rem"
 ---
@@ -150,9 +144,8 @@ Preto quente, branco em três intensidades e um vermelho só — mais o verde do
 - **Branco apagado** (rgba 255/0.5): subtítulos, textos de apoio, navegação em repouso, legendas. Abaixo disso a legibilidade sobre o grão cai — é o piso.
 - **Fio** (rgba 255/0.06): toda borda e divisória.
 
-### Tertiary
-- **Verde WhatsApp** (#25D366): exclusivo do botão flutuante; não é cor da marca.
-- **Cores das categorias do blog** (#818cf8 espiritualidade, #e8657e ministério, #eab308 música, #4ade80 eventos, #c084fc reflexão): só nas etiquetas de categoria, sempre sobre fundo da mesma matiz a 15%.
+### Nenhuma terceira cor (dono, 2026-10-26)
+O site usa **uma cor só**: o vermelho, mais os neutros. O verde do WhatsApp saiu do botão flutuante (agora vermelho com o glifo branco) e as cinco cores das categorias do blog (#818cf8, #e8657e, #eab308, #4ade80, #c084fc) viraram a etiqueta neutra: o dono achou que "muitas cores não conversam umas com as outras". Uma cor nova só com pedido explícito.
 
 ### Named Rules
 **A Regra do Único Vermelho.** O vermelho aparece em menos de 10% de qualquer tela: barra, botão, ícones, links. A raridade é o que faz o botão de convite saltar. A única exceção é a faixa de convite (`cta-section`), que inverte: fundo vermelho inteiro, texto branco.
@@ -185,7 +178,7 @@ Preto quente, branco em três intensidades e um vermelho só — mais o verde do
 
 ## Layout
 
-Página de uma coluna com contêineres centrados em quatro larguras herdadas do Tailwind: 48rem (texto corrido), 56rem (FAQ, contato, páginas), 64rem (grades de cartões, álbum, sessions) e 72rem (cabeçalho). Seções com `padding: 7rem 2rem` no desktop e `5rem 1.5rem` até 768px; o herói ocupa 100vh no desktop e centra o carrossel; no celular ele mede só o próprio conteúdo (desde 2026-10-25), e o título "Quem Somos" aparece na primeira tela em 390×844.
+Página de uma coluna com **duas larguras** (dono, 2026-10-26: "tudo muito desalinhado"): **larga, 64rem**, para o cabeçalho (o logo começa na mesma linha das grades e o "Convide-nos" termina na mesma linha), cartões, álbum, sessions, agenda, contato, índice do blog; **de leitura, 42rem**, para texto corrido, FAQ, post e corpo das páginas. Os blocos de texto centrado (títulos de seção, apoio, faixa de convite) podem ter caixa mais estreita, mas o texto fica no eixo. A home e as páginas internas abrem as seções com título centrado; o blog e o post mantêm os títulos à esquerda (o dono pediu alinhamento entre componentes, não centralização de texto). **Componentes lado a lado terminam na mesma linha** (dono, 2026-10-26: "espaços vazios entre os componentes"): no índice do blog o destaque e a coluna de linhas esticam até a mesma altura (o destaque ao lado de linhas usa foto 2:1 e resumo de 2 linhas para as duas nascerem parecidas); a caixa de assinatura vai da linha do 1º colunista à do último; na agenda a foto acompanha a altura da lista (mínimo de 15rem) em vez de 420px fixos; o contato fica em 2 colunas com o WhatsApp largo até 1023px (3 colunas deixavam uma linha com buraco). Margem lateral de 1.5rem (24px) no celular em todas as páginas: `.wrap-pagina` põe a margem por fora da largura. (Antes eram quatro larguras, 48/56/64/72rem, e 18 bordas esquerdas diferentes na home.) Seções com `padding: 7rem 2rem` no desktop e `5rem 1.5rem` até 768px; o herói ocupa 100vh no desktop e centra o carrossel; no celular ele mede só o próprio conteúdo (desde 2026-10-25), e o título "Quem Somos" aparece na primeira tela em 390×844.
 
 Grades: cartões em 1 → 2 (≥768px) → 3 (≥1024px) colunas com `gap: 1.5rem`; álbum em 1 → 2 (≥1024px) com `gap: 2.5rem`; cartões de contato em 2 → 3 (≥768px) → 5 (≥1024px) com `gap: 1rem`; agenda em 1 → `1fr 2fr` (≥768px). Todas as colunas são `minmax(0, 1fr)`, para o conteúdo nunca alargar a grade.
 
@@ -202,7 +195,7 @@ Sombras só existem em três lugares, cada um com motivo: o carrossel do herói 
 ### Shadow Vocabulary
 - **Palco** (`box-shadow: 0 20px 60px rgba(0,0,0,.5), 0 0 100px rgba(0,0,0,.25), 0 0 3px rgba(197,48,80,.12)`): só o carrossel do herói. O halo é da identidade; não copiar para outros elementos.
 - **Levantar** (`0 8px 30px rgba(197,48,80,.3)` ou `0 8px 30px rgba(0,0,0,.2)`): hover de botões primários e cartões de sessão, junto com `translateY(-2px)`.
-- **Flutuante** (`0 4px 20px rgba(37,211,102,.3)`): o botão do WhatsApp.
+- **Flutuante** (`0 6px 20px rgba(0,0,0,.45)`): o botão do WhatsApp (vermelho; a sombra é neutra, sem brilho colorido).
 - **Modal** (`0 8px 40px rgba(0,0,0,.3)`): painel do menu e modal de autor.
 
 ### Named Rules
@@ -225,11 +218,11 @@ A exceção geométrica é a agenda: itens em paralelogramo (`clip-path: polygon
 - **Nav CTA** (`nav-cta`): o mesmo vermelho em 0.85rem / 600, `padding: 0.45rem 1.2rem`, 8px.
 - **Pill** (`platform-link`, `pill-link`): borda no fio, texto apagado 0.8rem / 500, ícone 1rem; hover: texto branco, borda vermelha, fundo vermelho a 10%.
 - **Hero link** (`hero-cta-link`): o convite do herói e a luz mais forte do palco (dono, 2026-10-25). Pílula completa (9999px) em vermelho sólido, texto branco 1rem / 600, altura mínima de 52px, glifo do WhatsApp de 1.25rem; hover igual ao primário. Embaixo, a dica "Abre o WhatsApp com a mensagem pronta…" em branco suave, 0.875rem. Antes era uma pílula fantasma (fio a 10%, 13,6px) que sumia ao lado do verde do botão flutuante.
-- **Floating WhatsApp** (`whatsapp-float`): círculo verde de 56px com a sombra Flutuante. No celular sai da frente enquanto a pessoa rola para baixo (classe `lendo` no `body`, posta pelo `top.js`) e volta ao rolar para cima, junto com o voltar ao topo (44px): os dois cobriam o texto do post em 21 de 29 posições de rolagem.
+- **Floating WhatsApp** (`whatsapp-float`): círculo vermelho (`--accent`, hover `#d4365a`) de 56px com o glifo branco do WhatsApp e a sombra Flutuante (era o verde da plataforma até 2026-10-26). No celular sai da frente enquanto a pessoa rola para baixo (classe `lendo` no `body`, posta pelo `top.js`) e volta ao rolar para cima, junto com o voltar ao topo (44px): os dois cobriam o texto do post em 21 de 29 posições de rolagem.
 - **Focus:** contorno branco de 2px a 3px de distância (`:focus-visible`), em todos os controles.
 
 ### Chips
-- **Category tag:** 0.7rem / 600, caixa alta, 0.08em, `padding: 0.25rem 0.7rem`, 4px; cor da categoria sobre a mesma matiz a 15%. Sem estado interativo.
+- **Category tag:** 0.7rem / 600, caixa alta, 0.08em, `padding: 0.25rem 0.7rem`, 4px; **neutra** (branco suave sobre branco a 7%), igual para todas as categorias: o nome diz a categoria. Como link (fila do blog), a ativa ganha um fio de 1px na cor do texto.
 
 ### Cards / Containers
 - **Corner Style:** 12px (`card`, `link-card`, `post-related-card`); 16px nas molduras de imagem.
@@ -259,7 +252,7 @@ Moldura de 16px com fio e sombra Palco, 960px máx (90vw), três slides em cross
 `/blog/` é um mapa, não uma fila por data. Seções de `_data/blog_secoes.yml`: "Para quem organiza" (Eventos), "Música" e "Fé e ministério" (Ministério, Espiritualidade, Reflexão). Cada seção abre com título 700 + barra de 40×3 + apoio apagado, alinhados à esquerda como o herói do blog; depois o **destaque** (cartão carvão 16px, capa 16:9 inteira, título 700, resumo de 3 linhas; é o post com `destaque: true` ou o mais recente) e, ao lado a partir de 768px (7/12 + 5/12), até 4 **linhas de título** (`_includes/blog-linha.html`: miniatura 16:9 de 7.5rem com 8px de canto, etiqueta, título 600 de até 3 linhas, tempo de leitura; fio de 1px entre linhas). Seção com um texto só: o destaque deita a partir de 900px. "Para quem organiza" leva o bloco "Como servimos" com as páginas de serviço. Ritmo: 5rem entre seções (4rem no celular). Fecho: colunistas e "Receba nossos artigos" numa faixa de duas colunas. As páginas de categoria continuam com a lista completa (destaque + cartões verticais).
 
 ### Post (coluna única, 2026-10-26)
-Tudo em uma coluna de 42rem e uma margem esquerda: trilha "← Blog · Categoria" (44px de toque) → etiqueta → H1 (até 2.5rem, `text-wrap: balance`) → assinatura em duas linhas → capa 16:9 inteira (16px) → primeiro parágrafo → **"Neste guia"** (cartão carvão 12px, lista numerada dos H2 com marcador vermelho, 2 colunas a partir de 640px; só em textos com 4 ou mais H2) → texto (listas com marcador `--accent-text`, H2 com entrelinha 1.25) → FAQ → **fim** após um fio: autor (foto redonda de 64px + bio), convite, "Leia a seguir" (as mesmas linhas de título, da mesma seção do índice), compartilhar.
+Tudo em uma coluna de 42rem: trilha "← Blog · Categoria" (44px de toque) → etiqueta → H1 (até 2.5rem, `text-wrap: balance`) → assinatura em duas linhas → capa 16:9 inteira (16px) → primeiro parágrafo → **"Neste guia"** (cartão carvão 12px, lista numerada dos H2 com marcador vermelho, 2 colunas a partir de 640px; só em textos com 4 ou mais H2) → texto (listas com marcador `--accent-text`, H2 com entrelinha 1.25) → FAQ → **fim** após um fio: autor (foto redonda de 64px + bio), convite, "Leia a seguir" (as mesmas linhas de título, da mesma seção do índice), compartilhar.
 
 ### Contact cards
 `link-card` carvão com ícone vermelho de 2.5rem. O WhatsApp vem primeiro, com o glifo do WhatsApp, largo no celular (2 colunas): a seção fecha a home, e a última impressão é "convide", não "siga".
