@@ -49,15 +49,22 @@ margin: 0.75rem 0 1rem;
 line-height: 1.2;
   }
 
-  // Duas linhas: quem escreve (prova de que é o ministério falando) e data · tempo de leitura.
-  // Em uma linha só, o "·" sobrava no fim da linha quando quebrava no celular.
   .post-meta-row {
 display: flex;
+align-items: center;
+gap: 0.75rem;
+color: var(--text-muted);
+font-size: 0.85rem;
+flex-wrap: wrap;
+  }
+
+  // Só no cabeçalho do post: duas linhas, quem escreve (prova de que é o ministério falando) e data · tempo de leitura.
+  // Em uma linha só, o "·" sobrava no fim da linha quando quebrava no celular. O índice do blog usa a mesma classe
+  // em linha única: a coluna sem escopo empilhou e centralizou a data/autor/tempo do card em destaque (26/10).
+  .post-header .post-meta-row {
 flex-direction: column;
 align-items: flex-start;
 gap: 0.35rem;
-color: var(--text-muted);
-font-size: 0.85rem;
   }
 
   .post-autor strong {
