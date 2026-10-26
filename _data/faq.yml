@@ -161,3 +161,131 @@
     Dunga (2011); Thiago Brado ao vivo em Ribeirão Preto (2025); Rahamim ao vivo, do Colo de Deus
     (2025); Ano 10, do Diego Fernandes (2019); e Ilmar Quintanilha 25 anos ao vivo (2026). Boa
     parte do nosso repertório de eventos sai deles.
+
+# ---- Eventos (blog). Sem `home:`: só aparecem nos posts que listam o id em `faq:`. ----
+- id: ev-ejc-o-que-e
+  pergunta: "O que é EJC?"
+  resposta: >-
+    EJC é o Encontro de Jovens com Cristo, um retiro de fim de semana que jovens da paróquia
+    organizam para outros jovens. Tem pregações, partilha em grupos, adoração, Missa, dinâmicas
+    e música, e termina com um convite para seguir no grupo de pós-encontro.
+
+- id: ev-ejc-quem-participa
+  pergunta: "Quem pode fazer o EJC?"
+  resposta: >-
+    Jovens a partir da adolescência, com idade mínima definida por cada paróquia. As inscrições
+    abrem na secretaria paroquial semanas antes, com uma taxa que cobre alimentação e hospedagem,
+    e quem não pode pagar costuma conseguir ajuda.
+
+- id: ev-ejc-musica
+  pergunta: "Qual é o papel da música no EJC?"
+  resposta: >-
+    Conduzir cada momento: canções rápidas na acolhida, uma canção que ecoa cada pregação antes
+    da partilha, cantos lentos e repetidos na adoração e louvor forte no envio. O ministério
+    precisa receber o roteiro inteiro do fim de semana para montar o repertório.
+
+- id: ev-retiro-quando-comecar
+  pergunta: "Com quanta antecedência organizar um retiro de jovens?"
+  resposta: >-
+    Quatro meses, no mínimo. É o tempo de reservar a casa de retiro, que lota cedo em feriados e
+    no Carnaval, confirmar pregadores e ministério de música, montar a equipe e abrir as
+    inscrições com três semanas de prazo.
+
+- id: ev-retiro-equipe
+  pergunta: "Que equipes um retiro de jovens precisa?"
+  resposta: >-
+    Coordenação geral, secretaria e inscrições, acolhida, cozinha, liturgia, intercessão, música
+    e comunicação, cada uma com um responsável. Jovens que já fizeram um retiro são a melhor
+    equipe, e servir faz parte da formação deles.
+
+- id: ev-retiro-programacao
+  pergunta: "Como é a programação de um retiro de fim de semana?"
+  resposta: >-
+    Sexta à noite: chegada, acolhida e oração de abertura. Sábado: pregações de manhã e à tarde,
+    partilha em grupos, confissões, adoração e uma vigília ou noite de louvor. Domingo: última
+    pregação, testemunhos e Missa de envio. Deixe respiros entre os blocos.
+
+- id: ev-padroeiro-quando-comecar
+  pergunta: "Com quanta antecedência organizar a festa do padroeiro?"
+  resposta: >-
+    Quatro meses antes do dia do santo: comissão, datas da novena e da festa com o pároco,
+    pregadores e atração musical. Três meses antes, orçamento e autorizações; dois, divulgação;
+    um, ensaios e estrutura.
+
+- id: ev-padroeiro-data-movel
+  pergunta: "Toda festa de padroeiro tem data fixa?"
+  resposta: >-
+    A maioria sim, no dia do santo. Festas ligadas à Páscoa mudam de ano para ano: Divina
+    Misericórdia, Pentecostes, Corpus Christi, Sagrado Coração de Jesus, Cristo Rei e Sagrada
+    Família. Em 2027 a Páscoa cai em 28 de março.
+
+- id: ev-padroeiro-novena
+  pergunta: "Quando começa a novena do padroeiro?"
+  resposta: >-
+    Nove dias antes da festa, terminando na véspera ou no próprio dia do santo, conforme o
+    costume da paróquia. Cada noite costuma ter um pregador e um tema, e as noites de maior
+    público pedem música ao vivo.
+
+- id: ev-show-o-que-e
+  pergunta: "O que é um show de evangelização?"
+  resposta: >-
+    Uma noite de louvor, oração e pregação com música ao vivo, aberta à comunidade, em que o
+    palco serve ao anúncio do Evangelho. Costuma fechar a festa do padroeiro, abrir um retiro ou
+    reunir a cidade numa data da paróquia, com acolhida, louvor, pregação, adoração e envio.
+
+- id: ev-show-estrutura
+  pergunta: "Que estrutura um show de evangelização precisa?"
+  resposta: >-
+    Sistema de som compatível com o espaço, retorno de palco, mesa com canais suficientes,
+    palco coberto com altura, energia dedicada com aterramento e passagem de som com duas horas
+    de folga. Em praça, ainda autorização da prefeitura e plano para chuva. O ministério manda o
+    mapa de palco com o que usa.
+
+- id: ev-show-roteiro
+  pergunta: "Quanto tempo dura um show de evangelização e qual é o roteiro?"
+  resposta: >-
+    Cerca de duas horas: acolhida e abertura, bloco de louvor, pregação ou testemunho de dez a
+    quinze minutos, adoração ou um momento de oração mais lento, e louvor de envio com a bênção
+    final do padre.
+
+- id: ev-carnaval-o-que-e
+  pergunta: "O que é retiro de Carnaval?"
+  resposta: >-
+    O retiro espiritual que paróquias, movimentos e comunidades fazem nos dias de Carnaval, de
+    sábado a terça-feira, terminando com a Missa da Quarta-feira de Cinzas, que abre a Quaresma.
+    Em 2027 vai de 6 a 9 de fevereiro.
+
+- id: ev-carnaval-como-participar
+  pergunta: "Como participar de um retiro de Carnaval?"
+  resposta: >-
+    Procure a paróquia, a pastoral da juventude ou o grupo de oração a partir de novembro: as
+    inscrições dos retiros com hospedagem abrem cedo e as vagas acabam. A taxa cobre hospedagem
+    e alimentação, e quem não pode pagar costuma encontrar ajuda.
+
+- id: ev-carnaval-organizar
+  pergunta: "Quando começar a organizar um retiro de Carnaval?"
+  resposta: >-
+    Em novembro: autorização do pároco, comissão e local reservado, porque as casas de retiro
+    lotam primeiro nessa data. Dezembro fecha tema, pregadores, ministério de música, orçamento
+    e inscrições; janeiro é divulgação, escalas e compras.
+
+- id: ev-vigilia-o-que-e
+  pergunta: "O que é uma vigília de oração?"
+  resposta: >-
+    Uma noite, inteira ou em parte, em que a comunidade se reúne para rezar, louvar e ouvir a
+    Palavra. Paróquias fazem vigílias na véspera de Pentecostes, na novena do padroeiro, na
+    virada do ano ou antes de um grande evento, com ou sem adoração ao Santíssimo e Missa.
+
+- id: ev-vigilia-quanto-dura
+  pergunta: "Quanto tempo dura uma vigília de oração?"
+  resposta: >-
+    O que a comunidade aguenta rezando de verdade: quatro horas bem feitas, das 20h à
+    meia-noite, valem mais do que uma noite inteira em que metade dorme. Em bairro residencial,
+    a adoração fecha a noite para o som não incomodar a vizinhança.
+
+- id: ev-vigilia-roteiro
+  pergunta: "Qual é o roteiro de uma vigília de oração?"
+  resposta: >-
+    Acolhida e abertura com animação, Palavra e pregação curta, bloco de louvor, Terço ou oração
+    dos fiéis, adoração ao Santíssimo com cantos lentos e silêncio, intercessão e cura, e envio
+    com louvor forte e a bênção final ou a Missa.
