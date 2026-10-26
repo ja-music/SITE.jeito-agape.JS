@@ -4,7 +4,8 @@ title: "Vigília de oração na paróquia: como organizar e roteiro de uma noite
 date: 2027-01-21 05:00:00 -0300
 author: "Beto Ferreira"
 category: "Eventos"
-image: "/assets/og-cover.jpg"
+image: "/assets/blog/capa-vigilia-de-oracao.jpg"
+og_image: "/assets/blog/capa-vigilia-de-oracao-og.jpg"
 description: "Vigília de oração é uma noite inteira, ou parte dela, de oração em comunidade. Como organizar, quem faz o quê e um roteiro por blocos, da acolhida à bênção final."
 faq: [ev-vigilia-o-que-e, ev-vigilia-quanto-dura, ev-vigilia-roteiro]
 ---

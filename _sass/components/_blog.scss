@@ -150,24 +150,55 @@ transition: border-color 0.3s;
 border-color: var(--accent);
   }
 
+  // Cartões verticais com a capa 16:9 inteira (26/10/2026, com as fotos do ensaio): a miniatura de 140px em pé
+  // cortava as fotos em grupo e o título das artes. 1 coluna no celular, 2 a partir de 768px.
+  .post-card {
+flex-direction: column;
+  }
+
+  .post-card-media, .featured-media {
+display: block;
+  }
+
   .post-card-img {
-width: 140px;
-min-height: 100%;
+display: block;
+width: 100%;
+height: auto;
+aspect-ratio: 16 / 9;
 object-fit: cover;
-flex-shrink: 0;
   }
 
   .post-card-body {
-padding: 1.25rem;
+padding: 1.25rem 1.25rem 1.4rem;
 display: flex;
 flex-direction: column;
-justify-content: center;
+flex: 1;
 min-width: 0;
   }
+
+  // Número ímpar de cartões: o último ocupa a linha inteira, deitado (capa à esquerda), em vez de ficar sozinho numa coluna.
+  @media (min-width: 768px) {
+.post-grid > .post-card:last-child:nth-child(odd) { grid-column: 1 / -1; flex-direction: row; }
+.post-grid > .post-card:last-child:nth-child(odd) .post-card-media { flex: 0 0 50%; }
+.post-grid > .post-card:last-child:nth-child(odd) .post-card-img { height: 100%; }
+.post-grid > .post-card:last-child:nth-child(odd) .post-card-body { justify-content: center; padding: 1.5rem 1.75rem; }
+  }
+
+  // Destaque no computador: capa à esquerda, texto à direita (empilhado, sobrava meia largura vazia ao lado do texto).
+  @media (min-width: 900px) {
+.featured-card { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
+.featured-media { position: relative; min-height: 22rem; }
+.featured-media .featured-img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; }
+.featured-body { display: flex; flex-direction: column; justify-content: center; padding: 2.25rem 2.25rem 2.25rem 2rem; }
+.featured-body .post-excerpt { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  }
+
+  .blog-index .featured-meta { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+  .featured-body .category-tag { align-self: flex-start; }
   .post-card-body .category-tag { align-self: flex-start; } // item flex esticava a etiqueta na largura do card (bug herdado do site antigo)
 
   .post-card-body h3 {
-font-size: 1rem;
+font-size: 1.05rem;
 font-weight: 600;
 margin-bottom: 0.4rem;
 line-height: 1.4;
@@ -509,16 +540,7 @@ display: -webkit-box;
 overflow: hidden;
   }
 
-  @media (max-width: 640px) {
-.post-card {
-  flex-direction: column;
-}
-.post-card-img {
-  width: 100%;
-  height: 180px;
-  min-height: auto;
-}
-  }
+
 
   dialog.author-modal { margin: auto; padding: 2.5rem 2rem 2rem; color: var(--text); }
   dialog.author-modal::backdrop { background: rgba(0, 0, 0, 0.75); }

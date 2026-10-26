@@ -6,16 +6,16 @@ Uso: {% include blog-lista.html posts=site.posts %} — no índice (/blog/) e na
   {%- if lista.size > 0 %}
   {%- assign featured = lista.first %}{% assign fk = featured.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
   <a href="{{ featured.url }}" class="featured-card">
-    {%- if site.data.images[fk] %}{% include picture.html name=fk alt=featured.title class="featured-img" sizes="(min-width: 58rem) 54rem, calc(100vw - 2rem)" priority=true %}{% elsif featured.image %}<img src="{{ featured.image }}" alt=featured.title class="featured-img" fetchpriority="high" decoding="async" width="1200" height="675">{% endif %}
+    {%- if site.data.images[fk] %}{% include picture.html name=fk alt=featured.title class="featured-img" pictureclass="featured-media" sizes="(min-width: 900px) 29rem, calc(100vw - 2rem)" priority=true %}{% elsif featured.image %}<img src="{{ featured.image }}" alt=featured.title class="featured-img" fetchpriority="high" decoding="async" width="1200" height="675">{% endif %}
     <div class="featured-body">
       {%- if featured.category %}<span class="category-tag" data-cat="{{ featured.category | slugify: "latin" }}">{{ featured.category }}</span>{% endif %}
       <h2>{{ featured.title }}</h2>
       <p class="post-excerpt">{{ featured.excerpt | strip_html | truncatewords: 50 }}</p>
-      <div class="post-meta-row" style="margin-bottom: 1rem;">
-        <span>{% include data-pt.html data=featured.date formato="ponto" %}</span>
-        {%- if featured.author %}<span class="dot">&middot;</span><span>{{ featured.author }}</span>{% endif %}
+      {%- comment -%}Duas linhas, como no cabeçalho do post: em uma só, o "·" sobrava no fim da linha no celular.{%- endcomment %}
+      <div class="post-meta-row featured-meta" style="margin-bottom: 1rem;">
+        {%- if featured.author %}<span class="post-autor">Por <strong>{{ featured.author }}</strong></span>{% endif %}
         {%- assign words = featured.content | number_of_words %}{% assign mins = words | divided_by: 200 %}{% if mins < 1 %}{% assign mins = 1 %}{% endif %}
-        <span class="dot">&middot;</span><span>{{ mins }} min de leitura</span>
+        <span class="post-meta-data"><span>{% include data-pt.html data=featured.date formato="ponto" %}</span><span class="dot" aria-hidden="true">&middot;</span><span>{{ mins }} min de leitura</span></span>
       </div>
       <span class="read-more">Ler artigo {% include icon.html name="arrow-right" %}</span>
     </div>
@@ -27,7 +27,7 @@ Uso: {% include blog-lista.html posts=site.posts %} — no índice (/blog/) e na
     {%- for post in lista offset:1 %}{% assign ck = post.image | remove: "/assets/" | split: "." | first | replace: "/", "-" %}
     {%- if post.image %}
     <a href="{{ post.url }}" class="post-card">
-      {%- if site.data.images[ck] %}{% include picture.html name=ck alt=post.title class="post-card-img" sizes="(min-width: 641px) 140px, 100vw" %}{% else %}<img src="{{ post.image }}" alt=post.title class="post-card-img" loading="lazy" decoding="async" width="400" height="225">{% endif %}
+      {%- if site.data.images[ck] %}{% include picture.html name=ck alt=post.title class="post-card-img" pictureclass="post-card-media" sizes="(min-width: 58rem) 27rem, (min-width: 641px) calc(50vw - 2.5rem), calc(100vw - 2rem)" %}{% else %}<img src="{{ post.image }}" alt=post.title class="post-card-img" loading="lazy" decoding="async" width="400" height="225">{% endif %}
       <div class="post-card-body">
         {%- if post.category %}<span class="category-tag" data-cat="{{ post.category | slugify: "latin" }}" style="margin-bottom: 0.5rem;">{{ post.category }}</span>{% endif %}
         <h3>{{ post.title }}</h3>
