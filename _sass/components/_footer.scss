@@ -19,17 +19,18 @@
   z-index: 1000;
   width: 56px;
   height: 56px;
-  background: #25D366;
+  background: var(--accent); // vermelho da marca com o ícone branco do WhatsApp (dono, 26/10/2026; era o verde da plataforma)
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
   transition: transform 0.3s, opacity 0.3s;
 }
 
 .whatsapp-float:hover {
   transform: scale(1.08);
+  background: #d4365a;
 }
 
 /* WhatsApp Float with tooltip */

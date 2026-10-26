@@ -622,3 +622,14 @@ overflow: hidden;
   .blog-servicos a:hover svg { transform: translateX(3px); }
   @media (prefers-reduced-motion: reduce) { .blog-servicos a:hover svg { transform: none; } }
 
+  /* ---- Eixo central (26/10/2026): o blog abre e divide as seções como a home (título + barra + apoio centrados) ---- */
+  .blog-hero { text-align: center; }
+  .blog-hero .accent-bar { margin-inline: auto; }
+  .blog-hero p { max-width: 35rem; margin-inline: auto; }
+  .blog-cats ul { justify-content: center; }
+  .blog-secao__cabeca { text-align: center; }
+  .blog-secao__cabeca .accent-bar { margin-inline: auto; }
+  .blog-secao__cabeca p { margin-inline: auto; }
+  .blog-secao__mais { text-align: center; }
+  .blog-colunistas .section-label { text-align: center; }
+

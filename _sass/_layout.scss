@@ -4,6 +4,10 @@
 .wrap-4xl { max-width: 56rem; }
 .wrap-5xl { max-width: 64rem; }
 .wrap-6xl { max-width: 72rem; }
+// Duas larguras no site todo (dono, 26/10/2026): larga 64rem (cabeçalho, grades, seções) e de leitura 42rem
+// (texto, FAQ, post). .wrap-pagina põe a margem lateral de 1.5rem POR FORA da largura: o conteúdo começa na
+// mesma linha do logo no computador e a 24px da borda no celular, como as seções da home.
+.wrap-pagina { box-sizing: content-box; width: auto; padding-inline: 1.5rem; }
 .text-center { text-align: center; }
 .text-justify { text-align: justify; }
 .text-white { color: #fff; }

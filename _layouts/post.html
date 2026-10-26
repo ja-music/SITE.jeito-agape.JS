@@ -41,7 +41,7 @@ Tudo na mesma coluna de 42rem e na mesma margem esquerda.
 {%- endunless -%}
 {%- endif -%}
 
-<div class="post-pagina mx-auto px-4">
+<div class="post-pagina mx-auto wrap-pagina">
   <nav class="post-trilha" aria-label="Você está em">
     <a href="/blog/">{% include icon.html name="arrow-left" %} Blog</a>
     {%- if cat_pg %}<span class="post-trilha__sep" aria-hidden="true">·</span><a href="{{ cat_pg.url }}">{{ page.category }}</a>{% endif %}

@@ -7,7 +7,7 @@ posts, com acento), ordem (posição na fila de categorias), intro (frase que de
 A lista é a mesma do índice (_includes/blog-lista.html), só com os posts da categoria.
 {%- endcomment -%}
 {%- assign posts_cat = site.posts | where: "category", page.categoria -%}
-<div class="blog-index wrap-4xl mx-auto px-4">
+<div class="blog-index wrap-5xl mx-auto wrap-pagina">
 
   <div class="blog-hero">
     <h1>{{ page.categoria }}</h1>
