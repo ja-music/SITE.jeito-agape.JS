@@ -17,6 +17,7 @@ Site oficial: {{ site.url }}/ · Idioma: pt-BR · Base: {{ org.cidade }}, {{ org
 - Série no YouTube: Incondicional Sessions (capítulo 1: "{{ site.data.incondicional[0].titulo }}").
 - Missa mensal: {{ org.missa_mensal.quando }}, {{ org.missa_mensal.local }}, {{ org.missa_mensal.cidade }} – {{ org.missa_mensal.uf }}.
 - Lema: "{{ org.versiculo }}" ({{ org.versiculo_ref }}).
+- O ministério desenvolve e usa o **JA Manager**, aplicativo de repertório, cifra no tom de cada um, escala, ensaio e projeção para ministérios de música e bandas: https://jam.jeitoagape.com.br/
 - Mais: [Quem somos]({{ "/sobre/" | absolute_url }})
 
 ## Convites (o que o ministério faz em cada evento)
