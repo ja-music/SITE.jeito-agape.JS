@@ -1,0 +1,218 @@
+// Abertura da home — o refrão de "Aliança" (álbum Confiar) em tipografia cinética.
+// Conceito: "a linha que não se rompe". A barra vermelha de 40×3 (a assinatura dos títulos do site)
+// sublinha a promessa, segura as palavras que tentam se separar, vira anel (aliança), o anel vira o
+// coração da marca e o coração assina o título. 120 BPM: uma batida = 0,5 s, um compasso = 2 s.
+//   compasso 1 (0–2 s)    gancho: a linha se desenha, "Aliança" entra, "do álbum Confiar"
+//   compasso 2 (2–4 s)    "Quero fazer uma aliança contigo", palavra a palavra; "aliança" fica vermelha, a linha cresce
+//   compasso 3 (4–6 s)    "Nada nos separará" espalhadas na linha cheia; a linha as puxa de volta
+//   compasso 4 (6–8 s)    a linha levanta em 3D e vira anel; "Tu és Emanuel, o Deus Conosco"
+//   compasso 5 (8–10 s)   o anel se fecha no coração (uma batida); "Comigo sempre estará"
+//   compasso 6 (10–12 s)  título: coração + "Jeito Ágape" + barra + "Ministério de Música Católica"
+//   compasso 7 (12,4 s)   a cortina sobe e o site aparece
+// Toda a linha do tempo é CSS; js/abertura.js só pula, trava a rolagem e limpa. Só existe com html.tem-abertura
+// (decisão no script inline de _includes/home/abertura.html). Sem o main.js, a cortina sobe do mesmo jeito.
+// Vermelho só na linha, no anel, no coração e na palavra "aliança": bem menos de 10% da tela.
+
+.abertura { display: none; }
+html.tem-abertura .abertura { display: block; }
+html.abertura-trava { overflow: hidden; }
+
+.abertura {
+  position: fixed;
+  inset: 0;
+  z-index: 9000; // abaixo do grão (9999), acima do cabeçalho, do menu e do toast
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+  touch-action: none;
+  --ly: 2.75rem;                            // a linha fica 2,75rem abaixo do centro nas cenas 1–3
+  --larg: min(92vw, 72rem);                 // largura "cheia" da linha e medida das frases
+  --anel: min(80vw, 40rem);
+  --cor: clamp(4.5rem, 14vw, 9rem);         // coração
+  --alto: -2.5rem;                         // o coração fica um pouco acima do centro
+  --fonte: clamp(2rem, 7.2vw, 6.5rem);
+  --expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --mola: cubic-bezier(0.34, 1.3, 0.64, 1);
+  will-change: transform;
+  animation: ab-sai 0.8s cubic-bezier(0.7, 0, 0.3, 1) 12.4s forwards;
+}
+.abertura--sair { animation: ab-sai-ja 0.5s cubic-bezier(0.7, 0, 0.3, 1) forwards; }
+.abertura--pausa, .abertura--pausa * { animation-play-state: paused !important; }
+@keyframes ab-sai { to { transform: translateY(-100%); } }
+@keyframes ab-sai-ja { to { transform: translateY(-100%); } }
+
+.abertura__cena { position: absolute; inset: 0; }
+.abertura__cena > * { position: absolute; left: 0; right: 0; margin: 0 auto; }
+
+// A linha (cenas 1–3): desenha 40px, cresce até a largura cheia, volta a 40px e some ao virar anel.
+.ab-linha { display: block; width: 0; height: 3px; background: var(--accent); border-radius: 2px; }
+.ab-linha--1 { top: calc(50% + var(--ly)); animation: ab-linha-1 6.3s linear both; }
+@keyframes ab-linha-1 {
+  0%     { width: 0; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }          // 0,0 s
+  6.35%  { width: 40px; }                                                                   // 0,4 s
+  55.56% { width: 40px; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }       // 3,5 s
+  61.9%  { width: var(--larg); }                                                            // 3,9 s
+  87.3%  { width: var(--larg); animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); } // 5,5 s
+  93.65% { width: 40px; opacity: 1; animation-timing-function: ease-in; }                  // 5,9 s
+  100%   { width: 40px; opacity: 0; }                                                       // 6,3 s
+}
+
+// Cena 1: o nome da música, como um título de seção (título + barra + apoio).
+.ab-titulo {
+  bottom: calc(50% - var(--ly) + 0.85rem);
+  font-weight: 700;
+  font-size: clamp(3.75rem, 16vw, 11rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+.ab-titulo__nome { display: inline-block; opacity: 0; animation: ab-slam 0.4s var(--expo) 0.45s both, ab-sobe-fora 0.2s ease-in 1.8s forwards; }
+.ab-album {
+  top: calc(50% + var(--ly) + 1.1rem);
+  font: 600 0.8rem/1.4 var(--font);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text-muted);
+  opacity: 0;
+  animation: ab-sobe 0.4s var(--expo) 1s both, ab-apaga 0.2s ease-in 1.8s forwards;
+}
+
+// Frases do refrão: cada palavra (ou grupo) é um item do flex, para animar transform sem brigar com o centro.
+.ab-frase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 0.3em;
+  max-width: var(--larg);
+  font-weight: 700;
+  font-size: var(--fonte);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+.ab-frase > span { display: inline-block; opacity: 0; }
+
+// Cena 2: "Quero fazer uma aliança contigo".
+.ab-l1, .ab-l2 { bottom: calc(50% - var(--ly) + 0.75rem); }
+.ab-l1 { animation: ab-some 0.2s ease-in 3.8s forwards; }
+.ab-l1 > span:nth-child(1) { animation: ab-esq 0.35s var(--expo) 2s both; }
+.ab-l1 > span:nth-child(2) { animation: ab-dir 0.35s var(--expo) 2.5s both; }
+.ab-l1 > span:nth-child(3) { animation: ab-sobe 0.35s var(--expo) 3s both; }
+.ab-l1 em { font-style: normal; animation: ab-vermelho 0.25s ease 3.5s forwards; }
+
+// Cena 3: "Nada nos separará" — espalhadas pela linha cheia, depois a mola junta as três.
+.ab-l2 {
+  flex-wrap: nowrap;
+  max-width: 96vw;
+  column-gap: clamp(1rem, 8vw, 7rem);
+  animation: ab-junta 0.45s var(--mola) 5.5s forwards, ab-some 0.2s ease-in 5.8s forwards;
+}
+@keyframes ab-junta { to { column-gap: 0.3em; } }
+.ab-l2 > span:nth-child(1) { animation: ab-slam 0.35s var(--expo) 4s both; }
+.ab-l2 > span:nth-child(2) { animation: ab-slam 0.35s var(--expo) 4.5s both; }
+.ab-l2 > span:nth-child(3) { animation: ab-slam 0.35s var(--expo) 5s both; }
+
+// Cena 4: a linha levanta (rotateX 90° → 0) e é um anel; depois gira meia volta e se fecha no coração.
+.ab-anel {
+  left: 50%;
+  right: auto;
+  top: 50%;
+  width: var(--anel);
+  height: var(--anel);
+  margin: calc(var(--anel) / -2) 0 0 calc(var(--anel) / -2);
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ab-anel 2.3s linear 6s both;
+}
+@keyframes ab-anel {
+  0%   { opacity: 0; transform: perspective(900px) rotateX(90deg) scale(0.12); animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); } // 6,0 s
+  30%  { opacity: 1; transform: perspective(900px) rotateX(0) scale(1); }                                                          // 6,7 s
+  57%  { opacity: 1; transform: perspective(900px) rotateY(0) scale(1); animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1); } // 7,3 s
+  87%  { opacity: 1; transform: perspective(900px) rotateY(180deg) scale(1); animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1); } // 8,0 s
+  100% { opacity: 0; transform: perspective(900px) rotateY(180deg) scale(0.2); }                                                  // 8,3 s
+}
+.ab-l3 {
+  top: 0;
+  bottom: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 0.1em;
+  max-width: var(--anel);
+  font-size: clamp(1.6rem, 5vw, 4rem);
+  animation: ab-some 0.2s ease-in 7.8s forwards;
+}
+.ab-l3 > span:nth-child(1) { animation: ab-sobe 0.4s var(--expo) 6.5s both; }
+.ab-l3 > span:nth-child(2) { font-weight: 300; animation: ab-sobe 0.4s var(--expo) 7s both; }
+.ab-l3 strong { font-weight: 700; }
+
+// Cena 5: o coração nasce do anel e bate uma vez; "Comigo sempre estará" embaixo.
+.ab-coracao {
+  left: 50%;
+  right: auto;
+  top: 50%;
+  width: var(--cor);
+  height: var(--cor);
+  margin: calc(var(--cor) / -2 + var(--alto)) 0 0 calc(var(--cor) / -2);
+  opacity: 0;
+  animation: ab-coracao 2.5s linear 8.1s both;
+}
+@keyframes ab-coracao {
+  0%   { opacity: 0; transform: scale(0.25); animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); } // 8,1 s
+  18%  { opacity: 1; transform: scale(1); }                                                        // 8,55 s
+  24%  { transform: scale(1); animation-timing-function: ease-out; }                               // 8,7 s
+  32%  { transform: scale(1.14); animation-timing-function: ease-in-out; }                         // 8,9 s
+  40%  { transform: scale(1); }                                                                    // 9,1 s
+  76%  { transform: scale(1); animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }          // 10,0 s
+  96%  { transform: scale(0.82); }                                                                 // 10,5 s
+  100% { transform: scale(0.82); }
+}
+.ab-l4, .ab-fim { top: calc(50% + var(--alto) + var(--cor) / 2 + 1rem); }
+.ab-l4 { align-items: baseline; animation: ab-some 0.2s ease-in 9.8s forwards; }
+.ab-l4 > span:nth-child(1) { animation: ab-sobe 0.35s var(--expo) 8.5s both; }
+.ab-l4 > span:nth-child(2) { font-size: 1.3em; animation: ab-slam 0.35s var(--expo) 9s both; }
+.ab-l4 > span:nth-child(3) { animation: ab-sobe 0.35s var(--expo) 9.5s both; }
+
+// Cena 6: a assinatura do site — nome, barra de 40×3 e apoio.
+.ab-fim { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.ab-fim__nome { font-weight: 700; font-size: clamp(2.5rem, 8vw, 7rem); line-height: 1.1; letter-spacing: -0.02em; opacity: 0; animation: ab-sobe 0.45s var(--expo) 10.3s both; }
+.ab-fim .ab-linha--2 { margin: 0.9rem 0 1rem; animation: ab-linha-2 0.35s var(--expo) 10.7s both; }
+@keyframes ab-linha-2 { to { width: 40px; } }
+.ab-fim__lead { font-weight: 300; font-size: clamp(0.95rem, 1.6vw, 1.15rem); color: var(--text-muted); opacity: 0; animation: ab-fade 0.45s ease 11s both; }
+
+// Pular: aparece em 1 s, 44px de toque, etiqueta do site; Esc e toque na tela também pulam (abertura.js).
+.abertura__pular {
+  position: absolute;
+  right: max(1.25rem, env(safe-area-inset-right));
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  min-height: 44px;
+  padding: 0 1rem;
+  font: 600 0.8rem/1 var(--font);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0;
+  animation: ab-fade 0.4s ease 1s forwards;
+  transition: color 0.2s, border-color 0.2s;
+}
+.abertura__pular:hover, .abertura__pular:focus-visible { color: var(--text); border-color: var(--accent); }
+
+@keyframes ab-fade { to { opacity: 1; } }
+@keyframes ab-apaga { to { opacity: 0; } }
+@keyframes ab-slam { from { opacity: 0; transform: scale(1.35); filter: blur(12px); } to { opacity: 1; transform: none; filter: blur(0); } }
+@keyframes ab-esq { from { opacity: 0; transform: translateX(-0.6em); } to { opacity: 1; transform: none; } }
+@keyframes ab-dir { from { opacity: 0; transform: translateX(0.6em); } to { opacity: 1; transform: none; } }
+@keyframes ab-sobe { from { opacity: 0; transform: translateY(0.5em); } to { opacity: 1; transform: none; } }
+@keyframes ab-sobe-fora { to { opacity: 0; transform: translateY(-0.35em); } }
+// Saída de cena: a frase inteira sobe e some em 0,2 s, antes da próxima entrar — corte, não crossfade.
+@keyframes ab-some { to { opacity: 0; transform: translateY(-0.3em); filter: blur(6px); } }
+@keyframes ab-vermelho { to { color: var(--accent); } }
+
+// Quem pede menos movimento nem vê a abertura (o script inline já não a liga; aqui é o cinto).
+@media (prefers-reduced-motion: reduce) { .abertura { display: none !important; } }

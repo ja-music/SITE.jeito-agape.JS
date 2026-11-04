@@ -1,0 +1,22 @@
+{%- comment -%}
+Abertura da home: o refrão de "Aliança" (álbum Confiar) em tipografia cinética, ~13 s.
+O script inline decide ANTES da primeira pintura se ela toca: uma vez por sessão; nunca com #âncora na URL,
+com prefers-reduced-motion ou sob automação (Lighthouse e a paridade não a veem). ?abertura=1 força, ?abertura=0 pula.
+A linha do tempo é toda CSS (_sass/components/_abertura.scss); js/abertura.js só pula, trava a rolagem e limpa.
+{%- endcomment %}
+<script>(function(){try{var q=location.search,f=/[?&]abertura=1(&|$)/.test(q);if(/[?&]abertura=0(&|$)/.test(q)||location.hash||(navigator.webdriver&&!f)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;if(!f&&sessionStorage.getItem('abertura'))return;sessionStorage.setItem('abertura','1');document.documentElement.classList.add('tem-abertura')}catch(e){}})()</script>
+<div id="abertura" class="abertura">
+  <div class="abertura__cena" aria-hidden="true">
+    <span class="ab-linha ab-linha--1"></span>
+    <p class="ab-titulo"><span class="ab-titulo__nome">Aliança</span></p>
+    <p class="ab-album">do álbum Confiar</p>
+    <p class="ab-frase ab-l1"><span>Quero fazer</span><span>uma <em>aliança</em></span><span>contigo</span></p>
+    <p class="ab-frase ab-l2"><span>Nada</span><span>nos</span><span>separará</span></p>
+    <span class="ab-anel"></span>
+    <p class="ab-frase ab-l3"><span>Tu és Emanuel,</span><span>o Deus <strong>Conosco</strong></span></p>
+    <img class="ab-coracao" src="{{ '/assets/logo.png' | relative_url }}" alt="" width="256" height="256">
+    <p class="ab-frase ab-l4"><span>Comigo</span><span>sempre</span><span>estará</span></p>
+    <p class="ab-fim"><span class="ab-fim__nome">Jeito Ágape</span><span class="ab-linha ab-linha--2"></span><span class="ab-fim__lead">Ministério de Música Católica</span></p>
+  </div>
+  <button class="abertura__pular" type="button">Pular abertura</button>
+</div>

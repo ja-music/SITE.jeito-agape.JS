@@ -6,6 +6,7 @@
 </head>
 <body data-page="{{ page.schema | default: 'page' }}">
 <script>document.documentElement.classList.replace('no-js','js')</script>
+{%- if page.schema == "home" %}{% include home/abertura.html %}{% endif %}
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 <div id="topo-sentinela" aria-hidden="true"></div>
 {% include header.html %}

@@ -263,6 +263,9 @@ Tudo em uma coluna de 42rem: trilha "← Blog · Categoria" (44px de toque) → 
 ### Agenda item
 Paralelogramo carvão com dia em vermelho (1.6rem / 700) e mês em etiqueta, título 600 e meta apagada. Evento passado: dia e título em branco apagado + etiqueta "Realizada" (`.agenda-status`), nunca opacidade ou risco (lia como cancelada e dava 1,5:1). Foto da banda em moldura inclinada com brilho vermelho pulsante.
 
+### Abertura da home (assinatura, dono 2026-11-04)
+A única peça de movimento orquestrado do site: o refrão de *Aliança* em tipografia cinética sobre a home, ~13 s a 120 BPM, uma vez por sessão, com "Pular abertura" (44px), toque e Esc; desligada com `prefers-reduced-motion`. Usa só o vocabulário daqui: Inter 700 em escala de display, noite, branco e o vermelho da marca em menos de 10% do quadro; a barra de 40×3 dos títulos é o fio condutor (sublinha a promessa, segura as palavras que tentam se separar, vira anel, vira o coração, assina o título). Saídas de cena por corte de 0,2 s, nunca crossfade; easing exponencial e uma mola curta; sem partículas, brilhos ou gradientes. Fonte: `_sass/components/_abertura.scss`.
+
 ## Do's and Don'ts
 
 ### Do:
