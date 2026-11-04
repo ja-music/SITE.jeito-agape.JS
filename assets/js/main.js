@@ -15,4 +15,5 @@
 {% include js/subscribe.js %}
 {% include js/top.js %}
 {% include js/analytics.js %}
+{% include js/vitais.js %}
 })();

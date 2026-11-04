@@ -17,7 +17,7 @@ Uso: {% include blog-secao.html secao=s %}
   </div>
   <div class="blog-secao__corpo{% if sp.size == 1 and secao.servicos == nil %} blog-secao__corpo--so{% endif %}">
     <a href="{{ lead.url }}" class="secao-lead">
-      {%- if site.data.images[lk] %}{% include picture.html name=lk alt="" class="secao-lead__img" pictureclass="secao-lead__media" sizes="(min-width: 1024px) 37rem, (min-width: 768px) 60vw, calc(100vw - 2rem)" %}{% elsif lead.image %}<img src="{{ lead.image }}" alt="" class="secao-lead__img" width="1200" height="675" loading="lazy">{% endif %}
+      {%- if site.data.images[lk] %}{% include picture.html name=lk alt="" class="secao-lead__img" pictureclass="secao-lead__media" sizes="(min-width: 1024px) 37rem, (min-width: 768px) 60vw, calc(100vw - 2rem)" priority=include.prioridade %}{% elsif lead.image %}<img src="{{ lead.image }}" alt="" class="secao-lead__img" width="1200" height="675" loading="lazy">{% endif %}
       <div class="secao-lead__corpo">
         {%- if lead.category %}<span class="category-tag" data-cat="{{ lead.category | slugify: "latin" }}">{{ lead.category }}</span>{% endif %}
         <h3 class="secao-lead__titulo">{{ lead.title }}</h3>

@@ -27,7 +27,7 @@ As páginas de categoria (/blog/<slug>/) continuam com a lista completa por data
   </div>
 
   {%- for s in site.data.blog_secoes %}
-  {% include blog-secao.html secao=s %}
+  {% include blog-secao.html secao=s prioridade=forloop.first %}
   {%- endfor %}
 
   <div class="blog-fecho">
