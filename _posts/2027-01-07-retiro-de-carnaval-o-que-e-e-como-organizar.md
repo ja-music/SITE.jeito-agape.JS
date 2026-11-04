@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Retiro de Carnaval: o que é, como participar e como organizar na paróquia"
+titulo_seo: "Retiro de Carnaval: o que é e como organizar"
 date: 2027-01-07 05:00:00 -0300
 author: "Beto Ferreira"
 category: "Eventos"

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Calendário de festas de padroeiro: as datas dos santos mais comuns e quando começar a organizar"
+titulo_seo: "Calendário de festas de padroeiro: datas e quando organizar"
 date: 2026-12-03 05:00:00 -0300
 author: "Beto Ferreira"
 category: "Eventos"

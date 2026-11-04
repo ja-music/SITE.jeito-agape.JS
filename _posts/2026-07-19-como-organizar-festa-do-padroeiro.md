@@ -8,7 +8,7 @@ servico: banda-para-festa-de-padroeiro
 destaque: true # abre a seção "Para quem organiza" do /blog/ e a página /blog/eventos/
 image: "/assets/blog/capa-festa-do-padroeiro.jpg"
 og_image: "/assets/blog/capa-festa-do-padroeiro-og.jpg"
-description: "Guia prático para a comissão de festa: cronograma reverso de 6 meses, divisão da comissão por frentes, novena, estrutura, som, divulgação e checklist final. Escrito por quem já animou mais de 500 missões e festas em Minas."
+description: "Guia prático para a comissão de festa: cronograma reverso de 6 meses, comissão por frentes, novena, estrutura, som, divulgação e checklist final."
 keywords: "como organizar festa de padroeiro, festa do padroeiro, comissão de festa, quermesse paroquial, novena do padroeiro, organizar festa da paróquia, checklist festa paroquial, cronograma festa padroeiro, festa junina paroquial, evento católico"
 ---
 

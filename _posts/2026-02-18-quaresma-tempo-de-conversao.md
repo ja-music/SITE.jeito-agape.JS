@@ -6,7 +6,7 @@ author: "Beto Ferreira"
 category: "Espiritualidade"
 image: "/assets/blog/quaresma.png"
 og_image: "/assets/blog/quaresma-og.png"
-description: "Quaresma 2026: quando começa, quando termina, o que a Igreja pede no Catecismo e como viver os 40 dias com oração, jejum e caridade. Guia completo com datas, referências e vídeos."
+description: "Quaresma: quando começa, quando termina, o que a Igreja pede no Catecismo e como viver os 40 dias com oração, jejum e caridade."
 keywords: "quaresma, quaresma 2026, quando começa a quaresma, quarta-feira de cinzas, o que é quaresma, tempo litúrgico, oração jejum caridade, catecismo quaresma, semana santa 2026, tríduo pascal, páscoa 2026, católico, igreja católica"
 ---
 

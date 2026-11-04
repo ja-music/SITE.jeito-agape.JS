@@ -6,7 +6,7 @@ author: "Beto Ferreira"
 category: "Eventos"
 image: "/assets/blog/capa-quanto-custa.jpg"
 og_image: "/assets/blog/capa-quanto-custa-og.jpg"
-description: "Som, estrutura, horários e a conversa com o ministério: o que a comissão da festa do padroeiro precisa deixar pronto para a música ao vivo dar certo, sem surpresa na véspera."
+description: "Som, estrutura, horários e a conversa com o ministério: o que a comissão da festa do padroeiro deixa pronto para a música ao vivo dar certo."
 keywords: "música ao vivo festa paroquial, organizar festa do padroeiro, sonorização missa, comissão festa paróquia, ministério de música católica, banda para festa de padroeiro"
 ---
 

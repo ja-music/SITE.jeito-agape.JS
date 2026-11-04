@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Vigília de oração na paróquia: como organizar e roteiro de uma noite"
+titulo_seo: "Vigília de oração na paróquia: como organizar e roteiro"
 date: 2027-01-21 05:00:00 -0300
 author: "Beto Ferreira"
 category: "Eventos"
