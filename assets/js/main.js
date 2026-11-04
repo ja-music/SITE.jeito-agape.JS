@@ -3,6 +3,7 @@
 ---
 (function () {
   'use strict';
+{% include js/abertura.js %}
 {% include js/track.js %}
 {% include js/dialog.js %}
 {% include js/header.js %}
