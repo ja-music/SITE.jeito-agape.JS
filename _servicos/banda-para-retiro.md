@@ -8,7 +8,7 @@ order: 3
 icon: mountain
 faq: [antecedencia, quantas-pessoas, som-estrutura, duracao]
 related_posts: []
-whatsapp_text: "Paz e bem! Estamos preparando um retiro (ou EJC) e gostaríamos de convidar o Jeito Ágape para o louvor e a adoração, para que todos vivam um encontro profundo com Deus.\n\nCidade:\nData:\n\nDeus abençoe a missão de vocês!"
+whatsapp_text: "Olá, a paz esteja sempre conosco!\n\nEstamos preparando um retiro (ou EJC) e gostaríamos de convidar o Jeito Ágape para o louvor e a adoração, para que todos vivam um encontro profundo com Deus.\n\nDetalhes do evento:\nCidade:\nData:\n\nDeus abençoe a missão de vocês!"
 permalink: /banda-para-retiro/
 short: "Retiros e EJC"
 resumo: "Louvor, adoração e ministração no ritmo do retiro, e animação com linguagem jovem no EJC."
