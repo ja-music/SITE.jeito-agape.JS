@@ -1,10 +1,14 @@
 {%- comment -%}
 Abertura da home: o refrão de "Aliança" (álbum Confiar) em tipografia cinética, ~13 s.
 O script inline decide ANTES da primeira pintura se ela toca: uma vez por sessão; nunca com #âncora na URL,
-com prefers-reduced-motion ou sob automação (Lighthouse e a paridade não a veem). ?abertura=1 força, ?abertura=0 pula.
-A linha do tempo é toda CSS (_sass/components/_abertura.scss); js/abertura.js só pula, trava a rolagem e limpa.
+com prefers-reduced-motion, sob automação (Lighthouse e a paridade não a veem), para robôs (Googlebot, bingbot,
+OAI-SearchBot, PerplexityBot, ClaudeBot…: o Google pede para não cobrir a página inteira ao chegar) nem para quem
+chega da busca ou de um assistente de IA (referrer google, bing, chatgpt, perplexity, claude, copilot…), que veio
+atrás de uma resposta. ?abertura=1 força, ?abertura=0 pula. O conteúdo é o mesmo para todos: só a animação muda.
+A linha do tempo é toda CSS (_includes/home/abertura.scss, inline no <head> da home); js/abertura.js só pula,
+trava a rolagem e limpa.
 {%- endcomment %}
-<script>(function(){try{var q=location.search,f=/[?&]abertura=1(&|$)/.test(q);if(/[?&]abertura=0(&|$)/.test(q)||location.hash||(navigator.webdriver&&!f)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;if(!f&&sessionStorage.getItem('abertura'))return;sessionStorage.setItem('abertura','1');document.documentElement.classList.add('tem-abertura')}catch(e){}})()</script>
+<script>(function(){try{var q=location.search,f=/[?&]abertura=1(&|$)/.test(q);if(/[?&]abertura=0(&|$)/.test(q)||location.hash||matchMedia('(prefers-reduced-motion: reduce)').matches)return;if(!f&&(navigator.webdriver||/bot|crawl|spider|slurp|headless|lighthouse|preview/i.test(navigator.userAgent)||/^https?:\/\/([^\/]+\.)?(google|bing|yahoo|duckduckgo|ecosia|yandex|baidu|chatgpt|openai|perplexity|claude|copilot)\./i.test(document.referrer)||sessionStorage.getItem('abertura')))return;sessionStorage.setItem('abertura','1');document.documentElement.classList.add('tem-abertura')}catch(e){}})()</script>
 <div id="abertura" class="abertura">
   <div class="abertura__cena" aria-hidden="true">
     <span class="ab-fundo ab-fundo--vermelho"></span><span class="ab-fundo ab-fundo--branco"></span><span class="ab-fundo ab-fundo--noite"></span>

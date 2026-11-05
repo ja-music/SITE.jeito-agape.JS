@@ -2,8 +2,9 @@
 whatsapp_numero: "5531991267983"
 whatsapp_exibicao: "(31) 99126-7983"
 whatsapp_internacional: "+55 31 99126-7983"
-# Texto padrão do convite (qualificador: tipo, cidade e data). Páginas de serviço têm o próprio.
-whatsapp_texto: "Olá! Quero convidar o Jeito Ágape para (show, festa do padroeiro, retiro ou encontro). Cidade e data:"
+# Texto padrão do convite: acolhedor e apontando para Deus (dono, 2026-11-04), com os qualificadores
+# tipo, cidade e data em linhas para a pessoa completar. Páginas de serviço têm o próprio. \n vira quebra de linha no WhatsApp.
+whatsapp_texto: "Paz e bem! Conheci o Jeito Ágape e gostaria de convidar vocês para servir com a música na nossa comunidade, para que mais pessoas se encontrem com Deus.\n\nTipo de evento:\nCidade:\nData:\n\nDeus abençoe a missão de vocês!"
 email: "contato@jeitoagape.com.br"
 # hero: aparece na coluna de ícones ao lado do carrossel · card: vira card na seção Contato
 redes:

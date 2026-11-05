@@ -14,6 +14,7 @@
 // Tipografia: as palavras grandes em caixa alta na fonte display (--ab-display: por ora a própria Inter 700;
 // o wordmark da marca é um condensado pesado, e a demo compara Anton/Bebas/Oswald — a escolha do dono entra
 // como fonte auto-hospedada em assets/fonts/), os apoios em Inter 300/600 — o contraste é entre pesos e caixas.
+// Vai inline no <head> só da home (_includes/head.html, filtro scssify); as outras páginas não carregam nada disto.
 // Toda a linha do tempo é CSS; js/abertura.js só pula, trava a rolagem e limpa. Só existe com html.tem-abertura
 // (decisão no script inline de _includes/home/abertura.html). Sem o main.js, a cortina sobe do mesmo jeito.
 

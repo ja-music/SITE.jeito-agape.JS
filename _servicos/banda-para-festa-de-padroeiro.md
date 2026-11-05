@@ -8,7 +8,7 @@ order: 2
 icon: calendar
 faq: [antecedencia, som-estrutura, duracao, convite]
 related_posts: [como-organizar-festa-do-padroeiro, quanto-custa-banda-para-missa-festa-paroquial]
-whatsapp_text: "Olá! Gostaria de convidar o Jeito Ágape para a festa do padroeiro. Cidade e data:"
+whatsapp_text: "Paz e bem! Estamos preparando a festa do padroeiro da nossa paróquia e gostaríamos de convidar o Jeito Ágape para louvar a Deus com a nossa comunidade.\n\nCidade:\nData:\n\nDeus abençoe a missão de vocês!"
 permalink: /banda-para-festa-de-padroeiro/
 short: "Festa do padroeiro"
 resumo: "Novena, Missa solene e show na praça. Servimos uma parte ou a festa inteira, do tríduo ao encerramento."

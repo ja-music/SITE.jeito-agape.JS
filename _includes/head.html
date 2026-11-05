@@ -3,6 +3,10 @@
 {% include seo.html %}
 <link rel="preload" href="{{ '/assets/fonts/inter-latin-var.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+{%- if page.schema == "home" %}{%- comment -%}A abertura só existe na home: o CSS dela vem inline aqui, compilado pelo Sass do site, e não pesa nas outras páginas.{%- endcomment -%}
+{%- capture abertura_css %}{% include home/abertura.scss %}{% endcapture %}
+<style>{{ abertura_css | scssify }}</style>
+{%- endif %}
 <link rel="icon" href="{{ '/assets/favicon.png' | relative_url }}" sizes="48x48" type="image/png">
 <link rel="icon" href="{{ '/assets/favicon-32.png' | relative_url }}" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">

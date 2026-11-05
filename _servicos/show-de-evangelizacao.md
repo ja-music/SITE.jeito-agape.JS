@@ -8,7 +8,7 @@ order: 1
 icon: mic
 faq: [duracao, som-estrutura, tipos-de-evento, convite]
 related_posts: [como-organizar-festa-do-padroeiro]
-whatsapp_text: "Olá! Gostaria de convidar o Jeito Ágape para um show de evangelização. Cidade e data:"
+whatsapp_text: "Paz e bem! Gostaria de convidar o Jeito Ágape para um show de evangelização na nossa comunidade, para que mais pessoas possam se encontrar com Jesus pela música.\n\nCidade:\nData:\n\nDeus abençoe a missão de vocês!"
 permalink: /show-de-evangelizacao/
 short: "Shows de evangelização"
 resumo: "Cerca de 1h10 de música, palavra e oração, na praça, no salão ou no palco do evento."

@@ -1,6 +1,8 @@
 {%- assign org = site.data.org -%}{%- assign ct = site.data.contato -%}{%- assign alb = site.data.album -%}
 {%- assign schema = page.schema | default: "page" -%}
-{%- if schema == "home" -%}{%- assign titulo = org.nome | append: " | Ministério de Música Católica em BH" -%}{%- else -%}{%- assign titulo = page.title | append: " | " | append: org.nome -%}{%- endif -%}
+{%- comment -%}<title>: o sufixo " | Jeito Ágape" só entra se o total couber em 60 caracteres (o Google mostra o nome do site
+acima do resultado e corta títulos longos); titulo_seo no front matter encurta o <title> sem mudar o H1.{%- endcomment -%}
+{%- if schema == "home" -%}{%- assign titulo = org.nome | append: " | Ministério de Música Católica em BH" -%}{%- else -%}{%- assign titulo = page.titulo_seo | default: page.title -%}{%- assign titulo_sufixo = titulo | append: " | " | append: org.nome -%}{%- if titulo_sufixo.size <= 60 -%}{%- assign titulo = titulo_sufixo -%}{%- endif -%}{%- endif -%}
 {%- assign desc = page.description | default: page.intro | default: org.descricao_curta | strip -%}
 {%- assign url = page.url | replace: "index.html", "" | absolute_url -%}
 {%- assign og_rel = page.og_image | default: page.image | default: "/assets/og-cover.jpg" -%}

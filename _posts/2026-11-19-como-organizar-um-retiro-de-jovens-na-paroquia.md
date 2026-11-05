@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Como organizar um retiro de jovens na paróquia: programação, equipe e música"
+titulo_seo: "Como organizar um retiro de jovens na paróquia"
 date: 2026-11-19 05:00:00 -0300
 author: "Beto Ferreira"
 category: "Eventos"
